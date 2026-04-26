@@ -1,0 +1,27 @@
+---
+title: "Actividades de aprendizaje"
+---
+
+# Actividad 1: voltaje transmembrana inducido
+
+Para una célula de radio \(a = 10\,\mu m\), estime \(\Delta V_m^{\mathrm{ind}}\) en los polos para diferentes valores de \(E_0\).
+
+Explique en qué casos se podría superar un umbral aproximado de \(1\,V\).
+
+# Actividad 2: carga temporal de la membrana
+
+Compare la respuesta de la membrana para pulsos de:
+
+- \(100\,ns\)
+- \(10\,\mu s\)
+- \(1\,ms\)
+
+Explique por qué los pulsos más cortos pueden requerir campos eléctricos mayores.
+
+# Actividad 3: energía libre del poro
+
+Modifique el voltaje transmembrana total \(V_m^{\mathrm{tot}}\) y describa cómo cambia la barrera energética.
+
+# Actividad 4: calentamiento Joule
+
+Estime \(\Delta T\) para diferentes valores de \(E\), \(\sigma\) y \(\tau\). Discuta cuándo el calentamiento puede dejar de ser despreciable.

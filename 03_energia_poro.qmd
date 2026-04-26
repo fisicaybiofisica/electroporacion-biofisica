@@ -1,0 +1,41 @@
+---
+title: "Paisaje de energía libre del poro"
+---
+
+# Objetivo del módulo
+
+Este módulo presenta un modelo energético mínimo para interpretar la nucleación y expansión de poros acuosos en una membrana sometida a voltaje transmembrana.
+
+# Modelo conceptual
+
+Una forma simplificada del cambio de energía libre asociado a un poro de radio \(r\) es:
+
+\[
+\Delta G(r,V_m^{\mathrm{tot}})
+\approx
+2\pi r\gamma
+-
+\pi r^2\Gamma
+-
+k r^2\left(V_m^{\mathrm{tot}}\right)^2
+\]
+
+# Significado de los términos
+
+| Término | Interpretación física |
+|---|---|
+| \(2\pi r\gamma\) | Costo energético de crear el borde del poro |
+| \(-\pi r^2\Gamma\) | Reducción de energía asociada a la tensión superficial |
+| \(-k r^2(V_m^{\mathrm{tot}})^2\) | Contribución eléctrica que reduce la barrera energética |
+
+# Lectura biofísica
+
+El campo eléctrico no debe interpretarse como una ruptura mecánica directa. Su efecto principal, en este modelo, es reducir la barrera de energía libre asociada a la transición hacia estados permeabilizados.
+
+# Simulación interactiva
+
+En la siguiente versión se incluirá un notebook en Google Colab para graficar \(\Delta G(r)\) y modificar \(V_m^{\mathrm{tot}}\), \(\gamma\), \(\Gamma\) y \(k\).
+
+# Referencias
+
+Ver @Weaver1996, @Bockmann2008 y @Kotnik2019.

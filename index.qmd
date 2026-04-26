@@ -1,0 +1,27 @@
+---
+title: "Biofísica de la Electroporación"
+subtitle: "Material complementario para la clase oral"
+author: "José Alexander Álvarez Bustamante"
+---
+
+# Presentación general
+
+Este portal complementa la clase **La electroporación y sus aplicaciones**, preparada para una prueba oral de concurso profesoral en la Universidad Nacional de Colombia, sede Medellín.
+
+La clase presencial presenta las ideas centrales en 30 minutos. Este sitio ofrece desarrollos matemáticos, simulaciones en Python y actividades de profundización para estudiantes.
+
+## Módulos del portal
+
+1. Deducción de la ecuación de Schwan a partir de la ecuación de Laplace.
+2. Dinámica temporal del voltaje transmembrana mediante un circuito RC equivalente.
+3. Modelo de energía libre para la nucleación y expansión de poros.
+4. Estimación del calentamiento Joule durante pulsos eléctricos.
+5. Actividades de aprendizaje.
+
+## Uso sugerido
+
+Durante la clase se discuten los conceptos centrales. Los estudiantes pueden usar este portal para revisar las deducciones, explorar modelos computacionales y desarrollar actividades de profundización.
+
+## Enlace con la clase
+
+Este material acompaña la presentación **La Electroporación y sus Aplicaciones: Principios Biofísicos para la Ingeniería Celular**.

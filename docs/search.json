@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "01_schwan_laplace.html",
+    "href": "01_schwan_laplace.html",
+    "title": "Ecuación de Schwan desde Laplace",
+    "section": "",
+    "text": "1 Objetivo del módulo\nEste módulo complementa la clase presencial mostrando cómo se obtiene, en una aproximación cuasiestacionaria, la expresión del voltaje transmembrana inducido en una célula aproximadamente esférica sometida a un campo eléctrico externo uniforme.\n\n\n2 Planteamiento físico\nConsideremos una célula esférica de radio (a), inmersa en un medio conductor y expuesta a un campo eléctrico externo uniforme (E_0). En el régimen cuasiestacionario, el potencial eléctrico () satisface la ecuación de Laplace:\n[ ^2 = 0 ]\nLa solución se construye imponiendo simetría axial respecto a la dirección del campo aplicado.\n\n\n3 Resultado central\nPara una esfera ideal, el voltaje transmembrana inducido puede escribirse como:\n[ V_m^{}() f a E_0 ]\ndonde (f ) para una célula esférica ideal.\n\n\n4 Interpretación biofísica\nLa magnitud del voltaje inducido es máxima en los polos alineados con el campo eléctrico y mínima cerca del ecuador celular. Por eso la permeabilización suele iniciar en regiones de mayor polarización eléctrica.\n\n\n5 Simulación interactiva\nEn la siguiente versión se incluirá un notebook en Google Colab con controles para variar (E_0), (a) y ().\n\n\n6 Referencias\nVer Kotnik et al. (2000) y Kotnik et al. (2019).\n\n\n\n\n\nReferencias\n\nKotnik, Tadej, Damijan Miklavcic, y Lluis M. Mir. 2000. «Analytical Description of Transmembrane Voltage Induced by Electric Fields on Spheroidal Cells». Biophysical Journal 79 (2): 670-79. https://doi.org/10.1016/S0006-3495(00)76325-9.\n\n\nKotnik, Tadej, Lea Rems, Mounir Tarek, y Damijan Miklavcic. 2019. «Membrane Electroporation and Electropermeabilization: Mechanisms and Models». Annual Review of Biophysics 48: 63-91. https://doi.org/10.1146/annurev-biophys-052118-115451."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "05_actividades.html",
+    "href": "05_actividades.html",
+    "title": "Actividades de aprendizaje",
+    "section": "",
+    "text": "1 Actividad 1: voltaje transmembrana inducido\nPara una célula de radio (a = 10,m), estime (V_m^{}) en los polos para diferentes valores de (E_0).\nExplique en qué casos se podría superar un umbral aproximado de (1,V).\n\n\n2 Actividad 2: carga temporal de la membrana\nCompare la respuesta de la membrana para pulsos de:\n\n(100,ns)\n(10,s)\n(1,ms)\n\nExplique por qué los pulsos más cortos pueden requerir campos eléctricos mayores.\n\n\n3 Actividad 3: energía libre del poro\nModifique el voltaje transmembrana total (V_m^{}) y describa cómo cambia la barrera energética.\n\n\n4 Actividad 4: calentamiento Joule\nEstime (T) para diferentes valores de (E), () y (). Discuta cuándo el calentamiento puede dejar de ser despreciable."
+  },
+  {
+    "objectID": "03_energia_poro.html",
+    "href": "03_energia_poro.html",
+    "title": "Paisaje de energía libre del poro",
+    "section": "",
+    "text": "1 Objetivo del módulo\nEste módulo presenta un modelo energético mínimo para interpretar la nucleación y expansión de poros acuosos en una membrana sometida a voltaje transmembrana.\n\n\n2 Modelo conceptual\nUna forma simplificada del cambio de energía libre asociado a un poro de radio (r) es:\n[ G(r,V_m^{}) r - r^2 - k r2(V_m{})^2 ]\n\n\n3 Significado de los términos\n\n\n\n\n\n\n\nTérmino\nInterpretación física\n\n\n\n\n(2r)\nCosto energético de crear el borde del poro\n\n\n(-r^2)\nReducción de energía asociada a la tensión superficial\n\n\n(-k r2(V_m{})^2)\nContribución eléctrica que reduce la barrera energética\n\n\n\n\n\n4 Lectura biofísica\nEl campo eléctrico no debe interpretarse como una ruptura mecánica directa. Su efecto principal, en este modelo, es reducir la barrera de energía libre asociada a la transición hacia estados permeabilizados.\n\n\n5 Simulación interactiva\nEn la siguiente versión se incluirá un notebook en Google Colab para graficar (G(r)) y modificar (V_m^{}), (), () y (k).\n\n\n6 Referencias\nVer Weaver y Chizmadzhev (1996), Böckmann et al. (2008) y Kotnik et al. (2019).\n\n\n\n\n\nReferencias\n\nBöckmann, Rainer A., Bert L. de Groot, Serguei Kakorin, Eberhard Neumann, y Helmut Grubmüller. 2008. «Kinetics, Statistics, and Energetics of Lipid Membrane Electroporation Studied by Molecular Dynamics Simulations». Biophysical Journal 95 (4): 1837-50. https://doi.org/10.1529/biophysj.108.129437.\n\n\nKotnik, Tadej, Lea Rems, Mounir Tarek, y Damijan Miklavcic. 2019. «Membrane Electroporation and Electropermeabilization: Mechanisms and Models». Annual Review of Biophysics 48: 63-91. https://doi.org/10.1146/annurev-biophys-052118-115451.\n\n\nWeaver, James C., y Yuri A. Chizmadzhev. 1996. «Theory of Electroporation: A Review». Bioelectrochemistry and Bioenergetics 41 (2): 135-60. https://doi.org/10.1016/S0302-4598(96)05062-3."
+  },
+  {
+    "objectID": "02_dinamica_rc.html",
+    "href": "02_dinamica_rc.html",
+    "title": "Dinámica temporal: circuito RC equivalente",
+    "section": "",
+    "text": "1 Objetivo del módulo\nEste módulo muestra cómo la membrana puede modelarse como un sistema eléctrico transitorio. La idea central es que la membrana no alcanza instantáneamente el voltaje inducido máximo, sino que se carga con una constante de tiempo característica.\n\n\n2 Modelo RC equivalente\nLa membrana puede representarse como una capacitancia (C_m) asociada a una resistencia de membrana (R_m), acoplada al medio externo mediante una resistencia efectiva (R_e).\nLa respuesta temporal mínima puede escribirse como:\n[ V_m^{}(t) = V_{m,}^{} (1-e^{-t/_m}) ]\ndonde:\n[ _m = (R_e R_m)C_m ]\nEn el límite usual (R_m R_e):\n[ _m R_e C_m ]\n\n\n3 Interpretación\nA (t=_m), la membrana alcanza aproximadamente el 63 % del valor máximo. Esta relación permite entender por qué los pulsos muy cortos requieren campos eléctricos mayores para producir una polarización comparable.\n\n\n4 Referencias\nVer Kotnik et al. (2019).\n\n\n\n\n\nReferencias\n\nKotnik, Tadej, Lea Rems, Mounir Tarek, y Damijan Miklavcic. 2019. «Membrane Electroporation and Electropermeabilization: Mechanisms and Models». Annual Review of Biophysics 48: 63-91. https://doi.org/10.1146/annurev-biophys-052118-115451."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Biofísica de la Electroporación",
+    "section": "",
+    "text": "Este portal complementa la clase La electroporación y sus aplicaciones, preparada para una prueba oral de concurso profesoral en la Universidad Nacional de Colombia, sede Medellín.\nLa clase presencial presenta las ideas centrales en 30 minutos. Este sitio ofrece desarrollos matemáticos, simulaciones en Python y actividades de profundización para estudiantes.\n\n\n\nDeducción de la ecuación de Schwan a partir de la ecuación de Laplace.\nDinámica temporal del voltaje transmembrana mediante un circuito RC equivalente.\nModelo de energía libre para la nucleación y expansión de poros.\nEstimación del calentamiento Joule durante pulsos eléctricos.\nActividades de aprendizaje.\n\n\n\n\nDurante la clase se discuten los conceptos centrales. Los estudiantes pueden usar este portal para revisar las deducciones, explorar modelos computacionales y desarrollar actividades de profundización.\n\n\n\nEste material acompaña la presentación La Electroporación y sus Aplicaciones: Principios Biofísicos para la Ingeniería Celular."
+  },
+  {
+    "objectID": "index.html#módulos-del-portal",
+    "href": "index.html#módulos-del-portal",
+    "title": "Biofísica de la Electroporación",
+    "section": "",
+    "text": "Deducción de la ecuación de Schwan a partir de la ecuación de Laplace.\nDinámica temporal del voltaje transmembrana mediante un circuito RC equivalente.\nModelo de energía libre para la nucleación y expansión de poros.\nEstimación del calentamiento Joule durante pulsos eléctricos.\nActividades de aprendizaje."
+  },
+  {
+    "objectID": "index.html#uso-sugerido",
+    "href": "index.html#uso-sugerido",
+    "title": "Biofísica de la Electroporación",
+    "section": "",
+    "text": "Durante la clase se discuten los conceptos centrales. Los estudiantes pueden usar este portal para revisar las deducciones, explorar modelos computacionales y desarrollar actividades de profundización."
+  },
+  {
+    "objectID": "index.html#enlace-con-la-clase",
+    "href": "index.html#enlace-con-la-clase",
+    "title": "Biofísica de la Electroporación",
+    "section": "",
+    "text": "Este material acompaña la presentación La Electroporación y sus Aplicaciones: Principios Biofísicos para la Ingeniería Celular."
+  },
+  {
+    "objectID": "04_calentamiento_joule.html",
+    "href": "04_calentamiento_joule.html",
+    "title": "Calentamiento Joule durante pulsos eléctricos",
+    "section": "",
+    "text": "1 Objetivo del módulo\nEste módulo introduce una estimación mínima del aumento de temperatura producido por disipación eléctrica durante la aplicación de pulsos.\n\n\n2 Potencia volumétrica disipada\nEn un medio conductor, la potencia volumétrica disipada puede aproximarse como:\n[ q = E^2 ]\ndonde () es la conductividad eléctrica y (E) es la magnitud del campo eléctrico aplicado.\n\n\n3 Balance térmico mínimo\nPara pulsos cortos y una aproximación adiabática:\n[ c_p = E^2 ]\nPor tanto:\n[ T ]\n\n\n4 Interpretación\nEsta estimación permite distinguir regímenes predominantemente no térmicos de condiciones en las que el calentamiento puede contribuir al daño celular.\n\n\n5 Referencias\nVer Yarmush et al. (2014) y Kotnik et al. (2019).\n\n\n\n\n\nReferencias\n\nKotnik, Tadej, Lea Rems, Mounir Tarek, y Damijan Miklavcic. 2019. «Membrane Electroporation and Electropermeabilization: Mechanisms and Models». Annual Review of Biophysics 48: 63-91. https://doi.org/10.1146/annurev-biophys-052118-115451.\n\n\nYarmush, Martin L., Alexander Golberg, Gregor Sersa, Tadej Kotnik, y Damijan Miklavcic. 2014. «Electroporation-Based Technologies for Medicine: Principles, Applications, and Challenges». Annual Review of Biomedical Engineering 16: 295-320. https://doi.org/10.1146/annurev-bioeng-071813-104622."
+  }
+]

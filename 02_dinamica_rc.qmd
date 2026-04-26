@@ -1,0 +1,40 @@
+---
+title: "Dinámica temporal: circuito RC equivalente"
+---
+
+# Objetivo del módulo
+
+Este módulo muestra cómo la membrana puede modelarse como un sistema eléctrico transitorio. La idea central es que la membrana no alcanza instantáneamente el voltaje inducido máximo, sino que se carga con una constante de tiempo característica.
+
+# Modelo RC equivalente
+
+La membrana puede representarse como una capacitancia \(C_m\) asociada a una resistencia de membrana \(R_m\), acoplada al medio externo mediante una resistencia efectiva \(R_e\).
+
+La respuesta temporal mínima puede escribirse como:
+
+\[
+\Delta V_m^{\mathrm{ind}}(t)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-t/\tau_m}\right)
+\]
+
+donde:
+
+\[
+\tau_m = (R_e \parallel R_m)C_m
+\]
+
+En el límite usual \(R_m \gg R_e\):
+
+\[
+\tau_m \approx R_e C_m
+\]
+
+# Interpretación
+
+A \(t=\tau_m\), la membrana alcanza aproximadamente el 63 % del valor máximo. Esta relación permite entender por qué los pulsos muy cortos requieren campos eléctricos mayores para producir una polarización comparable.
+
+# Referencias
+
+Ver @Kotnik2019.

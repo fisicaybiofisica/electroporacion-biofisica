@@ -1,0 +1,41 @@
+---
+title: "Calentamiento Joule durante pulsos eléctricos"
+---
+
+# Objetivo del módulo
+
+Este módulo introduce una estimación mínima del aumento de temperatura producido por disipación eléctrica durante la aplicación de pulsos.
+
+# Potencia volumétrica disipada
+
+En un medio conductor, la potencia volumétrica disipada puede aproximarse como:
+
+\[
+q = \sigma E^2
+\]
+
+donde \(\sigma\) es la conductividad eléctrica y \(E\) es la magnitud del campo eléctrico aplicado.
+
+# Balance térmico mínimo
+
+Para pulsos cortos y una aproximación adiabática:
+
+\[
+\rho c_p \frac{dT}{dt} = \sigma E^2
+\]
+
+Por tanto:
+
+\[
+\Delta T
+\approx
+\frac{\sigma E^2 \tau}{\rho c_p}
+\]
+
+# Interpretación
+
+Esta estimación permite distinguir regímenes predominantemente no térmicos de condiciones en las que el calentamiento puede contribuir al daño celular.
+
+# Referencias
+
+Ver @Yarmush2014 y @Kotnik2019.

@@ -1,0 +1,39 @@
+---
+title: "Ecuación de Schwan desde Laplace"
+---
+
+# Objetivo del módulo
+
+Este módulo complementa la clase presencial mostrando cómo se obtiene, en una aproximación cuasiestacionaria, la expresión del voltaje transmembrana inducido en una célula aproximadamente esférica sometida a un campo eléctrico externo uniforme.
+
+# Planteamiento físico
+
+Consideremos una célula esférica de radio \(a\), inmersa en un medio conductor y expuesta a un campo eléctrico externo uniforme \(E_0\). En el régimen cuasiestacionario, el potencial eléctrico \(\phi\) satisface la ecuación de Laplace:
+
+\[
+\nabla^2 \phi = 0
+\]
+
+La solución se construye imponiendo simetría axial respecto a la dirección del campo aplicado.
+
+# Resultado central
+
+Para una esfera ideal, el voltaje transmembrana inducido puede escribirse como:
+
+\[
+\Delta V_m^{\mathrm{ind}}(\theta) \approx f a E_0 \cos\theta
+\]
+
+donde \(f \approx 1.5\) para una célula esférica ideal.
+
+# Interpretación biofísica
+
+La magnitud del voltaje inducido es máxima en los polos alineados con el campo eléctrico y mínima cerca del ecuador celular. Por eso la permeabilización suele iniciar en regiones de mayor polarización eléctrica.
+
+# Simulación interactiva
+
+En la siguiente versión se incluirá un notebook en Google Colab con controles para variar \(E_0\), \(a\) y \(\theta\).
+
+# Referencias
+
+Ver @Kotnik2000 y @Kotnik2019.

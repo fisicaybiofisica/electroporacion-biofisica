@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Biofísica de la Electroporación"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: 01_schwan_laplace.qmd
+        text: Schwan
+      - href: 02_dinamica_rc.qmd
+        text: Circuito RC
+      - href: 03_energia_poro.qmd
+        text: Energía del poro
+      - href: 04_calentamiento_joule.qmd
+        text: Calentamiento Joule
+      - href: 05_actividades.qmd
+        text: Actividades
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    smooth-scroll: true
+    code-fold: true
+    lang: es
+
+bibliography: references.bib
