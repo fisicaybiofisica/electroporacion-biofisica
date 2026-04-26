@@ -1,6 +1,5 @@
 ---
 title: "Calentamiento Joule durante pulsos eléctricos"
-format: html
 ---
 
 # Objetivo del módulo

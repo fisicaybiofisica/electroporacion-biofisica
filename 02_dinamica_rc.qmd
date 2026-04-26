@@ -1,7 +1,6 @@
 ---
 title: "Dinámica temporal: circuito RC equivalente"
 author-title: "Autor"
-format: html
 ---
 
 # Objetivo del módulo

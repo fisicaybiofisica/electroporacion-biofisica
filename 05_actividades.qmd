@@ -1,6 +1,5 @@
 ---
 title: "Actividades de aprendizaje"
-format: html
 ---
 
 # Propósito de las actividades

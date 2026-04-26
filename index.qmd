@@ -3,10 +3,6 @@ title: "La Electroporación y sus Aplicaciones"
 subtitle: "Portal complementario de biofísica para Ingeniería Física"
 author: "José Alexander Álvarez Bustamante"
 author-title: "Autor"
-format:
-  html:
-    toc: true
-    toc-depth: 3
 ---
 
 ![](figures/ep_portada_membrana_electroporacion.png){fig-align="center" width="85%"}

@@ -1,7 +1,6 @@
 ---
 title: "Paisaje de energía libre del poro"
 author-title: "Autor"
-format: html
 ---
 
 # Objetivo del módulo
