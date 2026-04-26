@@ -22,10 +22,13 @@ website:
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: true
     number-sections: true
     smooth-scroll: true
     code-fold: true
+    code-tools: true
+    html-math-method: mathjax
     lang: es
 
 bibliography: references.bib

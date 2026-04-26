@@ -1,40 +1,387 @@
 ---
 title: "Calentamiento Joule durante pulsos eléctricos"
+format: html
 ---
 
 # Objetivo del módulo
 
-Este módulo introduce una estimación mínima del aumento de temperatura producido por disipación eléctrica durante la aplicación de pulsos.
+Este módulo introduce una estimación mínima del aumento de temperatura producido por disipación eléctrica durante la aplicación de pulsos eléctricos.
+
+El propósito no es construir un modelo térmico completo, sino mostrar cómo la conductividad del medio, la magnitud del campo eléctrico y la duración del pulso controlan el calentamiento aproximado del sistema.
+
+En electroporación, esta estimación permite distinguir condiciones predominantemente no térmicas de escenarios en los que el calentamiento puede contribuir al daño celular, a cambios en la permeabilidad de la membrana o a efectos irreversibles.
 
 # Potencia volumétrica disipada
 
-En un medio conductor, la potencia volumétrica disipada puede aproximarse como:
+Cuando una corriente eléctrica atraviesa un medio conductor, parte de la energía eléctrica se transforma en calor. Este fenómeno se conoce como calentamiento Joule.
 
-\[
+En un medio homogéneo con conductividad eléctrica $\sigma$, sometido a un campo eléctrico de magnitud $E$, la potencia disipada por unidad de volumen puede aproximarse como:
+
+$$
 q = \sigma E^2
-\]
+$$
 
-donde \(\sigma\) es la conductividad eléctrica y \(E\) es la magnitud del campo eléctrico aplicado.
+La @fig-volumen ilustra este proceso: el campo eléctrico impulsa una corriente a través del medio conductor, y la resistencia al movimiento de cargas genera calor en todo el volumen.
+
+| Símbolo | Significado | Unidad SI |
+|---|---|---|
+| $q$ | potencia volumétrica disipada | $\mathrm{W\,m^{-3}}$ |
+| $\sigma$ | conductividad eléctrica del medio | $\mathrm{S\,m^{-1}}$ |
+| $E$ | magnitud del campo eléctrico aplicado | $\mathrm{V\,m^{-1}}$ |
+
+Esta expresión muestra una dependencia cuadrática con el campo eléctrico: si el campo se duplica, la potencia disipada aumenta aproximadamente cuatro veces.
+
+![Volumen de control de un medio conductor sometido a un campo eléctrico $E$ entre dos electrodos planos. La conductividad $\sigma$ del medio determina la intensidad de la corriente, y la disipación Joule $q = \sigma E^2$ aparece distribuida en todo el volumen como calor.](figures/ep_joule_volumen_control.png){#fig-volumen fig-alt="Medio conductor entre dos electrodos con campo eléctrico E y disipación Joule sigma E cuadrado." fig-align="center" width="80%"}
 
 # Balance térmico mínimo
 
-Para pulsos cortos y una aproximación adiabática:
+Para estimar el aumento de temperatura, se puede partir de un balance de energía local.
 
-\[
+Si se considera un pulso corto y se desprecia, en primera aproximación, la pérdida de calor por conducción, convección o radiación durante el intervalo del pulso, se obtiene una aproximación adiabática:
+
+$$
 \rho c_p \frac{dT}{dt} = \sigma E^2
-\]
+$$
+
+| Símbolo | Significado | Unidad SI |
+|---|---|---|
+| $\rho$ | densidad del medio | $\mathrm{kg\,m^{-3}}$ |
+| $c_p$ | calor específico a presión constante | $\mathrm{J\,kg^{-1}\,K^{-1}}$ |
+| $T$ | temperatura | $\mathrm{K}$ o $\mathrm{^\circ C}$ |
+| $t$ | tiempo | $\mathrm{s}$ |
+
+El término $\rho c_p$ representa la capacidad térmica volumétrica del medio. Cuanto mayor sea este producto, más energía se requiere para aumentar la temperatura del sistema.
+
+# Estimación del aumento de temperatura
+
+Si el campo eléctrico se mantiene aproximadamente constante durante un pulso de duración $\tau$, se puede integrar la ecuación anterior:
+
+$$
+\rho c_p \int_{T_0}^{T_0+\Delta T} dT
+=
+\sigma E^2 \int_0^\tau dt
+$$
 
 Por tanto:
 
-\[
+$$
+\rho c_p \Delta T = \sigma E^2 \tau
+$$
+
+y el aumento de temperatura aproximado es:
+
+$$
 \Delta T
 \approx
 \frac{\sigma E^2 \tau}{\rho c_p}
-\]
+$$
 
-# Interpretación
+La @fig-temperatura ilustra la relación entre el pulso eléctrico de duración $\tau$ y el aumento de temperatura resultante: durante el pulso la temperatura sube, y al cesar el pulso la relajación térmica es lenta comparada con la escala del pulso.
 
-Esta estimación permite distinguir regímenes predominantemente no térmicos de condiciones en las que el calentamiento puede contribuir al daño celular.
+![Relación conceptual entre un pulso eléctrico rectangular de duración $\tau = t_2 - t_1$ y el aumento aproximado de temperatura $\Delta T$ producido por calentamiento Joule. La temperatura sube durante el pulso desde $T_0$ hasta $T_0 + \Delta T$ y se estabiliza después de que el pulso cesa.](figures/ep_joule_aumento_temperatura.png){#fig-temperatura fig-alt="Pulso eléctrico rectangular de duración tau y curva de temperatura que sube durante el pulso y se estabiliza después." fig-align="center" width="85%"}
+
+Esta expresión permite identificar tres dependencias importantes:
+
+1. $\Delta T$ aumenta linealmente con la conductividad $\sigma$.
+2. $\Delta T$ aumenta linealmente con la duración del pulso $\tau$.
+3. $\Delta T$ aumenta cuadráticamente con el campo eléctrico $E$.
+
+Por esta razón, pequeños incrementos en el campo eléctrico pueden producir aumentos térmicos relevantes, especialmente en medios de alta conductividad o bajo protocolos con pulsos largos o repetidos.
+
+# Ejemplo numérico mínimo
+
+Supongamos un medio acuoso con valores aproximados:
+
+$$
+\sigma = 1~\mathrm{S\,m^{-1}},
+\qquad
+E = 1.0 \times 10^5~\mathrm{V\,m^{-1}},
+\qquad
+\tau = 100~\mu\mathrm{s} = 1.0 \times 10^{-4}~\mathrm{s}
+$$
+
+$$
+\rho = 1000~\mathrm{kg\,m^{-3}},
+\qquad
+c_p = 4180~\mathrm{J\,kg^{-1}\,K^{-1}}
+$$
+
+Entonces:
+
+$$
+\Delta T
+\approx
+\frac{
+(1)(1.0 \times 10^5)^2(1.0 \times 10^{-4})
+}{
+(1000)(4180)
+}
+\approx
+0.24~\mathrm{K}
+$$
+
+Este resultado sugiere que, para un único pulso corto bajo estas condiciones, el calentamiento global estimado puede ser pequeño.
+
+Sin embargo, esta conclusión no debe extrapolarse sin cuidado. En la práctica, el calentamiento puede aumentar por campos eléctricos más intensos, medios con mayor conductividad, pulsos más largos, trenes de pulsos repetidos, geometrías con concentración local del campo, proximidad a electrodos, o disipación no uniforme en tejidos o suspensiones celulares.
+
+# Simulación interactiva
+
+La siguiente simulación permite explorar cómo cambia $\Delta T$ al modificar la conductividad del medio, el campo eléctrico, la duración del pulso, la densidad y el calor específico.
+
+::: {.callout-note}
+## Instrucciones
+
+Use los controles deslizantes para modificar los parámetros del medio y del pulso. La gráfica muestra $\Delta T$ en función de la duración del pulso $\tau$. El punto naranja indica el valor correspondiente a la duración seleccionada.
+:::
+
+## Panel interactivo
+
+:::{.columns}
+
+:::{.column width="34%"}
+
+```{ojs}
+//| echo: false
+
+viewof sigma = Inputs.range(
+  [0.1, 5.0],
+  {
+    value: 1.0,
+    step: 0.1,
+    label: "Conductividad σ [S/m]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof E_kVcm = Inputs.range(
+  [0.1, 5.0],
+  {
+    value: 1.0,
+    step: 0.1,
+    label: "Campo eléctrico E [kV/cm]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof tau_us = Inputs.range(
+  [1, 1000],
+  {
+    value: 100,
+    step: 1,
+    label: "Duración del pulso τ [µs]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof rho = Inputs.range(
+  [900, 1200],
+  {
+    value: 1000,
+    step: 10,
+    label: "Densidad ρ [kg/m³]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof cp = Inputs.range(
+  [3000, 5000],
+  {
+    value: 4180,
+    step: 10,
+    label: "Calor específico cp [J/(kg·K)]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+E_SI   = E_kVcm * 1.0e5
+tau_s  = tau_us * 1.0e-6
+deltaT = sigma * E_SI * E_SI * tau_s / (rho * cp)
+```
+
+```{ojs}
+//| echo: false
+
+html`
+<div style="
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #f8fafc;
+  font-size: 0.95rem;
+">
+  <h4 style="margin-top:0;">Valores calculados</h4>
+  <ul style="padding-left:1.2rem;">
+    <li><b>σ:</b><br>${sigma.toFixed(1)} S/m</li>
+    <li><b>E:</b><br>${E_kVcm.toFixed(1)} kV/cm = ${E_SI.toExponential(2)} V/m</li>
+    <li><b>τ:</b><br>${tau_us} µs = ${tau_s.toExponential(2)} s</li>
+    <li><b>ρ:</b><br>${rho} kg/m³</li>
+    <li><b>c<sub>p</sub>:</b><br>${cp} J/(kg·K)</li>
+    <li><b>ΔT ≈</b><br>${deltaT.toFixed(4)} K</li>
+  </ul>
+</div>
+`
+```
+
+:::
+
+:::{.column width="66%"}
+
+```{ojs}
+//| echo: false
+
+dataJoule = Array.from({length: 300}, (_, i) => {
+  const tauPlot_us = 1 + i * (1000 - 1) / 299
+  const tauPlot_s  = tauPlot_us * 1.0e-6
+  const dT         = sigma * E_SI * E_SI * tauPlot_s / (rho * cp)
+  return {
+    tau_us: tauPlot_us,
+    deltaT: dT
+  }
+})
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  width: 480,
+  height: 420,
+  marginLeft: 75,
+  marginRight: 25,
+  marginTop: 25,
+  marginBottom: 55,
+  grid: true,
+  x: {
+    label: "Duración del pulso τ [µs] →",
+    domain: [1, 1000]
+  },
+  y: {
+    label: "↑ Aumento de temperatura ΔT [K]",
+    nice: true
+  },
+  marks: [
+    Plot.line(dataJoule, {
+      x: "tau_us",
+      y: "deltaT",
+      stroke: "#1f4e79",
+      strokeWidth: 3
+    }),
+    Plot.dot(
+      [{tau_us: tau_us, deltaT: deltaT}],
+      {
+        x: "tau_us",
+        y: "deltaT",
+        r: 6,
+        fill: "#d95f02"
+      }
+    ),
+    Plot.ruleX([tau_us], {
+      stroke: "#d95f02",
+      strokeDasharray: "4,4",
+      strokeWidth: 1.4
+    }),
+    Plot.text(
+      [{tau_us: tau_us, deltaT: deltaT, label: `ΔT = ${deltaT.toFixed(3)} K`}],
+      {
+        x: "tau_us",
+        y: "deltaT",
+        text: "label",
+        dx: 8,
+        dy: -10,
+        fontSize: 11,
+        fill: "#d95f02"
+      }
+    )
+  ]
+})
+```
+
+:::
+
+:::
+
+# Interpretación física
+
+La ecuación anterior no describe todos los detalles térmicos del sistema, pero ofrece una escala útil para interpretar los experimentos.
+
+En particular, permite responder preguntas como:
+
+- ¿El protocolo usado puede considerarse predominantemente no térmico?
+- ¿El campo aplicado es suficientemente alto para producir calentamiento apreciable?
+- ¿La duración del pulso es suficientemente corta para despreciar difusión térmica durante el pulso?
+- ¿La conductividad del medio podría amplificar la disipación de energía?
+- ¿El daño celular observado podría tener una contribución térmica además de la permeabilización eléctrica?
+
+# Limitaciones del modelo
+
+La estimación:
+
+$$
+\Delta T
+\approx
+\frac{\sigma E^2 \tau}{\rho c_p}
+$$
+
+es una aproximación mínima. Su utilidad principal es didáctica y de orden de magnitud.
+
+No incluye:
+
+- difusión térmica durante o después del pulso;
+- geometrías complejas de electrodos;
+- distribución espacial no uniforme del campo eléctrico;
+- acumulación térmica por múltiples pulsos;
+- cambios de conductividad con la temperatura;
+- heterogeneidad de tejidos;
+- efectos locales cerca de membranas, electrodos o interfaces.
+
+Para una descripción más completa sería necesario resolver una ecuación de bioheat o una ecuación de transferencia de calor acoplada al problema eléctrico.
+
+# Conexión con la electroporación
+
+En protocolos de electroporación, el objetivo suele ser inducir una permeabilización controlada de la membrana mediante el voltaje transmembrana. Sin embargo, el mismo campo eléctrico que contribuye a la carga de la membrana también puede disipar energía en el medio.
+
+Por tanto, la interpretación biofísica debe separar, al menos conceptualmente, dos efectos:
+
+| Efecto | Variable dominante | Consecuencia |
+|---|---|---|
+| Carga de membrana | $\Delta V_m^{\mathrm{ind}}$ | Permeabilización eléctrica |
+| Calentamiento Joule | $\sigma E^2 \tau$ | Aumento de temperatura |
+
+En condiciones suaves, el calentamiento puede ser pequeño y la respuesta puede interpretarse principalmente como electroporación no térmica. En condiciones más intensas, el calentamiento puede contribuir a daño irreversible, cambios estructurales o muerte celular.
+
+# Preguntas para explorar
+
+1. ¿Qué ocurre con $\Delta T$ si se duplica el campo eléctrico $E$? ¿Por qué no se duplica linealmente?
+2. ¿Qué combinación de $\sigma$, $E$ y $\tau$ produce un calentamiento de $1$ K?
+3. ¿Por qué un medio de alta conductividad disipa más energía para el mismo campo?
+4. ¿En qué condiciones sería razonable despreciar la difusión térmica durante el pulso?
+5. ¿Cómo cambiaría $\Delta T$ si se aplican 10 pulsos consecutivos en lugar de uno?
+6. ¿Qué diferencia hay entre el calentamiento Joule y el efecto térmico producido directamente sobre la membrana?
+
+# Ideas clave
+
+- La potencia volumétrica disipada por calentamiento Joule es $q = \sigma E^2$ y tiene dependencia cuadrática con el campo.
+- El aumento de temperatura aproximado bajo la hipótesis adiabática es $\Delta T \approx \sigma E^2 \tau / (\rho c_p)$.
+- $\Delta T$ aumenta linealmente con $\sigma$ y $\tau$, y cuadráticamente con $E$.
+- Para un único pulso corto en condiciones típicas de electroporación, el calentamiento puede ser pequeño, pero no siempre despreciable.
+- Campos intensos, medios conductivos, pulsos largos o trenes de pulsos pueden producir calentamiento significativo.
+- El calentamiento Joule y la permeabilización de membrana son efectos concurrentes que deben evaluarse por separado.
 
 # Referencias
 

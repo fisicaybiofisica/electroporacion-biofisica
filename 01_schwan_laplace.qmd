@@ -1,39 +1,1001 @@
 ---
 title: "Ecuación de Schwan desde Laplace"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+bibliography: references.bib
 ---
 
 # Objetivo del módulo
 
 Este módulo complementa la clase presencial mostrando cómo se obtiene, en una aproximación cuasiestacionaria, la expresión del voltaje transmembrana inducido en una célula aproximadamente esférica sometida a un campo eléctrico externo uniforme.
 
-# Planteamiento físico
-
-Consideremos una célula esférica de radio \(a\), inmersa en un medio conductor y expuesta a un campo eléctrico externo uniforme \(E_0\). En el régimen cuasiestacionario, el potencial eléctrico \(\phi\) satisface la ecuación de Laplace:
-
-\[
-\nabla^2 \phi = 0
-\]
-
-La solución se construye imponiendo simetría axial respecto a la dirección del campo aplicado.
+El objetivo no es presentar una teoría electrostática completamente general, sino construir una deducción física clara y útil que permita entender de dónde proviene la ecuación de Schwan y cómo deben interpretarse sus variables.
 
 # Resultado central
 
-Para una esfera ideal, el voltaje transmembrana inducido puede escribirse como:
+El resultado de interés es la expresión aproximada:
 
-\[
-\Delta V_m^{\mathrm{ind}}(\theta) \approx f a E_0 \cos\theta
-\]
+$$
+\Delta V_m^{\mathrm{ind}}(\theta) \approx f\,a\,E_0\cos\theta
+$$
 
-donde \(f \approx 1.5\) para una célula esférica ideal.
+donde, para una célula esférica ideal en el régimen cuasiestacionario,
 
-# Interpretación biofísica
+$$
+f \approx 1.5
+$$
 
-La magnitud del voltaje inducido es máxima en los polos alineados con el campo eléctrico y mínima cerca del ecuador celular. Por eso la permeabilización suele iniciar en regiones de mayor polarización eléctrica.
+Por tanto,
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta) \approx 1.5\,a\,E_0\cos\theta
+$$
+
+Esta ecuación muestra que el voltaje transmembrana inducido depende linealmente del radio celular $a$, de la magnitud del campo externo $E_0$ y de la posición angular $\theta$ sobre la membrana.
+
+# Variables y unidades
+
+| Variable | Significado físico | Unidad SI |
+|---|---|---|
+| $a$ | Radio celular | m |
+| $E_0$ | Magnitud del campo eléctrico externo uniforme | V/m |
+| $\theta$ | Ángulo polar medido respecto al eje del campo | rad |
+| $r$ | Coordenada radial | m |
+| $\phi$ | Potencial eléctrico | V |
+| $\phi_e(r,\theta)$ | Potencial eléctrico en la región exterior | V |
+| $\phi_i(r,\theta)$ | Potencial eléctrico en la región interior | V |
+| $\Delta V_m^{\mathrm{ind}}$ | Voltaje transmembrana inducido | V |
+| $f$ | Factor geométrico de forma | adimensional |
+| $A$, $B$, $C$ | Constantes de integración determinadas por las condiciones físicas | dependen de la expresión |
+
+# Planteamiento físico
+
+Consideremos una célula aproximadamente esférica de radio $a$, inmersa en un medio conductor y expuesta a un campo eléctrico externo uniforme de magnitud $E_0$.
+
+La @fig-schwan-geometria introduce la geometría básica del problema. El punto $P$ sobre la membrana queda identificado mediante el ángulo polar $\theta$, medido respecto al eje del campo eléctrico aplicado.
+
+![Geometría básica empleada en la deducción de la ecuación de Schwan. Una célula aproximadamente esférica, de radio $a$, se encuentra inmersa en un campo eléctrico externo uniforme $E_0$. El punto $P$ sobre la membrana queda identificado por el ángulo polar $\theta$ medido respecto al eje del campo.](figures/ep_schwan_geometria_basica.png){#fig-schwan-geometria width="90%"}
+
+Usaremos las siguientes aproximaciones:
+
+1. La célula se aproxima como una esfera.
+2. El campo externo aplicado es uniforme.
+3. El problema posee simetría axial respecto al eje del campo.
+4. La membrana es delgada comparada con el radio celular.
+5. La membrana se trata como una barrera poco conductora en el límite cuasiestacionario.
+6. No consideramos, en este primer modelo, formación dinámica de poros ni cambios no lineales de conductividad.
+
+# Ecuación de Laplace
+
+En una región conductora sin acumulación volumétrica de carga libre, el potencial eléctrico satisface la ecuación de Laplace:
+
+$$
+\nabla^2 \phi = 0
+$$
+
+Como el problema tiene simetría axial, el potencial depende de $r$ y $\theta$, pero no del ángulo azimutal. En coordenadas esféricas, para un problema sin dependencia azimutal, la ecuación de Laplace se escribe como:
+
+$$
+\frac{1}{r^2}
+\frac{\partial}{\partial r}
+\left(
+r^2\frac{\partial \phi}{\partial r}
+\right)
++
+\frac{1}{r^2\sin\theta}
+\frac{\partial}{\partial \theta}
+\left(
+\sin\theta
+\frac{\partial \phi}{\partial \theta}
+\right)
+=0
+$$
+
+El campo externo uniforme impone una dependencia angular proporcional a $\cos\theta$. Por esta razón, para el modo dipolar dominante, se buscan soluciones de la forma:
+
+$$
+\phi(r,\theta)=R(r)\cos\theta
+$$
+
+Al sustituir esta forma en la ecuación de Laplace se obtiene una ecuación radial cuya solución general para el término dipolar es:
+
+$$
+R(r)=C_1 r+\frac{C_2}{r^2}
+$$
+
+Por tanto, la solución dipolar general puede escribirse como:
+
+$$
+\phi(r,\theta)
+=
+\left(
+C_1 r+\frac{C_2}{r^2}
+\right)\cos\theta
+$$
+
+Esta forma contiene dos contribuciones:
+
+- un término proporcional a $r\cos\theta$, asociado con un campo uniforme;
+- un término proporcional a $\dfrac{\cos\theta}{r^2}$, asociado con la perturbación dipolar causada por la célula.
+
+# Potencial exterior
+
+En la región exterior a la célula, el potencial debe parecerse al de un campo uniforme cuando estamos lejos de la célula.
+
+Si el campo externo uniforme apunta a lo largo del eje polar, el potencial lejano puede escribirse como:
+
+$$
+\phi_{\infty}(r,\theta)=-E_0 r\cos\theta
+$$
+
+Por tanto, una forma compatible con el campo uniforme lejano es:
+
+$$
+\phi_e(r,\theta)
+=
+\left(
+-E_0 r+\frac{A}{r^2}
+\right)\cos\theta,
+\qquad r\ge a
+$$
+
+donde $A$ es una constante que se determina con las condiciones de frontera.
+
+El término
+
+$$
+-E_0 r\cos\theta
+$$
+
+representa el campo eléctrico uniforme aplicado, mientras que el término
+
+$$
+\frac{A}{r^2}\cos\theta
+$$
+
+representa la perturbación inducida por la presencia de la célula.
+
+# Potencial interior
+
+En la región interior, la solución debe permanecer finita en $r=0$. Por esa razón, se descarta el término proporcional a $1/r^2$, pues diverge en el origen.
+
+La solución interior se escribe como:
+
+$$
+\phi_i(r,\theta)
+=
+-B\,r\cos\theta+C,
+\qquad r\le a
+$$
+
+donde $B$ representa la magnitud de un posible campo uniforme interno y $C$ es una constante de referencia del potencial.
+
+# Condiciones físicas de frontera
+
+La @fig-schwan-frontera resume las condiciones físicas empleadas en la deducción simplificada.
+
+![Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio $a$ inmersa en un campo eléctrico uniforme $E_0$, con una región interior descrita por $\phi_i(r,\theta)$ y una región exterior descrita por $\phi_e(r,\theta)$. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.](figures/ep_schwan_condiciones_frontera.png){#fig-schwan-frontera width="95%"}
+
+## Condición 1: campo uniforme lejos de la célula
+
+Lejos de la célula, el potencial exterior debe tender al potencial del campo uniforme aplicado:
+
+$$
+\phi_e(r,\theta)\to -E_0 r\cos\theta
+\qquad
+\text{cuando}
+\qquad
+r\to\infty
+$$
+
+Esta condición ya está incorporada en la expresión:
+
+$$
+\phi_e(r,\theta)
+=
+\left(
+-E_0 r+\frac{A}{r^2}
+\right)\cos\theta
+$$
+
+porque el término $A/r^2$ desaparece cuando $r$ crece mucho.
+
+## Condición 2: interior aproximadamente equipotencial
+
+En el límite cuasiestacionario y para una membrana poco conductora, el interior celular se aproxima como equipotencial. Esto significa que el campo eléctrico interno es pequeño:
+
+$$
+\mathbf{E}_i=-\nabla\phi_i\approx 0
+$$
+
+Por tanto, el potencial interior se aproxima como una constante:
+
+$$
+\phi_i(r,\theta)\approx C
+$$
+
+Comparando con la forma general interior,
+
+$$
+\phi_i(r,\theta)
+=
+-B\,r\cos\theta+C
+$$
+
+esto implica:
+
+$$
+B\approx 0
+$$
+
+Entonces,
+
+$$
+\phi_i(r,\theta)\approx C
+$$
+
+Para simplificar la referencia de potencial, podemos elegir:
+
+$$
+C=0
+$$
+
+Esta elección no cambia la física, porque el potencial eléctrico siempre se define salvo una constante arbitraria.
+
+## Condición 3: corriente normal despreciable a través de la membrana
+
+En esta aproximación, la membrana actúa como una barrera poco conductora. Por tanto, la componente normal de corriente a través de la membrana se considera despreciable.
+
+Como el campo eléctrico se relaciona con el potencial mediante:
+
+$$
+\mathbf{E}=-\nabla\phi
+$$
+
+y la componente radial del campo es proporcional a
+
+$$
+E_r=-\frac{\partial \phi}{\partial r}
+$$
+
+una forma simplificada de imponer flujo normal despreciable en la superficie $r=a$ es:
+
+$$
+\left.
+\frac{\partial \phi_e}{\partial r}
+\right|_{r=a}
+\approx 0
+$$
+
+Esta condición se aplica al potencial exterior:
+
+$$
+\phi_e(r,\theta)
+=
+\left(
+-E_0 r+\frac{A}{r^2}
+\right)\cos\theta
+$$
+
+# Determinación de la constante exterior $A$
+
+Derivamos el potencial exterior respecto a $r$:
+
+$$
+\frac{\partial \phi_e}{\partial r}
+=
+\frac{\partial}{\partial r}
+\left[
+\left(
+-E_0 r+\frac{A}{r^2}
+\right)\cos\theta
+\right]
+$$
+
+Como $\cos\theta$ no depende de $r$,
+
+$$
+\frac{\partial \phi_e}{\partial r}
+=
+\left[
+\frac{\partial}{\partial r}
+\left(
+-E_0 r+\frac{A}{r^2}
+\right)
+\right]\cos\theta
+$$
+
+Derivando término a término:
+
+$$
+\frac{\partial}{\partial r}
+\left(
+-E_0 r
+\right)
+=
+-E_0
+$$
+
+y
+
+$$
+\frac{\partial}{\partial r}
+\left(
+\frac{A}{r^2}
+\right)
+=
+\frac{\partial}{\partial r}
+\left(
+A r^{-2}
+\right)
+=
+-2A r^{-3}
+=
+-\frac{2A}{r^3}
+$$
+
+Por tanto,
+
+$$
+\frac{\partial \phi_e}{\partial r}
+=
+\left(
+-E_0-\frac{2A}{r^3}
+\right)\cos\theta
+$$
+
+Ahora aplicamos la condición de frontera en $r=a$:
+
+$$
+\left.
+\frac{\partial \phi_e}{\partial r}
+\right|_{r=a}
+\approx 0
+$$
+
+Entonces:
+
+$$
+\left(
+-E_0-\frac{2A}{a^3}
+\right)\cos\theta
+=
+0
+$$
+
+Para que esta condición se cumpla para cualquier $\theta$, el factor entre paréntesis debe anularse:
+
+$$
+-E_0-\frac{2A}{a^3}=0
+$$
+
+Despejamos $A$:
+
+$$
+-\frac{2A}{a^3}=E_0
+$$
+
+$$
+2A=-E_0a^3
+$$
+
+$$
+A=-\frac{E_0a^3}{2}
+$$
+
+# Potencial exterior sobre la superficie celular
+
+Sustituimos el valor de $A$ en el potencial exterior:
+
+$$
+\phi_e(r,\theta)
+=
+\left(
+-E_0 r
++
+\frac{-E_0a^3/2}{r^2}
+\right)\cos\theta
+$$
+
+Por tanto,
+
+$$
+\phi_e(r,\theta)
+=
+\left(
+-E_0 r
+-
+\frac{E_0a^3}{2r^2}
+\right)\cos\theta
+$$
+
+Ahora evaluamos sobre la superficie celular, es decir, en $r=a$:
+
+$$
+\phi_e(a,\theta)
+=
+\left(
+-E_0 a
+-
+\frac{E_0a^3}{2a^2}
+\right)\cos\theta
+$$
+
+Como
+
+$$
+\frac{a^3}{a^2}=a
+$$
+
+entonces:
+
+$$
+\phi_e(a,\theta)
+=
+\left(
+-E_0 a
+-
+\frac{E_0a}{2}
+\right)\cos\theta
+$$
+
+Factorizando $E_0a$:
+
+$$
+\phi_e(a,\theta)
+=
+-\left(
+1+\frac{1}{2}
+\right)E_0a\cos\theta
+$$
+
+Como
+
+$$
+1+\frac{1}{2}=\frac{3}{2}
+$$
+
+se obtiene:
+
+$$
+\phi_e(a,\theta)
+=
+-\frac{3}{2}E_0a\cos\theta
+$$
+
+# Voltaje transmembrana inducido
+
+Definimos el voltaje transmembrana inducido como la diferencia entre el potencial justo al interior y justo al exterior de la membrana:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+\phi_i(a,\theta)-\phi_e(a,\theta)
+$$
+
+Bajo la aproximación de interior equipotencial y con la elección $C=0$,
+
+$$
+\phi_i(a,\theta)\approx 0
+$$
+
+Entonces:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+0
+-
+\left(
+-\frac{3}{2}E_0a\cos\theta
+\right)
+$$
+
+Por tanto:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+\frac{3}{2}E_0a\cos\theta
+$$
+
+o, de manera equivalente,
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+1.5\,a\,E_0\cos\theta
+$$
+
+Esta es la forma clásica de la ecuación de Schwan para una célula esférica ideal en el régimen cuasiestacionario:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+\approx
+f\,a\,E_0\cos\theta
+$$
+
+con
+
+$$
+f\approx 1.5
+$$
+
+> **Nota sobre el signo:**  
+> El signo exacto depende de la convención usada para definir el voltaje transmembrana. En este módulo se usa:
+>
+> $$
+> \Delta V_m=\phi_{\text{interior}}-\phi_{\text{exterior}}
+> $$
+>
+> Si se adopta la convención opuesta, la expresión cambia de signo, pero la dependencia angular y la magnitud física permanecen iguales.
+
+# Interpretación biofísica de la dependencia angular
+
+La @fig-schwan-angular muestra la dependencia angular del voltaje transmembrana inducido predicha por la ecuación de Schwan.
+
+![Dependencia angular del voltaje transmembrana inducido según la ecuación de Schwan para una célula aproximadamente esférica en un campo eléctrico uniforme $E_0$. El voltaje inducido alcanza un máximo positivo en el polo superior ($\theta=0$), es aproximadamente nulo en el ecuador ($\theta=\pi/2$) y alcanza un máximo negativo en el polo inferior ($\theta=\pi$).](figures/ep_schwan_dependencia_angular.png){#fig-schwan-angular width="100%"}
+
+La ecuación
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+1.5\,a\,E_0\cos\theta
+$$
+
+predice una variación cosenoidal sobre la superficie celular.
+
+## Máximo positivo
+
+En el polo superior, donde
+
+$$
+\theta=0
+$$
+
+se cumple que:
+
+$$
+\cos(0)=1
+$$
+
+Por tanto:
+
+$$
+\Delta V_m^{\mathrm{ind}}(0)
+=
+1.5\,a\,E_0
+$$
+
+## Valor nulo en el ecuador
+
+En el ecuador celular, donde
+
+$$
+\theta=\frac{\pi}{2}
+$$
+
+se cumple que:
+
+$$
+\cos\left(\frac{\pi}{2}\right)=0
+$$
+
+Por tanto:
+
+$$
+\Delta V_m^{\mathrm{ind}}\left(\frac{\pi}{2}\right)
+=
+0
+$$
+
+## Máximo negativo
+
+En el polo inferior, donde
+
+$$
+\theta=\pi
+$$
+
+se cumple que:
+
+$$
+\cos(\pi)=-1
+$$
+
+Por tanto:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\pi)
+=
+-1.5\,a\,E_0
+$$
+
+Esto significa que la polarización inducida es máxima en magnitud en los polos y se anula en el ecuador. Por ello, la permeabilización suele iniciarse en regiones de la membrana más alineadas con el campo eléctrico aplicado.
+
+# Ejemplo numérico
+
+Supongamos una célula con radio:
+
+$$
+a=10\,\mu\text{m}
+$$
+
+Convertimos a metros:
+
+$$
+a=10\times 10^{-6}\,\text{m}
+$$
+
+$$
+a=1.0\times 10^{-5}\,\text{m}
+$$
+
+Supongamos un campo externo:
+
+$$
+E_0=100\,\text{kV/m}
+$$
+
+Convertimos a unidades SI:
+
+$$
+E_0=100\times 10^3\,\text{V/m}
+$$
+
+$$
+E_0=1.0\times 10^5\,\text{V/m}
+$$
+
+El valor máximo del voltaje inducido en magnitud es:
+
+$$
+\left|\Delta V_m^{\mathrm{ind}}\right|_{\max}
+=
+1.5\,a\,E_0
+$$
+
+Sustituyendo:
+
+$$
+\left|\Delta V_m^{\mathrm{ind}}\right|_{\max}
+=
+1.5
+\left(
+1.0\times 10^{-5}\,\text{m}
+\right)
+\left(
+1.0\times 10^5\,\text{V/m}
+\right)
+$$
+
+Las unidades se cancelan así:
+
+$$
+\text{m}\cdot \frac{\text{V}}{\text{m}}=\text{V}
+$$
+
+Entonces:
+
+$$
+\left|\Delta V_m^{\mathrm{ind}}\right|_{\max}
+=
+1.5\,\text{V}
+$$
+
+Este orden de magnitud es biofísicamente relevante porque se encuentra en el rango en el que puede esperarse una permeabilización significativa de la membrana celular.
 
 # Simulación interactiva
 
-En la siguiente versión se incluirá un notebook en Google Colab con controles para variar \(E_0\), \(a\) y \(\theta\).
+En esta simulación se explora la ecuación de Schwan en su forma cuasiestacionaria:
 
-# Referencias
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)=1.5\,a\,E_0\cos\theta
+$$
 
-Ver @Kotnik2000 y @Kotnik2019.
+El objetivo es visualizar cómo cambian la magnitud y la distribución angular del voltaje transmembrana inducido cuando se modifican el radio celular, el campo eléctrico externo y un umbral de referencia para permeabilización.
+
+::: {.callout-note}
+## Instrucciones
+
+Use los controles deslizantes para modificar:
+
+- el radio celular $a$, expresado en micrómetros;
+- el campo eléctrico externo $E_0$, expresado en kV/m;
+- el umbral de referencia, expresado en voltios.
+
+La gráfica muestra $\Delta V_m^{\mathrm{ind}}$ en función del ángulo polar $\theta$. Las secciones resaltadas en color indican las regiones donde la magnitud del voltaje inducido supera el umbral seleccionado.
+:::
+
+## Panel interactivo
+
+::: {.columns}
+
+::: {.column width="32%"}
+
+```{ojs}
+//| echo: false
+
+viewof radio_um = Inputs.range(
+  [2, 30],
+  {
+    value: 10,
+    step: 1,
+    label: "Radio celular a [µm]"
+  }
+)
+
+viewof campo_kVm = Inputs.range(
+  [10, 300],
+  {
+    value: 120,
+    step: 10,
+    label: "Campo externo E₀ [kV/m]"
+  }
+)
+
+viewof umbral_V = Inputs.range(
+  [0.1, 3.0],
+  {
+    value: 1.0,
+    step: 0.1,
+    label: "Umbral de referencia [V]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+a_m = radio_um * 1e-6
+E0_Vm = campo_kVm * 1e3
+
+theta = Array.from(
+  {length: 401},
+  (_, i) => i * Math.PI / 400
+)
+
+datos = theta.map(t => ({
+  theta: t,
+  deltaV: 1.5 * a_m * E0_Vm * Math.cos(t)
+}))
+
+deltaVmax = 1.5 * a_m * E0_Vm
+
+datosUmbral = datos.filter(d => Math.abs(d.deltaV) >= umbral_V)
+```
+
+```{ojs}
+//| echo: false
+
+html`
+<div style="
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #f8fafc;
+  font-size: 0.95rem;
+">
+  <h4 style="margin-top:0;">Valores usados</h4>
+  <ul style="padding-left:1.2rem;">
+    <li><b>Radio celular:</b><br>${radio_um.toFixed(1)} µm = ${a_m.toExponential(2)} m</li>
+    <li><b>Campo externo:</b><br>${campo_kVm.toFixed(1)} kV/m = ${E0_Vm.toExponential(2)} V/m</li>
+    <li><b>Voltaje máximo inducido:</b><br>${deltaVmax.toFixed(3)} V</li>
+    <li><b>Umbral seleccionado:</b><br>${umbral_V.toFixed(2)} V</li>
+  </ul>
+  <p style="margin-bottom:0;">
+    Condición aproximada:
+    <br>
+    <b>|ΔV<sub>m</sub><sup>ind</sup>| ≥ ${umbral_V.toFixed(2)} V</b>
+  </p>
+</div>
+`
+```
+
+:::
+
+::: {.column width="68%"}
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  width: 760,
+  height: 460,
+  marginLeft: 75,
+  marginRight: 25,
+  marginTop: 25,
+  marginBottom: 60,
+  grid: true,
+  x: {
+    label: "Ángulo polar θ [rad] →",
+    domain: [0, Math.PI],
+    ticks: [0, Math.PI / 2, Math.PI],
+    tickFormat: d => {
+      if (Math.abs(d) < 1e-6) return "0";
+      if (Math.abs(d - Math.PI / 2) < 1e-6) return "π/2";
+      if (Math.abs(d - Math.PI) < 1e-6) return "π";
+      return d.toFixed(2);
+    }
+  },
+  y: {
+    label: "↑ ΔVm inducido [V]"
+  },
+  marks: [
+    Plot.ruleY([0], {
+      stroke: "black",
+      strokeOpacity: 0.55
+    }),
+
+    Plot.ruleY([umbral_V], {
+      stroke: "#6b7280",
+      strokeDasharray: "5,5",
+      strokeOpacity: 0.75
+    }),
+
+    Plot.ruleY([-umbral_V], {
+      stroke: "#6b7280",
+      strokeDasharray: "5,5",
+      strokeOpacity: 0.75
+    }),
+
+    Plot.line(datos, {
+      x: "theta",
+      y: "deltaV",
+      stroke: "#1f4e79",
+      strokeWidth: 3
+    }),
+
+    Plot.line(datosUmbral, {
+      x: "theta",
+      y: "deltaV",
+      stroke: "#d95f02",
+      strokeWidth: 6
+    }),
+
+    Plot.dot(datosUmbral, {
+      x: "theta",
+      y: "deltaV",
+      r: 2.5,
+      fill: "#d95f02"
+    }),
+
+    Plot.text(
+      [
+        {theta: 0.08, deltaV: umbral_V, label: "+ umbral"},
+        {theta: 0.08, deltaV: -umbral_V, label: "- umbral"}
+      ],
+      {
+        x: "theta",
+        y: "deltaV",
+        text: "label",
+        dy: -8,
+        fontSize: 12,
+        fill: "#374151"
+      }
+    )
+  ]
+})
+```
+
+:::
+
+:::
+
+## Cómo interpretar la simulación
+
+El valor máximo en magnitud se obtiene en los polos de la célula:
+
+$$
+\left|\Delta V_m^{\mathrm{ind}}\right|_{\max}=1.5\,a\,E_0
+$$
+
+Por tanto:
+
+- si aumenta el radio celular $a$, aumenta el voltaje inducido;
+- si aumenta el campo eléctrico externo $E_0$, aumenta el voltaje inducido;
+- si $\theta=\pi/2$, entonces $\cos\theta=0$ y el voltaje inducido se anula;
+- si $|\Delta V_m^{\mathrm{ind}}|$ supera el umbral seleccionado, esa región angular puede interpretarse como una zona potencialmente más susceptible a permeabilización.
+
+::: {.callout-warning}
+## Precaución física
+
+El umbral usado en esta simulación es solo una referencia didáctica. En células reales, el umbral de permeabilización depende del tipo celular, la duración del pulso, la forma de onda, la temperatura, el medio extracelular, la geometría celular y el estado fisiológico de la membrana.
+:::
+
+## Código opcional para Google Colab
+
+El panel anterior funciona directamente en este portal. El siguiente código se ofrece solo para estudiantes que deseen modificar la simulación en Google Colab o en un editor de Python.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from ipywidgets import interact, FloatSlider
+
+def simular_schwan(radio_um=10.0, campo_kVm=120.0, umbral_V=1.0):
+    """
+    Simulación didáctica de la ecuación de Schwan:
+    Delta V_m^ind(theta) = 1.5 a E0 cos(theta)
+
+    Parámetros:
+    radio_um : radio celular en micrómetros
+    campo_kVm : campo eléctrico externo en kV/m
+    umbral_V : umbral de referencia en V
+    """
+
+    a = radio_um * 1e-6
+    E0 = campo_kVm * 1e3
+
+    theta = np.linspace(0, np.pi, 400)
+
+    delta_V = 1.5 * a * E0 * np.cos(theta)
+
+    supera_umbral = np.abs(delta_V) >= umbral_V
+
+    plt.figure(figsize=(9, 5))
+    plt.plot(theta, delta_V, linewidth=2.5, label=r"$\Delta V_m^{ind}(\theta)$")
+    plt.plot(
+        theta[supera_umbral],
+        delta_V[supera_umbral],
+        linewidth=5,
+        label="Regiones sobre el umbral"
+    )
+
+    plt.axhline(umbral_V, linestyle="--", label="Umbral positivo")
+    plt.axhline(-umbral_V, linestyle="--", label="Umbral negativo")
+    plt.axhline(0, linewidth=0.8)
+
+    plt.xticks(
+        [0, np.pi/2, np.pi],
+        [r"$0$", r"$\pi/2$", r"$\pi$"]
+    )
+
+    plt.xlabel(r"Ángulo polar $\theta$ [rad]")
+    plt.ylabel(r"$\Delta V_m^{ind}$ [V]")
+    plt.title("Voltaje transmembrana inducido según la ecuación de Schwan")
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+    plt.show()
+
+    print(f"Radio celular: {radio_um:.2f} µm")
+    print(f"Campo externo: {campo_kVm:.2f} kV/m")
+    print(f"Voltaje máximo inducido: {1.5*a*E0:.3f} V")
+    print(f"Umbral elegido: {umbral_V:.3f} V")
+
+interact(
+    simular_schwan,
+    radio_um=FloatSlider(
+        value=10.0,
+        min=2.0,
+        max=30.0,
+        step=1.0,
+        description="a [µm]"
+    ),
+    campo_kVm=FloatSlider(
+        value=120.0,
+        min=10.0,
+        max=300.0,
+        step=10.0,
+        description="E0 [kV/m]"
+    ),
+    umbral_V=FloatSlider(
+        value=1.0,
+        min=0.1,
+        max=3.0,
+        step=0.1,
+        description="Umbral [V]"
+    )
+);
+```
+
+## Preguntas para explorar
+
+1. ¿Qué ocurre con el voltaje inducido máximo cuando se duplica el radio celular?
+2. ¿Qué ocurre cuando se duplica el campo eléctrico externo?
+3. ¿Por qué el voltaje inducido se anula cerca del ecuador?
+4. ¿Para qué combinaciones de $a$ y $E_0$ se supera un umbral de $1\,\text{V}$?
+5. ¿Qué regiones de la célula serían más propensas a iniciar permeabilización?

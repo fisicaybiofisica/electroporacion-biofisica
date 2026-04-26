@@ -1,40 +1,734 @@
 ---
 title: "Dinámica temporal: circuito RC equivalente"
+author-title: "Autor"
+format: html
 ---
 
 # Objetivo del módulo
 
-Este módulo muestra cómo la membrana puede modelarse como un sistema eléctrico transitorio. La idea central es que la membrana no alcanza instantáneamente el voltaje inducido máximo, sino que se carga con una constante de tiempo característica.
+Este módulo muestra cómo la membrana celular puede modelarse, en primera aproximación, como un sistema eléctrico transitorio de tipo RC. La idea central es que la membrana **no alcanza instantáneamente** el voltaje inducido máximo, sino que se carga progresivamente con una constante de tiempo característica.
 
-# Modelo RC equivalente
+En el módulo anterior se obtuvo la dependencia espacial aproximada del voltaje transmembrana inducido:
 
-La membrana puede representarse como una capacitancia \(C_m\) asociada a una resistencia de membrana \(R_m\), acoplada al medio externo mediante una resistencia efectiva \(R_e\).
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+\approx
+f\,a\,E_0\cos\theta
+$$
 
-La respuesta temporal mínima puede escribirse como:
+donde $f \approx 1.5$ para una célula esférica en la aproximación clásica de Schwan.
 
-\[
+Ahora incorporamos la dinámica temporal. Durante un pulso rectangular, la respuesta mínima puede escribirse como:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta,t)
+\approx
+f\,a\,E_0\cos\theta
+\left(1-e^{-t/\tau_m}\right)
+$$
+
+Esta expresión permite entender por qué pulsos muy cortos pueden requerir campos eléctricos mayores para inducir una polarización comparable a la producida por pulsos más largos.
+
+# Resultado central
+
+Para un pulso rectangular aplicado a partir de $t=0$, la respuesta temporal mínima de la membrana se puede escribir como:
+
+$$
 \Delta V_m^{\mathrm{ind}}(t)
 =
 \Delta V_{m,\max}^{\mathrm{ind}}
 \left(1-e^{-t/\tau_m}\right)
-\]
+$$
+
+donde la constante de tiempo está dada por:
+
+$$
+\tau_m = (R_e \parallel R_m)\,C_m
+$$
+
+y la resistencia equivalente en paralelo se define como:
+
+$$
+R_e \parallel R_m
+=
+\frac{R_eR_m}{R_e+R_m}
+$$
+
+En el límite biológico usual, cuando la resistencia de membrana es mucho mayor que la resistencia efectiva del medio,
+
+$$
+R_m \gg R_e
+$$
+
+se obtiene:
+
+$$
+\tau_m \approx R_e C_m
+$$
+
+# Variables y unidades
+
+| Símbolo | Significado físico | Unidad |
+|---|---|---|
+| $\Delta V_m^{\mathrm{tot}}(t)$ | Voltaje transmembrana total | V |
+| $\Delta V_{m,0}$ | Voltaje transmembrana basal previo al pulso | V |
+| $\Delta V_m^{\mathrm{ind}}(t)$ | Contribución inducida por el campo eléctrico | V |
+| $\Delta V_{m,\max}^{\mathrm{ind}}$ | Valor máximo o estacionario de la contribución inducida | V |
+| $t$ | Tiempo | s |
+| $t_0$ | Tiempo de inicio del pulso | s |
+| $t_p$ | Duración del pulso | s |
+| $\tau_m$ | Constante de tiempo de membrana | s |
+| $R_e$ | Resistencia efectiva del medio y la geometría | $\Omega$ |
+| $R_m$ | Resistencia de membrana | $\Omega$ |
+| $C_m$ | Capacitancia de membrana | F |
+| $a$ | Radio celular | m |
+| $E_0$ | Magnitud del campo externo | V/m |
+| $\theta$ | Ángulo polar respecto a la dirección del campo | rad |
+| $f$ | Factor geométrico de forma | adimensional |
+
+# Relación con el voltaje transmembrana total
+
+Durante el pulso, el voltaje transmembrana total puede expresarse como:
+
+$$
+\Delta V_m^{\mathrm{tot}}(t)
+=
+\Delta V_{m,0}
++
+\Delta V_m^{\mathrm{ind}}(t)
+$$
 
 donde:
 
-\[
-\tau_m = (R_e \parallel R_m)C_m
-\]
+- $\Delta V_{m,0}$ representa la contribución basal previa a la estimulación;
+- $\Delta V_m^{\mathrm{ind}}(t)$ representa la contribución inducida por el campo eléctrico.
 
-En el límite usual \(R_m \gg R_e\):
+En esta aproximación, la magnitud de la contribución inducida es máxima en los polos alineados con el campo.
 
-\[
-\tau_m \approx R_e C_m
-\]
+# Planteamiento físico
 
-# Interpretación
+La bicapa lipídica actúa como una barrera dieléctrica delgada entre dos medios conductores: el citoplasma y el medio extracelular. Desde el punto de vista eléctrico, esta barrera puede almacenar carga, por lo que se modela como una capacitancia.
 
-A \(t=\tau_m\), la membrana alcanza aproximadamente el 63 % del valor máximo. Esta relación permite entender por qué los pulsos muy cortos requieren campos eléctricos mayores para producir una polarización comparable.
+En una descripción mínima, la membrana se representa como una capacitancia $C_m$ en paralelo con una resistencia de membrana $R_m$. Esta combinación está acoplada al medio por una resistencia efectiva $R_e$. Este circuito equivalente se ilustra en @fig-circuito.
+
+La interpretación física es la siguiente:
+
+- $C_m$ representa la capacidad de la membrana para almacenar carga.
+- $R_m$ representa las rutas de fuga a través de la membrana.
+- $R_e$ representa la oposición efectiva del medio y la geometría al proceso de carga.
+- La polarización inducida **se desarrolla en el tiempo**, no de forma instantánea.
+
+![Circuito RC equivalente mínimo para describir la carga transitoria de la membrana. La fuente $V_\mathrm{pulso}(t)$ representa el estímulo externo; $R_e$ es la resistencia efectiva del medio; $R_m$ y $C_m$ son, respectivamente, la resistencia y capacitancia de membrana. La flecha roja indica la contribución inducida del voltaje transmembrana.](figures/ep_rc_equivalente_membrana.png){#fig-circuito fig-alt="Circuito RC equivalente de membrana con V_pulso(t), R_e, R_m, C_m y Delta V_m inducido en función del tiempo." width=85%}
+
+# Ecuación diferencial mínima durante el pulso
+
+Si se aplica un pulso rectangular constante a partir de $t=t_0$, la dinámica mínima de la contribución inducida puede escribirse como:
+
+$$
+\tau_m \frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
++
+\Delta V_m^{\mathrm{ind}}
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+$$
+
+Esta ecuación indica que la membrana tiende hacia un valor máximo inducido, pero lo hace con una rapidez controlada por $\tau_m$.
+
+Si al inicio del pulso se toma como condición inicial $\Delta V_m^{\mathrm{ind}}(t_0)=0$, entonces la solución es:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-(t-t_0)/\tau_m}\right)
+\qquad
+\text{para}
+\qquad
+t_0 \le t \le t_0 + t_p
+$$
+
+# Interpretación de la constante de tiempo
+
+La constante de tiempo $\tau_m$ indica qué tan rápido se carga la membrana. Transcurrido un tiempo $\tau_m$ desde el inicio del pulso:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + \tau_m)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-1}\right)
+\approx
+0.63\,\Delta V_{m,\max}^{\mathrm{ind}}
+$$
+
+Por tanto, la membrana ha alcanzado aproximadamente el 63 % del valor máximo inducido al cabo de un tiempo $\tau_m$ desde el inicio del pulso.
+
+# Descarga cuando cesa el pulso
+
+Cuando el pulso termina en $t = t_0 + t_p$, la fuente deja de impulsar la carga y la contribución inducida comienza a decaer, como se ilustra en @fig-carga. En esa etapa, la ecuación diferencial pasa a ser:
+
+$$
+\tau_m \frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
++
+\Delta V_m^{\mathrm{ind}}
+=
+0
+$$
+
+con condición inicial:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-t_p/\tau_m}\right)
+$$
+
+La solución para la fase de descarga es:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-t_p/\tau_m}\right)
+e^{-(t - t_0 - t_p)/\tau_m}
+\qquad
+\text{para}
+\qquad
+t > t_0 + t_p
+$$
+
+Esta expresión muestra que, una vez cesa el pulso, la contribución inducida no desaparece abruptamente: decae exponencialmente con la misma constante de tiempo del sistema.
+
+![Pulso rectangular y respuesta temporal de carga y descarga de la membrana. Durante el intervalo $[t_0,\, t_0 + t_p]$ la membrana se carga progresivamente hacia $\Delta V_{m,\max}^{\mathrm{ind}}$; cuando el pulso cesa, la contribución inducida decae exponencialmente desde el valor alcanzado al final del pulso.](figures/ep_rc_carga_descarga_membrana.png){#fig-carga fig-alt="Pulso rectangular y respuesta temporal de carga y descarga exponencial de la membrana." width=92%}
+
+# Relación con la ecuación de Schwan
+
+El valor máximo inducido puede aproximarse mediante la ecuación de Schwan:
+
+$$
+\Delta V_{m,\max}^{\mathrm{ind}}(\theta)
+\approx
+f\,a\,E_0\cos\theta
+$$
+
+Al incorporar la dinámica temporal durante el pulso:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta,t)
+\approx
+f\,a\,E_0\cos\theta
+\left(1-e^{-(t-t_0)/\tau_m}\right)
+\qquad
+\text{para}
+\qquad
+t_0 \le t \le t_0 + t_p
+$$
+
+y luego, una vez cesa el pulso:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta,t)
+\approx
+f\,a\,E_0\cos\theta
+\left(1-e^{-t_p/\tau_m}\right)
+e^{-(t - t_0 - t_p)/\tau_m}
+\qquad
+\text{para}
+\qquad
+t > t_0 + t_p
+$$
+
+Estas expresiones combinan dos ideas físicas:
+
+1. La distribución espacial del voltaje inducido sobre la membrana.
+2. La evolución temporal asociada a la carga y descarga del sistema RC.
+
+En los polos alineados con el campo, $\cos\theta=\pm 1$, la magnitud de la polarización inducida es máxima. En el ecuador celular, $\theta=\pi/2$, se tiene $\cos\theta=0$, por lo que la contribución inducida idealizada se anula.
+
+# Ejemplo numérico
+
+Supongamos una célula con $a = 10\,\mu\text{m}$, un campo externo $E_0 = 100\,\text{kV/m}$ y un factor geométrico $f = 1.5$. El pulso se aplica a partir de $t_0 = 1\,\mu\text{s}$.
+
+En el polo celular, donde $\cos\theta=1$:
+
+$$
+\Delta V_{m,\max}^{\mathrm{ind}}
+=
+1.5
+\left(10\times10^{-6}\,\text{m}\right)
+\left(100\times10^3\,\text{V/m}\right)
+=
+1.5\,\text{V}
+$$
+
+Si la constante de tiempo es $\tau_m = 1\,\mu\text{s}$, entonces a $t = t_0 + \tau_m$:
+
+$$
+\Delta V_m^{\mathrm{ind}}
+\approx
+0.63\times1.5\,\text{V}
+\approx
+0.95\,\text{V}
+$$
+
+Si el pulso dura $t_p = 3\,\mu\text{s}$, el valor alcanzado al final será:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
+=
+1.5
+\left(1-e^{-3}\right)\,\text{V}
+\approx
+1.43\,\text{V}
+$$
+
+y luego decaerá exponencialmente una vez el pulso cese.
+
+# Simulación interactiva
+
+En esta simulación se explora la dinámica temporal de la contribución inducida del voltaje transmembrana durante y después del pulso.
+
+::: {.callout-note}
+## Instrucciones
+
+Use los controles deslizantes para modificar:
+
+- el tiempo de inicio del pulso $t_0$;
+- el voltaje máximo inducido $\Delta V_{m,\max}^{\mathrm{ind}}$;
+- la constante de tiempo de membrana $\tau_m$;
+- la duración del pulso $t_p$;
+- el tiempo total mostrado.
+
+La gráfica superior muestra el pulso aplicado. La gráfica inferior muestra la respuesta temporal de carga y descarga de la membrana. Las líneas verticales de referencia indican $t_0$ (azul), $t_0 + \tau_m$ (gris) y $t_0 + t_p$ (verde).
+:::
+
+## Panel interactivo
+
+::: {.columns}
+
+::: {.column width="32%"}
+
+```{ojs}
+//| echo: false
+
+viewof t0_us = Inputs.range(
+  [0.0, 10.0],
+  {
+    value: 1.0,
+    step: 0.05,
+    label: "Inicio del pulso t₀ [µs]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof Vmax = Inputs.range(
+  [0.1, 3.0],
+  {
+    value: 1.5,
+    step: 0.05,
+    label: "ΔVm,max inducido [V]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof tau_us = Inputs.range(
+  [0.05, 10.0],
+  {
+    value: 1.0,
+    step: 0.05,
+    label: "Constante τm [µs]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof tp_us = Inputs.range(
+  [0.05, 20.0],
+  {
+    value: 3.0,
+    step: 0.05,
+    label: "Duración del pulso tp [µs]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+viewof tiempo_total_us = Inputs.range(
+  [2, 50],
+  {
+    value: 12,
+    step: 0.5,
+    label: "Tiempo total mostrado [µs]"
+  }
+)
+```
+
+```{ojs}
+//| echo: false
+
+t0    = t0_us
+tau   = tau_us
+tp    = tp_us
+t_fin = t0 + tp
+tiempo_total = Math.max(tiempo_total_us, t0 + 1.2 * tp, t0 + 4 * tau)
+
+datos_rc = Array.from({length: 700}, (_, i) => {
+  const t = (i / 699) * tiempo_total
+  const pulso = (t >= t0 && t <= t_fin) ? 1 : 0
+
+  let deltaV
+  if (t < t0) {
+    deltaV = 0
+  } else if (t <= t_fin) {
+    deltaV = Vmax * (1 - Math.exp(-(t - t0) / tau))
+  } else {
+    const deltaV_tp = Vmax * (1 - Math.exp(-tp / tau))
+    deltaV = deltaV_tp * Math.exp(-(t - t_fin) / tau)
+  }
+
+  return { t, pulso, deltaV }
+})
+
+deltaV_tau  = Vmax * (1 - Math.exp(-1))
+deltaV_tp   = Vmax * (1 - Math.exp(-tp / tau))
+fraccion_tp = 100 * deltaV_tp / Vmax
+```
+
+```{ojs}
+//| echo: false
+
+html`
+<div style="
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #f8fafc;
+  font-size: 0.95rem;
+">
+  <h4 style="margin-top:0;">Valores calculados</h4>
+  <ul style="padding-left:1.2rem;">
+    <li><b>t₀:</b><br>${t0.toFixed(2)} µs</li>
+    <li><b>ΔV<sub>m,max</sub><sup>ind</sup>:</b><br>${Vmax.toFixed(2)} V</li>
+    <li><b>τ<sub>m</sub>:</b><br>${tau.toFixed(2)} µs</li>
+    <li><b>t<sub>p</sub>:</b><br>${tp.toFixed(2)} µs</li>
+    <li><b>ΔV<sub>m</sub><sup>ind</sup>(t₀ + τ<sub>m</sub>):</b><br>${deltaV_tau.toFixed(3)} V</li>
+    <li><b>ΔV<sub>m</sub><sup>ind</sup>(t₀ + t<sub>p</sub>):</b><br>${deltaV_tp.toFixed(3)} V</li>
+    <li><b>Fracción alcanzada al final del pulso:</b><br>${fraccion_tp.toFixed(1)} %</li>
+  </ul>
+</div>
+`
+```
+
+:::
+
+::: {.column width="68%"}
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  width: 500,
+  height: 190,
+  marginLeft: 70,
+  marginRight: 25,
+  marginTop: 25,
+  marginBottom: 45,
+  grid: true,
+  x: {
+    label: "Tiempo [µs] →",
+    domain: [0, tiempo_total]
+  },
+  y: {
+    label: "Pulso",
+    domain: [-0.05, 1.15],
+    ticks: [0, 1]
+  },
+  marks: [
+    Plot.line(datos_rc, {
+      x: "t",
+      y: "pulso",
+      stroke: "#111827",
+      strokeWidth: 2.5,
+      curve: "step-after"
+    }),
+    Plot.ruleX([t0], {
+      stroke: "#1f78b4",
+      strokeDasharray: "6,4",
+      strokeWidth: 1.5
+    }),
+    Plot.ruleX([t_fin], {
+      stroke: "#2ca25f",
+      strokeDasharray: "6,4",
+      strokeWidth: 1.5
+    }),
+    Plot.text(
+      [
+        {t: t0,    y: 1.08, label: "t₀"},
+        {t: t_fin, y: 1.08, label: "t₀ + tp"}
+      ],
+      {
+        x: "t", y: "y", text: "label", dy: -4, fontSize: 11,
+        fill: d => d.label === "t₀" ? "#1f78b4" : "#2ca25f"
+      }
+    )
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  width: 500,
+  height: 430,
+  marginLeft: 80,
+  marginRight: 30,
+  marginTop: 25,
+  marginBottom: 60,
+  grid: true,
+  x: {
+    label: "Tiempo [µs] →",
+    domain: [0, tiempo_total]
+  },
+  y: {
+    label: "↑ ΔVm inducido [V]",
+    domain: [0, Vmax * 1.15]
+  },
+  marks: [
+    Plot.ruleY([0], { stroke: "black", strokeOpacity: 0.55 }),
+    Plot.ruleY([Vmax], {
+      stroke: "#9ca3af",
+      strokeDasharray: "4,6",
+      strokeOpacity: 0.8
+    }),
+    Plot.ruleX([t0], {
+      stroke: "#1f78b4",
+      strokeDasharray: "6,4",
+      strokeWidth: 1.5
+    }),
+    Plot.ruleX([t0 + tau], {
+      stroke: "#6c757d",
+      strokeDasharray: "4,4",
+      strokeWidth: 1.2
+    }),
+    Plot.ruleX([t_fin], {
+      stroke: "#2ca25f",
+      strokeDasharray: "6,4",
+      strokeWidth: 1.5
+    }),
+    Plot.line(datos_rc, {
+      x: "t",
+      y: "deltaV",
+      stroke: "#1f4e79",
+      strokeWidth: 3
+    }),
+    Plot.dot(
+      [
+        {t: t0 + tau, deltaV: deltaV_tau},
+        {t: t_fin,    deltaV: deltaV_tp}
+      ],
+      { x: "t", y: "deltaV", r: 4.5, fill: "#1f4e79" }
+    ),
+    Plot.text(
+      [
+        {t: t0,       deltaV: Vmax * 0.05, label: "t₀"},
+        {t: t0 + tau, deltaV: deltaV_tau,  label: "t₀ + τm"},
+        {t: t_fin,    deltaV: deltaV_tp,   label: "t₀ + tp"},
+        {t: tiempo_total * 0.03, deltaV: Vmax, label: "ΔVm,max"}
+      ],
+      {
+        x: "t", y: "deltaV", text: "label",
+        dy: -8, fontSize: 11, fill: "#374151"
+      }
+    )
+  ]
+})
+```
+
+:::
+
+:::
+
+## Código para Google Colab
+
+El panel anterior funciona directamente en este portal. El siguiente código se ofrece solo para estudiantes que deseen reproducir o modificar la simulación en Python.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from ipywidgets import interact, FloatSlider
+
+def simular_rc(
+    t0_us=1.0, Vmax=1.5, tau_us=1.0, tp_us=3.0, tiempo_total_us=12.0
+):
+    """
+    Simulación didáctica de carga y descarga RC de la membrana.
+
+    Para t0 <= t <= t0 + tp:
+        Delta V_m^ind(t) = Vmax * (1 - exp(-(t - t0)/tau))
+
+    Para t > t0 + tp:
+        Delta V_m^ind(t) = Delta V_m^ind(t0 + tp) * exp(-(t - t0 - tp)/tau)
+    """
+
+    t_fin = t0_us + tp_us
+    tiempo_total_us = max(tiempo_total_us, t0_us + 1.2 * tp_us, t0_us + 4 * tau_us)
+
+    t  = np.linspace(0, tiempo_total_us, 1000)
+    Vm = np.zeros_like(t)
+
+    Vtp  = Vmax * (1 - np.exp(-tp_us / tau_us))
+    Vtau = Vmax * (1 - np.exp(-1))
+
+    for i, ti in enumerate(t):
+        if ti < t0_us:
+            Vm[i] = 0.0
+        elif ti <= t_fin:
+            Vm[i] = Vmax * (1 - np.exp(-(ti - t0_us) / tau_us))
+        else:
+            Vm[i] = Vtp * np.exp(-(ti - t_fin) / tau_us)
+
+    pulso = np.where((t >= t0_us) & (t <= t_fin), 1.0, 0.0)
+
+    fig, ax = plt.subplots(2, 1, figsize=(9, 7), sharex=True)
+
+    ax[0].step(t, pulso, where="post", linewidth=2.5)
+    ax[0].axvline(t0_us,  linestyle="--", color="steelblue", label=r"$t_0$")
+    ax[0].axvline(t_fin,  linestyle="--", color="green",     label=r"$t_0 + t_p$")
+    ax[0].set_ylabel("Pulso")
+    ax[0].set_ylim(-0.1, 1.2)
+    ax[0].legend(fontsize=9)
+    ax[0].grid(True, alpha=0.3)
+
+    ax[1].plot(t, Vm, linewidth=2.5, label=r"$\Delta V_m^{ind}(t)$")
+    ax[1].axhline(Vmax, linestyle=":", color="gray",
+                  label=r"$\Delta V_{m,\max}^{ind}$")
+    ax[1].axvline(t0_us,            linestyle="--", color="steelblue",
+                  label=r"$t_0$")
+    ax[1].axvline(t0_us + tau_us,   linestyle="--", color="gray",
+                  label=r"$t_0 + \tau_m$")
+    ax[1].axvline(t_fin,            linestyle="-.", color="green",
+                  label=r"$t_0 + t_p$")
+    ax[1].scatter([t0_us + tau_us, t_fin], [Vtau, Vtp], zorder=5)
+
+    ax[1].set_xlabel("Tiempo [µs]")
+    ax[1].set_ylabel(r"$\Delta V_m^{ind}(t)$ [V]")
+    ax[1].grid(True, alpha=0.3)
+    ax[1].legend(fontsize=9)
+
+    plt.tight_layout()
+    plt.show()
+
+    print(f"t₀:                               {t0_us:.3f} µs")
+    print(f"ΔV_m,max inducido:                {Vmax:.3f} V")
+    print(f"τ_m:                              {tau_us:.3f} µs")
+    print(f"t_p:                              {tp_us:.3f} µs")
+    print(f"ΔV_m^ind(t₀ + τ_m):              {Vtau:.3f} V")
+    print(f"ΔV_m^ind(t₀ + t_p):              {Vtp:.3f} V")
+    print(f"Fracción alcanzada al fin pulso:  {100*Vtp/Vmax:.1f} %")
+
+interact(
+    simular_rc,
+    t0_us=FloatSlider(
+        value=1.0, min=0.0, max=10.0, step=0.05,
+        description="t₀ [µs]"
+    ),
+    Vmax=FloatSlider(
+        value=1.5, min=0.1, max=3.0, step=0.05,
+        description="Vmax [V]"
+    ),
+    tau_us=FloatSlider(
+        value=1.0, min=0.05, max=10.0, step=0.05,
+        description="tau [µs]"
+    ),
+    tp_us=FloatSlider(
+        value=3.0, min=0.05, max=20.0, step=0.05,
+        description="tp [µs]"
+    ),
+    tiempo_total_us=FloatSlider(
+        value=12.0, min=2.0, max=50.0, step=0.5,
+        description="total [µs]"
+    )
+)
+```
+
+# Cómo interpretar la simulación
+
+Durante el pulso, la membrana se carga de forma exponencial. Si $t_p$ es mucho mayor que $\tau_m$, la curva se aproxima a $\Delta V_{m,\max}^{\mathrm{ind}}$.
+
+Si $t_p$ es menor o comparable con $\tau_m$, la membrana no alcanza completamente el valor máximo inducido antes de que el pulso termine.
+
+El valor alcanzado al final del pulso es:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-t_p/\tau_m}\right)
+$$
+
+Después de $t_0 + t_p$, la contribución inducida decae como:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t)
+=
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)\,
+e^{-(t - t_0 - t_p)/\tau_m}
+$$
+
+::: {.callout-warning}
+## Precaución física
+
+Este modelo RC es una aproximación mínima. En células reales, la dinámica puede modificarse por geometría celular, conductividad del medio, permeabilización de la membrana, formación de poros, cambios de conductancia, temperatura, forma de onda y heterogeneidad celular.
+:::
+
+# Preguntas para explorar
+
+1. ¿Qué ocurre con $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$ cuando se aumenta la duración del pulso $t_p$?
+2. ¿Qué ocurre si $t_p$ es mucho menor que $\tau_m$?
+3. ¿Por qué a $t = t_0 + \tau_m$ se alcanza aproximadamente el 63 % del valor máximo?
+4. ¿Qué cambia si se aumenta $\Delta V_{m,\max}^{\mathrm{ind}}$ pero se mantiene constante $\tau_m$?
+5. ¿Por qué la descarga no empieza desde $\Delta V_{m,\max}^{\mathrm{ind}}$, sino desde $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$?
+6. ¿Cómo afecta el tiempo de inicio $t_0$ a la energía total depositada en la membrana durante el pulso?
+
+# Alcance y limitaciones
+
+Este modelo RC es una representación mínima cuyo valor principal es pedagógico. Permite entender por qué la membrana necesita un tiempo finito para cargarse y descargarse.
+
+Sin embargo, el modelo no incluye explícitamente:
+
+- geometrías celulares complejas;
+- membranas no esféricas;
+- heterogeneidad espacial de la membrana;
+- conductancias dependientes del voltaje;
+- formación y evolución de poros;
+- cambios en la conductividad durante la permeabilización;
+- efectos térmicos;
+- acoplamiento con organelos o estructuras intracelulares.
+
+Por tanto, esta aproximación debe interpretarse como un primer modelo físico para entender la escala temporal de la polarización inducida, no como una descripción completa de todos los procesos de la electroporación.
+
+# Ideas clave
+
+- La membrana puede modelarse, en primera aproximación, como un sistema RC.
+- La contribución inducida $\Delta V_m^{\mathrm{ind}}(t)$ no aparece instantáneamente, sino que crece exponencialmente a partir del inicio del pulso $t_0$.
+- La constante de tiempo $\tau_m$ controla la rapidez de carga de la membrana.
+- A $t = t_0 + \tau_m$, la membrana alcanza aproximadamente el 63 % del valor máximo inducido.
+- Si el pulso termina antes de completar la carga, la contribución inducida comienza a decaer exponencialmente.
+- La descarga parte del valor alcanzado al final del pulso, $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$.
+- El modelo temporal puede combinarse con la ecuación de Schwan para incorporar simultáneamente dependencia angular y temporal.
 
 # Referencias
 
-Ver @Kotnik2019.
+Ver @Kotnik1998, @Bilska2000, @Kotnik2000 y @Kotnik2019.
