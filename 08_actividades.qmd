@@ -1,0 +1,580 @@
+---
+title: "Actividades de aprendizaje"
+---
+
+# Propósito de las actividades
+
+Las siguientes actividades están diseñadas para reforzar los conceptos biofísicos centrales de la electroporación mediante análisis cuantitativo, interpretación gráfica y razonamiento físico.
+
+El objetivo no es memorizar ecuaciones, sino comprender cómo el campo eléctrico externo, el tamaño celular, la dinámica capacitiva de la membrana, la energía libre de formación de poros y la disipación Joule se relacionan entre sí.
+
+# Cómo enfrentar estas actividades
+
+Antes de abrir cualquier pista o respuesta, se recomienda seguir este orden de trabajo:
+
+**Paso 1 — Lee el enunciado completo** sin abrir nada. Identifica qué se pregunta, qué datos tienes y qué ecuación podría ser relevante.
+
+**Paso 2 — Intenta resolverlo por tu cuenta** durante al menos 10 minutos. Escribe en papel las unidades de cada variable. Los errores más frecuentes en estas actividades son de conversión de unidades, no de conceptos.
+
+**Paso 3 — Si estás bloqueado, abre la pista.** La pista no da la respuesta: da una orientación sobre cómo empezar o qué verificar. Úsala como un empuje, no como un atajo.
+
+**Paso 4 — Después de obtener tu resultado, abre la respuesta** para comparar. Si tu número coincide, verifica también la interpretación física. Si no coincide, busca el paso donde difieren antes de leer la solución completa.
+
+**Paso 5 — Escribe con tus propias palabras** qué aprendiste de esa actividad. Una frase es suficiente.
+
+::: {.callout-note}
+## Sobre las respuestas
+
+Las respuestas incluyen el desarrollo completo y la interpretación física. No están ahí para copiarse, sino para que puedas identificar exactamente dónde razonaste diferente. El valor está en ese proceso de comparación, no en el número final.
+:::
+
+---
+
+# Actividad 1: voltaje transmembrana inducido
+
+*Nivel: básico*
+
+## Objetivo
+
+Estimar el voltaje transmembrana inducido por un campo eléctrico externo y analizar en qué condiciones se puede alcanzar un umbral aproximado de electroporación.
+
+## Contexto físico
+
+Para una célula aproximadamente esférica, el voltaje transmembrana inducido puede estimarse mediante la ecuación de Schwan:
+
+$$
+\Delta V_m^{\mathrm{ind}}(\theta)
+=
+1.5\,a\,E_0\cos\theta
+$$
+
+donde $a$ es el radio celular, $E_0$ el campo eléctrico externo y $\theta$ el ángulo medido respecto a la dirección del campo. En los polos ($\theta = 0$, $\cos\theta = 1$):
+
+$$
+\Delta V_m^{\mathrm{ind}}
+=
+1.5\,a\,E_0
+$$
+
+## Procedimiento
+
+Considere una célula de radio $a = 10~\mu\mathrm{m}$. Calcule $\Delta V_m^{\mathrm{ind}}$ en los polos para los siguientes campos eléctricos y complete la tabla:
+
+| Caso | $E_0$ | $\Delta V_m^{\mathrm{ind}}$ |
+|---|---|---|
+| 1 | $0.2~\mathrm{kV/cm}$ | ? |
+| 2 | $0.5~\mathrm{kV/cm}$ | ? |
+| 3 | $1.0~\mathrm{kV/cm}$ | ? |
+| 4 | $1.5~\mathrm{kV/cm}$ | ? |
+| 5 | $2.0~\mathrm{kV/cm}$ | ? |
+
+## Preguntas orientadoras
+
+1. ¿Para qué valores de $E_0$ se supera aproximadamente $\Delta V_m^{\mathrm{ind}} = 1~\mathrm{V}$?
+2. ¿Por qué una célula más grande alcanza un mayor voltaje inducido bajo el mismo campo?
+3. ¿Qué ocurriría si el radio celular fuera $5~\mu\mathrm{m}$ en lugar de $10~\mu\mathrm{m}$?
+4. ¿Por qué el voltaje inducido es máximo en los polos y nulo cerca del ecuador?
+5. ¿Qué limitaciones tiene usar esta ecuación como criterio directo de electroporación?
+
+::: {.callout-tip collapse="true"}
+## 💡 Pista — Actividad 1
+
+La clave está en las unidades. La ecuación usa metros y V/m, pero los datos están en $\mu$m y kV/cm. Antes de sustituir, convierte todo al SI:
+
+$$
+1~\mu\mathrm{m} = 10^{-6}~\mathrm{m}
+\qquad
+1~\mathrm{kV/cm} = \frac{10^3~\mathrm{V}}{10^{-2}~\mathrm{m}} = 10^5~\mathrm{V/m}
+$$
+
+Después la ecuación es directa: multiplica $1.5 \times a \times E_0$. El resultado debe quedar en voltios.
+
+Para las preguntas conceptuales: la ecuación de Schwan es lineal tanto en $a$ como en $E_0$. Eso significa que si duplicas el radio, el voltaje se duplica; si duplicas el campo, también se duplica. Y $\cos\theta$ vale 1 en los polos y 0 en el ecuador.
+:::
+
+::: {.callout-note collapse="true"}
+## ✓ Respuesta — Actividad 1
+
+**Conversión de unidades:**
+
+$$
+a = 10~\mu\mathrm{m} = 10 \times 10^{-6}~\mathrm{m} = 10^{-5}~\mathrm{m}
+\qquad
+1~\mathrm{kV/cm} = 10^5~\mathrm{V/m}
+$$
+
+**Tabla de resultados:**
+
+| Caso | $E_0$ | $E_0$ [V/m] | $\Delta V_m^{\mathrm{ind}} = 1.5 \times 10^{-5} \times E_0$ |
+|---|---|---|---|
+| 1 | $0.2~\mathrm{kV/cm}$ | $2.0\times10^4$ | $0.300~\mathrm{V}$ |
+| 2 | $0.5~\mathrm{kV/cm}$ | $5.0\times10^4$ | $0.750~\mathrm{V}$ |
+| 3 | $1.0~\mathrm{kV/cm}$ | $1.0\times10^5$ | $1.500~\mathrm{V}$ |
+| 4 | $1.5~\mathrm{kV/cm}$ | $1.5\times10^5$ | $2.250~\mathrm{V}$ |
+| 5 | $2.0~\mathrm{kV/cm}$ | $2.0\times10^5$ | $3.000~\mathrm{V}$ |
+
+**Interpretación:**
+
+1. El umbral de $1~\mathrm{V}$ se supera a partir de $E_0 = 1.0~\mathrm{kV/cm}$ (casos 3, 4 y 5).
+
+2. La ecuación es lineal en $a$: $\Delta V_m^{\mathrm{ind}} \propto a$. Una célula más grande presenta más separación entre sus polos bajo el mismo campo externo y acumula más diferencia de potencial.
+
+3. Si $a = 5~\mu\mathrm{m}$, todos los voltajes se reducirían a la mitad. Para superar $1~\mathrm{V}$ habría que aplicar $E_0 = 2.0~\mathrm{kV/cm}$.
+
+4. El factor $\cos\theta$ es máximo en $\theta = 0$ (polo alineado con el campo) y se anula en $\theta = \pi/2$ (ecuador). Esto refleja la geometría de la polarización dipolar inducida por el campo externo.
+
+5. Limitaciones principales: la ecuación asume estado cuasiestático, célula perfectamente esférica, membrana sin conductancia, campo uniforme y ausencia de interacciones entre células. La electroporación también depende de la duración del pulso y de la barrera energética del poro.
+:::
+
+---
+
+# Actividad 2: carga temporal de la membrana
+
+*Nivel: básico*
+
+## Objetivo
+
+Analizar cómo la duración del pulso afecta la carga capacitiva de la membrana y el valor máximo alcanzado por el voltaje transmembrana inducido.
+
+## Contexto físico
+
+Durante un pulso rectangular que comienza en $t_0$, la componente inducida del voltaje transmembrana evoluciona como:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-(t-t_0)/\tau_m}\right)
+\qquad
+t_0 \leq t \leq t_0 + t_p
+$$
+
+Al final del pulso:
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
+=
+\Delta V_{m,\max}^{\mathrm{ind}}
+\left(1-e^{-t_p/\tau_m}\right)
+$$
+
+## Procedimiento
+
+Suponga $\Delta V_{m,\max}^{\mathrm{ind}} = 1.5~\mathrm{V}$ y $\tau_m = 1~\mu\mathrm{s}$. Calcule el voltaje alcanzado al final del pulso y la fracción respecto al máximo para cada caso:
+
+| Caso | $t_p$ | $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$ | Fracción del máximo |
+|---|---|---|---|
+| 1 | $100~\mathrm{ns}$ | ? | ? |
+| 2 | $10~\mu\mathrm{s}$ | ? | ? |
+| 3 | $1~\mathrm{ms}$ | ? | ? |
+
+## Preguntas orientadoras
+
+1. ¿Qué fracción de $\Delta V_{m,\max}^{\mathrm{ind}}$ se alcanza en cada caso?
+2. ¿Cuál de los tres pulsos permite que la membrana se cargue casi completamente?
+3. ¿Por qué un pulso de $100~\mathrm{ns}$ puede no permitir que la membrana alcance el valor esperado por la ecuación de Schwan?
+4. ¿Por qué los pulsos más cortos pueden requerir campos eléctricos mayores?
+5. ¿Qué diferencia conceptual hay entre aplicar un campo intenso durante nanosegundos y uno menor durante microsegundos?
+
+::: {.callout-tip collapse="true"}
+## 💡 Pista — Actividad 2
+
+La clave es comparar $t_p$ con $\tau_m = 1~\mu\mathrm{s}$. La fracción de carga alcanzada depende del cociente $t_p / \tau_m$:
+
+- Si $t_p \ll \tau_m$: el exponencial apenas decae, la membrana se carga muy poco.
+- Si $t_p \approx \tau_m$: la membrana alcanza $1 - e^{-1} \approx 63\%$ del máximo.
+- Si $t_p \gg \tau_m$: el exponencial se acerca a cero, la membrana alcanza casi el $100\%$.
+
+Convierte las duraciones al SI antes de calcular:
+
+$$
+100~\mathrm{ns} = 10^{-7}~\mathrm{s}
+\qquad
+10~\mu\mathrm{s} = 10^{-5}~\mathrm{s}
+\qquad
+1~\mathrm{ms} = 10^{-3}~\mathrm{s}
+\qquad
+\tau_m = 10^{-6}~\mathrm{s}
+$$
+
+Calcula primero el cociente $t_p/\tau_m$, luego evalúa $1 - e^{-t_p/\tau_m}$.
+:::
+
+::: {.callout-note collapse="true"}
+## ✓ Respuesta — Actividad 2
+
+**Expresión a evaluar:**
+
+$$
+\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
+=
+1.5 \times \left(1 - e^{-t_p/\tau_m}\right)~\mathrm{V}
+$$
+
+| Caso | $t_p$ | $t_p/\tau_m$ | $1 - e^{-t_p/\tau_m}$ | Voltaje alcanzado | Fracción |
+|---|---|---|---|---|---|
+| 1 | $100~\mathrm{ns}$ | $0.1$ | $0.0952$ | $0.143~\mathrm{V}$ | $9.5\%$ |
+| 2 | $10~\mu\mathrm{s}$ | $10$ | $\approx 1.000$ | $\approx 1.500~\mathrm{V}$ | $\approx 100\%$ |
+| 3 | $1~\mathrm{ms}$ | $1000$ | $\approx 1.000$ | $\approx 1.500~\mathrm{V}$ | $\approx 100\%$ |
+
+**Interpretación:**
+
+1. El pulso de $100~\mathrm{ns}$ solo carga la membrana hasta el $9.5\%$ del valor máximo. Los pulsos de $10~\mu\mathrm{s}$ y $1~\mathrm{ms}$ la cargan prácticamente al $100\%$, ya que $t_p \gg \tau_m$.
+
+2. Los casos 2 y 3 permiten alcanzar la carga completa.
+
+3. La ecuación de Schwan describe el voltaje en estado cuasiestático (para $t_p \gg \tau_m$). Un pulso de $100~\mathrm{ns}$ es mucho más corto que $\tau_m$, por lo que la membrana no tiene tiempo de cargarse hasta ese valor.
+
+4. Si el pulso es corto, la membrana solo alcanza una fracción pequeña del voltaje máximo. Para compensar y llegar al mismo voltaje absoluto habría que aumentar $\Delta V_{m,\max}^{\mathrm{ind}} = 1.5\,a\,E_0$, es decir, aumentar el campo $E_0$.
+
+5. Un campo intenso durante nanosegundos puede penetrar al interior celular sin cargar la membrana significativamente (pulsos nanosegundo o nsPEF). Un campo menor durante microsegundos o milisegundos carga completamente la membrana y produce permeabilización clásica de la bicapa lipídica.
+:::
+
+---
+
+# Actividad 3: energía libre de formación del poro
+
+*Nivel: medio*
+
+## Objetivo
+
+Interpretar cómo el voltaje transmembrana total modifica el paisaje de energía libre asociado a la formación de un poro de membrana.
+
+## Contexto físico
+
+El modelo simplificado para la energía libre de un poro de radio $r$ es:
+
+$$
+\Delta G(r,V_m^{\mathrm{tot}})
+\approx
+2\pi r\gamma
+-
+\pi r^2\Gamma
+-
+k r^2\left(V_m^{\mathrm{tot}}\right)^2
+$$
+
+El radio crítico y la barrera energética se obtienen del máximo de $\Delta G(r)$:
+
+$$
+r_c
+=
+\frac{\pi\gamma}{\pi\Gamma+k\left(V_m^{\mathrm{tot}}\right)^2}
+\qquad
+\Delta G_c
+=
+\frac{\pi^2\gamma^2}{\pi\Gamma+k\left(V_m^{\mathrm{tot}}\right)^2}
+$$
+
+## Procedimiento
+
+Use los parámetros físicos justificados en el módulo correspondiente:
+
+$$
+\gamma = 9.2~\mathrm{pN}
+\qquad
+\Gamma = 1~\mathrm{mN/m}
+\qquad
+k = 556~\mathrm{mF/m^2}
+\qquad
+T = 298~\mathrm{K}
+$$
+
+Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para cada voltaje:
+
+| Caso | $V_m^{\mathrm{tot}}$ | $r_c$ | $\Delta G_c$ |
+|---|---|---|---|
+| 1 | $0~\mathrm{mV}$ | ? | ? |
+| 2 | $150~\mathrm{mV}$ | ? | ? |
+| 3 | $300~\mathrm{mV}$ | ? | ? |
+| 4 | $450~\mathrm{mV}$ | ? | ? |
+| 5 | $600~\mathrm{mV}$ | ? | ? |
+
+## Preguntas orientadoras
+
+1. ¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $V_m^{\mathrm{tot}}$?
+2. ¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?
+3. ¿Qué significa físicamente que la barrera $\Delta G_c$ disminuya?
+4. ¿Por qué una barrera menor no implica ruptura irreversible inmediata?
+5. ¿A partir de qué voltaje la barrera cae por debajo de $\sim 5\,k_BT$?
+6. ¿Qué diferencias conceptuales hay entre nucleación, expansión y daño irreversible?
+
+::: {.callout-tip collapse="true"}
+## 💡 Pista — Actividad 3
+
+Primero convierte todo al SI:
+
+$$
+\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}
+\qquad
+\Gamma = 10^{-3}~\mathrm{J/m^2}
+\qquad
+k = 0.556~\mathrm{F/m^2}
+$$
+
+$$
+k_BT = 1.381 \times 10^{-23} \times 298 \approx 4.114 \times 10^{-21}~\mathrm{J}
+$$
+
+Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.
+
+Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego:
+
+$$
+r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
+\quad\rightarrow\quad
+r_c~\mathrm{[nm]} = r_c~\mathrm{[m]} \times 10^9
+$$
+
+$$
+\Delta G_c = \frac{\pi^2\gamma^2}{A}~\mathrm{[J]}
+\quad\rightarrow\quad
+\Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
+$$
+
+Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador, y por tanto menor $r_c$ y menor $\Delta G_c$.
+:::
+
+::: {.callout-note collapse="true"}
+## ✓ Respuesta — Actividad 3
+
+**Parámetros en SI:**
+
+$$
+\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}
+\qquad
+\Gamma = 10^{-3}~\mathrm{J/m^2}
+\qquad
+k = 0.556~\mathrm{F/m^2}
+\qquad
+k_BT = 4.114 \times 10^{-21}~\mathrm{J}
+$$
+
+**Denominador:** $A = \pi\Gamma + k V^2$
+
+| Caso | $V_m^{\mathrm{tot}}$ | $A~\mathrm{[J/m^2]}$ | $r_c~\mathrm{[nm]}$ | $\Delta G_c~[k_BT]$ |
+|---|---|---|---|---|
+| 1 | $0~\mathrm{mV}$ | $3.14 \times 10^{-3}$ | $9.20$ | $64.6$ |
+| 2 | $150~\mathrm{mV}$ | $1.566 \times 10^{-2}$ | $1.847$ | $13.0$ |
+| 3 | $300~\mathrm{mV}$ | $5.135 \times 10^{-2}$ | $0.544$ | $3.82$ |
+| 4 | $450~\mathrm{mV}$ | $1.128 \times 10^{-1}$ | $0.250$ | $1.75$ |
+| 5 | $600~\mathrm{mV}$ | $2.003 \times 10^{-1}$ | $0.142$ | $1.00$ |
+
+**Interpretación:**
+
+1. Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.
+
+2. El término eléctrico es $-kr^2V^2$. La energía almacenada en un campo eléctrico es proporcional a $V^2$ (como en un condensador). El efecto no depende del signo del voltaje, solo de su magnitud al cuadrado.
+
+3. Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.
+
+4. La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía para expandirse sigue siendo desfavorable.
+
+5. Entre $V = 300~\mathrm{mV}$ y $V = 150~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, claramente por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta. Por tanto, el umbral de $5\,k_BT$ se cruza entre $150~\mathrm{mV}$ y $300~\mathrm{mV}$.
+
+6. **Nucleación**: formación del primer poro hidrofílico estable (superar $\Delta G_c$). **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la membrana no recupera su integridad (requiere superar la barrera de ruptura, que es mucho mayor a voltajes bajos, $\sim 300\,k_BT$).
+:::
+
+---
+
+# Actividad 4: calentamiento Joule
+
+*Nivel: medio*
+
+## Objetivo
+
+Estimar el aumento de temperatura producido por disipación Joule durante un pulso eléctrico y discutir cuándo el calentamiento puede dejar de ser despreciable.
+
+## Contexto físico
+
+La potencia volumétrica disipada en un medio conductor es:
+
+$$
+q = \sigma E^2
+$$
+
+Para un pulso corto, bajo aproximación adiabática:
+
+$$
+\Delta T
+\approx
+\frac{\sigma E^2\tau}{\rho c_p}
+$$
+
+donde $\sigma$ es la conductividad, $E$ el campo eléctrico, $\tau$ la duración del pulso, $\rho$ la densidad y $c_p$ el calor específico.
+
+## Procedimiento
+
+Use $\rho = 1000~\mathrm{kg\,m^{-3}}$ y $c_p = 4180~\mathrm{J\,kg^{-1}\,K^{-1}}$. Recuerde que $1~\mathrm{kV/cm} = 10^5~\mathrm{V/m}$.
+
+| Caso | $\sigma~\mathrm{[S/m]}$ | $E~\mathrm{[kV/cm]}$ | $\tau$ | $\Delta T~\mathrm{[K]}$ |
+|---|---:|---:|---:|---|
+| 1 | 1.0 | 0.5 | $100~\mu\mathrm{s}$ | ? |
+| 2 | 1.0 | 1.0 | $100~\mu\mathrm{s}$ | ? |
+| 3 | 1.0 | 2.0 | $100~\mu\mathrm{s}$ | ? |
+| 4 | 2.0 | 1.0 | $100~\mu\mathrm{s}$ | ? |
+| 5 | 1.0 | 1.0 | $1~\mathrm{ms}$ | ? |
+| 6 | 2.0 | 2.0 | $1~\mathrm{ms}$ | ? |
+
+## Preguntas orientadoras
+
+1. ¿Cuál de los casos produce el mayor calentamiento?
+2. ¿Qué variable tiene mayor efecto sobre $\Delta T$: duplicar $E$, $\sigma$ o $\tau$?
+3. ¿Por qué el campo eléctrico tiene un efecto cuadrático sobre el calentamiento?
+4. ¿En qué casos el calentamiento podría ser biológicamente relevante?
+5. ¿Por qué esta estimación no reemplaza un modelo completo de transferencia de calor?
+6. ¿Cómo cambiaría $\Delta T$ con un tren de muchos pulsos?
+
+::: {.callout-tip collapse="true"}
+## 💡 Pista — Actividad 4
+
+La ecuación $\Delta T = \sigma E^2 \tau / (\rho c_p)$ tiene tres variables independientes. Antes de calcular, piensa cualitativamente qué ocurre al duplicar cada una:
+
+- Duplicar $\sigma$: $\Delta T$ se **duplica** (efecto lineal).
+- Duplicar $\tau$: $\Delta T$ se **duplica** (efecto lineal).
+- Duplicar $E$: $\Delta T$ se **cuadruplica** (efecto cuadrático, ya que $E$ aparece como $E^2$).
+
+Usa esto para predecir los casos 3 y 4 a partir del caso 2 antes de calcular:
+
+- Caso 3 ($E$ doble respecto al caso 2): $\Delta T_3 = 4 \times \Delta T_2$
+- Caso 4 ($\sigma$ doble respecto al caso 2): $\Delta T_4 = 2 \times \Delta T_2$
+
+Para el caso 6: combina $\sigma$ doble, $E$ doble y $\tau$ diez veces mayor que en el caso 2. Predice el factor de aumento antes de calcular.
+:::
+
+::: {.callout-note collapse="true"}
+## ✓ Respuesta — Actividad 4
+
+**Conversiones previas:**
+
+$$
+1~\mathrm{kV/cm} = 10^5~\mathrm{V/m}
+\qquad
+100~\mu\mathrm{s} = 10^{-4}~\mathrm{s}
+\qquad
+1~\mathrm{ms} = 10^{-3}~\mathrm{s}
+$$
+
+$$
+\Delta T = \frac{\sigma\, E^2\, \tau}{\rho\, c_p} = \frac{\sigma\, E^2\, \tau}{1000 \times 4180}
+$$
+
+| Caso | $\sigma$ | $E~\mathrm{[V/m]}$ | $\tau~\mathrm{[s]}$ | $\Delta T~\mathrm{[K]}$ |
+|---|---|---|---|---|
+| 1 | 1.0 | $5\times10^4$ | $10^{-4}$ | $0.060$ |
+| 2 | 1.0 | $10^5$ | $10^{-4}$ | $0.239$ |
+| 3 | 1.0 | $2\times10^5$ | $10^{-4}$ | $0.957$ |
+| 4 | 2.0 | $10^5$ | $10^{-4}$ | $0.479$ |
+| 5 | 1.0 | $10^5$ | $10^{-3}$ | $2.392$ |
+| 6 | 2.0 | $2\times10^5$ | $10^{-3}$ | $19.14$ |
+
+**Interpretación:**
+
+1. El caso 6 produce el mayor calentamiento ($19.1~\mathrm{K}$), porque combina alta conductividad, campo intenso y pulso largo.
+
+2. Duplicar $E$ cuadruplica $\Delta T$ (casos 2 → 3: $0.239 \times 4 = 0.957~\mathrm{K}$). Duplicar $\sigma$ o $\tau$ solo lo duplica. El campo tiene el mayor efecto relativo.
+
+3. El campo aparece como $E^2$ porque la potencia disipada $q = \sigma E^2$ ya es cuadrática en $E$: la corriente $J = \sigma E$ y la potencia por unidad de volumen $q = J \cdot E = \sigma E^2$.
+
+4. Un aumento de $\sim 1~\mathrm{K}$ (caso 3) comienza a ser biológicamente relevante si se acumula con múltiples pulsos. El caso 6, con $\sim 19~\mathrm{K}$, sería claramente problemático: podría desnaturalizar proteínas, alterar membranas y comprometer la viabilidad celular.
+
+5. Esta estimación no incluye difusión térmica durante el pulso, heterogeneidad del tejido, ni acumulación entre pulsos. En geometrías reales el campo no es uniforme y existen puntos calientes cerca de los electrodos.
+
+6. Con $N$ pulsos repetidos y sin tiempo suficiente para disipar el calor: $\Delta T_{\mathrm{total}} \approx N \times \Delta T_{\mathrm{pulso}}$. Para frecuencias altas o trenes densos, el calentamiento puede sumarse significativamente.
+:::
+
+---
+
+# Actividad integradora
+
+*Nivel: avanzado*
+
+## Objetivo
+
+Conectar los cuatro módulos del portal en una interpretación biofísica unificada.
+
+## Situación problema
+
+Se desea aplicar un protocolo de electroporación a células aproximadamente esféricas de radio $a = 10~\mu\mathrm{m}$, en un medio con conductividad $\sigma = 1.2~\mathrm{S/m}$, usando un pulso rectangular de duración $\tau = 100~\mu\mathrm{s}$.
+
+Se evalúan tres protocolos:
+
+| Protocolo | $E_0$ |
+|---|---|
+| A | $0.5~\mathrm{kV/cm}$ |
+| B | $1.0~\mathrm{kV/cm}$ |
+| C | $2.0~\mathrm{kV/cm}$ |
+
+## Preguntas orientadoras
+
+1. Estime $\Delta V_m^{\mathrm{ind}}$ en los polos para cada protocolo.
+2. ¿Cuál protocolo podría superar el umbral aproximado de $1~\mathrm{V}$?
+3. ¿Cómo cambiaría cualitativamente la barrera energética $\Delta G_c$ al pasar del protocolo A al C?
+4. Estime $\Delta T$ para cada protocolo.
+5. ¿Cuál protocolo parece más favorable para inducir permeabilización con calentamiento moderado?
+6. ¿Por qué la decisión experimental no debe basarse solo en una ecuación?
+
+::: {.callout-tip collapse="true"}
+## 💡 Pista — Actividad integradora
+
+Esta actividad une los resultados de las cuatro anteriores. Aplica cada modelo por separado y luego compara:
+
+**Voltaje inducido:** usa $\Delta V_m^{\mathrm{ind}} = 1.5 \times a \times E_0$ con $a = 10^{-5}~\mathrm{m}$.
+
+**Barrera energética:** no es necesario calcularlo numéricamente. Razona cualitativamente: al aumentar $V_m^{\mathrm{tot}}$, el denominador $A = \pi\Gamma + kV^2$ crece, y $\Delta G_c = \pi^2\gamma^2/A$ disminuye.
+
+**Calentamiento:** usa $\Delta T = \sigma E^2 \tau / (\rho c_p)$ con $\sigma = 1.2~\mathrm{S/m}$, $\tau = 10^{-4}~\mathrm{s}$, $\rho c_p = 4.18\times10^6~\mathrm{J\,m^{-3}\,K^{-1}}$.
+
+El protocolo B suele ser el punto de equilibrio típico: campo suficiente para inducir permeabilización, calentamiento aún moderado. Verifica los números antes de concluir.
+
+Para la pregunta 6, reflexiona sobre qué aspecto **no** cubre cada modelo por separado.
+:::
+
+::: {.callout-note collapse="true"}
+## ✓ Respuesta — Actividad integradora
+
+**1. Voltaje transmembrana inducido en los polos** ($a = 10^{-5}~\mathrm{m}$, $f = 1.5$):
+
+| Protocolo | $E_0~\mathrm{[V/m]}$ | $\Delta V_m^{\mathrm{ind}}~\mathrm{[V]}$ |
+|---|---|---|
+| A | $5\times10^4$ | $0.75$ |
+| B | $10^5$ | $1.50$ |
+| C | $2\times10^5$ | $3.00$ |
+
+**2.** Solo los protocolos B y C superan el umbral de $1~\mathrm{V}$. El protocolo A ($0.75~\mathrm{V}$) queda por debajo, lo que sugiere permeabilización subumbral o muy débil.
+
+**3. Barrera energética** (razonamiento cualitativo): al pasar de A a C, $V_m^{\mathrm{tot}}$ crece cuatro veces, el término $kV^2$ en el denominador aumenta notablemente y $\Delta G_c$ disminuye de forma significativa. Con $V \approx 0.75~\mathrm{V}$ (protocolo A) la barrera es alta; con $V \approx 1.5~\mathrm{V}$ (protocolo B) cae a valores comparables a las fluctuaciones térmicas; con $V \approx 3.0~\mathrm{V}$ (protocolo C) la nucleación sería prácticamente espontánea.
+
+**4. Calentamiento Joule** ($\sigma = 1.2~\mathrm{S/m}$, $\tau = 10^{-4}~\mathrm{s}$):
+
+$$
+\Delta T = \frac{1.2 \times E^2 \times 10^{-4}}{4.18\times10^6}
+$$
+
+| Protocolo | $E~\mathrm{[V/m]}$ | $\Delta T~\mathrm{[K]}$ |
+|---|---|---|
+| A | $5\times10^4$ | $0.072$ |
+| B | $10^5$ | $0.287$ |
+| C | $2\times10^5$ | $1.148$ |
+
+**5.** El protocolo B es el más equilibrado: supera el umbral de voltaje inducido ($1.5~\mathrm{V}$), reduce la barrera energética a valores donde la nucleación es probable, y produce un calentamiento de solo $\sim 0.29~\mathrm{K}$ por pulso. El protocolo C favorece más la permeabilización, pero el calentamiento de $\sim 1.1~\mathrm{K}$ por pulso puede acumularse con múltiples pulsos.
+
+**6.** Ninguna ecuación es suficiente sola:
+
+| Modelo | Lo que no incluye |
+|---|---|
+| Schwan ($\Delta V_m^{\mathrm{ind}}$) | Dinámica temporal, heterogeneidad celular, geometría no esférica |
+| RC (carga temporal) | Distribución espacial del voltaje, efectos no lineales |
+| Energía del poro ($\Delta G_c$) | Barrera hidrofóbica, fluctuaciones estocásticas, cierre del poro |
+| Calentamiento Joule ($\Delta T$) | Difusión térmica, acumulación de pulsos, geometría del electrodo |
+
+El diseño racional de un protocolo requiere integrar todos estos aspectos: el campo debe ser suficiente para inducir voltaje y reducir la barrera, el pulso debe ser suficientemente largo para cargar la membrana, y el calentamiento acumulado debe mantenerse dentro de límites biológicamente tolerables.
+:::
+
+---
+
+# Cierre
+
+Estas actividades muestran que la electroporación no depende de un único parámetro. La respuesta celular surge de la interacción entre la geometría celular, la intensidad del campo eléctrico, la duración del pulso, la dinámica capacitiva de la membrana, la barrera energética para formar poros y la disipación Joule en el medio.
+
+Por ello, el diseño racional de protocolos de electroporación requiere combinar modelos eléctricos, térmicos y biofísicos.

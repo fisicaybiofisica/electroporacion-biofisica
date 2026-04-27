@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Regímenes de operación – Biofísica de la Electroporación</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Biofísica de la Electroporación</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./00_introduccion_membrana.html"> 
+<span class="menu-text">Membrana</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./01_schwan_laplace.html"> 
+<span class="menu-text">Schwan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./02_dinamica_rc.html"> 
+<span class="menu-text">Circuito RC</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./03_energia_poro.html"> 
+<span class="menu-text">Energía del poro</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./04_calentamiento_joule.html"> 
+<span class="menu-text">Joule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./05_regimenes_operacion.html" aria-current="page"> 
+<span class="menu-text">Regímenes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./06_tecnologia_electroporador.html"> 
+<span class="menu-text">Electroporador</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./07_aplicaciones.html"> 
+<span class="menu-text">Aplicaciones</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./08_actividades.html"> 
+<span class="menu-text">Actividades</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-del-módulo" id="toc-propósito-del-módulo" class="nav-link active" data-scroll-target="#propósito-del-módulo"><span class="header-section-number">1</span> Propósito del módulo</a></li>
+  <li><a href="#parámetros-principales" id="toc-parámetros-principales" class="nav-link" data-scroll-target="#parámetros-principales"><span class="header-section-number">2</span> Parámetros principales</a></li>
+  <li><a href="#mapa-conceptual-de-regímenes" id="toc-mapa-conceptual-de-regímenes" class="nav-link" data-scroll-target="#mapa-conceptual-de-regímenes"><span class="header-section-number">3</span> Mapa conceptual de regímenes</a></li>
+  <li><a href="#electroporación-reversible" id="toc-electroporación-reversible" class="nav-link" data-scroll-target="#electroporación-reversible"><span class="header-section-number">4</span> Electroporación reversible</a></li>
+  <li><a href="#electroporación-irreversible-no-térmica" id="toc-electroporación-irreversible-no-térmica" class="nav-link" data-scroll-target="#electroporación-irreversible-no-térmica"><span class="header-section-number">5</span> Electroporación irreversible no térmica</a></li>
+  <li><a href="#régimen-térmico" id="toc-régimen-térmico" class="nav-link" data-scroll-target="#régimen-térmico"><span class="header-section-number">6</span> Régimen térmico</a></li>
+  <li><a href="#pulsos-de-nanosegundos" id="toc-pulsos-de-nanosegundos" class="nav-link" data-scroll-target="#pulsos-de-nanosegundos"><span class="header-section-number">7</span> Pulsos de nanosegundos</a></li>
+  <li><a href="#formas-de-onda" id="toc-formas-de-onda" class="nav-link" data-scroll-target="#formas-de-onda"><span class="header-section-number">8</span> Formas de onda</a></li>
+  <li><a href="#lectura-integradora" id="toc-lectura-integradora" class="nav-link" data-scroll-target="#lectura-integradora"><span class="header-section-number">9</span> Lectura integradora</a></li>
+  <li><a href="#conexión-con-aplicaciones" id="toc-conexión-con-aplicaciones" class="nav-link" data-scroll-target="#conexión-con-aplicaciones"><span class="header-section-number">10</span> Conexión con aplicaciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Regímenes de operación</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<p class="subtitle lead">Campo eléctrico, duración de pulso, dosis y respuesta biológica</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="propósito-del-módulo" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Propósito del módulo</h1>
+<p>La electroporación no tiene un único resultado biológico. El desenlace depende del régimen físico de operación: intensidad de campo, duración del pulso, número de pulsos, forma de onda, conductividad del medio, temperatura y tipo celular.</p>
+<p>Este módulo organiza los principales regímenes de operación y muestra cómo un mismo principio físico puede conducir a respuestas biológicas distintas.</p>
+</section>
+<section id="parámetros-principales" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Parámetros principales</h1>
+<p>Los parámetros experimentales más importantes son:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parámetro</th>
+<th>Significado</th>
+<th>Efecto general</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(E_0\)</span></td>
+<td>campo eléctrico externo</td>
+<td>controla la magnitud del voltaje inducido</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\tau\)</span></td>
+<td>duración del pulso</td>
+<td>controla la escala temporal de carga y exposición</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(N\)</span></td>
+<td>número de pulsos</td>
+<td>contribuye a la dosis total</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f\)</span> o <span class="math inline">\(\Delta t\)</span></td>
+<td>frecuencia o intervalo entre pulsos</td>
+<td>afecta recuperación, acumulación y calentamiento</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>conductividad del medio</td>
+<td>afecta corriente y calentamiento Joule</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mapa-conceptual-de-regímenes" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Mapa conceptual de regímenes</h1>
+<p>En términos generales, se pueden distinguir cuatro escenarios:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Régimen</th>
+<th>Condición cualitativa</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No detectable</td>
+<td>estímulo insuficiente</td>
+<td>no se observa aumento significativo de permeabilidad</td>
+</tr>
+<tr class="even">
+<td>Reversible</td>
+<td>permeabilización transitoria</td>
+<td>transporte molecular con recuperación celular</td>
+</tr>
+<tr class="odd">
+<td>Irreversible no térmica</td>
+<td>daño de membrana dominante</td>
+<td>pérdida de viabilidad sin calor dominante</td>
+</tr>
+<tr class="even">
+<td>Térmico</td>
+<td>disipación Joule significativa</td>
+<td>daño inespecífico por aumento de temperatura</td>
+</tr>
+</tbody>
+</table>
+<p>La <a href="#fig-regimenes-operacion" class="quarto-xref">Figura&nbsp;1</a> muestra de manera cualitativa cómo la combinación entre intensidad del campo eléctrico y duración del pulso permite ubicar distintos regímenes de operación. Este tipo de mapa debe interpretarse como una guía física aproximada, no como una frontera universal exacta.</p>
+<div id="fig-regimenes-operacion" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regimenes-operacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/ep_regimenes_operacion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regimenes-operacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Mapa conceptual de regímenes de operación en electroporación. La respuesta biológica depende de la combinación entre campo eléctrico, duración del pulso y dosis aplicada. En términos generales, pueden distinguirse regiones de electroporación no detectable, electroporación reversible, electroporación irreversible no térmica y daño térmico. Los límites entre regiones son aproximados y dependen del tipo celular, el medio, la temperatura y la geometría experimental.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="electroporación-reversible" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Electroporación reversible</h1>
+<p>La electroporación reversible ocurre cuando el estímulo eléctrico induce vías transitorias de transporte, pero la célula conserva la capacidad de recuperar la integridad de la membrana.</p>
+<p>Este régimen es útil cuando se busca introducir moléculas manteniendo viabilidad celular, por ejemplo:</p>
+<ul>
+<li>ADN;</li>
+<li>ARN;</li>
+<li>proteínas;</li>
+<li>fármacos;</li>
+<li>sondas fluorescentes;</li>
+<li>moléculas pequeñas.</li>
+</ul>
+<p>La clave física es alcanzar una permeabilización suficiente sin superar la capacidad de recuperación celular.</p>
+</section>
+<section id="electroporación-irreversible-no-térmica" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Electroporación irreversible no térmica</h1>
+<p>La electroporación irreversible ocurre cuando el daño de membrana supera la capacidad de recierre, reparación y recuperación homeostática.</p>
+<p>En este caso, la pérdida de viabilidad se atribuye principalmente a la alteración irreversible de la membrana y no necesariamente al aumento de temperatura.</p>
+<p>Este régimen es importante en ablación no térmica de tejidos, especialmente cuando se busca destruir células preservando en parte la matriz extracelular y estructuras mecánicas del tejido.</p>
+</section>
+<section id="régimen-térmico" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Régimen térmico</h1>
+<p>A campos suficientemente altos, pulsos prolongados o dosis acumuladas, la corriente eléctrica puede producir calentamiento Joule significativo.</p>
+<p>El daño térmico no es específico de la membrana. Puede afectar:</p>
+<ul>
+<li>proteínas;</li>
+<li>lípidos;</li>
+<li>organelos;</li>
+<li>matriz extracelular;</li>
+<li>volumen del medio tratado.</li>
+</ul>
+<p>Por esta razón, cuando se desea estudiar electroporación no térmica, es necesario estimar o controlar el aumento de temperatura.</p>
+</section>
+<section id="pulsos-de-nanosegundos" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Pulsos de nanosegundos</h1>
+<p>Los pulsos eléctricos de nanosegundos, usualmente denominados nsPEF, usan duraciones muy cortas y campos eléctricos altos.</p>
+<p>En estos regímenes, la escala temporal del estímulo puede ser comparable o menor que algunos tiempos característicos de carga de membranas celulares y subcelulares. Por ello, se investigan efectos sobre:</p>
+<ul>
+<li>membrana plasmática;</li>
+<li>organelos;</li>
+<li>señalización intracelular;</li>
+<li>calcio;</li>
+<li>apoptosis;</li>
+<li>respuestas subcelulares.</li>
+</ul>
+<p>Estos efectos dependen fuertemente de la forma de onda, amplitud, número de pulsos y geometría celular.</p>
+</section>
+<section id="formas-de-onda" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Formas de onda</h1>
+<p>La forma temporal del pulso también modifica la respuesta biológica.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Forma de onda</th>
+<th>Característica</th>
+<th>Comentario físico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Decaimiento exponencial</td>
+<td>descarga RC clásica</td>
+<td>menor control temporal de la dosis</td>
+</tr>
+<tr class="even">
+<td>Cuadrada monopolar</td>
+<td>amplitud casi constante</td>
+<td>buen control de duración y amplitud</td>
+</tr>
+<tr class="odd">
+<td>Bipolar simétrica</td>
+<td>inversión de polaridad</td>
+<td>puede reducir polarización interfacial</td>
+</tr>
+<tr class="even">
+<td>Bimonopolar</td>
+<td>dos monopulsos consecutivos</td>
+<td>aumenta dosis entregada</td>
+</tr>
+<tr class="odd">
+<td>Bipolar con intervalo</td>
+<td>pulsos separados por pausa</td>
+<td>permite explorar mitigación o acumulación de efectos</td>
+</tr>
+</tbody>
+</table>
+<p>La <a href="#fig-formas-onda" class="quarto-xref">Figura&nbsp;2</a> resume varias formas temporales de pulso usadas en electroporación. Aunque todas pueden inducir permeabilización, no entregan la misma dosis temporal ni producen la misma polarización interfacial; por ello, la forma de onda es parte del diseño físico del estímulo.</p>
+<div id="fig-formas-onda" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-formas-onda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/ep_formas_onda.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-formas-onda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Comparación cualitativa de formas de onda utilizadas en electroporación. El decaimiento exponencial es característico de descargas RC clásicas; el pulso cuadrado monopolar permite mayor control de amplitud y duración; los pulsos bipolares invierten la polaridad y pueden modificar la polarización interfacial; los pulsos bimonopolares y bipolares con intervalo permiten explorar efectos de dosis, recuperación parcial y mitigación de reacciones electroquímicas.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="lectura-integradora" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Lectura integradora</h1>
+<p>El régimen de electroporación no se define por una sola variable. Una misma amplitud de campo puede tener efectos distintos si cambia:</p>
+<ul>
+<li>la duración del pulso;</li>
+<li>el número de pulsos;</li>
+<li>la conductividad del medio;</li>
+<li>la temperatura;</li>
+<li>la geometría celular;</li>
+<li>la composición de membrana;</li>
+<li>la forma de onda.</li>
+</ul>
+<p>Por ello, los mapas de régimen deben leerse como guías operacionales aproximadas, no como fronteras universales exactas.</p>
+</section>
+<section id="conexión-con-aplicaciones" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Conexión con aplicaciones</h1>
+<p>Los regímenes físicos permiten entender por qué la electroporación puede utilizarse en contextos tan diferentes como transferencia génica, electroquimioterapia, ablación tumoral, procesamiento de alimentos y modulación intracelular.</p>
+<p><a href="./06_tecnologia_electroporador.html">Continuar con tecnología del electroporador</a></p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Regímenes de operación"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Campo eléctrico, duración de pulso, dosis y respuesta biológica"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Propósito del módulo</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>La electroporación no tiene un único resultado biológico. El desenlace depende del régimen físico de operación: intensidad de campo, duración del pulso, número de pulsos, forma de onda, conductividad del medio, temperatura y tipo celular.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Este módulo organiza los principales regímenes de operación y muestra cómo un mismo principio físico puede conducir a respuestas biológicas distintas.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu"># Parámetros principales</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Los parámetros experimentales más importantes son:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Parámetro <span class="pp">|</span> Significado <span class="pp">|</span> Efecto general <span class="pp">|</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $E_0$ <span class="pp">|</span> campo eléctrico externo <span class="pp">|</span> controla la magnitud del voltaje inducido <span class="pp">|</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\tau$ <span class="pp">|</span> duración del pulso <span class="pp">|</span> controla la escala temporal de carga y exposición <span class="pp">|</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $N$ <span class="pp">|</span> número de pulsos <span class="pp">|</span> contribuye a la dosis total <span class="pp">|</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $f$ o $\Delta t$ <span class="pp">|</span> frecuencia o intervalo entre pulsos <span class="pp">|</span> afecta recuperación, acumulación y calentamiento <span class="pp">||</span> forma de onda <span class="pp">|</span> monopolar, bipolar, bimonopolar, exponencial <span class="pp">|</span> modifica polarización y respuesta electroquímica <span class="pp">|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\sigma$ <span class="pp">|</span> conductividad del medio <span class="pp">|</span> afecta corriente y calentamiento Joule <span class="pp">|</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu"># Mapa conceptual de regímenes</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>En términos generales, se pueden distinguir cuatro escenarios:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Régimen <span class="pp">|</span> Condición cualitativa <span class="pp">|</span> Resultado esperado <span class="pp">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> No detectable <span class="pp">|</span> estímulo insuficiente <span class="pp">|</span> no se observa aumento significativo de permeabilidad <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reversible <span class="pp">|</span> permeabilización transitoria <span class="pp">|</span> transporte molecular con recuperación celular <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Irreversible no térmica <span class="pp">|</span> daño de membrana dominante <span class="pp">|</span> pérdida de viabilidad sin calor dominante <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Térmico <span class="pp">|</span> disipación Joule significativa <span class="pp">|</span> daño inespecífico por aumento de temperatura <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>La @fig-regimenes-operacion muestra de manera cualitativa cómo la combinación entre intensidad del campo eléctrico y duración del pulso permite ubicar distintos regímenes de operación. Este tipo de mapa debe interpretarse como una guía física aproximada, no como una frontera universal exacta.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="al">![Mapa conceptual de regímenes de operación en electroporación. La respuesta biológica depende de la combinación entre campo eléctrico, duración del pulso y dosis aplicada. En términos generales, pueden distinguirse regiones de electroporación no detectable, electroporación reversible, electroporación irreversible no térmica y daño térmico. Los límites entre regiones son aproximados y dependen del tipo celular, el medio, la temperatura y la geometría experimental.](figures/ep_regimenes_operacion.png)</span>{#fig-regimenes-operacion fig-align="center" width="90%"}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Electroporación reversible</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>La electroporación reversible ocurre cuando el estímulo eléctrico induce vías transitorias de transporte, pero la célula conserva la capacidad de recuperar la integridad de la membrana.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Este régimen es útil cuando se busca introducir moléculas manteniendo viabilidad celular, por ejemplo:</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ADN;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ARN;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>proteínas;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>fármacos;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sondas fluorescentes;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>moléculas pequeñas.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>La clave física es alcanzar una permeabilización suficiente sin superar la capacidad de recuperación celular.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu"># Electroporación irreversible no térmica</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La electroporación irreversible ocurre cuando el daño de membrana supera la capacidad de recierre, reparación y recuperación homeostática.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>En este caso, la pérdida de viabilidad se atribuye principalmente a la alteración irreversible de la membrana y no necesariamente al aumento de temperatura.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Este régimen es importante en ablación no térmica de tejidos, especialmente cuando se busca destruir células preservando en parte la matriz extracelular y estructuras mecánicas del tejido.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># Régimen térmico</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>A campos suficientemente altos, pulsos prolongados o dosis acumuladas, la corriente eléctrica puede producir calentamiento Joule significativo.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>El daño térmico no es específico de la membrana. Puede afectar:</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>proteínas;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>lípidos;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>organelos;</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>matriz extracelular;</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>volumen del medio tratado.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Por esta razón, cuando se desea estudiar electroporación no térmica, es necesario estimar o controlar el aumento de temperatura.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu"># Pulsos de nanosegundos</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Los pulsos eléctricos de nanosegundos, usualmente denominados nsPEF, usan duraciones muy cortas y campos eléctricos altos.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>En estos regímenes, la escala temporal del estímulo puede ser comparable o menor que algunos tiempos característicos de carga de membranas celulares y subcelulares. Por ello, se investigan efectos sobre:</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>membrana plasmática;</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>organelos;</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>señalización intracelular;</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>calcio;</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>apoptosis;</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>respuestas subcelulares.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>Estos efectos dependen fuertemente de la forma de onda, amplitud, número de pulsos y geometría celular.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="fu"># Formas de onda</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>La forma temporal del pulso también modifica la respuesta biológica.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Forma de onda <span class="pp">|</span> Característica <span class="pp">|</span> Comentario físico <span class="pp">|</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Decaimiento exponencial <span class="pp">|</span> descarga RC clásica <span class="pp">|</span> menor control temporal de la dosis <span class="pp">|</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cuadrada monopolar <span class="pp">|</span> amplitud casi constante <span class="pp">|</span> buen control de duración y amplitud <span class="pp">|</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bipolar simétrica <span class="pp">|</span> inversión de polaridad <span class="pp">|</span> puede reducir polarización interfacial <span class="pp">|</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bimonopolar <span class="pp">|</span> dos monopulsos consecutivos <span class="pp">|</span> aumenta dosis entregada <span class="pp">|</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bipolar con intervalo <span class="pp">|</span> pulsos separados por pausa <span class="pp">|</span> permite explorar mitigación o acumulación de efectos <span class="pp">|</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>La @fig-formas-onda resume varias formas temporales de pulso usadas en electroporación. Aunque todas pueden inducir permeabilización, no entregan la misma dosis temporal ni producen la misma polarización interfacial; por ello, la forma de onda es parte del diseño físico del estímulo.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="al">![Comparación cualitativa de formas de onda utilizadas en electroporación. El decaimiento exponencial es característico de descargas RC clásicas; el pulso cuadrado monopolar permite mayor control de amplitud y duración; los pulsos bipolares invierten la polaridad y pueden modificar la polarización interfacial; los pulsos bimonopolares y bipolares con intervalo permiten explorar efectos de dosis, recuperación parcial y mitigación de reacciones electroquímicas.](figures/ep_formas_onda.png)</span>{#fig-formas-onda fig-align="center" width="90%"}</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lectura integradora</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>El régimen de electroporación no se define por una sola variable. Una misma amplitud de campo puede tener efectos distintos si cambia:</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la duración del pulso;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>el número de pulsos;</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la conductividad del medio;</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la temperatura;</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la geometría celular;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la composición de membrana;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la forma de onda.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Por ello, los mapas de régimen deben leerse como guías operacionales aproximadas, no como fronteras universales exactas.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conexión con aplicaciones</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Los regímenes físicos permiten entender por qué la electroporación puede utilizarse en contextos tan diferentes como transferencia génica, electroquimioterapia, ablación tumoral, procesamiento de alimentos y modulación intracelular.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Continuar con tecnología del electroporador</span><span class="co">](06_tecnologia_electroporador.qmd)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Inicio
+      - href: 00_introduccion_membrana.qmd
+        text: Membrana
       - href: 01_schwan_laplace.qmd
         text: Schwan
       - href: 02_dinamica_rc.qmd
@@ -15,8 +17,14 @@ website:
       - href: 03_energia_poro.qmd
         text: Energía del poro
       - href: 04_calentamiento_joule.qmd
-        text: Calentamiento Joule
-      - href: 05_actividades.qmd
+        text: Joule
+      - href: 05_regimenes_operacion.qmd
+        text: Regímenes
+      - href: 06_tecnologia_electroporador.qmd
+        text: Electroporador
+      - href: 07_aplicaciones.qmd
+        text: Aplicaciones
+      - href: 08_actividades.qmd
         text: Actividades
 
 format:

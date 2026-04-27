@@ -1,0 +1,302 @@
+---
+title: "Tecnología del electroporador"
+subtitle: "Arquitectura funcional de un sistema de pulsos eléctricos"
+---
+
+# Propósito del módulo
+
+Un electroporador no es simplemente una fuente de alto voltaje. Es un sistema diseñado para entregar pulsos eléctricos controlados a una muestra biológica bajo condiciones reproducibles y seguras.
+
+Este módulo presenta la arquitectura funcional básica de un electroporador y conecta sus componentes con las variables físicas estudiadas en los módulos anteriores.
+
+# Función general
+
+Un electroporador debe ser capaz de controlar:
+
+- amplitud del pulso;
+- duración;
+- número de pulsos;
+- frecuencia o intervalo entre pulsos;
+- polaridad;
+- forma de onda;
+- energía entregada;
+- corriente;
+- condiciones de seguridad y monitoreo.
+
+La @fig-electroporador-arquitectura resume la arquitectura funcional de un electroporador moderno. Aunque existen muchas configuraciones instrumentales, la mayoría de los sistemas puede entenderse como una cadena de conversión, almacenamiento, conmutación, control, entrega del campo eléctrico y monitoreo de la respuesta de la muestra.
+
+![Arquitectura funcional de un electroporador. El sistema convierte y almacena energía eléctrica, genera pulsos mediante conmutación rápida, controla amplitud, duración, polaridad y frecuencia, entrega el campo eléctrico a la muestra mediante electrodos y mide variables como voltaje, corriente, temperatura e impedancia para monitoreo y realimentación.](figures/ep_electroporador_arquitectura.png){#fig-electroporador-arquitectura fig-align="center" width="92%"}
+
+# Bloques funcionales principales
+
+Un sistema de electroporación típico puede dividirse en seis bloques funcionales:
+
+| Bloque | Función |
+|---|---|
+| Fuente AC/DC | convierte y suministra energía eléctrica al sistema |
+| Banco de capacitores o bus DC | almacena energía y estabiliza la entrega |
+| Conmutación rápida | define polaridad, duración y forma de onda |
+| Controlador digital | programa amplitud, duración, número de pulsos y sincronización |
+| Electrodos y muestra | entregan el campo eléctrico al sistema biológico |
+| Monitoreo y realimentación | mide la respuesta eléctrica y térmica de la muestra |
+
+Estos bloques no deben interpretarse como piezas aisladas. En un electroporador real, la fuente, el banco de capacitores, la etapa de conmutación, la carga biológica y el sistema de control forman un sistema acoplado. Por eso, el protocolo eléctrico aplicado a la muestra depende tanto del diseño electrónico como de las propiedades eléctricas del medio biológico.
+
+# Fuente de energía
+
+La fuente convierte la energía de entrada en una señal eléctrica adecuada para alimentar el sistema de pulsos.
+
+Dependiendo del diseño, puede incluir:
+
+- conversión AC/DC;
+- rectificación;
+- filtrado;
+- elevación de voltaje mediante convertidores DC/DC o transformadores;
+- regulación;
+- protección contra sobrecorriente;
+- aislamiento eléctrico;
+- descarga segura del sistema.
+
+La @fig-fuente-alto-voltaje ilustra una fuente de alto voltaje de manera conceptual. En equipos de electroporación, la fuente no suele aplicar directamente el pulso final a la muestra. Su función principal es cargar el bus DC o el banco de capacitores hasta un voltaje definido por el protocolo experimental.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_fuente_alto_voltaje.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: fuente de energía para un electroporador. Mostrar de izquierda a derecha: entrada AC de red eléctrica, fusible/protección, rectificador, filtro capacitivo, convertidor elevador o etapa de alto voltaje DC, salida hacia bus DC. Incluir símbolos eléctricos simples: enchufe AC, puente rectificador, capacitor de filtrado, transformador o convertidor DC/DC, bloque de regulación y protección. Añadir etiquetas: "Entrada AC", "Protección", "Rectificación", "Filtrado", "Elevación de voltaje", "Salida HV DC". Incluir valores orientativos no obligatorios: "centenas de voltios a varios kV", "corriente limitada", "aislamiento eléctrico". Estilo académico, claro, sin exceso de detalle, colores sobrios azul, gris y blanco. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Fuente de energía de un electroporador. La etapa de alimentación convierte la energía de entrada en una tensión continua de alto voltaje, con protección, rectificación, filtrado, regulación y aislamiento. Su función principal es suministrar energía estable al bus DC o al banco de capacitores, no necesariamente aplicar directamente el pulso final a la muestra.](figures/ep_fuente_alto_voltaje.png){#fig-fuente-alto-voltaje fig-align="center" width="88%"}
+
+En términos prácticos, los voltajes de trabajo dependen de la aplicación y de la separación entre electrodos. Para suspensiones celulares en cubetas, se pueden requerir desde decenas hasta miles de voltios, porque el campo eléctrico promedio se estima como:
+
+$$
+E_0 \approx \frac{V}{L}
+$$
+
+donde $V$ es el voltaje aplicado y $L$ es la separación entre electrodos.
+
+# Banco de capacitores o bus DC
+
+El banco de capacitores almacena energía eléctrica antes de liberarla durante el pulso.
+
+La energía almacenada en un capacitor ideal es:
+
+$$
+U =
+\frac{1}{2}CV^2
+$$
+
+donde $C$ es la capacitancia y $V$ el voltaje de carga.
+
+La @fig-banco-capacitores muestra el principio general de un banco capacitivo. Varios capacitores pueden conectarse en paralelo para aumentar la capacitancia total y, por tanto, la energía disponible para el pulso. También pueden conectarse en serie cuando se necesita soportar mayor voltaje, aunque esto requiere balanceo de voltaje entre capacitores.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_banco_capacitores_bus_dc.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: banco de capacitores o bus DC de un electroporador. Mostrar un bus positivo y un bus negativo con varios capacitores conectados en paralelo. Añadir una variante pequeña lateral con capacitores en serie para soportar mayor voltaje, etiquetada como "serie: mayor voltaje admisible". En el diagrama principal indicar "paralelo: mayor capacitancia total". Mostrar flechas de carga desde la fuente y flechas de descarga hacia la etapa de conmutación. Incluir ecuación U = 1/2 C V^2. Etiquetas: "Bus DC", "Banco de capacitores", "Almacena energía", "Entrega corriente durante el pulso", "Resistencia de descarga/seguridad". Usar colores sobrios azul, gris, blanco; estilo académico; evitar detalles industriales excesivos. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Banco de capacitores o bus DC. Los capacitores almacenan energía antes del pulso y permiten entregarla en tiempos cortos. En paralelo aumentan la capacitancia equivalente y la energía disponible; en serie pueden soportar mayores voltajes, con la necesidad de balancear la tensión entre elementos.](figures/ep_banco_capacitores_bus_dc.png){#fig-banco-capacitores fig-align="center" width="88%"}
+
+Este bloque es importante porque muchos pulsos de electroporación requieren entregar energía en tiempos muy cortos. La fuente por sí sola puede no responder con suficiente rapidez, mientras que el banco de capacitores permite liberar energía de manera controlada.
+
+En un diseño real, la elección de la capacitancia depende de:
+
+- voltaje de operación;
+- energía requerida por pulso;
+- duración del pulso;
+- corriente máxima esperada;
+- impedancia de la carga biológica;
+- caída aceptable de voltaje durante el pulso;
+- requisitos de seguridad.
+
+# Conmutación rápida
+
+La etapa de conmutación define cuándo, durante cuánto tiempo y con qué polaridad se aplica el pulso.
+
+Puede implementarse mediante dispositivos de potencia como:
+
+- MOSFET;
+- IGBT;
+- tiristores;
+- configuraciones tipo puente H;
+- interruptores especializados de alta tensión.
+
+La @fig-conmutacion-puente-h muestra una configuración tipo puente H. En esta arquitectura, cuatro interruptores electrónicos permiten aplicar a la carga una polaridad positiva, una polaridad negativa o estados de desconexión, según la combinación de interruptores activados.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_conmutacion_puente_h.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: puente H para conmutación de pulsos en electroporación. Mostrar cuatro interruptores electrónicos etiquetados S1, S2, S3, S4 o MOSFET/IGBT formando una H. En el centro colocar la carga biológica o electrocubeta. Mostrar tres estados en mini-paneles: (A) polaridad positiva con S1 y S4 cerrados, (B) polaridad negativa con S2 y S3 cerrados, (C) apagado o alta impedancia. Incluir flechas de corriente para cada estado. Añadir una analogía hidráulica pequeña en la parte inferior: dos tuberías paralelas con válvulas que redirigen el flujo en un sentido u otro a través de una rueda/carga. Etiquetas: "Bus +", "Bus -", "Carga", "Pulso positivo", "Pulso negativo", "Control de polaridad". Estilo académico, claro, no sobrecargado, colores azul, gris, verde suave. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Etapa de conmutación rápida mediante un puente H. Cuatro interruptores de potencia permiten invertir la polaridad aplicada a la carga biológica y generar pulsos monopolares o bipolares. La analogía hidráulica es útil: como un conjunto de válvulas que redirige el flujo por una ruta u otra, el puente H redirige la corriente eléctrica a través de la muestra en sentidos opuestos.](figures/ep_conmutacion_puente_h.png){#fig-conmutacion-puente-h fig-align="center" width="88%"}
+
+La analogía hidráulica ayuda a entender el puente H: los interruptores funcionan como válvulas. Al abrir una pareja de válvulas, el flujo atraviesa la carga en un sentido; al abrir la pareja opuesta, el flujo atraviesa la carga en sentido contrario. En electrónica, ese “flujo” corresponde a la corriente eléctrica y la “carga” corresponde a la muestra entre electrodos.
+
+La capacidad de la etapa de conmutación se define por parámetros como:
+
+- voltaje máximo soportado;
+- corriente máxima conducida;
+- velocidad de conmutación;
+- pérdidas de potencia;
+- aislamiento de la etapa de control;
+- protección contra cortocircuitos;
+- capacidad de disipar calor.
+
+La @fig-formas-onda-electroporador muestra que distintas configuraciones de conmutación permiten generar formas de onda con efectos físicos diferentes. La forma temporal del pulso modifica la dosis eléctrica, la polarización de electrodos, la carga de membrana y la posibilidad de usar protocolos monopolares o bipolares.
+
+![Formas de onda utilizadas en electroporación. El decaimiento exponencial es característico de descargas RC clásicas; el pulso cuadrado monopolar permite mayor control de amplitud y duración; las formas bipolares invierten la polaridad y pueden atenuar la polarización interfacial; los pulsos bimonopolares y bipolares con intervalo permiten ajustar dosis, recuperación parcial y efectos electroquímicos.](figures/ep_formas_onda.png){#fig-formas-onda-electroporador fig-align="center" width="88%"}
+
+# Control digital
+
+El controlador programa y sincroniza el protocolo eléctrico.
+
+Puede controlar:
+
+- amplitud;
+- duración;
+- número de pulsos;
+- polaridad;
+- intervalo entre pulsos;
+- frecuencia;
+- secuencias complejas;
+- disparo sincronizado con mediciones.
+
+La @fig-controlador-pulsos representa el controlador como la etapa que traduce un protocolo definido por el usuario en señales de disparo para la electrónica de potencia. En equipos modernos, este bloque puede implementarse mediante microcontroladores, FPGA, tarjetas de adquisición de datos o sistemas embebidos conectados a una computadora.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_controlador_pulsos.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: controlador digital de un electroporador. Mostrar una computadora portátil con interfaz gráfica sencilla donde se programan parámetros: amplitud, duración, número de pulsos, frecuencia, polaridad. Conectar la computadora a un microcontrolador o FPGA. Desde el controlador sacar señales hacia la etapa de conmutación: gate drivers, señales TTL, disparo, sincronización. Mostrar una pequeña línea temporal con pulsos programados. Etiquetas: "Computadora", "Interfaz de usuario", "Microcontrolador / FPGA", "Gate drivers", "Señales de disparo", "Tren de pulsos". Estilo académico, claro, colores sobrios azul, gris, blanco. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Control digital del protocolo de electroporación. La computadora o interfaz de usuario permite definir amplitud, duración, número de pulsos, frecuencia y polaridad. El microcontrolador o FPGA genera señales de disparo sincronizadas que gobiernan la etapa de conmutación mediante circuitos de manejo de compuerta.](figures/ep_controlador_pulsos.png){#fig-controlador-pulsos fig-align="center" width="88%"}
+
+La diferencia entre un generador simple y un electroporador avanzado está, en gran parte, en la precisión del control temporal. Un pulso de microsegundos o nanosegundos exige sincronización más estricta que un pulso de milisegundos. Por ello, los controladores pueden requerir temporización de alta resolución y aislamiento entre la etapa lógica y la etapa de potencia.
+
+# Electrodos y muestra biológica
+
+Los electrodos son la interfaz entre el equipo y la muestra. Su geometría determina cómo se distribuye el campo eléctrico.
+
+En una aproximación simple, para electrodos planos separados una distancia $L$, el campo promedio puede estimarse como:
+
+$$
+E_0 \approx \frac{V}{L}
+$$
+
+donde $V$ es la diferencia de potencial aplicada y $L$ la separación entre electrodos.
+
+La @fig-electrocubeta muestra una electrocubeta típica para suspensiones celulares. En este diseño, la muestra líquida se ubica entre dos electrodos planos separados por una distancia conocida. Esa separación permite estimar el campo eléctrico promedio a partir del voltaje aplicado.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_electrocubeta_electrodos.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: electrocubeta para electroporación de suspensiones celulares. Mostrar una cubeta transparente con dos electrodos planos metálicos paralelos, muestra líquida entre ellos y células suspendidas. Indicar separación entre electrodos L, voltaje aplicado V, campo eléctrico promedio E0 = V/L con flechas uniformes entre electrodos. Mostrar materiales típicos de electrodos: aluminio, acero inoxidable, platino o materiales conductores compatibles. Añadir una vista superior pequeña donde se vean las placas paralelas y la muestra. Etiquetas: "Electrodo", "Muestra biológica", "Separación L", "Campo eléctrico E0", "Voltaje V". Estilo académico, claro, colores suaves, fondo blanco. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Electrocubeta con electrodos planos para electroporación. La muestra biológica se ubica entre dos electrodos separados una distancia $L$. Si se aplica una diferencia de potencial $V$, el campo promedio puede estimarse como $E_0 \approx V/L$, aunque en la práctica pueden existir no uniformidades cerca de bordes e interfaces.](figures/ep_electrocubeta_electrodos.png){#fig-electrocubeta fig-align="center" width="88%"}
+
+En la práctica, los electrodos deben elegirse considerando:
+
+- biocompatibilidad;
+- resistencia a corrosión;
+- baja polarización interfacial;
+- facilidad de limpieza o esterilización;
+- estabilidad frente a pulsos de alta corriente;
+- geometría reproducible.
+
+Los materiales pueden incluir acero inoxidable, aluminio, platino u otros conductores compatibles con la aplicación. La separación entre electrodos es crítica, porque una misma diferencia de potencial produce campos distintos si cambia $L$.
+
+Sin embargo, en geometrías reales, el campo puede ser no uniforme, especialmente cerca de bordes, puntas, agujas o interfaces de tejido.
+
+# Monitoreo y retroalimentación
+
+Un electroporador avanzado puede monitorear variables como:
+
+- voltaje aplicado;
+- corriente;
+- impedancia de la muestra;
+- temperatura;
+- energía entregada;
+- cambios transitorios durante el pulso.
+
+La @fig-monitoreo-realimentacion resume las mediciones más relevantes. Estas señales permiten verificar si el pulso aplicado corresponde al protocolo programado y si la muestra cambia sus propiedades eléctricas durante la permeabilización.
+
+<!--
+PROMPT PARA GEMINI
+Nombre del archivo: ep_monitoreo_realimentacion.png
+
+Generar una figura educativa, estilo vectorial limpio, fondo blanco, formato horizontal 16:9, etiquetas en español. Tema: monitoreo y realimentación en un electroporador. Mostrar la muestra entre electrodos conectada a sensores: divisor de alto voltaje para medir voltaje, resistencia shunt o sensor Hall para corriente, sensor de temperatura, medición de impedancia. Conectar estos sensores a un sistema de adquisición de datos y luego al controlador. Mostrar gráficas pequeñas: V(t), I(t), T(t), Z(t). Etiquetas: "Medición de voltaje", "Medición de corriente", "Temperatura", "Impedancia", "Adquisición de datos", "Realimentación al controlador". Estilo académico, claro, colores sobrios, fondo blanco. Dejar 15 % de espacio inferior para notas.
+-->
+
+![Monitoreo y realimentación durante la electroporación. El sistema puede medir voltaje, corriente, temperatura e impedancia de la muestra. Estas variables permiten estimar la energía entregada, detectar cambios en la carga biológica, verificar la reproducibilidad del protocolo y mejorar la seguridad del sistema.](figures/ep_monitoreo_realimentacion.png){#fig-monitoreo-realimentacion fig-align="center" width="88%"}
+
+Estas mediciones son importantes porque la muestra biológica no es una carga puramente resistiva ni constante. Su impedancia puede cambiar durante la permeabilización, y la corriente medida puede diferir de la esperada si hay burbujas, mala conexión, cambios de conductividad, calentamiento o alteraciones en la geometría efectiva de contacto.
+
+La corriente y el voltaje permiten estimar la potencia eléctrica instantánea:
+
+$$
+P(t)=V(t)I(t)
+$$
+
+y, por integración temporal, la energía entregada:
+
+$$
+U =
+\int P(t)\,dt
+=
+\int V(t)I(t)\,dt
+$$
+
+Estas magnitudes son útiles para relacionar el protocolo eléctrico con la dosis aplicada y el posible calentamiento del sistema.
+
+# Seguridad y reproducibilidad
+
+El uso de pulsos de alto voltaje exige condiciones de seguridad estrictas:
+
+- aislamiento eléctrico;
+- descarga segura de capacitores;
+- protección del usuario;
+- control de corriente;
+- bloqueo de operación ante fallas;
+- verificación de conexiones;
+- registro de parámetros.
+
+Desde el punto de vista científico, la reproducibilidad exige reportar claramente:
+
+- geometría de electrodos;
+- separación entre electrodos;
+- voltaje aplicado;
+- campo estimado;
+- duración del pulso;
+- número de pulsos;
+- frecuencia o intervalo entre pulsos;
+- forma de onda;
+- conductividad del medio;
+- temperatura;
+- tipo de célula o tejido.
+
+# Conexión con los modelos físicos
+
+Los módulos anteriores permiten interpretar lo que hace el equipo:
+
+| Variable del equipo | Variable física relacionada |
+|---|---|
+| Voltaje aplicado | campo externo $E_0$ |
+| Separación de electrodos | estimación de $E_0$ |
+| Duración del pulso | carga RC de membrana |
+| Forma de onda | polarización y respuesta temporal |
+| Número de pulsos | dosis acumulada |
+| Corriente | disipación Joule |
+| Temperatura | daño térmico potencial |
+| Impedancia de la muestra | cambio eléctrico asociado al estado de la carga biológica |
+
+El electroporador, por tanto, es el instrumento que convierte los modelos físicos en protocolos experimentales.
+
+[Continuar con aplicaciones](07_aplicaciones.qmd)
