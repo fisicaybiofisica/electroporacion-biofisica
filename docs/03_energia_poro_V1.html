@@ -195,7 +195,7 @@ window.Quarto = {
 <span class="menu-text">Circuito RC</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./03_energia_poro.html" aria-current="page"> 
+    <a class="nav-link" href="./03_energia_poro.html"> 
 <span class="menu-text">Energía del poro</span></a>
   </li>  
   <li class="nav-item">
@@ -261,11 +261,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#código-para-google-colab" id="toc-código-para-google-colab" class="nav-link" data-scroll-target="#código-para-google-colab"><span class="header-section-number">12.1</span> Código para Google Colab</a></li>
   </ul></li>
-  <li><a href="#actividad-energía-libre-del-poro" id="toc-actividad-energía-libre-del-poro" class="nav-link" data-scroll-target="#actividad-energía-libre-del-poro"><span class="header-section-number">13</span> Actividad: energía libre del poro</a>
-  <ul class="collapse">
-  <li><a href="#contexto" id="toc-contexto" class="nav-link" data-scroll-target="#contexto"><span class="header-section-number">13.1</span> Contexto</a></li>
-  <li><a href="#procedimiento" id="toc-procedimiento" class="nav-link" data-scroll-target="#procedimiento"><span class="header-section-number">13.2</span> Procedimiento</a></li>
-  </ul></li>
+  <li><a href="#preguntas-para-explorar" id="toc-preguntas-para-explorar" class="nav-link" data-scroll-target="#preguntas-para-explorar"><span class="header-section-number">13</span> Preguntas para explorar</a></li>
   <li><a href="#alcance-y-limitaciones" id="toc-alcance-y-limitaciones" class="nav-link" data-scroll-target="#alcance-y-limitaciones"><span class="header-section-number">14</span> Alcance y limitaciones</a></li>
   <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">15</span> Ideas clave</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">16</span> Referencias</a></li>
@@ -1339,188 +1335,18 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="actividad-energía-libre-del-poro" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Actividad: energía libre del poro</h1>
-<p><em>Nivel: medio</em></p>
-<section id="contexto" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="contexto"><span class="header-section-number">13.1</span> Contexto</h2>
-<p>Use el modelo simplificado con los parámetros de referencia justificados en este módulo:</p>
-<p><span class="math display">\[
-\gamma = 9.2~\mathrm{pN}
-\qquad
-\Gamma = 1~\mathrm{mN/m}
-\qquad
-k = 556~\mathrm{mF/m^2}
-\qquad
-T = 298~\mathrm{K}
-\]</span></p>
-<p>con <span class="math inline">\(k_BT = 4.11 \times 10^{-21}~\mathrm{J}\)</span>.</p>
-</section>
-<section id="procedimiento" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="procedimiento"><span class="header-section-number">13.2</span> Procedimiento</h2>
-<p>Calcule <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span> (en unidades de <span class="math inline">\(k_BT\)</span>) para los siguientes voltajes y complete la tabla:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Caso</th>
-<th><span class="math inline">\(V_m^{\mathrm{tot}}\)</span></th>
-<th><span class="math inline">\(r_c\)</span> [nm]</th>
-<th><span class="math inline">\(\Delta G_c\)</span> [<span class="math inline">\(k_BT\)</span>]</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td><span class="math inline">\(0~\mathrm{mV}\)</span></td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td><span class="math inline">\(150~\mathrm{mV}\)</span></td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td><span class="math inline">\(300~\mathrm{mV}\)</span></td>
-<td>?</td>
-<td>?</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td><span class="math inline">\(450~\mathrm{mV}\)</span></td>
-<td>?</td>
-<td>?</td>
-</tr>
-</tbody>
-</table>
-<p>Luego responda:</p>
+<section id="preguntas-para-explorar" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Preguntas para explorar</h1>
 <ol type="1">
-<li>¿Cómo cambian <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span> al aumentar <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>?</li>
-<li>¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?</li>
-<li>¿Qué significa físicamente que la barrera <span class="math inline">\(\Delta G_c\)</span> disminuya?</li>
-<li>¿Por qué una barrera menor no implica ruptura irreversible inmediata?</li>
-<li>¿A partir de qué voltaje la barrera cae por debajo de <span class="math inline">\(5\,k_BT\)</span>?</li>
-<li>¿Qué diferencias conceptuales hay entre nucleación, expansión y daño irreversible?</li>
+<li>¿Qué ocurre con la barrera energética <span class="math inline">\(\Delta G_c\)</span> cuando aumenta <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>?</li>
+<li>¿Qué ocurre con el radio crítico <span class="math inline">\(r_c\)</span> cuando aumenta <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>?</li>
+<li>¿Por qué el término eléctrico depende de <span class="math inline">\(\left(V_m^{\mathrm{tot}}\right)^2\)</span> y no simplemente de <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>?</li>
+<li>¿Qué efecto tiene aumentar la energía de línea <span class="math inline">\(\gamma\)</span>?</li>
+<li>¿Qué efecto tiene aumentar la tensión superficial efectiva <span class="math inline">\(\Gamma\)</span>?</li>
+<li>¿Por qué una barrera energética alta hace menos probable la nucleación de un poro?</li>
+<li>Con los parámetros por defecto, ¿a qué voltaje aproximado la barrera <span class="math inline">\(\Delta G_c\)</span> cae por debajo de <span class="math inline">\(5\,k_BT\)</span>?</li>
+<li>¿Por qué este modelo no reproduce la segunda barrera de ruptura irreversible visible en la figura de referencia?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>💡 Pista — Actividad energía libre del poro
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Primero convierte todo al SI:</p>
-<p><span class="math display">\[
-\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}
-\qquad
-\Gamma = 10^{-3}~\mathrm{J/m^2}
-\qquad
-k = 0.556~\mathrm{F/m^2}
-\]</span></p>
-<p>Los voltajes también en V: <span class="math inline">\(150~\mathrm{mV} = 0.150~\mathrm{V}\)</span>, etc.</p>
-<p>Calcula primero el denominador <span class="math inline">\(A = \pi\Gamma + k V^2\)</span> para cada voltaje. Luego:</p>
-<p><span class="math display">\[
-r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
-\quad\rightarrow\quad
-r_c~\mathrm{[nm]} = r_c~\mathrm{[m]} \times 10^9
-\]</span></p>
-<p><span class="math display">\[
-\Delta G_c = \frac{\pi^2\gamma^2}{A}~\mathrm{[J]}
-\quad\rightarrow\quad
-\Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
-\]</span></p>
-<p>Observa cómo <span class="math inline">\(A\)</span> crece con <span class="math inline">\(V^2\)</span>: a mayor voltaje, mayor denominador, y por tanto menor <span class="math inline">\(r_c\)</span> y menor <span class="math inline">\(\Delta G_c\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>✓ Respuesta — Actividad energía libre del poro
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Parámetros en SI:</strong></p>
-<p><span class="math display">\[
-\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}, \quad
-\Gamma = 10^{-3}~\mathrm{J/m^2}, \quad
-k = 0.556~\mathrm{F/m^2}, \quad
-k_BT = 4.114 \times 10^{-21}~\mathrm{J}
-\]</span></p>
-<p><strong>Denominador:</strong> <span class="math inline">\(A = \pi\Gamma + k V^2\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Caso</th>
-<th><span class="math inline">\(V_m^{\mathrm{tot}}\)</span></th>
-<th><span class="math inline">\(A~[\mathrm{J/m^2}]\)</span></th>
-<th><span class="math inline">\(r_c~[\mathrm{nm}]\)</span></th>
-<th><span class="math inline">\(\Delta G_c~[k_BT]\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td><span class="math inline">\(0~\mathrm{mV}\)</span></td>
-<td><span class="math inline">\(3.14 \times 10^{-3}\)</span></td>
-<td><span class="math inline">\(9.20\)</span></td>
-<td><span class="math inline">\(64.6\)</span></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td><span class="math inline">\(150~\mathrm{mV}\)</span></td>
-<td><span class="math inline">\(1.566 \times 10^{-2}\)</span></td>
-<td><span class="math inline">\(1.847\)</span></td>
-<td><span class="math inline">\(13.0\)</span></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td><span class="math inline">\(300~\mathrm{mV}\)</span></td>
-<td><span class="math inline">\(5.135 \times 10^{-2}\)</span></td>
-<td><span class="math inline">\(0.544\)</span></td>
-<td><span class="math inline">\(3.82\)</span></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td><span class="math inline">\(450~\mathrm{mV}\)</span></td>
-<td><span class="math inline">\(1.128 \times 10^{-1}\)</span></td>
-<td><span class="math inline">\(0.250\)</span></td>
-<td><span class="math inline">\(1.75\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Respuestas:</strong></p>
-<ol type="1">
-<li><p>Al aumentar <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>, tanto <span class="math inline">\(r_c\)</span> como <span class="math inline">\(\Delta G_c\)</span> disminuyen progresivamente, porque el término <span class="math inline">\(kV^2\)</span> crece y aumenta el denominador <span class="math inline">\(A\)</span>.</p></li>
-<li><p>El término eléctrico es <span class="math inline">\(-kr^2V^2\)</span>. La energía almacenada en un campo eléctrico es proporcional a <span class="math inline">\(V^2\)</span> (como en un condensador). El efecto no depende del signo del voltaje, solo de su magnitud al cuadrado: <span class="math inline">\(+300~\mathrm{mV}\)</span> y <span class="math inline">\(-300~\mathrm{mV}\)</span> producen la misma reducción de barrera.</p></li>
-<li><p>Una barrera <span class="math inline">\(\Delta G_c\)</span> menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.</p></li>
-<li><p>La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía para expandirse sigue siendo desfavorable.</p></li>
-<li><p>Entre <span class="math inline">\(V = 300~\mathrm{mV}\)</span> y <span class="math inline">\(V = 150~\mathrm{mV}\)</span>: a <span class="math inline">\(300~\mathrm{mV}\)</span> la barrera ya es <span class="math inline">\(3.82\,k_BT\)</span>, por debajo de <span class="math inline">\(5\,k_BT\)</span>. A <span class="math inline">\(150~\mathrm{mV}\)</span> es <span class="math inline">\(13.0\,k_BT\)</span>, aún alta. El umbral de <span class="math inline">\(5\,k_BT\)</span> se cruza entre <span class="math inline">\(150~\mathrm{mV}\)</span> y <span class="math inline">\(300~\mathrm{mV}\)</span>.</p></li>
-<li><p><strong>Nucleación</strong>: formación del primer poro hidrofílico estable — superar <span class="math inline">\(\Delta G_c\)</span>. <strong>Expansión</strong>: crecimiento del radio una vez nucleado. <strong>Daño irreversible</strong>: expansión tan grande que la membrana no recupera su integridad — requiere superar la barrera de ruptura, que es mucho mayor a voltajes bajos (<span class="math inline">\(\sim 300\,k_BT\)</span> a <span class="math inline">\(0~\mathrm{mV}\)</span>).</p></li>
-</ol>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="alcance-y-limitaciones" class="level1" data-number="14">
 <h1 data-number="14"><span class="header-section-number">14</span> Alcance y limitaciones</h1>
@@ -2836,146 +2662,49 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-806"><a href="#cb10-806" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb10-807"><a href="#cb10-807" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-808"><a href="#cb10-808" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-809"><a href="#cb10-809" aria-hidden="true" tabindex="-1"></a><span class="fu"># Actividad: energía libre del poro</span></span>
+<span id="cb10-809"><a href="#cb10-809" aria-hidden="true" tabindex="-1"></a><span class="fu"># Preguntas para explorar</span></span>
 <span id="cb10-810"><a href="#cb10-810" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-811"><a href="#cb10-811" aria-hidden="true" tabindex="-1"></a>*Nivel: medio*</span>
-<span id="cb10-812"><a href="#cb10-812" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-813"><a href="#cb10-813" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contexto</span></span>
-<span id="cb10-814"><a href="#cb10-814" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-815"><a href="#cb10-815" aria-hidden="true" tabindex="-1"></a>Use el modelo simplificado con los parámetros de referencia justificados en este módulo:</span>
-<span id="cb10-816"><a href="#cb10-816" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-817"><a href="#cb10-817" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-818"><a href="#cb10-818" aria-hidden="true" tabindex="-1"></a>\gamma = 9.2~\mathrm{pN}</span>
-<span id="cb10-819"><a href="#cb10-819" aria-hidden="true" tabindex="-1"></a>\qquad</span>
-<span id="cb10-820"><a href="#cb10-820" aria-hidden="true" tabindex="-1"></a>\Gamma = 1~\mathrm{mN/m}</span>
-<span id="cb10-821"><a href="#cb10-821" aria-hidden="true" tabindex="-1"></a>\qquad</span>
-<span id="cb10-822"><a href="#cb10-822" aria-hidden="true" tabindex="-1"></a>k = 556~\mathrm{mF/m^2}</span>
-<span id="cb10-823"><a href="#cb10-823" aria-hidden="true" tabindex="-1"></a>\qquad</span>
-<span id="cb10-824"><a href="#cb10-824" aria-hidden="true" tabindex="-1"></a>T = 298~\mathrm{K}</span>
-<span id="cb10-825"><a href="#cb10-825" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-826"><a href="#cb10-826" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-827"><a href="#cb10-827" aria-hidden="true" tabindex="-1"></a>con $k_BT = 4.11 \times 10^{-21}~\mathrm{J}$.</span>
-<span id="cb10-828"><a href="#cb10-828" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-829"><a href="#cb10-829" aria-hidden="true" tabindex="-1"></a><span class="fu">## Procedimiento</span></span>
-<span id="cb10-830"><a href="#cb10-830" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-831"><a href="#cb10-831" aria-hidden="true" tabindex="-1"></a>Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para los siguientes voltajes y complete la tabla:</span>
-<span id="cb10-832"><a href="#cb10-832" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-833"><a href="#cb10-833" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $V_m^{\mathrm{tot}}$ <span class="pp">|</span> $r_c$ <span class="co">[</span><span class="ot">nm</span><span class="co">]</span> <span class="pp">|</span> $\Delta G_c$ <span class="co">[</span><span class="ot">$k_BT$</span><span class="co">]</span> <span class="pp">|</span></span>
-<span id="cb10-834"><a href="#cb10-834" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
-<span id="cb10-835"><a href="#cb10-835" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> $0~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
-<span id="cb10-836"><a href="#cb10-836" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> $150~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
-<span id="cb10-837"><a href="#cb10-837" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> $300~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
-<span id="cb10-838"><a href="#cb10-838" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> $450~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
-<span id="cb10-839"><a href="#cb10-839" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-840"><a href="#cb10-840" aria-hidden="true" tabindex="-1"></a>Luego responda:</span>
-<span id="cb10-841"><a href="#cb10-841" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-842"><a href="#cb10-842" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $V_m^{\mathrm{tot}}$?</span>
-<span id="cb10-843"><a href="#cb10-843" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?</span>
-<span id="cb10-844"><a href="#cb10-844" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>¿Qué significa físicamente que la barrera $\Delta G_c$ disminuya?</span>
-<span id="cb10-845"><a href="#cb10-845" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>¿Por qué una barrera menor no implica ruptura irreversible inmediata?</span>
-<span id="cb10-846"><a href="#cb10-846" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>¿A partir de qué voltaje la barrera cae por debajo de $5\,k_BT$?</span>
-<span id="cb10-847"><a href="#cb10-847" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>¿Qué diferencias conceptuales hay entre nucleación, expansión y daño irreversible?</span>
+<span id="cb10-811"><a href="#cb10-811" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>¿Qué ocurre con la barrera energética $\Delta G_c$ cuando aumenta $V_m^{\mathrm{tot}}$?</span>
+<span id="cb10-812"><a href="#cb10-812" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>¿Qué ocurre con el radio crítico $r_c$ cuando aumenta $V_m^{\mathrm{tot}}$?</span>
+<span id="cb10-813"><a href="#cb10-813" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>¿Por qué el término eléctrico depende de $\left(V_m^{\mathrm{tot}}\right)^2$ y no simplemente de $V_m^{\mathrm{tot}}$?</span>
+<span id="cb10-814"><a href="#cb10-814" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>¿Qué efecto tiene aumentar la energía de línea $\gamma$?</span>
+<span id="cb10-815"><a href="#cb10-815" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>¿Qué efecto tiene aumentar la tensión superficial efectiva $\Gamma$?</span>
+<span id="cb10-816"><a href="#cb10-816" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>¿Por qué una barrera energética alta hace menos probable la nucleación de un poro?</span>
+<span id="cb10-817"><a href="#cb10-817" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Con los parámetros por defecto, ¿a qué voltaje aproximado la barrera $\Delta G_c$ cae por debajo de $5\,k_BT$?</span>
+<span id="cb10-818"><a href="#cb10-818" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>¿Por qué este modelo no reproduce la segunda barrera de ruptura irreversible visible en la figura de referencia?</span>
+<span id="cb10-819"><a href="#cb10-819" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-820"><a href="#cb10-820" aria-hidden="true" tabindex="-1"></a><span class="fu"># Alcance y limitaciones</span></span>
+<span id="cb10-821"><a href="#cb10-821" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-822"><a href="#cb10-822" aria-hidden="true" tabindex="-1"></a>Este modelo energético es útil para construir intuición biofísica, pero es una representación mínima. No describe de manera completa todos los procesos moleculares involucrados en la electroporación.</span>
+<span id="cb10-823"><a href="#cb10-823" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-824"><a href="#cb10-824" aria-hidden="true" tabindex="-1"></a>Entre sus limitaciones principales están:</span>
+<span id="cb10-825"><a href="#cb10-825" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-826"><a href="#cb10-826" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>supone una geometría idealizada del poro (cilíndrico, radio uniforme);</span>
+<span id="cb10-827"><a href="#cb10-827" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>agrupa efectos eléctricos complejos en un solo coeficiente efectivo $k$;</span>
+<span id="cb10-828"><a href="#cb10-828" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no describe la transición hidrofóbico–hidrofílico como una barrera separada;</span>
+<span id="cb10-829"><a href="#cb10-829" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no incluye fluctuaciones térmicas de manera estocástica;</span>
+<span id="cb10-830"><a href="#cb10-830" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no reproduce la barrera de ruptura irreversible a voltajes bajos;</span>
+<span id="cb10-831"><a href="#cb10-831" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no incluye composición lipídica específica ni proteínas de membrana;</span>
+<span id="cb10-832"><a href="#cb10-832" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no describe la dinámica molecular detallada de formación y cierre del poro;</span>
+<span id="cb10-833"><a href="#cb10-833" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no representa explícitamente cambios de conductancia durante la permeabilización.</span>
+<span id="cb10-834"><a href="#cb10-834" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-835"><a href="#cb10-835" aria-hidden="true" tabindex="-1"></a>Por tanto, debe usarse como una herramienta conceptual para entender cómo el voltaje transmembrana puede modificar la barrera energética de formación del poro.</span>
+<span id="cb10-836"><a href="#cb10-836" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-837"><a href="#cb10-837" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ideas clave</span></span>
+<span id="cb10-838"><a href="#cb10-838" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-839"><a href="#cb10-839" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La energía libre de Gibbs permite evaluar la dirección espontánea de procesos a temperatura y presión constantes.</span>
+<span id="cb10-840"><a href="#cb10-840" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La formación de un poro puede representarse mediante un paisaje energético $\Delta G(r)$.</span>
+<span id="cb10-841"><a href="#cb10-841" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término de borde $2\pi r\gamma$ penaliza la formación inicial del poro; $\gamma$ es la energía de línea del borde hidrofílico.</span>
+<span id="cb10-842"><a href="#cb10-842" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término de tensión $-\pi r^2\Gamma$ favorece la expansión del poro; $\Gamma$ es la tensión superficial de la membrana.</span>
+<span id="cb10-843"><a href="#cb10-843" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término eléctrico $-k r^2 (V_m^{\mathrm{tot}})^2$ refleja la ganancia energética dieléctrica al sustituir lípido por agua en el poro.</span>
+<span id="cb10-844"><a href="#cb10-844" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El coeficiente $k$ puede estimarse desde la permitividad del agua y el grosor de membrana: $k \approx \pi(\varepsilon_w - \varepsilon_m)\varepsilon_0/d_m \approx 556\,\text{mF/m}^2$.</span>
+<span id="cb10-845"><a href="#cb10-845" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El voltaje transmembrana reduce tanto el radio crítico $r_c$ como la barrera $\Delta G_c$.</span>
+<span id="cb10-846"><a href="#cb10-846" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas, haciendo la nucleación probable.</span>
+<span id="cb10-847"><a href="#cb10-847" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La electroporación debe interpretarse como una transición estructural favorecida por el campo, no como una ruptura mecánica simple.</span>
 <span id="cb10-848"><a href="#cb10-848" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-849"><a href="#cb10-849" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb10-850"><a href="#cb10-850" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Pista — Actividad energía libre del poro</span></span>
-<span id="cb10-851"><a href="#cb10-851" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-852"><a href="#cb10-852" aria-hidden="true" tabindex="-1"></a>Primero convierte todo al SI:</span>
-<span id="cb10-853"><a href="#cb10-853" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-854"><a href="#cb10-854" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-855"><a href="#cb10-855" aria-hidden="true" tabindex="-1"></a>\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}</span>
-<span id="cb10-856"><a href="#cb10-856" aria-hidden="true" tabindex="-1"></a>\qquad</span>
-<span id="cb10-857"><a href="#cb10-857" aria-hidden="true" tabindex="-1"></a>\Gamma = 10^{-3}~\mathrm{J/m^2}</span>
-<span id="cb10-858"><a href="#cb10-858" aria-hidden="true" tabindex="-1"></a>\qquad</span>
-<span id="cb10-859"><a href="#cb10-859" aria-hidden="true" tabindex="-1"></a>k = 0.556~\mathrm{F/m^2}</span>
-<span id="cb10-860"><a href="#cb10-860" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-861"><a href="#cb10-861" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-862"><a href="#cb10-862" aria-hidden="true" tabindex="-1"></a>Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.</span>
-<span id="cb10-863"><a href="#cb10-863" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-864"><a href="#cb10-864" aria-hidden="true" tabindex="-1"></a>Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego:</span>
-<span id="cb10-865"><a href="#cb10-865" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-866"><a href="#cb10-866" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-867"><a href="#cb10-867" aria-hidden="true" tabindex="-1"></a>r_c = \frac{\pi\gamma}{A}~\mathrm{<span class="co">[</span><span class="ot">m</span><span class="co">]</span>}</span>
-<span id="cb10-868"><a href="#cb10-868" aria-hidden="true" tabindex="-1"></a>\quad\rightarrow\quad</span>
-<span id="cb10-869"><a href="#cb10-869" aria-hidden="true" tabindex="-1"></a>r_c~\mathrm{<span class="co">[</span><span class="ot">nm</span><span class="co">]</span>} = r_c~\mathrm{<span class="co">[</span><span class="ot">m</span><span class="co">]</span>} \times 10^9</span>
-<span id="cb10-870"><a href="#cb10-870" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-871"><a href="#cb10-871" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-872"><a href="#cb10-872" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-873"><a href="#cb10-873" aria-hidden="true" tabindex="-1"></a>\Delta G_c = \frac{\pi^2\gamma^2}{A}~\mathrm{<span class="co">[</span><span class="ot">J</span><span class="co">]</span>}</span>
-<span id="cb10-874"><a href="#cb10-874" aria-hidden="true" tabindex="-1"></a>\quad\rightarrow\quad</span>
-<span id="cb10-875"><a href="#cb10-875" aria-hidden="true" tabindex="-1"></a>\Delta G_c~<span class="co">[</span><span class="ot">k_BT</span><span class="co">]</span> = \frac{\Delta G_c~\mathrm{<span class="co">[</span><span class="ot">J</span><span class="co">]</span>}}{k_BT}</span>
-<span id="cb10-876"><a href="#cb10-876" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-877"><a href="#cb10-877" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-878"><a href="#cb10-878" aria-hidden="true" tabindex="-1"></a>Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador, y por tanto menor $r_c$ y menor $\Delta G_c$.</span>
-<span id="cb10-879"><a href="#cb10-879" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-880"><a href="#cb10-880" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-881"><a href="#cb10-881" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
-<span id="cb10-882"><a href="#cb10-882" aria-hidden="true" tabindex="-1"></a><span class="fu">## ✓ Respuesta — Actividad energía libre del poro</span></span>
-<span id="cb10-883"><a href="#cb10-883" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-884"><a href="#cb10-884" aria-hidden="true" tabindex="-1"></a>**Parámetros en SI:**</span>
-<span id="cb10-885"><a href="#cb10-885" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-886"><a href="#cb10-886" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-887"><a href="#cb10-887" aria-hidden="true" tabindex="-1"></a>\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}, \quad</span>
-<span id="cb10-888"><a href="#cb10-888" aria-hidden="true" tabindex="-1"></a>\Gamma = 10^{-3}~\mathrm{J/m^2}, \quad</span>
-<span id="cb10-889"><a href="#cb10-889" aria-hidden="true" tabindex="-1"></a>k = 0.556~\mathrm{F/m^2}, \quad</span>
-<span id="cb10-890"><a href="#cb10-890" aria-hidden="true" tabindex="-1"></a>k_BT = 4.114 \times 10^{-21}~\mathrm{J}</span>
-<span id="cb10-891"><a href="#cb10-891" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-892"><a href="#cb10-892" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-893"><a href="#cb10-893" aria-hidden="true" tabindex="-1"></a>**Denominador:** $A = \pi\Gamma + k V^2$</span>
-<span id="cb10-894"><a href="#cb10-894" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-895"><a href="#cb10-895" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $V_m^{\mathrm{tot}}$ <span class="pp">|</span> $A~<span class="co">[</span><span class="ot">\mathrm{J/m^2}</span><span class="co">]</span>$ <span class="pp">|</span> $r_c~<span class="co">[</span><span class="ot">\mathrm{nm}</span><span class="co">]</span>$ <span class="pp">|</span> $\Delta G_c~<span class="co">[</span><span class="ot">k_BT</span><span class="co">]</span>$ <span class="pp">|</span></span>
-<span id="cb10-896"><a href="#cb10-896" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|---|</span></span>
-<span id="cb10-897"><a href="#cb10-897" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> $0~\mathrm{mV}$ <span class="pp">|</span> $3.14 \times 10^{-3}$ <span class="pp">|</span> $9.20$ <span class="pp">|</span> $64.6$ <span class="pp">|</span></span>
-<span id="cb10-898"><a href="#cb10-898" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> $150~\mathrm{mV}$ <span class="pp">|</span> $1.566 \times 10^{-2}$ <span class="pp">|</span> $1.847$ <span class="pp">|</span> $13.0$ <span class="pp">|</span></span>
-<span id="cb10-899"><a href="#cb10-899" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> $300~\mathrm{mV}$ <span class="pp">|</span> $5.135 \times 10^{-2}$ <span class="pp">|</span> $0.544$ <span class="pp">|</span> $3.82$ <span class="pp">|</span></span>
-<span id="cb10-900"><a href="#cb10-900" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> $450~\mathrm{mV}$ <span class="pp">|</span> $1.128 \times 10^{-1}$ <span class="pp">|</span> $0.250$ <span class="pp">|</span> $1.75$ <span class="pp">|</span></span>
-<span id="cb10-901"><a href="#cb10-901" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-902"><a href="#cb10-902" aria-hidden="true" tabindex="-1"></a>**Respuestas:**</span>
-<span id="cb10-903"><a href="#cb10-903" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-904"><a href="#cb10-904" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.</span>
-<span id="cb10-905"><a href="#cb10-905" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-906"><a href="#cb10-906" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>El término eléctrico es $-kr^2V^2$. La energía almacenada en un campo eléctrico es proporcional a $V^2$ (como en un condensador). El efecto no depende del signo del voltaje, solo de su magnitud al cuadrado: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.</span>
-<span id="cb10-907"><a href="#cb10-907" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-908"><a href="#cb10-908" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.</span>
-<span id="cb10-909"><a href="#cb10-909" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-910"><a href="#cb10-910" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía para expandirse sigue siendo desfavorable.</span>
-<span id="cb10-911"><a href="#cb10-911" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-912"><a href="#cb10-912" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Entre $V = 300~\mathrm{mV}$ y $V = 150~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta. El umbral de $5\,k_BT$ se cruza entre $150~\mathrm{mV}$ y $300~\mathrm{mV}$.</span>
-<span id="cb10-913"><a href="#cb10-913" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-914"><a href="#cb10-914" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la membrana no recupera su integridad — requiere superar la barrera de ruptura, que es mucho mayor a voltajes bajos ($\sim 300\,k_BT$ a $0~\mathrm{mV}$).</span>
-<span id="cb10-915"><a href="#cb10-915" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb10-916"><a href="#cb10-916" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-917"><a href="#cb10-917" aria-hidden="true" tabindex="-1"></a><span class="fu"># Alcance y limitaciones</span></span>
-<span id="cb10-918"><a href="#cb10-918" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-919"><a href="#cb10-919" aria-hidden="true" tabindex="-1"></a>Este modelo energético es útil para construir intuición biofísica, pero es una representación mínima. No describe de manera completa todos los procesos moleculares involucrados en la electroporación.</span>
-<span id="cb10-920"><a href="#cb10-920" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-921"><a href="#cb10-921" aria-hidden="true" tabindex="-1"></a>Entre sus limitaciones principales están:</span>
-<span id="cb10-922"><a href="#cb10-922" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-923"><a href="#cb10-923" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>supone una geometría idealizada del poro (cilíndrico, radio uniforme);</span>
-<span id="cb10-924"><a href="#cb10-924" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>agrupa efectos eléctricos complejos en un solo coeficiente efectivo $k$;</span>
-<span id="cb10-925"><a href="#cb10-925" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no describe la transición hidrofóbico–hidrofílico como una barrera separada;</span>
-<span id="cb10-926"><a href="#cb10-926" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no incluye fluctuaciones térmicas de manera estocástica;</span>
-<span id="cb10-927"><a href="#cb10-927" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no reproduce la barrera de ruptura irreversible a voltajes bajos;</span>
-<span id="cb10-928"><a href="#cb10-928" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no incluye composición lipídica específica ni proteínas de membrana;</span>
-<span id="cb10-929"><a href="#cb10-929" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no describe la dinámica molecular detallada de formación y cierre del poro;</span>
-<span id="cb10-930"><a href="#cb10-930" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>no representa explícitamente cambios de conductancia durante la permeabilización.</span>
-<span id="cb10-931"><a href="#cb10-931" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-932"><a href="#cb10-932" aria-hidden="true" tabindex="-1"></a>Por tanto, debe usarse como una herramienta conceptual para entender cómo el voltaje transmembrana puede modificar la barrera energética de formación del poro.</span>
-<span id="cb10-933"><a href="#cb10-933" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-934"><a href="#cb10-934" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ideas clave</span></span>
-<span id="cb10-935"><a href="#cb10-935" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-936"><a href="#cb10-936" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La energía libre de Gibbs permite evaluar la dirección espontánea de procesos a temperatura y presión constantes.</span>
-<span id="cb10-937"><a href="#cb10-937" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La formación de un poro puede representarse mediante un paisaje energético $\Delta G(r)$.</span>
-<span id="cb10-938"><a href="#cb10-938" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término de borde $2\pi r\gamma$ penaliza la formación inicial del poro; $\gamma$ es la energía de línea del borde hidrofílico.</span>
-<span id="cb10-939"><a href="#cb10-939" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término de tensión $-\pi r^2\Gamma$ favorece la expansión del poro; $\Gamma$ es la tensión superficial de la membrana.</span>
-<span id="cb10-940"><a href="#cb10-940" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El término eléctrico $-k r^2 (V_m^{\mathrm{tot}})^2$ refleja la ganancia energética dieléctrica al sustituir lípido por agua en el poro.</span>
-<span id="cb10-941"><a href="#cb10-941" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El coeficiente $k$ puede estimarse desde la permitividad del agua y el grosor de membrana: $k \approx \pi(\varepsilon_w - \varepsilon_m)\varepsilon_0/d_m \approx 556\,\text{mF/m}^2$.</span>
-<span id="cb10-942"><a href="#cb10-942" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El voltaje transmembrana reduce tanto el radio crítico $r_c$ como la barrera $\Delta G_c$.</span>
-<span id="cb10-943"><a href="#cb10-943" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas, haciendo la nucleación probable.</span>
-<span id="cb10-944"><a href="#cb10-944" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La electroporación debe interpretarse como una transición estructural favorecida por el campo, no como una ruptura mecánica simple.</span>
-<span id="cb10-945"><a href="#cb10-945" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-946"><a href="#cb10-946" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
-<span id="cb10-947"><a href="#cb10-947" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-948"><a href="#cb10-948" aria-hidden="true" tabindex="-1"></a>Ver @Weaver1996, @Bockmann2008, @Kotnik2019, @Kotulska2007, @Antonov2009 y @Rems2017.</span>
+<span id="cb10-849"><a href="#cb10-849" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias</span></span>
+<span id="cb10-850"><a href="#cb10-850" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-851"><a href="#cb10-851" aria-hidden="true" tabindex="-1"></a>Ver @Weaver1996, @Bockmann2008, @Kotnik2019, @Kotulska2007, @Antonov2009 y @Rems2017.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

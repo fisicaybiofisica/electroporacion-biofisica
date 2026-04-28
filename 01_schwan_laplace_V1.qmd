@@ -702,7 +702,7 @@ Use los controles deslizantes para modificar:
 - el campo eléctrico externo $E_0$, expresado en kV/m;
 - el umbral de referencia, expresado en voltios.
 
-La gráfica muestra $\Delta V_m^{\mathrm{ind}}$ en función del ángulo polar $\theta$. **El tramo naranja** indica las regiones angulares donde la magnitud del voltaje inducido supera el umbral seleccionado — es decir, las zonas de la membrana potencialmente más susceptibles a permeabilización bajo ese estímulo.
+La gráfica muestra $\Delta V_m^{\mathrm{ind}}$ en función del ángulo polar $\theta$. Las secciones resaltadas en color indican las regiones donde la magnitud del voltaje inducido supera el umbral seleccionado.
 :::
 
 ## Panel interactivo
@@ -722,10 +722,6 @@ viewof radio_um = Inputs.range(
     label: "Radio celular a [µm]"
   }
 )
-```
-
-```{ojs}
-//| echo: false
 
 viewof campo_kVm = Inputs.range(
   [10, 300],
@@ -735,10 +731,6 @@ viewof campo_kVm = Inputs.range(
     label: "Campo externo E₀ [kV/m]"
   }
 )
-```
-
-```{ojs}
-//| echo: false
 
 viewof umbral_V = Inputs.range(
   [0.1, 3.0],
@@ -807,8 +799,8 @@ html`
 //| echo: false
 
 Plot.plot({
-  width: 500,
-  height: 420,
+  width: 760,
+  height: 460,
   marginLeft: 75,
   marginRight: 25,
   marginTop: 25,
@@ -1002,90 +994,3 @@ interact(
 3. ¿Por qué el voltaje inducido se anula cerca del ecuador?
 4. ¿Para qué combinaciones de $a$ y $E_0$ se supera un umbral de $1\,\text{V}$?
 5. ¿Qué regiones de la célula serían más propensas a iniciar permeabilización?
-
----
-
-# Actividad: ecuación de Schwan
-
-*Nivel: básico*
-
-## Contexto
-
-Para una célula aproximadamente esférica de radio $a = 10~\mu\mathrm{m}$ en el polo celular ($\theta = 0$, $\cos\theta = 1$):
-
-$$
-\Delta V_m^{\mathrm{ind}} = 1.5\,a\,E_0
-$$
-
-## Procedimiento
-
-Calcule $\Delta V_m^{\mathrm{ind}}$ en el polo para los siguientes campos eléctricos y complete la tabla:
-
-| Caso | $E_0$ | $\Delta V_m^{\mathrm{ind}}$ |
-|---|---|---|
-| 1 | $0.2~\mathrm{kV/cm}$ | ? |
-| 2 | $0.5~\mathrm{kV/cm}$ | ? |
-| 3 | $1.0~\mathrm{kV/cm}$ | ? |
-| 4 | $1.5~\mathrm{kV/cm}$ | ? |
-| 5 | $2.0~\mathrm{kV/cm}$ | ? |
-
-Luego responda:
-
-1. ¿Para qué valores de $E_0$ se supera $\Delta V_m^{\mathrm{ind}} = 1~\mathrm{V}$?
-2. ¿Por qué una célula más grande alcanza mayor voltaje inducido bajo el mismo campo?
-3. Si el radio fuera $a = 5~\mu\mathrm{m}$, ¿qué campo se necesitaría para obtener $1.5~\mathrm{V}$?
-4. ¿Por qué el voltaje es máximo en los polos y nulo en el ecuador?
-
-::: {.callout-tip collapse="true"}
-## 💡 Pista — Actividad ecuación de Schwan
-
-La clave está en las unidades. La ecuación usa metros y V/m, pero los datos están en $\mu$m y kV/cm. Convierte antes de sustituir:
-
-$$
-1~\mu\mathrm{m} = 10^{-6}~\mathrm{m}
-\qquad
-1~\mathrm{kV/cm} = \frac{10^3~\mathrm{V}}{10^{-2}~\mathrm{m}} = 10^5~\mathrm{V/m}
-$$
-
-La ecuación es **lineal** en $a$ y en $E_0$: si uno se duplica, $\Delta V_m^{\mathrm{ind}}$ se duplica. Usa eso para predecir antes de calcular.
-
-El factor $\cos\theta$ vale $1$ en los polos ($\theta = 0$) y $0$ en el ecuador ($\theta = \pi/2$).
-:::
-
-::: {.callout-note collapse="true"}
-## ✓ Respuesta — Actividad ecuación de Schwan
-
-**Conversión de unidades:**
-
-$$
-a = 10~\mu\mathrm{m} = 10^{-5}~\mathrm{m}
-\qquad
-1~\mathrm{kV/cm} = 10^5~\mathrm{V/m}
-$$
-
-**Tabla de resultados** ($\Delta V_m^{\mathrm{ind}} = 1.5 \times 10^{-5} \times E_0$):
-
-| Caso | $E_0$ | $E_0$ [V/m] | $\Delta V_m^{\mathrm{ind}}$ |
-|---|---|---|---|
-| 1 | $0.2~\mathrm{kV/cm}$ | $2.0\times10^4$ | $0.300~\mathrm{V}$ |
-| 2 | $0.5~\mathrm{kV/cm}$ | $5.0\times10^4$ | $0.750~\mathrm{V}$ |
-| 3 | $1.0~\mathrm{kV/cm}$ | $1.0\times10^5$ | $1.500~\mathrm{V}$ |
-| 4 | $1.5~\mathrm{kV/cm}$ | $1.5\times10^5$ | $2.250~\mathrm{V}$ |
-| 5 | $2.0~\mathrm{kV/cm}$ | $2.0\times10^5$ | $3.000~\mathrm{V}$ |
-
-**Respuestas:**
-
-1. El umbral de $1~\mathrm{V}$ se supera a partir de $E_0 = 1.0~\mathrm{kV/cm}$ (casos 3, 4 y 5).
-
-2. La ecuación es lineal en $a$: $\Delta V_m^{\mathrm{ind}} \propto a$. Una célula más grande separa más sus polos del centro geométrico bajo el mismo campo, acumulando mayor diferencia de potencial.
-
-3. Con $a = 5~\mu\mathrm{m}$, el voltaje se reduce a la mitad. Para obtener $1.5~\mathrm{V}$:
-$$E_0 = \frac{1.5}{1.5 \times 5\times10^{-6}} = 2.0~\mathrm{kV/cm}$$
-Es decir, el campo debe duplicarse.
-
-4. El factor $\cos\theta$ vale $1$ en los polos ($\theta=0$) y $0$ en el ecuador ($\theta=\pi/2$). La polarización dipolar inducida por el campo externo es máxima donde el campo es perpendicular a la membrana — que es precisamente en los polos.
-:::
-
-# Referencias
-
-Ver @Kotnik2000, @Bilska2000 y @Kotnik2019.

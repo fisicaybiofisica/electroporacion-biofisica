@@ -790,113 +790,16 @@ interact(
 )
 ```
 
-# Actividad: energía libre del poro
+# Preguntas para explorar
 
-*Nivel: medio*
-
-## Contexto
-
-Use el modelo simplificado con los parámetros de referencia justificados en este módulo:
-
-$$
-\gamma = 9.2~\mathrm{pN}
-\qquad
-\Gamma = 1~\mathrm{mN/m}
-\qquad
-k = 556~\mathrm{mF/m^2}
-\qquad
-T = 298~\mathrm{K}
-$$
-
-con $k_BT = 4.11 \times 10^{-21}~\mathrm{J}$.
-
-## Procedimiento
-
-Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para los siguientes voltajes y complete la tabla:
-
-| Caso | $V_m^{\mathrm{tot}}$ | $r_c$ [nm] | $\Delta G_c$ [$k_BT$] |
-|---|---|---|---|
-| 1 | $0~\mathrm{mV}$ | ? | ? |
-| 2 | $150~\mathrm{mV}$ | ? | ? |
-| 3 | $300~\mathrm{mV}$ | ? | ? |
-| 4 | $450~\mathrm{mV}$ | ? | ? |
-
-Luego responda:
-
-1. ¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $V_m^{\mathrm{tot}}$?
-2. ¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?
-3. ¿Qué significa físicamente que la barrera $\Delta G_c$ disminuya?
-4. ¿Por qué una barrera menor no implica ruptura irreversible inmediata?
-5. ¿A partir de qué voltaje la barrera cae por debajo de $5\,k_BT$?
-6. ¿Qué diferencias conceptuales hay entre nucleación, expansión y daño irreversible?
-
-::: {.callout-tip collapse="true"}
-## 💡 Pista — Actividad energía libre del poro
-
-Primero convierte todo al SI:
-
-$$
-\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}
-\qquad
-\Gamma = 10^{-3}~\mathrm{J/m^2}
-\qquad
-k = 0.556~\mathrm{F/m^2}
-$$
-
-Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.
-
-Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego:
-
-$$
-r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
-\quad\rightarrow\quad
-r_c~\mathrm{[nm]} = r_c~\mathrm{[m]} \times 10^9
-$$
-
-$$
-\Delta G_c = \frac{\pi^2\gamma^2}{A}~\mathrm{[J]}
-\quad\rightarrow\quad
-\Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
-$$
-
-Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador, y por tanto menor $r_c$ y menor $\Delta G_c$.
-:::
-
-::: {.callout-note collapse="true"}
-## ✓ Respuesta — Actividad energía libre del poro
-
-**Parámetros en SI:**
-
-$$
-\gamma = 9.2 \times 10^{-12}~\mathrm{J/m}, \quad
-\Gamma = 10^{-3}~\mathrm{J/m^2}, \quad
-k = 0.556~\mathrm{F/m^2}, \quad
-k_BT = 4.114 \times 10^{-21}~\mathrm{J}
-$$
-
-**Denominador:** $A = \pi\Gamma + k V^2$
-
-| Caso | $V_m^{\mathrm{tot}}$ | $A~[\mathrm{J/m^2}]$ | $r_c~[\mathrm{nm}]$ | $\Delta G_c~[k_BT]$ |
-|---|---|---|---|---|
-| 1 | $0~\mathrm{mV}$ | $3.14 \times 10^{-3}$ | $9.20$ | $64.6$ |
-| 2 | $150~\mathrm{mV}$ | $1.566 \times 10^{-2}$ | $1.847$ | $13.0$ |
-| 3 | $300~\mathrm{mV}$ | $5.135 \times 10^{-2}$ | $0.544$ | $3.82$ |
-| 4 | $450~\mathrm{mV}$ | $1.128 \times 10^{-1}$ | $0.250$ | $1.75$ |
-
-**Respuestas:**
-
-1. Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.
-
-2. El término eléctrico es $-kr^2V^2$. La energía almacenada en un campo eléctrico es proporcional a $V^2$ (como en un condensador). El efecto no depende del signo del voltaje, solo de su magnitud al cuadrado: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.
-
-3. Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.
-
-4. La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía para expandirse sigue siendo desfavorable.
-
-5. Entre $V = 300~\mathrm{mV}$ y $V = 150~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta. El umbral de $5\,k_BT$ se cruza entre $150~\mathrm{mV}$ y $300~\mathrm{mV}$.
-
-6. **Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la membrana no recupera su integridad — requiere superar la barrera de ruptura, que es mucho mayor a voltajes bajos ($\sim 300\,k_BT$ a $0~\mathrm{mV}$).
-:::
+1. ¿Qué ocurre con la barrera energética $\Delta G_c$ cuando aumenta $V_m^{\mathrm{tot}}$?
+2. ¿Qué ocurre con el radio crítico $r_c$ cuando aumenta $V_m^{\mathrm{tot}}$?
+3. ¿Por qué el término eléctrico depende de $\left(V_m^{\mathrm{tot}}\right)^2$ y no simplemente de $V_m^{\mathrm{tot}}$?
+4. ¿Qué efecto tiene aumentar la energía de línea $\gamma$?
+5. ¿Qué efecto tiene aumentar la tensión superficial efectiva $\Gamma$?
+6. ¿Por qué una barrera energética alta hace menos probable la nucleación de un poro?
+7. Con los parámetros por defecto, ¿a qué voltaje aproximado la barrera $\Delta G_c$ cae por debajo de $5\,k_BT$?
+8. ¿Por qué este modelo no reproduce la segunda barrera de ruptura irreversible visible en la figura de referencia?
 
 # Alcance y limitaciones
 
