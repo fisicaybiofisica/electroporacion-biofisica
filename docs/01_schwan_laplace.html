@@ -353,17 +353,17 @@ f \approx 1.5
 <td>m</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\phi\)</span></td>
+<td><span class="math inline">\(\Phi\)</span></td>
 <td>Potencial eléctrico</td>
 <td>V</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\phi_e(r,\theta)\)</span></td>
+<td><span class="math inline">\(\Phi_e(r,\theta)\)</span></td>
 <td>Potencial eléctrico en la región exterior</td>
 <td>V</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\phi_i(r,\theta)\)</span></td>
+<td><span class="math inline">\(\Phi_i(r,\theta)\)</span></td>
 <td>Potencial eléctrico en la región interior</td>
 <td>V</td>
 </tr>
@@ -413,27 +413,27 @@ Figura&nbsp;1: Geometría básica empleada en la deducción de la ecuación de S
 <h1 data-number="5"><span class="header-section-number">5</span> Ecuación de Laplace</h1>
 <p>En una región conductora sin acumulación volumétrica de carga libre, el potencial eléctrico satisface la ecuación de Laplace:</p>
 <p><span class="math display">\[
-\nabla^2 \phi = 0
+\nabla^2 \Phi = 0
 \]</span></p>
 <p>Como el problema tiene simetría axial, el potencial depende de <span class="math inline">\(r\)</span> y <span class="math inline">\(\theta\)</span>, pero no del ángulo azimutal. En coordenadas esféricas, para un problema sin dependencia azimutal, la ecuación de Laplace se escribe como:</p>
 <p><span class="math display">\[
 \frac{1}{r^2}
 \frac{\partial}{\partial r}
 \left(
-r^2\frac{\partial \phi}{\partial r}
+r^2\frac{\partial \Phi}{\partial r}
 \right)
 +
 \frac{1}{r^2\sin\theta}
 \frac{\partial}{\partial \theta}
 \left(
 \sin\theta
-\frac{\partial \phi}{\partial \theta}
+\frac{\partial \Phi}{\partial \theta}
 \right)
 =0
 \]</span></p>
 <p>El campo externo uniforme impone una dependencia angular proporcional a <span class="math inline">\(\cos\theta\)</span>. Por esta razón, para el modo dipolar dominante, se buscan soluciones de la forma:</p>
 <p><span class="math display">\[
-\phi(r,\theta)=R(r)\cos\theta
+\Phi(r,\theta)=R(r)\cos\theta
 \]</span></p>
 <p>Al sustituir esta forma en la ecuación de Laplace se obtiene una ecuación radial cuya solución general para el término dipolar es:</p>
 <p><span class="math display">\[
@@ -441,7 +441,7 @@ R(r)=C_1 r+\frac{C_2}{r^2}
 \]</span></p>
 <p>Por tanto, la solución dipolar general puede escribirse como:</p>
 <p><span class="math display">\[
-\phi(r,\theta)
+\Phi(r,\theta)
 =
 \left(
 C_1 r+\frac{C_2}{r^2}
@@ -458,11 +458,11 @@ C_1 r+\frac{C_2}{r^2}
 <p>En la región exterior a la célula, el potencial debe parecerse al de un campo uniforme cuando estamos lejos de la célula.</p>
 <p>Si el campo externo uniforme apunta a lo largo del eje polar, el potencial lejano puede escribirse como:</p>
 <p><span class="math display">\[
-\phi_{\infty}(r,\theta)=-E_0 r\cos\theta
+\Phi_{\infty}(r,\theta)=-E_0 r\cos\theta
 \]</span></p>
 <p>Por tanto, una forma compatible con el campo uniforme lejano es:</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -485,7 +485,7 @@ C_1 r+\frac{C_2}{r^2}
 <p>En la región interior, la solución debe permanecer finita en <span class="math inline">\(r=0\)</span>. Por esa razón, se descarta el término proporcional a <span class="math inline">\(1/r^2\)</span>, pues diverge en el origen.</p>
 <p>La solución interior se escribe como:</p>
 <p><span class="math display">\[
-\phi_i(r,\theta)
+\Phi_i(r,\theta)
 =
 -B\,r\cos\theta+C,
 \qquad r\le a
@@ -501,7 +501,7 @@ C_1 r+\frac{C_2}{r^2}
 <img src="figures/ep_schwan_condiciones_frontera.png" class="img-fluid figure-img" style="width:95.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schwan-frontera-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2: Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio <span class="math inline">\(a\)</span> inmersa en un campo eléctrico uniforme <span class="math inline">\(E_0\)</span>, con una región interior descrita por <span class="math inline">\(\phi_i(r,\theta)\)</span> y una región exterior descrita por <span class="math inline">\(\phi_e(r,\theta)\)</span>. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.
+Figura&nbsp;2: Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio <span class="math inline">\(a\)</span> inmersa en un campo eléctrico uniforme <span class="math inline">\(E_0\)</span>, con una región interior descrita por <span class="math inline">\(\Phi_i(r,\theta)\)</span> y una región exterior descrita por <span class="math inline">\(\Phi_e(r,\theta)\)</span>. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.
 </figcaption>
 </figure>
 </div>
@@ -509,7 +509,7 @@ Figura&nbsp;2: Dominio físico y condiciones de frontera empleadas en la deducci
 <h2 data-number="8.1" class="anchored" data-anchor-id="condición-1-campo-uniforme-lejos-de-la-célula"><span class="header-section-number">8.1</span> Condición 1: campo uniforme lejos de la célula</h2>
 <p>Lejos de la célula, el potencial exterior debe tender al potencial del campo uniforme aplicado:</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)\to -E_0 r\cos\theta
+\Phi_e(r,\theta)\to -E_0 r\cos\theta
 \qquad
 \text{cuando}
 \qquad
@@ -517,7 +517,7 @@ r\to\infty
 \]</span></p>
 <p>Esta condición ya está incorporada en la expresión:</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -529,15 +529,15 @@ r\to\infty
 <h2 data-number="8.2" class="anchored" data-anchor-id="condición-2-interior-aproximadamente-equipotencial"><span class="header-section-number">8.2</span> Condición 2: interior aproximadamente equipotencial</h2>
 <p>En el límite cuasiestacionario y para una membrana poco conductora, el interior celular se aproxima como equipotencial. Esto significa que el campo eléctrico interno es pequeño:</p>
 <p><span class="math display">\[
-\mathbf{E}_i=-\nabla\phi_i\approx 0
+\mathbf{E}_i=-\nabla\Phi_i\approx 0
 \]</span></p>
 <p>Por tanto, el potencial interior se aproxima como una constante:</p>
 <p><span class="math display">\[
-\phi_i(r,\theta)\approx C
+\Phi_i(r,\theta)\approx C
 \]</span></p>
 <p>Comparando con la forma general interior,</p>
 <p><span class="math display">\[
-\phi_i(r,\theta)
+\Phi_i(r,\theta)
 =
 -B\,r\cos\theta+C
 \]</span></p>
@@ -547,7 +547,7 @@ B\approx 0
 \]</span></p>
 <p>Entonces,</p>
 <p><span class="math display">\[
-\phi_i(r,\theta)\approx C
+\Phi_i(r,\theta)\approx C
 \]</span></p>
 <p>Para simplificar la referencia de potencial, podemos elegir:</p>
 <p><span class="math display">\[
@@ -560,22 +560,22 @@ C=0
 <p>En esta aproximación, la membrana actúa como una barrera poco conductora. Por tanto, la componente normal de corriente a través de la membrana se considera despreciable.</p>
 <p>Como el campo eléctrico se relaciona con el potencial mediante:</p>
 <p><span class="math display">\[
-\mathbf{E}=-\nabla\phi
+\mathbf{E}=-\nabla\Phi
 \]</span></p>
 <p>y la componente radial del campo es proporcional a</p>
 <p><span class="math display">\[
-E_r=-\frac{\partial \phi}{\partial r}
+E_r=-\frac{\partial \Phi}{\partial r}
 \]</span></p>
 <p>una forma simplificada de imponer flujo normal despreciable en la superficie <span class="math inline">\(r=a\)</span> es:</p>
 <p><span class="math display">\[
 \left.
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 \right|_{r=a}
 \approx 0
 \]</span></p>
 <p>Esta condición se aplica al potencial exterior:</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -587,7 +587,7 @@ E_r=-\frac{\partial \phi}{\partial r}
 <h1 data-number="9"><span class="header-section-number">9</span> Determinación de la constante exterior <span class="math inline">\(A\)</span></h1>
 <p>Derivamos el potencial exterior respecto a <span class="math inline">\(r\)</span>:</p>
 <p><span class="math display">\[
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \frac{\partial}{\partial r}
 \left[
@@ -598,7 +598,7 @@ E_r=-\frac{\partial \phi}{\partial r}
 \]</span></p>
 <p>Como <span class="math inline">\(\cos\theta\)</span> no depende de <span class="math inline">\(r\)</span>,</p>
 <p><span class="math display">\[
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \left[
 \frac{\partial}{\partial r}
@@ -634,7 +634,7 @@ A r^{-2}
 \]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \left(
 -E_0-\frac{2A}{r^3}
@@ -643,7 +643,7 @@ A r^{-2}
 <p>Ahora aplicamos la condición de frontera en <span class="math inline">\(r=a\)</span>:</p>
 <p><span class="math display">\[
 \left.
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 \right|_{r=a}
 \approx 0
 \]</span></p>
@@ -674,7 +674,7 @@ A=-\frac{E_0a^3}{2}
 <h1 data-number="10"><span class="header-section-number">10</span> Potencial exterior sobre la superficie celular</h1>
 <p>Sustituimos el valor de <span class="math inline">\(A\)</span> en el potencial exterior:</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r
@@ -684,7 +684,7 @@ A=-\frac{E_0a^3}{2}
 \]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r
@@ -694,7 +694,7 @@ A=-\frac{E_0a^3}{2}
 \]</span></p>
 <p>Ahora evaluamos sobre la superficie celular, es decir, en <span class="math inline">\(r=a\)</span>:</p>
 <p><span class="math display">\[
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 \left(
 -E_0 a
@@ -708,7 +708,7 @@ A=-\frac{E_0a^3}{2}
 \]</span></p>
 <p>entonces:</p>
 <p><span class="math display">\[
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 \left(
 -E_0 a
@@ -718,7 +718,7 @@ A=-\frac{E_0a^3}{2}
 \]</span></p>
 <p>Factorizando <span class="math inline">\(E_0a\)</span>:</p>
 <p><span class="math display">\[
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 -\left(
 1+\frac{1}{2}
@@ -730,7 +730,7 @@ A=-\frac{E_0a^3}{2}
 \]</span></p>
 <p>se obtiene:</p>
 <p><span class="math display">\[
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 -\frac{3}{2}E_0a\cos\theta
 \]</span></p>
@@ -741,11 +741,11 @@ A=-\frac{E_0a^3}{2}
 <p><span class="math display">\[
 \Delta V_m^{\mathrm{ind}}(\theta)
 =
-\phi_i(a,\theta)-\phi_e(a,\theta)
+\Phi_i(a,\theta)-\Phi_e(a,\theta)
 \]</span></p>
 <p>Bajo la aproximación de interior equipotencial y con la elección <span class="math inline">\(C=0\)</span>,</p>
 <p><span class="math display">\[
-\phi_i(a,\theta)\approx 0
+\Phi_i(a,\theta)\approx 0
 \]</span></p>
 <p>Entonces:</p>
 <p><span class="math display">\[
@@ -783,7 +783,7 @@ f\approx 1.5
 <p><strong>Nota sobre el signo:</strong><br>
 El signo exacto depende de la convención usada para definir el voltaje transmembrana. En este módulo se usa:</p>
 <p><span class="math display">\[
-\Delta V_m=\phi_{\text{interior}}-\phi_{\text{exterior}}
+\Delta V_m=\Phi_{\text{interior}}-\Phi_{\text{exterior}}
 \]</span></p>
 <p>Si se adopta la convención opuesta, la expresión cambia de signo, pero la dependencia angular y la magnitud física permanecen iguales.</p>
 </blockquote>
@@ -1982,9 +1982,9 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $E_0$ <span class="pp">|</span> Magnitud del campo eléctrico externo uniforme <span class="pp">|</span> V/m <span class="pp">|</span></span>
 <span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\theta$ <span class="pp">|</span> Ángulo polar medido respecto al eje del campo <span class="pp">|</span> rad <span class="pp">|</span></span>
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $r$ <span class="pp">|</span> Coordenada radial <span class="pp">|</span> m <span class="pp">|</span></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\phi$ <span class="pp">|</span> Potencial eléctrico <span class="pp">|</span> V <span class="pp">|</span></span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\phi_e(r,\theta)$ <span class="pp">|</span> Potencial eléctrico en la región exterior <span class="pp">|</span> V <span class="pp">|</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\phi_i(r,\theta)$ <span class="pp">|</span> Potencial eléctrico en la región interior <span class="pp">|</span> V <span class="pp">|</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\Phi$ <span class="pp">|</span> Potencial eléctrico <span class="pp">|</span> V <span class="pp">|</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\Phi_e(r,\theta)$ <span class="pp">|</span> Potencial eléctrico en la región exterior <span class="pp">|</span> V <span class="pp">|</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\Phi_i(r,\theta)$ <span class="pp">|</span> Potencial eléctrico en la región interior <span class="pp">|</span> V <span class="pp">|</span></span>
 <span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $\Delta V_m^{\mathrm{ind}}$ <span class="pp">|</span> Voltaje transmembrana inducido <span class="pp">|</span> V <span class="pp">|</span></span>
 <span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $f$ <span class="pp">|</span> Factor geométrico de forma <span class="pp">|</span> adimensional <span class="pp">|</span></span>
 <span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $A$, $B$, $C$ <span class="pp">|</span> Constantes de integración determinadas por las condiciones físicas <span class="pp">|</span> dependen de la expresión <span class="pp">|</span></span>
@@ -2011,7 +2011,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>En una región conductora sin acumulación volumétrica de carga libre, el potencial eléctrico satisface la ecuación de Laplace:</span>
 <span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>\nabla^2 \phi = 0</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>\nabla^2 \Phi = 0</span>
 <span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>Como el problema tiene simetría axial, el potencial depende de $r$ y $\theta$, pero no del ángulo azimutal. En coordenadas esféricas, para un problema sin dependencia azimutal, la ecuación de Laplace se escribe como:</span>
@@ -2020,14 +2020,14 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>\frac{1}{r^2}</span>
 <span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>\frac{\partial}{\partial r}</span>
 <span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>\left(</span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>r^2\frac{\partial \phi}{\partial r}</span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>r^2\frac{\partial \Phi}{\partial r}</span>
 <span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>\right)</span>
 <span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>+</span>
 <span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>\frac{1}{r^2\sin\theta}</span>
 <span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>\frac{\partial}{\partial \theta}</span>
 <span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>\sin\theta</span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi}{\partial \theta}</span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi}{\partial \theta}</span>
 <span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>\right)</span>
 <span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>=0</span>
 <span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -2035,7 +2035,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>El campo externo uniforme impone una dependencia angular proporcional a $\cos\theta$. Por esta razón, para el modo dipolar dominante, se buscan soluciones de la forma:</span>
 <span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>\phi(r,\theta)=R(r)\cos\theta</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>\Phi(r,\theta)=R(r)\cos\theta</span>
 <span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>Al sustituir esta forma en la ecuación de Laplace se obtiene una ecuación radial cuya solución general para el término dipolar es:</span>
@@ -2047,7 +2047,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>Por tanto, la solución dipolar general puede escribirse como:</span>
 <span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>\phi(r,\theta)</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>\Phi(r,\theta)</span>
 <span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>C_1 r+\frac{C_2}{r^2}</span>
@@ -2066,13 +2066,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>Si el campo externo uniforme apunta a lo largo del eje polar, el potencial lejano puede escribirse como:</span>
 <span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>\phi_{\infty}(r,\theta)=-E_0 r\cos\theta</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>\Phi_{\infty}(r,\theta)=-E_0 r\cos\theta</span>
 <span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>Por tanto, una forma compatible con el campo uniforme lejano es:</span>
 <span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)</span>
 <span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>-E_0 r+\frac{A}{r^2}</span>
@@ -2103,7 +2103,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a>La solución interior se escribe como:</span>
 <span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a>\phi_i(r,\theta)</span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a>\Phi_i(r,\theta)</span>
 <span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a>-B\,r\cos\theta+C,</span>
 <span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a>\qquad r\le a</span>
@@ -2115,14 +2115,14 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a>La @fig-schwan-frontera resume las condiciones físicas empleadas en la deducción simplificada.</span>
 <span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a><span class="al">![Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio $a$ inmersa en un campo eléctrico uniforme $E_0$, con una región interior descrita por $\phi_i(r,\theta)$ y una región exterior descrita por $\phi_e(r,\theta)$. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.](figures/ep_schwan_condiciones_frontera.png)</span>{#fig-schwan-frontera width="95%"}</span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a><span class="al">![Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio $a$ inmersa en un campo eléctrico uniforme $E_0$, con una región interior descrita por $\Phi_i(r,\theta)$ y una región exterior descrita por $\Phi_e(r,\theta)$. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.](figures/ep_schwan_condiciones_frontera.png)</span>{#fig-schwan-frontera width="95%"}</span>
 <span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Condición 1: campo uniforme lejos de la célula</span></span>
 <span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a>Lejos de la célula, el potencial exterior debe tender al potencial del campo uniforme aplicado:</span>
 <span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)\to -E_0 r\cos\theta</span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)\to -E_0 r\cos\theta</span>
 <span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a>\qquad</span>
 <span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a>\text{cuando}</span>
 <span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a>\qquad</span>
@@ -2132,7 +2132,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a>Esta condición ya está incorporada en la expresión:</span>
 <span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)</span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)</span>
 <span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a>-E_0 r+\frac{A}{r^2}</span>
@@ -2146,19 +2146,19 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a>En el límite cuasiestacionario y para una membrana poco conductora, el interior celular se aproxima como equipotencial. Esto significa que el campo eléctrico interno es pequeño:</span>
 <span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a>\mathbf{E}_i=-\nabla\phi_i\approx 0</span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a>\mathbf{E}_i=-\nabla\Phi_i\approx 0</span>
 <span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a>Por tanto, el potencial interior se aproxima como una constante:</span>
 <span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a>\phi_i(r,\theta)\approx C</span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a>\Phi_i(r,\theta)\approx C</span>
 <span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a>Comparando con la forma general interior,</span>
 <span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a>\phi_i(r,\theta)</span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a>\Phi_i(r,\theta)</span>
 <span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a>-B\,r\cos\theta+C</span>
 <span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -2172,7 +2172,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a>Entonces,</span>
 <span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a>\phi_i(r,\theta)\approx C</span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a>\Phi_i(r,\theta)\approx C</span>
 <span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>Para simplificar la referencia de potencial, podemos elegir:</span>
@@ -2190,20 +2190,20 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a>Como el campo eléctrico se relaciona con el potencial mediante:</span>
 <span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a>\mathbf{E}=-\nabla\phi</span>
+<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a>\mathbf{E}=-\nabla\Phi</span>
 <span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a>y la componente radial del campo es proporcional a</span>
 <span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a>E_r=-\frac{\partial \phi}{\partial r}</span>
+<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a>E_r=-\frac{\partial \Phi}{\partial r}</span>
 <span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a>una forma simplificada de imponer flujo normal despreciable en la superficie $r=a$ es:</span>
 <span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a>\left.</span>
-<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi_e}{\partial r}</span>
+<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi_e}{\partial r}</span>
 <span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a>\right|_{r=a}</span>
 <span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a>\approx 0</span>
 <span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -2211,7 +2211,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a>Esta condición se aplica al potencial exterior:</span>
 <span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)</span>
+<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)</span>
 <span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a>-E_0 r+\frac{A}{r^2}</span>
@@ -2223,7 +2223,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a>Derivamos el potencial exterior respecto a $r$:</span>
 <span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi_e}{\partial r}</span>
+<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi_e}{\partial r}</span>
 <span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a>\frac{\partial}{\partial r}</span>
 <span id="cb8-285"><a href="#cb8-285" aria-hidden="true" tabindex="-1"></a>\left[</span>
@@ -2236,7 +2236,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-292"><a href="#cb8-292" aria-hidden="true" tabindex="-1"></a>Como $\cos\theta$ no depende de $r$,</span>
 <span id="cb8-293"><a href="#cb8-293" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-294"><a href="#cb8-294" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-295"><a href="#cb8-295" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi_e}{\partial r}</span>
+<span id="cb8-295"><a href="#cb8-295" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi_e}{\partial r}</span>
 <span id="cb8-296"><a href="#cb8-296" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-297"><a href="#cb8-297" aria-hidden="true" tabindex="-1"></a>\left[</span>
 <span id="cb8-298"><a href="#cb8-298" aria-hidden="true" tabindex="-1"></a>\frac{\partial}{\partial r}</span>
@@ -2278,7 +2278,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-334"><a href="#cb8-334" aria-hidden="true" tabindex="-1"></a>Por tanto,</span>
 <span id="cb8-335"><a href="#cb8-335" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-336"><a href="#cb8-336" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-337"><a href="#cb8-337" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi_e}{\partial r}</span>
+<span id="cb8-337"><a href="#cb8-337" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi_e}{\partial r}</span>
 <span id="cb8-338"><a href="#cb8-338" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-339"><a href="#cb8-339" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-340"><a href="#cb8-340" aria-hidden="true" tabindex="-1"></a>-E_0-\frac{2A}{r^3}</span>
@@ -2289,7 +2289,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-345"><a href="#cb8-345" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-346"><a href="#cb8-346" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-347"><a href="#cb8-347" aria-hidden="true" tabindex="-1"></a>\left.</span>
-<span id="cb8-348"><a href="#cb8-348" aria-hidden="true" tabindex="-1"></a>\frac{\partial \phi_e}{\partial r}</span>
+<span id="cb8-348"><a href="#cb8-348" aria-hidden="true" tabindex="-1"></a>\frac{\partial \Phi_e}{\partial r}</span>
 <span id="cb8-349"><a href="#cb8-349" aria-hidden="true" tabindex="-1"></a>\right|_{r=a}</span>
 <span id="cb8-350"><a href="#cb8-350" aria-hidden="true" tabindex="-1"></a>\approx 0</span>
 <span id="cb8-351"><a href="#cb8-351" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -2329,7 +2329,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-385"><a href="#cb8-385" aria-hidden="true" tabindex="-1"></a>Sustituimos el valor de $A$ en el potencial exterior:</span>
 <span id="cb8-386"><a href="#cb8-386" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-387"><a href="#cb8-387" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-388"><a href="#cb8-388" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)</span>
+<span id="cb8-388"><a href="#cb8-388" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)</span>
 <span id="cb8-389"><a href="#cb8-389" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-390"><a href="#cb8-390" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-391"><a href="#cb8-391" aria-hidden="true" tabindex="-1"></a>-E_0 r</span>
@@ -2341,7 +2341,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-397"><a href="#cb8-397" aria-hidden="true" tabindex="-1"></a>Por tanto,</span>
 <span id="cb8-398"><a href="#cb8-398" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-399"><a href="#cb8-399" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-400"><a href="#cb8-400" aria-hidden="true" tabindex="-1"></a>\phi_e(r,\theta)</span>
+<span id="cb8-400"><a href="#cb8-400" aria-hidden="true" tabindex="-1"></a>\Phi_e(r,\theta)</span>
 <span id="cb8-401"><a href="#cb8-401" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-402"><a href="#cb8-402" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-403"><a href="#cb8-403" aria-hidden="true" tabindex="-1"></a>-E_0 r</span>
@@ -2353,7 +2353,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-409"><a href="#cb8-409" aria-hidden="true" tabindex="-1"></a>Ahora evaluamos sobre la superficie celular, es decir, en $r=a$:</span>
 <span id="cb8-410"><a href="#cb8-410" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-411"><a href="#cb8-411" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-412"><a href="#cb8-412" aria-hidden="true" tabindex="-1"></a>\phi_e(a,\theta)</span>
+<span id="cb8-412"><a href="#cb8-412" aria-hidden="true" tabindex="-1"></a>\Phi_e(a,\theta)</span>
 <span id="cb8-413"><a href="#cb8-413" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-414"><a href="#cb8-414" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-415"><a href="#cb8-415" aria-hidden="true" tabindex="-1"></a>-E_0 a</span>
@@ -2371,7 +2371,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-427"><a href="#cb8-427" aria-hidden="true" tabindex="-1"></a>entonces:</span>
 <span id="cb8-428"><a href="#cb8-428" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-429"><a href="#cb8-429" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-430"><a href="#cb8-430" aria-hidden="true" tabindex="-1"></a>\phi_e(a,\theta)</span>
+<span id="cb8-430"><a href="#cb8-430" aria-hidden="true" tabindex="-1"></a>\Phi_e(a,\theta)</span>
 <span id="cb8-431"><a href="#cb8-431" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-432"><a href="#cb8-432" aria-hidden="true" tabindex="-1"></a>\left(</span>
 <span id="cb8-433"><a href="#cb8-433" aria-hidden="true" tabindex="-1"></a>-E_0 a</span>
@@ -2383,7 +2383,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-439"><a href="#cb8-439" aria-hidden="true" tabindex="-1"></a>Factorizando $E_0a$:</span>
 <span id="cb8-440"><a href="#cb8-440" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-441"><a href="#cb8-441" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-442"><a href="#cb8-442" aria-hidden="true" tabindex="-1"></a>\phi_e(a,\theta)</span>
+<span id="cb8-442"><a href="#cb8-442" aria-hidden="true" tabindex="-1"></a>\Phi_e(a,\theta)</span>
 <span id="cb8-443"><a href="#cb8-443" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-444"><a href="#cb8-444" aria-hidden="true" tabindex="-1"></a>-\left(</span>
 <span id="cb8-445"><a href="#cb8-445" aria-hidden="true" tabindex="-1"></a>1+\frac{1}{2}</span>
@@ -2399,7 +2399,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-455"><a href="#cb8-455" aria-hidden="true" tabindex="-1"></a>se obtiene:</span>
 <span id="cb8-456"><a href="#cb8-456" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-457"><a href="#cb8-457" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-458"><a href="#cb8-458" aria-hidden="true" tabindex="-1"></a>\phi_e(a,\theta)</span>
+<span id="cb8-458"><a href="#cb8-458" aria-hidden="true" tabindex="-1"></a>\Phi_e(a,\theta)</span>
 <span id="cb8-459"><a href="#cb8-459" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb8-460"><a href="#cb8-460" aria-hidden="true" tabindex="-1"></a>-\frac{3}{2}E_0a\cos\theta</span>
 <span id="cb8-461"><a href="#cb8-461" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -2411,13 +2411,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-467"><a href="#cb8-467" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-468"><a href="#cb8-468" aria-hidden="true" tabindex="-1"></a>\Delta V_m^{\mathrm{ind}}(\theta)</span>
 <span id="cb8-469"><a href="#cb8-469" aria-hidden="true" tabindex="-1"></a>=</span>
-<span id="cb8-470"><a href="#cb8-470" aria-hidden="true" tabindex="-1"></a>\phi_i(a,\theta)-\phi_e(a,\theta)</span>
+<span id="cb8-470"><a href="#cb8-470" aria-hidden="true" tabindex="-1"></a>\Phi_i(a,\theta)-\Phi_e(a,\theta)</span>
 <span id="cb8-471"><a href="#cb8-471" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-472"><a href="#cb8-472" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-473"><a href="#cb8-473" aria-hidden="true" tabindex="-1"></a>Bajo la aproximación de interior equipotencial y con la elección $C=0$,</span>
 <span id="cb8-474"><a href="#cb8-474" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-475"><a href="#cb8-475" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb8-476"><a href="#cb8-476" aria-hidden="true" tabindex="-1"></a>\phi_i(a,\theta)\approx 0</span>
+<span id="cb8-476"><a href="#cb8-476" aria-hidden="true" tabindex="-1"></a>\Phi_i(a,\theta)\approx 0</span>
 <span id="cb8-477"><a href="#cb8-477" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb8-478"><a href="#cb8-478" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-479"><a href="#cb8-479" aria-hidden="true" tabindex="-1"></a>Entonces:</span>
@@ -2466,7 +2466,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb8-522"><a href="#cb8-522" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; El signo exacto depende de la convención usada para definir el voltaje transmembrana. En este módulo se usa:</span></span>
 <span id="cb8-523"><a href="#cb8-523" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb8-524"><a href="#cb8-524" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; $$</span></span>
-<span id="cb8-525"><a href="#cb8-525" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; \Delta V_m=\phi_{\text{interior}}-\phi_{\text{exterior}}</span></span>
+<span id="cb8-525"><a href="#cb8-525" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; \Delta V_m=\Phi_{\text{interior}}-\Phi_{\text{exterior}}</span></span>
 <span id="cb8-526"><a href="#cb8-526" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; $$</span></span>
 <span id="cb8-527"><a href="#cb8-527" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb8-528"><a href="#cb8-528" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Si se adopta la convención opuesta, la expresión cambia de signo, pero la dependencia angular y la magnitud física permanecen iguales.</span></span>

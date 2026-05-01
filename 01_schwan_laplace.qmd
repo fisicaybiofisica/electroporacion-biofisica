@@ -38,9 +38,9 @@ Esta ecuación muestra que el voltaje transmembrana inducido depende linealmente
 | $E_0$ | Magnitud del campo eléctrico externo uniforme | V/m |
 | $\theta$ | Ángulo polar medido respecto al eje del campo | rad |
 | $r$ | Coordenada radial | m |
-| $\phi$ | Potencial eléctrico | V |
-| $\phi_e(r,\theta)$ | Potencial eléctrico en la región exterior | V |
-| $\phi_i(r,\theta)$ | Potencial eléctrico en la región interior | V |
+| $\Phi$ | Potencial eléctrico | V |
+| $\Phi_e(r,\theta)$ | Potencial eléctrico en la región exterior | V |
+| $\Phi_i(r,\theta)$ | Potencial eléctrico en la región interior | V |
 | $\Delta V_m^{\mathrm{ind}}$ | Voltaje transmembrana inducido | V |
 | $f$ | Factor geométrico de forma | adimensional |
 | $A$, $B$, $C$ | Constantes de integración determinadas por las condiciones físicas | dependen de la expresión |
@@ -67,7 +67,7 @@ Usaremos las siguientes aproximaciones:
 En una región conductora sin acumulación volumétrica de carga libre, el potencial eléctrico satisface la ecuación de Laplace:
 
 $$
-\nabla^2 \phi = 0
+\nabla^2 \Phi = 0
 $$
 
 Como el problema tiene simetría axial, el potencial depende de $r$ y $\theta$, pero no del ángulo azimutal. En coordenadas esféricas, para un problema sin dependencia azimutal, la ecuación de Laplace se escribe como:
@@ -76,14 +76,14 @@ $$
 \frac{1}{r^2}
 \frac{\partial}{\partial r}
 \left(
-r^2\frac{\partial \phi}{\partial r}
+r^2\frac{\partial \Phi}{\partial r}
 \right)
 +
 \frac{1}{r^2\sin\theta}
 \frac{\partial}{\partial \theta}
 \left(
 \sin\theta
-\frac{\partial \phi}{\partial \theta}
+\frac{\partial \Phi}{\partial \theta}
 \right)
 =0
 $$
@@ -91,7 +91,7 @@ $$
 El campo externo uniforme impone una dependencia angular proporcional a $\cos\theta$. Por esta razón, para el modo dipolar dominante, se buscan soluciones de la forma:
 
 $$
-\phi(r,\theta)=R(r)\cos\theta
+\Phi(r,\theta)=R(r)\cos\theta
 $$
 
 Al sustituir esta forma en la ecuación de Laplace se obtiene una ecuación radial cuya solución general para el término dipolar es:
@@ -103,7 +103,7 @@ $$
 Por tanto, la solución dipolar general puede escribirse como:
 
 $$
-\phi(r,\theta)
+\Phi(r,\theta)
 =
 \left(
 C_1 r+\frac{C_2}{r^2}
@@ -122,13 +122,13 @@ En la región exterior a la célula, el potencial debe parecerse al de un campo 
 Si el campo externo uniforme apunta a lo largo del eje polar, el potencial lejano puede escribirse como:
 
 $$
-\phi_{\infty}(r,\theta)=-E_0 r\cos\theta
+\Phi_{\infty}(r,\theta)=-E_0 r\cos\theta
 $$
 
 Por tanto, una forma compatible con el campo uniforme lejano es:
 
 $$
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -159,7 +159,7 @@ En la región interior, la solución debe permanecer finita en $r=0$. Por esa ra
 La solución interior se escribe como:
 
 $$
-\phi_i(r,\theta)
+\Phi_i(r,\theta)
 =
 -B\,r\cos\theta+C,
 \qquad r\le a
@@ -171,14 +171,14 @@ donde $B$ representa la magnitud de un posible campo uniforme interno y $C$ es u
 
 La @fig-schwan-frontera resume las condiciones físicas empleadas en la deducción simplificada.
 
-![Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio $a$ inmersa en un campo eléctrico uniforme $E_0$, con una región interior descrita por $\phi_i(r,\theta)$ y una región exterior descrita por $\phi_e(r,\theta)$. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.](figures/ep_schwan_condiciones_frontera.png){#fig-schwan-frontera width="95%"}
+![Dominio físico y condiciones de frontera empleadas en la deducción simplificada de la ecuación de Schwan. Se muestra una célula aproximadamente esférica de radio $a$ inmersa en un campo eléctrico uniforme $E_0$, con una región interior descrita por $\Phi_i(r,\theta)$ y una región exterior descrita por $\Phi_e(r,\theta)$. En el límite cuasiestacionario, el interior se aproxima como equipotencial y la corriente normal a través de la membrana se considera despreciable.](figures/ep_schwan_condiciones_frontera.png){#fig-schwan-frontera width="95%"}
 
 ## Condición 1: campo uniforme lejos de la célula
 
 Lejos de la célula, el potencial exterior debe tender al potencial del campo uniforme aplicado:
 
 $$
-\phi_e(r,\theta)\to -E_0 r\cos\theta
+\Phi_e(r,\theta)\to -E_0 r\cos\theta
 \qquad
 \text{cuando}
 \qquad
@@ -188,7 +188,7 @@ $$
 Esta condición ya está incorporada en la expresión:
 
 $$
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -202,19 +202,19 @@ porque el término $A/r^2$ desaparece cuando $r$ crece mucho.
 En el límite cuasiestacionario y para una membrana poco conductora, el interior celular se aproxima como equipotencial. Esto significa que el campo eléctrico interno es pequeño:
 
 $$
-\mathbf{E}_i=-\nabla\phi_i\approx 0
+\mathbf{E}_i=-\nabla\Phi_i\approx 0
 $$
 
 Por tanto, el potencial interior se aproxima como una constante:
 
 $$
-\phi_i(r,\theta)\approx C
+\Phi_i(r,\theta)\approx C
 $$
 
 Comparando con la forma general interior,
 
 $$
-\phi_i(r,\theta)
+\Phi_i(r,\theta)
 =
 -B\,r\cos\theta+C
 $$
@@ -228,7 +228,7 @@ $$
 Entonces,
 
 $$
-\phi_i(r,\theta)\approx C
+\Phi_i(r,\theta)\approx C
 $$
 
 Para simplificar la referencia de potencial, podemos elegir:
@@ -246,20 +246,20 @@ En esta aproximación, la membrana actúa como una barrera poco conductora. Por 
 Como el campo eléctrico se relaciona con el potencial mediante:
 
 $$
-\mathbf{E}=-\nabla\phi
+\mathbf{E}=-\nabla\Phi
 $$
 
 y la componente radial del campo es proporcional a
 
 $$
-E_r=-\frac{\partial \phi}{\partial r}
+E_r=-\frac{\partial \Phi}{\partial r}
 $$
 
 una forma simplificada de imponer flujo normal despreciable en la superficie $r=a$ es:
 
 $$
 \left.
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 \right|_{r=a}
 \approx 0
 $$
@@ -267,7 +267,7 @@ $$
 Esta condición se aplica al potencial exterior:
 
 $$
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r+\frac{A}{r^2}
@@ -279,7 +279,7 @@ $$
 Derivamos el potencial exterior respecto a $r$:
 
 $$
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \frac{\partial}{\partial r}
 \left[
@@ -292,7 +292,7 @@ $$
 Como $\cos\theta$ no depende de $r$,
 
 $$
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \left[
 \frac{\partial}{\partial r}
@@ -334,7 +334,7 @@ $$
 Por tanto,
 
 $$
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 =
 \left(
 -E_0-\frac{2A}{r^3}
@@ -345,7 +345,7 @@ Ahora aplicamos la condición de frontera en $r=a$:
 
 $$
 \left.
-\frac{\partial \phi_e}{\partial r}
+\frac{\partial \Phi_e}{\partial r}
 \right|_{r=a}
 \approx 0
 $$
@@ -385,7 +385,7 @@ $$
 Sustituimos el valor de $A$ en el potencial exterior:
 
 $$
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r
@@ -397,7 +397,7 @@ $$
 Por tanto,
 
 $$
-\phi_e(r,\theta)
+\Phi_e(r,\theta)
 =
 \left(
 -E_0 r
@@ -409,7 +409,7 @@ $$
 Ahora evaluamos sobre la superficie celular, es decir, en $r=a$:
 
 $$
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 \left(
 -E_0 a
@@ -427,7 +427,7 @@ $$
 entonces:
 
 $$
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 \left(
 -E_0 a
@@ -439,7 +439,7 @@ $$
 Factorizando $E_0a$:
 
 $$
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 -\left(
 1+\frac{1}{2}
@@ -455,7 +455,7 @@ $$
 se obtiene:
 
 $$
-\phi_e(a,\theta)
+\Phi_e(a,\theta)
 =
 -\frac{3}{2}E_0a\cos\theta
 $$
@@ -467,13 +467,13 @@ Definimos el voltaje transmembrana inducido como la diferencia entre el potencia
 $$
 \Delta V_m^{\mathrm{ind}}(\theta)
 =
-\phi_i(a,\theta)-\phi_e(a,\theta)
+\Phi_i(a,\theta)-\Phi_e(a,\theta)
 $$
 
 Bajo la aproximación de interior equipotencial y con la elección $C=0$,
 
 $$
-\phi_i(a,\theta)\approx 0
+\Phi_i(a,\theta)\approx 0
 $$
 
 Entonces:
@@ -522,7 +522,7 @@ $$
 > El signo exacto depende de la convención usada para definir el voltaje transmembrana. En este módulo se usa:
 >
 > $$
-> \Delta V_m=\phi_{\text{interior}}-\phi_{\text{exterior}}
+> \Delta V_m=\Phi_{\text{interior}}-\Phi_{\text{exterior}}
 > $$
 >
 > Si se adopta la convención opuesta, la expresión cambia de signo, pero la dependencia angular y la magnitud física permanecen iguales.
