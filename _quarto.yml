@@ -9,7 +9,7 @@ website:
       - href: index.qmd
         text: Inicio
       - href: 00_introduccion_membrana.qmd
-        text: Membrana
+        text: Biomembrana
       - href: 01_schwan_laplace.qmd
         text: Schwan
       - href: 02_dinamica_rc.qmd
@@ -26,6 +26,8 @@ website:
         text: Aplicaciones
       - href: 08_actividades.qmd
         text: Actividades
+      - href: about.qmd
+        text: Acerca de
 
 format:
   html:

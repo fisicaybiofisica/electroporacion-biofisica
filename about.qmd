@@ -1,5 +1,28 @@
 ---
-title: "About"
+title: "Acerca de este portal"
+subtitle: "Biofísica de la Electroporación"
 ---
 
-About this site
+# Sobre el portal
+
+Este portal académico presenta una ruta de aprendizaje sobre la biofísica de la electroporación, desde la estructura molecular de la biomembrana hasta sus aplicaciones en ingeniería celular, biotecnología y medicina.
+
+El portal está dirigido a estudiantes de Ingeniería Física, Biofísica, Ingeniería Biomédica y áreas afines que deseen comprender la electroporación más allá de una descripción puramente fenomenológica. Cada módulo puede recorrerse de manera autónoma o como parte de la ruta completa.
+
+# Autor
+
+**José Alexander Álvarez Bustamante**
+
+Biofísico computacional. Universidad CES, Medellín, Colombia.
+
+Grupo de Biofísica, Departamento de Física, Universidad Nacional de Colombia, Sede Medellín.
+
+# Contenido
+
+El portal cubre nueve módulos:
+
+la introducción a la biomembrana, que incluye componentes moleculares, bicapa lipídica y modelo dieléctrico; la deducción de la ecuación de Schwan a partir de la ecuación de Laplace en coordenadas esféricas; la dinámica temporal RC de carga y descarga de la biomembrana frente a pulsos eléctricos; el modelo de energía libre de formación del poro hidrofílico; la estimación del calentamiento Joule durante pulsos; los regímenes de operación y sus respuestas biológicas; la arquitectura funcional de un electroporador; las aplicaciones representativas de la electroporación; y las actividades de aprendizaje con ejercicios integradores y simulaciones.
+
+# Tecnología
+
+El portal está construido con [Quarto](https://quarto.org) y publicado en GitHub Pages. Las simulaciones interactivas utilizan Observable JS y están disponibles directamente en el navegador, sin necesidad de instalar ningún software adicional. Se ofrecen también versiones en Python para Google Colab.

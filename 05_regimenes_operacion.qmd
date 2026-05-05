@@ -7,90 +7,62 @@ subtitle: "Campo eléctrico, duración de pulso, dosis y respuesta biológica"
 
 La electroporación no tiene un único resultado biológico. El desenlace depende del régimen físico de operación: intensidad de campo, duración del pulso, número de pulsos, forma de onda, conductividad del medio, temperatura y tipo celular.
 
-Este módulo organiza los principales regímenes de operación y muestra cómo un mismo principio físico puede conducir a respuestas biológicas distintas.
+Este módulo organiza los principales regímenes de operación y muestra cómo un mismo principio físico —la permeabilización de la biomembrana por un campo eléctrico— puede conducir a respuestas biológicas muy distintas según cómo se combinen esos parámetros.
 
-# Parámetros principales
+Este módulo puede recorrerse de manera autónoma; se recomienda haber revisado previamente los módulos sobre la [ecuación de Schwan](01_schwan_laplace.qmd), la [dinámica RC](02_dinamica_rc.qmd) y el [calentamiento Joule](04_calentamiento_joule.qmd).
 
-Los parámetros experimentales más importantes son:
+# Parámetros experimentales principales
 
-| Parámetro | Significado | Efecto general |
-|---|---|---|
-| $E_0$ | campo eléctrico externo | controla la magnitud del voltaje inducido |
-| $\tau$ | duración del pulso | controla la escala temporal de carga y exposición |
-| $N$ | número de pulsos | contribuye a la dosis total |
-| $f$ o $\Delta t$ | frecuencia o intervalo entre pulsos | afecta recuperación, acumulación y calentamiento || forma de onda | monopolar, bipolar, bimonopolar, exponencial | modifica polarización y respuesta electroquímica |
-| $\sigma$ | conductividad del medio | afecta corriente y calentamiento Joule |
+Los parámetros experimentales más importantes en un protocolo de electroporación son los siguientes. El campo eléctrico externo $E_0$ (en V/m) controla la magnitud del voltaje transmembrana inducido según la ecuación de Schwan. La duración del pulso $\tau$ (en s) determina la escala temporal de carga de la biomembrana respecto a la constante de tiempo RC. El número de pulsos $N$ contribuye a la dosis total acumulada. La frecuencia entre pulsos o el intervalo entre ellos afecta la recuperación celular, la acumulación de daño y el calentamiento. La forma de onda (monopolar, bipolar, exponencial) modifica la polarización interfacial y la respuesta electroquímica. Finalmente, la conductividad del medio $\sigma$ (en S/m) afecta tanto la corriente que circula como la disipación Joule.
 
 # Mapa conceptual de regímenes
 
-En términos generales, se pueden distinguir cuatro escenarios:
+En términos generales, se pueden distinguir cuatro escenarios de respuesta:
 
 | Régimen | Condición cualitativa | Resultado esperado |
 |---|---|---|
 | No detectable | estímulo insuficiente | no se observa aumento significativo de permeabilidad |
 | Reversible | permeabilización transitoria | transporte molecular con recuperación celular |
-| Irreversible no térmica | daño de membrana dominante | pérdida de viabilidad sin calor dominante |
+| Irreversible no térmica | daño de biomembrana dominante | pérdida de viabilidad sin calor dominante |
 | Térmico | disipación Joule significativa | daño inespecífico por aumento de temperatura |
 
-La @fig-regimenes-operacion muestra de manera cualitativa cómo la combinación entre intensidad del campo eléctrico y duración del pulso permite ubicar distintos regímenes de operación. Este tipo de mapa debe interpretarse como una guía física aproximada, no como una frontera universal exacta.
+La @fig-regimenes-operacion muestra de manera cualitativa cómo la combinación entre intensidad del campo eléctrico y duración del pulso permite ubicar distintos regímenes de operación. Este mapa debe interpretarse como una guía física aproximada, no como una frontera universal exacta: los límites entre regiones dependen del tipo celular, el medio, la temperatura y la geometría experimental [@Kotnik2019].
 
-![Mapa conceptual de regímenes de operación en electroporación. La respuesta biológica depende de la combinación entre campo eléctrico, duración del pulso y dosis aplicada. En términos generales, pueden distinguirse regiones de electroporación no detectable, electroporación reversible, electroporación irreversible no térmica y daño térmico. Los límites entre regiones son aproximados y dependen del tipo celular, el medio, la temperatura y la geometría experimental.](figures/ep_regimenes_operacion.png){#fig-regimenes-operacion fig-align="center" width="90%"}
+![Mapa conceptual de regímenes de operación en electroporación. La respuesta biológica depende de la combinación entre campo eléctrico, duración del pulso y dosis aplicada. Pueden distinguirse regiones de electroporación no detectable, reversible, irreversible no térmica y de daño térmico. Los límites entre regiones son aproximados y dependen del tipo celular, el medio, la temperatura y la geometría experimental.](figures/ep_regimenes_operacion.png){#fig-regimenes-operacion fig-align="center" width="90%"}
 
 # Electroporación reversible
 
-La electroporación reversible ocurre cuando el estímulo eléctrico induce vías transitorias de transporte, pero la célula conserva la capacidad de recuperar la integridad de la membrana.
+La electroporación reversible ocurre cuando el estímulo eléctrico induce vías transitorias de transporte, pero la célula conserva la capacidad de recuperar la integridad de la biomembrana.
 
-Este régimen es útil cuando se busca introducir moléculas manteniendo viabilidad celular, por ejemplo:
+Este régimen es útil cuando se busca introducir moléculas manteniendo viabilidad celular. Las moléculas de interés pueden incluir ADN plasmídico, ARN, proteínas, fármacos, sondas fluorescentes o moléculas pequeñas en general.
 
-- ADN;
-- ARN;
-- proteínas;
-- fármacos;
-- sondas fluorescentes;
-- moléculas pequeñas.
-
-La clave física es alcanzar una permeabilización suficiente sin superar la capacidad de recuperación celular.
+La clave física es alcanzar una permeabilización suficiente —voltaje transmembrana inducido que supere el umbral de nucleación de poros— sin superar la capacidad de recuperación celular. Desde el modelo energético, esto significa que los poros nucleados deben poder cerrarse una vez que cesa el campo.
 
 # Electroporación irreversible no térmica
 
-La electroporación irreversible ocurre cuando el daño de membrana supera la capacidad de recierre, reparación y recuperación homeostática.
+La electroporación irreversible ocurre cuando el daño a la biomembrana supera la capacidad de recierre, reparación y recuperación homeostática de la célula.
 
-En este caso, la pérdida de viabilidad se atribuye principalmente a la alteración irreversible de la membrana y no necesariamente al aumento de temperatura.
+En este caso, la pérdida de viabilidad se atribuye principalmente a la alteración irreversible de la biomembrana y no necesariamente al aumento de temperatura. Desde el modelo energético, el voltaje transmembrana inducido es suficientemente alto para que los poros se expandan más allá del punto de retorno, o para que se nucleen simultáneamente tantos poros que la estructura de la bicapa no pueda recuperarse.
 
-Este régimen es importante en ablación no térmica de tejidos, especialmente cuando se busca destruir células preservando en parte la matriz extracelular y estructuras mecánicas del tejido.
+Este régimen es importante en ablación no térmica de tejidos, especialmente cuando se busca destruir células preservando en parte la matriz extracelular y las estructuras mecánicas del tejido circundante.
 
 # Régimen térmico
 
-A campos suficientemente altos, pulsos prolongados o dosis acumuladas, la corriente eléctrica puede producir calentamiento Joule significativo.
+A campos suficientemente altos, pulsos prolongados o dosis acumuladas, la corriente eléctrica puede producir calentamiento Joule significativo (ver módulo de [calentamiento Joule](04_calentamiento_joule.qmd)).
 
-El daño térmico no es específico de la membrana. Puede afectar:
+El daño térmico no es específico de la biomembrana: puede afectar proteínas (desnaturalización), lípidos, organelos, la matriz extracelular y el volumen del medio tratado. Por esta razón, cuando se desea estudiar electroporación predominantemente no térmica, es necesario estimar o controlar el aumento de temperatura mediante la expresión $\Delta T \approx \sigma E^2 \tau / (\rho c_p)$.
 
-- proteínas;
-- lípidos;
-- organelos;
-- matriz extracelular;
-- volumen del medio tratado.
+# Pulsos eléctricos de nanosegundos (nsPEF)
 
-Por esta razón, cuando se desea estudiar electroporación no térmica, es necesario estimar o controlar el aumento de temperatura.
+Los pulsos eléctricos de nanosegundos, usualmente denominados nsPEF, emplean duraciones muy cortas —del orden de 1 a 100 ns— y campos eléctricos elevados.
 
-# Pulsos de nanosegundos
+En estos regímenes, la escala temporal del estímulo puede ser comparable o menor que la constante de tiempo de carga $\tau_m$ de la biomembrana plasmática, de modo que la biomembrana externa no se polariza completamente. Sin embargo, los campos internos pueden alcanzar organelos y membranas intracelulares, cuyas constantes de tiempo son aún menores. Por ello, los nsPEF se investigan por sus efectos sobre organelos, señalización intracelular, flujos de calcio, mitocondrias, inducción de apoptosis y respuestas subcelulares.
 
-Los pulsos eléctricos de nanosegundos, usualmente denominados nsPEF, usan duraciones muy cortas y campos eléctricos altos.
-
-En estos regímenes, la escala temporal del estímulo puede ser comparable o menor que algunos tiempos característicos de carga de membranas celulares y subcelulares. Por ello, se investigan efectos sobre:
-
-- membrana plasmática;
-- organelos;
-- señalización intracelular;
-- calcio;
-- apoptosis;
-- respuestas subcelulares.
-
-Estos efectos dependen fuertemente de la forma de onda, amplitud, número de pulsos y geometría celular.
+Estos efectos dependen fuertemente de la forma de onda, la amplitud, el número de pulsos y la geometría celular [@Kotnik2019].
 
 # Formas de onda
 
-La forma temporal del pulso también modifica la respuesta biológica.
+La forma temporal del pulso también modifica la respuesta biológica. La siguiente tabla resume las formas más comunes:
 
 | Forma de onda | Característica | Comentario físico |
 |---|---|---|
@@ -104,22 +76,12 @@ La @fig-formas-onda resume varias formas temporales de pulso usadas en electropo
 
 ![Comparación cualitativa de formas de onda utilizadas en electroporación. El decaimiento exponencial es característico de descargas RC clásicas; el pulso cuadrado monopolar permite mayor control de amplitud y duración; los pulsos bipolares invierten la polaridad y pueden modificar la polarización interfacial; los pulsos bimonopolares y bipolares con intervalo permiten explorar efectos de dosis, recuperación parcial y mitigación de reacciones electroquímicas.](figures/ep_formas_onda.png){#fig-formas-onda fig-align="center" width="90%"}
 
-# Lectura integradora
+# El régimen como resultado de la combinación de parámetros
 
-El régimen de electroporación no se define por una sola variable. Una misma amplitud de campo puede tener efectos distintos si cambia:
-
-- la duración del pulso;
-- el número de pulsos;
-- la conductividad del medio;
-- la temperatura;
-- la geometría celular;
-- la composición de membrana;
-- la forma de onda.
-
-Por ello, los mapas de régimen deben leerse como guías operacionales aproximadas, no como fronteras universales exactas.
+El régimen de electroporación no se define por una sola variable. Una misma amplitud de campo puede producir efectos distintos si cambia la duración del pulso, el número de pulsos, la conductividad del medio, la temperatura, la geometría celular, la composición de la biomembrana o la forma de onda. Por ello, los mapas de régimen deben leerse como guías operacionales aproximadas, no como fronteras universales exactas.
 
 # Conexión con aplicaciones
 
-Los regímenes físicos permiten entender por qué la electroporación puede utilizarse en contextos tan diferentes como transferencia génica, electroquimioterapia, ablación tumoral, procesamiento de alimentos y modulación intracelular.
+Los regímenes físicos permiten entender por qué la electroporación puede utilizarse en contextos tan distintos como la transferencia génica, la electroquimioterapia, la ablación tumoral, el procesamiento de alimentos o la modulación intracelular. La diferencia entre esas aplicaciones no está en el principio básico —la permeabilización eléctrica de la biomembrana—, sino en el régimen de operación elegido.
 
-[Continuar con tecnología del electroporador](06_tecnologia_electroporador.qmd)
+[Continuar con la tecnología del electroporador →](06_tecnologia_electroporador.qmd)

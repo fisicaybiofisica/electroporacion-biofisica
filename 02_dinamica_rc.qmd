@@ -1,291 +1,291 @@
 ---
 title: "Dinámica temporal: circuito RC equivalente"
-author-title: "Autor"
+subtitle: "Respuesta transitoria de la biomembrana frente a pulsos eléctricos"
 ---
 
-# Objetivo del módulo
+# Propósito del módulo
 
-Este módulo muestra cómo la membrana celular puede modelarse, en primera aproximación, como un sistema eléctrico transitorio de tipo RC. La idea central es que la membrana **no alcanza instantáneamente** el voltaje inducido máximo, sino que se carga progresivamente con una constante de tiempo característica.
+La ecuación de Schwan, deducida en el módulo anterior, describe el voltaje transmembrana inducido en el estado estacionario: predice el valor máximo que alcanzaría la polarización si el campo externo se mantuviera aplicado durante un tiempo suficientemente largo. Sin embargo, la biomembrana **no se polariza instantáneamente**: su combinación de propiedades dieléctricas y resistivas introduce una inercia eléctrica que hace que la respuesta siga una dinámica transitoria.
 
-En el módulo anterior se obtuvo la dependencia espacial aproximada del voltaje transmembrana inducido:
+En este módulo se construye el modelo eléctrico mínimo de la biomembrana como un sistema RC y se deduce cómo evoluciona el voltaje transmembrana inducido durante la aplicación de un pulso eléctrico y una vez que este cesa. Este modelo permite entender, entre otras cosas, por qué los pulsos ultracortos requieren campos más intensos para producir una polarización comparable a la de pulsos más largos.
 
-$$
-\Delta V_m^{\mathrm{ind}}(\theta)
-\approx
-f\,a\,E_0\cos\theta
-$$
+Este módulo puede recorrerse de manera autónoma; se recomienda haber revisado previamente los módulos sobre la [estructura de la biomembrana](00_introduccion_membrana.qmd) y la [ecuación de Schwan](01_schwan_laplace.qmd).
 
-donde $f \approx 1.5$ para una célula esférica en la aproximación clásica de Schwan.
+# De Schwan estacionario a la respuesta temporal
 
-Ahora incorporamos la dinámica temporal. Durante un pulso rectangular, la respuesta mínima puede escribirse como:
+## El voltaje basal y el voltaje inducido
 
-$$
-\Delta V_m^{\mathrm{ind}}(\theta,t)
-\approx
-f\,a\,E_0\cos\theta
-\left(1-e^{-t/\tau_m}\right)
-$$
+Antes de incorporar la dinámica temporal, conviene precisar la relación entre el voltaje transmembrana nativo de la célula y el que se induce durante la electroporación.
 
-Esta expresión permite entender por qué pulsos muy cortos pueden requerir campos eléctricos mayores para inducir una polarización comparable a la producida por pulsos más largos.
+En condiciones fisiológicas, la biomembrana mantiene una diferencia de potencial de reposo $\Delta V_{m,0}$ entre el interior y el exterior celular. Este **voltaje basal** (también llamado potencial de membrana de reposo) surge del transporte activo de iones por bombas y canales: en la mayoría de las células animales, $\Delta V_{m,0} \approx -70~\mathrm{mV}$ (interior negativo respecto al exterior) [@Cooper2000]. En eritrocitos el valor es de aproximadamente $-9~\mathrm{mV}$; en neuronas puede llegar a $-90~\mathrm{mV}$; en levaduras, a $-200~\mathrm{mV}$.
 
-# Resultado central
-
-Para un pulso rectangular aplicado a partir de $t=0$, la respuesta temporal mínima de la membrana se puede escribir como:
+Cuando se aplica un campo eléctrico externo, se agrega sobre el voltaje basal una **contribución inducida** $\Delta V_m^{\mathrm{ind}}(t)$ que depende del tiempo. El voltaje transmembrana total en cualquier punto angular $\theta$ de la biomembrana es entonces:
 
 $$
-\Delta V_m^{\mathrm{ind}}(t)
-=
-\Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-t/\tau_m}\right)
-$$
-
-donde la constante de tiempo está dada por:
-
-$$
-\tau_m = (R_e \parallel R_m)\,C_m
-$$
-
-y la resistencia equivalente en paralelo se define como:
-
-$$
-R_e \parallel R_m
-=
-\frac{R_eR_m}{R_e+R_m}
-$$
-
-En el límite biológico usual, cuando la resistencia de membrana es mucho mayor que la resistencia efectiva del medio,
-
-$$
-R_m \gg R_e
-$$
-
-se obtiene:
-
-$$
-\tau_m \approx R_e C_m
-$$
-
-# Variables y unidades
-
-| Símbolo | Significado físico | Unidad |
-|---|---|---|
-| $\Delta V_m^{\mathrm{tot}}(t)$ | Voltaje transmembrana total | V |
-| $\Delta V_{m,0}$ | Voltaje transmembrana basal previo al pulso | V |
-| $\Delta V_m^{\mathrm{ind}}(t)$ | Contribución inducida por el campo eléctrico | V |
-| $\Delta V_{m,\max}^{\mathrm{ind}}$ | Valor máximo o estacionario de la contribución inducida | V |
-| $t$ | Tiempo | s |
-| $t_0$ | Tiempo de inicio del pulso | s |
-| $t_p$ | Duración del pulso | s |
-| $\tau_m$ | Constante de tiempo de membrana | s |
-| $R_e$ | Resistencia efectiva del medio y la geometría | $\Omega$ |
-| $R_m$ | Resistencia de membrana | $\Omega$ |
-| $C_m$ | Capacitancia de membrana | F |
-| $a$ | Radio celular | m |
-| $E_0$ | Magnitud del campo externo | V/m |
-| $\theta$ | Ángulo polar respecto a la dirección del campo | rad |
-| $f$ | Factor geométrico de forma | adimensional |
-
-# Relación con el voltaje transmembrana total
-
-Durante el pulso, el voltaje transmembrana total puede expresarse como:
-
-$$
-\Delta V_m^{\mathrm{tot}}(t)
+\Delta V_m^{\mathrm{tot}}(\theta, t)
 =
 \Delta V_{m,0}
 +
-\Delta V_m^{\mathrm{ind}}(t)
-$$
+\Delta V_m^{\mathrm{ind}}(\theta, t)
+$$ {#eq-Vm-total}
 
-donde:
+donde $\Delta V_{m,0}$ es el voltaje basal (en V, constante en primera aproximación durante el pulso) y $\Delta V_m^{\mathrm{ind}}(\theta, t)$ es la contribución inducida (en V, dependiente del ángulo $\theta$ y del tiempo $t$).
 
-- $\Delta V_{m,0}$ representa la contribución basal previa a la estimulación;
-- $\Delta V_m^{\mathrm{ind}}(t)$ representa la contribución inducida por el campo eléctrico.
+## ¿Se puede despreciar el voltaje basal?
 
-En esta aproximación, la magnitud de la contribución inducida es máxima en los polos alineados con el campo.
-
-# Planteamiento físico
-
-La bicapa lipídica actúa como una barrera dieléctrica delgada entre dos medios conductores: el citoplasma y el medio extracelular. Desde el punto de vista eléctrico, esta barrera puede almacenar carga, por lo que se modela como una capacitancia.
-
-En una descripción mínima, la membrana se representa como una capacitancia $C_m$ en paralelo con una resistencia de membrana $R_m$. Esta combinación está acoplada al medio por una resistencia efectiva $R_e$. Este circuito equivalente se ilustra en @fig-circuito.
-
-La interpretación física es la siguiente:
-
-- $C_m$ representa la capacidad de la membrana para almacenar carga.
-- $R_m$ representa las rutas de fuga a través de la membrana.
-- $R_e$ representa la oposición efectiva del medio y la geometría al proceso de carga.
-- La polarización inducida **se desarrolla en el tiempo**, no de forma instantánea.
-
-![Circuito RC equivalente mínimo para describir la carga transitoria de la membrana. La fuente $V_\mathrm{pulso}(t)$ representa el estímulo externo; $R_e$ es la resistencia efectiva del medio; $R_m$ y $C_m$ son, respectivamente, la resistencia y capacitancia de membrana. La flecha roja indica la contribución inducida del voltaje transmembrana.](figures/ep_rc_equivalente_membrana.png){#fig-circuito fig-alt="Circuito RC equivalente de membrana con V_pulso(t), R_e, R_m, C_m y Delta V_m inducido en función del tiempo." width=85%}
-
-# Ecuación diferencial mínima durante el pulso
-
-Si se aplica un pulso rectangular constante a partir de $t=t_0$, la dinámica mínima de la contribución inducida puede escribirse como:
+En los experimentos de electroporación, los campos eléctricos aplicados típicos están en el rango de $0.1$–$10~\mathrm{kV/cm}$. Para una célula de $a = 10~\mu\mathrm{m}$, la ecuación de Schwan predice un voltaje inducido máximo de:
 
 $$
-\tau_m \frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
+\Delta V_{m,\max}^{\mathrm{ind}} = \frac{3}{2}\,a\,E_0 = 1.5 \times 10^{-5}~\mathrm{m} \times E_0
+$$
+
+Con $E_0 = 1~\mathrm{kV/cm} = 10^5~\mathrm{V/m}$, se obtiene $\Delta V_{m,\max}^{\mathrm{ind}} = 1.5~\mathrm{V}$, es decir, **uno o dos órdenes de magnitud por encima del voltaje basal** ($|\Delta V_{m,0}| \sim 70~\mathrm{mV}$). Por esta razón, en los modelos de electroporación que trabajan con campos en el rango de electroporación estándar o por encima, el voltaje basal suele despreciarse y se trabaja directamente con la contribución inducida [@Kotnik2000]:
+
+$$
+\Delta V_m^{\mathrm{tot}}(\theta, t) \approx \Delta V_m^{\mathrm{ind}}(\theta, t)
+$$
+
+En los modelos más precisos o para pulsos de muy baja amplitud, el voltaje basal puede incluirse explícitamente sumando su valor a la solución temporal que se deduce a continuación.
+
+## La ecuación de Schwan como límite estacionario
+
+La ecuación de Schwan describe el valor al que tiende la contribución inducida cuando el pulso se ha mantenido durante un tiempo mucho mayor que la constante de tiempo del sistema, es decir, en el régimen estacionario ($t \to \infty$):
+
+$$
+\Delta V_{m,\max}^{\mathrm{ind}}(\theta)
+=
+\frac{3}{2}\,a\,E_0\cos\theta
+$$ {#eq-schwan-max}
+
+La pregunta que responde este módulo es: ¿cómo llega la biomembrana desde $\Delta V_m^{\mathrm{ind}} = 0$ (antes del pulso) hasta ese valor máximo? La respuesta requiere modelar la biomembrana como un circuito eléctrico con inercia.
+
+# Planteamiento físico: el circuito RC equivalente
+
+## Elementos del modelo
+
+Desde el punto de vista eléctrico, la biomembrana separa dos medios conductores —el citoplasma y el fluido extracelular— actuando como una capa dieléctrica de baja conductividad. Esta configuración sugiere naturalmente un modelo de circuito equivalente [@Schwan1957; @Kotnik1998].
+
+La biomembrana se representa mediante dos elementos en paralelo (ver @fig-circuito):
+
+- **Capacitancia de membrana $C_m$** (en F): representa la capacidad de la bicapa lipídica para almacenar carga en sus superficies. En el módulo anterior se estimó $C_m = \varepsilon_0\varepsilon_r/d$, con valores típicos de $5$–$10~\mathrm{mF/m^2}$. Para una célula esférica de radio $a$, la capacitancia total es $C_m^{\mathrm{tot}} \approx C_m \cdot 4\pi a^2$.
+- **Resistencia de membrana $R_m$** (en $\Omega$): representa las rutas de fuga de corriente iónica a través de la bicapa (canales, transportadores y la conductancia intrínseca de la bicapa). En condiciones de reposo y sin poros, $R_m$ es muy alta ($R_m \gg R_e$), porque la bicapa es un dieléctrico de baja conductividad.
+
+Estos dos elementos están en paralelo porque ambos están "conectados" a los mismos dos nodos: la cara interna y la cara externa de la biomembrana. La diferencia de potencial transmembrana $\Delta V_m^{\mathrm{ind}}$ es la misma para $C_m$ y para $R_m$.
+
+El conjunto membrana ($C_m \parallel R_m$) está acoplado al medio exterior y a la fuente de pulso mediante una **resistencia efectiva del medio $R_e$** (en $\Omega$), que está en serie con la combinación paralela. Esta resistencia recoge la oposición del electrolito extracelular y la geometría del sistema al flujo de corriente que carga la membrana.
+
+![Circuito RC equivalente mínimo para describir la carga transitoria de la biomembrana. La fuente $V_\mathrm{pulso}(t)$ representa el estímulo externo; $R_e$ es la resistencia efectiva del medio (en serie); $R_m$ y $C_m$ son, respectivamente, la resistencia y capacitancia de membrana (en paralelo). La diferencia de potencial sobre el paralelo $R_m \parallel C_m$ corresponde al voltaje transmembrana inducido $\Delta V_m^{\mathrm{ind}}(t)$.](figures/ep_rc_equivalente_membrana.png){#fig-circuito fig-alt="Circuito RC equivalente de membrana con V_pulso(t), R_e, R_m, C_m y Delta V_m inducido en función del tiempo." width=85%}
+
+## Deducción de la ecuación diferencial durante el pulso
+
+Cuando se aplica un pulso rectangular de voltaje constante $V_0$ a partir de $t = t_0$, el circuito de la @fig-circuito tiene una sola malla. Aplicando la Ley de Voltajes de Kirchhoff —la suma de caídas de tensión en una malla cerrada es igual a la tensión de la fuente— se obtiene:
+
+$$
+V_0 = R_e\,i(t) + \Delta V_m^{\mathrm{ind}}(t)
+$$ {#eq-kirchhoff}
+
+donde $i(t)$ es la corriente total que circula por el circuito (en A). La corriente se divide entre $R_m$ y $C_m$ en el nodo de la membrana. La corriente a través de $R_m$ es $i_{R_m} = \Delta V_m^{\mathrm{ind}} / R_m$, y la corriente que carga $C_m$ es $i_{C_m} = C_m\,d(\Delta V_m^{\mathrm{ind}})/dt$. Por la ley de nodos (Kirchhoff de corrientes):
+
+$$
+i(t) = \frac{\Delta V_m^{\mathrm{ind}}}{R_m} + C_m\frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
+$$ {#eq-nodos}
+
+Sustituyendo la ecuación (@eq-nodos) en la ecuación (@eq-kirchhoff):
+
+$$
+V_0
+=
+R_e\!\left(\frac{\Delta V_m^{\mathrm{ind}}}{R_m} + C_m\frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}\right)
++
+\Delta V_m^{\mathrm{ind}}
+$$
+
+$$
+V_0
+=
+\Delta V_m^{\mathrm{ind}}\!\left(\frac{R_e}{R_m} + 1\right)
++
+R_e\,C_m\frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
+$$
+
+Dividiendo entre $\left(1 + R_e/R_m\right)$ y definiendo:
+
+$$
+\tau_m = \frac{R_e\,R_m}{R_e + R_m}\,C_m = (R_e \parallel R_m)\,C_m
+$$ {#eq-tau}
+
+$$
+\Delta V_{m,\max}^{\mathrm{ind}} = \frac{R_m}{R_e + R_m}\,V_0
+$$ {#eq-Vmax-def}
+
+se obtiene la ecuación diferencial ordinaria de primer orden:
+
+$$
+\tau_m\,\frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
 +
 \Delta V_m^{\mathrm{ind}}
 =
 \Delta V_{m,\max}^{\mathrm{ind}}
-$$
+$$ {#eq-ode-carga}
 
-Esta ecuación indica que la membrana tiende hacia un valor máximo inducido, pero lo hace con una rapidez controlada por $\tau_m$.
+Esta es una EDO lineal de primer orden con término independiente constante. Su significado físico es directo: la biomembrana tiende hacia el valor máximo inducido $\Delta V_{m,\max}^{\mathrm{ind}}$, con una rapidez inversamente proporcional a $\tau_m$.
 
-Si al inicio del pulso se toma como condición inicial $\Delta V_m^{\mathrm{ind}}(t_0)=0$, entonces la solución es:
+## Solución durante el pulso
+
+La ecuación (@eq-ode-carga) es una EDO lineal de primer orden no homogénea. Se resuelve por separación de variables o mediante el factor integrante. Con la condición inicial $\Delta V_m^{\mathrm{ind}}(t_0) = 0$ (la membrana no está polarizada antes del pulso), la solución es:
 
 $$
 \Delta V_m^{\mathrm{ind}}(t)
 =
 \Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-(t-t_0)/\tau_m}\right)
-\qquad
-\text{para}
-\qquad
-t_0 \le t \le t_0 + t_p
+\!\left(1 - e^{-(t-t_0)/\tau_m}\right),
+\qquad t_0 \le t \le t_0 + t_p
+$$ {#eq-carga}
+
+donde $t_p$ es la duración del pulso (en s). La función crece desde cero de manera exponencial y se aproxima asintóticamente a $\Delta V_{m,\max}^{\mathrm{ind}}$.
+
+**Verificación:** en $t = t_0$, $e^0 = 1$ y la expresión vale $0$. Cuando $t \to \infty$, $e^{-\infty} = 0$ y la expresión tiende a $\Delta V_{m,\max}^{\mathrm{ind}}$. La derivada en $t = t_0$ es $\Delta V_{m,\max}^{\mathrm{ind}}/\tau_m$, que es la pendiente inicial de la carga.
+
+## Constante de tiempo $\tau_m$ y el límite biológico
+
+En condiciones fisiológicas, sin poros formados, la resistencia de membrana es mucho mayor que la resistencia del medio: $R_m \gg R_e$. En ese límite, la expresión de la ecuación (@eq-tau) se simplifica:
+
 $$
+\tau_m = \frac{R_e\,R_m}{R_e + R_m}\,C_m \approx \frac{R_e\,R_m}{R_m}\,C_m = R_e\,C_m
+$$ {#eq-tau-limite}
 
-# Interpretación de la constante de tiempo
+Es decir, la constante de tiempo de carga está controlada principalmente por la resistencia del medio $R_e$ y la capacitancia de membrana $C_m$. Cuanto más conductora es la solución extracelular (menor $R_e$) o menor es la capacitancia de la membrana (bicapa más delgada o área más pequeña), más rápido se carga la biomembrana. Los valores típicos de $\tau_m$ en células animales se encuentran en el rango de $0.1$–$10~\mu\mathrm{s}$ [@Kotnik1998; @Kotnik2000].
 
-La constante de tiempo $\tau_m$ indica qué tan rápido se carga la membrana. Transcurrido un tiempo $\tau_m$ desde el inicio del pulso:
+Transcurrido un tiempo igual a $\tau_m$ desde el inicio del pulso, la membrana ha alcanzado:
 
 $$
 \Delta V_m^{\mathrm{ind}}(t_0 + \tau_m)
 =
-\Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-1}\right)
+\Delta V_{m,\max}^{\mathrm{ind}}\!\left(1 - e^{-1}\right)
 \approx
 0.63\,\Delta V_{m,\max}^{\mathrm{ind}}
 $$
 
-Por tanto, la membrana ha alcanzado aproximadamente el 63 % del valor máximo inducido al cabo de un tiempo $\tau_m$ desde el inicio del pulso.
+es decir, aproximadamente el **63 %** del valor máximo.
 
 # Descarga cuando cesa el pulso
 
-Cuando el pulso termina en $t = t_0 + t_p$, la fuente deja de impulsar la carga y la contribución inducida comienza a decaer, como se ilustra en @fig-carga. En esa etapa, la ecuación diferencial pasa a ser:
+## Ecuación diferencial de la descarga
+
+Cuando el pulso termina en $t = t_0 + t_p$, la fuente de tensión se desconecta y la corriente externa se anula. La biomembrana queda como una capacitancia $C_m$ cargada al voltaje $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$, que se descarga a través de los caminos de fuga disponibles. La ecuación diferencial pasa a ser homogénea:
 
 $$
-\tau_m \frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
+\tau_m^{\mathrm{desc}}\,\frac{d\,\Delta V_m^{\mathrm{ind}}}{dt}
 +
 \Delta V_m^{\mathrm{ind}}
 =
-0
-$$
+0,
+\qquad t > t_0 + t_p
+$$ {#eq-ode-descarga}
 
-con condición inicial:
+## ¿Es la misma constante de tiempo en carga y en descarga?
+
+Esta es una pregunta biofísicamente importante. Durante la **carga**, la corriente proviene de la fuente externa y debe atravesar el medio extracelular (resistencia $R_e$) para llegar a la membrana; por ello $\tau_m^{\mathrm{carga}} \approx R_e C_m$ (en el límite $R_m \gg R_e$). Durante la **descarga**, la fuente ya no está conectada: la energía almacenada en $C_m$ se disipa a través de $R_m$ y de $R_e$. La constante de tiempo de descarga es en general:
 
 $$
-\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
-=
-\Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-t_p/\tau_m}\right)
-$$
+\tau_m^{\mathrm{desc}} = (R_e \parallel R_m)\,C_m
+$$ {#eq-tau-desc}
 
-La solución para la fase de descarga es:
+Hay dos casos físicamente distintos:
+
+**Caso 1: $R_m \gg R_e$ (membrana intacta, sin poros).** Si la biomembrana no se ha permeabilizado, $R_m$ sigue siendo muy alta y la descarga debe ocurrir principalmente a través de $R_e$: $\tau_m^{\mathrm{desc}} \approx R_e C_m \approx \tau_m^{\mathrm{carga}}$. En este caso carga y descarga tienen constantes de tiempo similares.
+
+**Caso 2: $R_m$ disminuye (electroporación reversible o irreversible).** Si durante el pulso se han formado poros hidrofílicos, la conductancia de membrana aumenta (resistencia $R_m$ disminuye drásticamente). En ese caso, $R_m$ puede volverse comparable o incluso menor que $R_e$, y la constante de tiempo de descarga se reduce: $\tau_m^{\mathrm{desc}} < \tau_m^{\mathrm{carga}}$. La descarga ocurre más rápidamente porque los propios poros ofrecen una ruta de disipación de carga [@Kotnik2000; @Kotnik2019]. Este mecanismo es relevante para comprender la recuperación celular post-pulso: si los poros cierran con cierta rapidez, la membrana puede recuperar su $R_m$ alta y la descarga subsiguiente se vuelve lenta.
+
+En el modelo mínimo que se presenta en este módulo, por simplicidad se asume que $\tau_m^{\mathrm{desc}} \approx \tau_m^{\mathrm{carga}} \equiv \tau_m$, es decir, que la membrana permanece mayormente intacta o que el poro no modifica sustancialmente la constante de descarga. Esta es una buena aproximación para pulsos subumbrales o para fines pedagógicos, pero debe tenerse en cuenta que en condiciones de electroporación real las constantes de tiempo pueden diferir.
+
+## Solución durante la descarga
+
+Con la condición inicial $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$ dada por la ecuación (@eq-carga) evaluada en el final del pulso, y con $\tau_m^{\mathrm{desc}} \approx \tau_m$, la solución de la ecuación (@eq-ode-descarga) es:
 
 $$
 \Delta V_m^{\mathrm{ind}}(t)
 =
 \Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-t_p/\tau_m}\right)
-e^{-(t - t_0 - t_p)/\tau_m}
-\qquad
-\text{para}
-\qquad
-t > t_0 + t_p
-$$
+\!\left(1 - e^{-t_p/\tau_m}\right)
+e^{-(t - t_0 - t_p)/\tau_m},
+\qquad t > t_0 + t_p
+$$ {#eq-descarga}
 
-Esta expresión muestra que, una vez cesa el pulso, la contribución inducida no desaparece abruptamente: decae exponencialmente con la misma constante de tiempo del sistema.
+Esta expresión indica que la descarga es también exponencial, con la misma constante de tiempo, pero parte del valor alcanzado al final del pulso y no de $\Delta V_{m,\max}^{\mathrm{ind}}$.
 
-![Pulso rectangular y respuesta temporal de carga y descarga de la membrana. Durante el intervalo $[t_0,\, t_0 + t_p]$ la membrana se carga progresivamente hacia $\Delta V_{m,\max}^{\mathrm{ind}}$; cuando el pulso cesa, la contribución inducida decae exponencialmente desde el valor alcanzado al final del pulso.](figures/ep_rc_carga_descarga_membrana.png){#fig-carga fig-alt="Pulso rectangular y respuesta temporal de carga y descarga exponencial de la membrana." width=92%}
+![Pulso rectangular y respuesta temporal de carga y descarga de la biomembrana. Durante el intervalo $[t_0,\, t_0 + t_p]$ la membrana se carga progresivamente hacia $\Delta V_{m,\max}^{\mathrm{ind}}$; cuando el pulso cesa, la contribución inducida decae exponencialmente desde el valor alcanzado al final del pulso.](figures/ep_rc_carga_descarga_membrana.png){#fig-carga fig-alt="Pulso rectangular y respuesta temporal de carga y descarga exponencial de la biomembrana." width=92%}
 
-# Relación con la ecuación de Schwan
+# Conexión con la ecuación de Schwan
 
-El valor máximo inducido puede aproximarse mediante la ecuación de Schwan:
+La ecuación de Schwan (ecuación @eq-schwan-max) proporciona el valor estacionario $\Delta V_{m,\max}^{\mathrm{ind}}(\theta)$ que aparece en las soluciones de carga y descarga. Incorporando la dependencia angular de Schwan en la solución temporal (@eq-carga), la respuesta completa durante el pulso queda:
 
 $$
-\Delta V_{m,\max}^{\mathrm{ind}}(\theta)
-\approx
-f\,a\,E_0\cos\theta
-$$
+\Delta V_m^{\mathrm{ind}}(\theta, t)
+=
+\frac{3}{2}\,a\,E_0\cos\theta
+\!\left(1 - e^{-(t-t_0)/\tau_m}\right),
+\qquad t_0 \le t \le t_0 + t_p
+$$ {#eq-schwan-temporal-carga}
 
-Al incorporar la dinámica temporal durante el pulso:
-
-$$
-\Delta V_m^{\mathrm{ind}}(\theta,t)
-\approx
-f\,a\,E_0\cos\theta
-\left(1-e^{-(t-t_0)/\tau_m}\right)
-\qquad
-\text{para}
-\qquad
-t_0 \le t \le t_0 + t_p
-$$
-
-y luego, una vez cesa el pulso:
+y tras el pulso:
 
 $$
-\Delta V_m^{\mathrm{ind}}(\theta,t)
-\approx
-f\,a\,E_0\cos\theta
-\left(1-e^{-t_p/\tau_m}\right)
-e^{-(t - t_0 - t_p)/\tau_m}
-\qquad
-\text{para}
-\qquad
-t > t_0 + t_p
-$$
+\Delta V_m^{\mathrm{ind}}(\theta, t)
+=
+\frac{3}{2}\,a\,E_0\cos\theta
+\!\left(1 - e^{-t_p/\tau_m}\right)
+e^{-(t - t_0 - t_p)/\tau_m},
+\qquad t > t_0 + t_p
+$$ {#eq-schwan-temporal-descarga}
 
-Estas expresiones combinan dos ideas físicas:
+Estas expresiones combinan dos contenidos físicos: la **distribución espacial** del voltaje inducido sobre la biomembrana (dada por el factor $\cos\theta$ de la ecuación de Schwan) y la **evolución temporal** asociada al circuito RC equivalente (dada por los factores exponenciales). La figura @fig-carga ilustra la forma de onda para el polo celular ($\theta = 0$, $\cos\theta = 1$).
 
-1. La distribución espacial del voltaje inducido sobre la membrana.
-2. La evolución temporal asociada a la carga y descarga del sistema RC.
-
-En los polos alineados con el campo, $\cos\theta=\pm 1$, la magnitud de la polarización inducida es máxima. En el ecuador celular, $\theta=\pi/2$, se tiene $\cos\theta=0$, por lo que la contribución inducida idealizada se anula.
+Un corolario importante: para que la membrana alcance el voltaje estacionario predicho por Schwan, el pulso debe durar al menos $t_p \gtrsim 3\tau_m$ (en ese punto se alcanza $\approx 95~\%$ del máximo). Si el pulso es más corto, la membrana no llega al máximo de Schwan y se necesita mayor campo $E_0$ para compensar.
 
 # Ejemplo numérico
 
-Supongamos una célula con $a = 10\,\mu\text{m}$, un campo externo $E_0 = 100\,\text{kV/m}$ y un factor geométrico $f = 1.5$. El pulso se aplica a partir de $t_0 = 1\,\mu\text{s}$.
+Supongamos una célula con $a = 10~\mu\text{m}$, un campo externo $E_0 = 100~\text{kV/m}$ y un factor geométrico $f = 1.5$. El pulso se aplica a partir de $t_0 = 1~\mu\text{s}$.
 
-En el polo celular, donde $\cos\theta=1$:
+En el polo celular ($\theta = 0$, $\cos\theta = 1$), el valor máximo inducido (ecuación @eq-schwan-max) es:
 
 $$
 \Delta V_{m,\max}^{\mathrm{ind}}
 =
-1.5
-\left(10\times10^{-6}\,\text{m}\right)
-\left(100\times10^3\,\text{V/m}\right)
+1.5 \times (10 \times 10^{-6}~\text{m}) \times (10^5~\text{V/m})
 =
-1.5\,\text{V}
+1.5~\text{V}
 $$
 
-Si la constante de tiempo es $\tau_m = 1\,\mu\text{s}$, entonces a $t = t_0 + \tau_m$:
+Con una constante de tiempo $\tau_m = 1~\mu\text{s}$, a $t = t_0 + \tau_m = 2~\mu\text{s}$ la ecuación (@eq-carga) da:
 
 $$
-\Delta V_m^{\mathrm{ind}}
+\Delta V_m^{\mathrm{ind}}(t_0 + \tau_m)
+=
+1.5\,\mathrm{V} \times (1 - e^{-1})
 \approx
-0.63\times1.5\,\text{V}
+0.63 \times 1.5~\text{V}
 \approx
-0.95\,\text{V}
+0.95~\text{V}
 $$
 
-Si el pulso dura $t_p = 3\,\mu\text{s}$, el valor alcanzado al final será:
+Si el pulso dura $t_p = 3~\mu\text{s}$, el valor al final del pulso (ecuación @eq-carga en $t = t_0 + t_p$) es:
 
 $$
 \Delta V_m^{\mathrm{ind}}(t_0 + t_p)
 =
-1.5
-\left(1-e^{-3}\right)\,\text{V}
+1.5~\text{V} \times (1 - e^{-3})
 \approx
-1.43\,\text{V}
+1.5 \times 0.950
+\approx
+1.43~\text{V}
 $$
 
-y luego decaerá exponencialmente una vez el pulso cese.
+Tras el pulso, la contribución inducida decae exponencialmente desde $1.43~\text{V}$ con la misma constante de tiempo $\tau_m = 1~\mu\text{s}$ (asumiendo membrana intacta), según la ecuación (@eq-descarga).
 
 # Simulación interactiva
 
-En esta simulación se explora la dinámica temporal de la contribución inducida del voltaje transmembrana durante y después del pulso.
+En esta simulación se explora la dinámica temporal de la contribución inducida del voltaje transmembrana durante y después del pulso, según las ecuaciones (@eq-carga) y (@eq-descarga).
 
 ::: {.callout-note}
 ## Instrucciones
@@ -298,7 +298,7 @@ Use los controles deslizantes para modificar:
 - la duración del pulso $t_p$;
 - el tiempo total mostrado.
 
-La gráfica superior muestra el pulso aplicado. La gráfica inferior muestra la respuesta temporal de carga y descarga de la membrana. Las líneas verticales de referencia indican $t_0$ (azul), $t_0 + \tau_m$ (gris) y $t_0 + t_p$ (verde).
+La gráfica superior muestra el pulso aplicado. La gráfica inferior muestra la respuesta temporal de carga y descarga de la biomembrana. Las líneas verticales de referencia indican $t_0$ (azul), $t_0 + \tau_m$ (gris) y $t_0 + t_p$ (verde).
 :::
 
 ## Panel interactivo
@@ -559,6 +559,27 @@ Plot.plot({
 
 :::
 
+## Cómo interpretar la simulación
+
+Durante el pulso, la biomembrana se carga de forma exponencial según la ecuación (@eq-carga). Si $t_p \gg \tau_m$, la curva se aproxima a $\Delta V_{m,\max}^{\mathrm{ind}}$ antes de que termine el pulso. Si $t_p \lesssim \tau_m$, la membrana no alcanza el valor máximo y la fracción alcanzada al final del pulso, $1 - e^{-t_p/\tau_m}$, es significativamente menor que 1.
+
+Después de $t_0 + t_p$, la contribución inducida decae exponencialmente desde el valor alcanzado al final del pulso, según la ecuación (@eq-descarga).
+
+::: {.callout-warning}
+## Precaución física
+
+Este modelo RC es una aproximación mínima. En células reales, la dinámica puede modificarse por geometría celular, conductividad del medio, permeabilización de la biomembrana, formación de poros, cambios de conductancia, temperatura, forma de onda y heterogeneidad celular [@Kotnik2019].
+:::
+
+# Preguntas para explorar
+
+1. ¿Qué ocurre con $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$ cuando se aumenta la duración del pulso $t_p$?
+2. ¿Qué ocurre si $t_p$ es mucho menor que $\tau_m$? ¿Qué campo se necesitaría para compensar?
+3. ¿Por qué a $t = t_0 + \tau_m$ se alcanza aproximadamente el 63 % del valor máximo? ¿Qué valor exacto corresponde a $1 - e^{-1}$?
+4. ¿Qué cambia si se aumenta $\Delta V_{m,\max}^{\mathrm{ind}}$ pero se mantiene constante $\tau_m$?
+5. ¿Por qué la descarga no parte desde $\Delta V_{m,\max}^{\mathrm{ind}}$, sino desde $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$?
+6. Si durante el pulso se forman poros y $R_m$ disminuye, ¿cómo afecta esto a la constante de tiempo de descarga?
+
 ## Código para Google Colab
 
 El panel anterior funciona directamente en este portal. El siguiente código se ofrece solo para estudiantes que deseen reproducir o modificar la simulación en Python.
@@ -572,7 +593,7 @@ def simular_rc(
     t0_us=1.0, Vmax=1.5, tau_us=1.0, tp_us=3.0, tiempo_total_us=12.0
 ):
     """
-    Simulación didáctica de carga y descarga RC de la membrana.
+    Simulación didáctica de carga y descarga RC de la biomembrana.
 
     Para t0 <= t <= t0 + tp:
         Delta V_m^ind(t) = Vmax * (1 - exp(-(t - t0)/tau))
@@ -662,72 +683,27 @@ interact(
 )
 ```
 
-# Cómo interpretar la simulación
-
-Durante el pulso, la membrana se carga de forma exponencial. Si $t_p$ es mucho mayor que $\tau_m$, la curva se aproxima a $\Delta V_{m,\max}^{\mathrm{ind}}$.
-
-Si $t_p$ es menor o comparable con $\tau_m$, la membrana no alcanza completamente el valor máximo inducido antes de que el pulso termine.
-
-El valor alcanzado al final del pulso es:
-
-$$
-\Delta V_m^{\mathrm{ind}}(t_0 + t_p)
-=
-\Delta V_{m,\max}^{\mathrm{ind}}
-\left(1-e^{-t_p/\tau_m}\right)
-$$
-
-Después de $t_0 + t_p$, la contribución inducida decae como:
-
-$$
-\Delta V_m^{\mathrm{ind}}(t)
-=
-\Delta V_m^{\mathrm{ind}}(t_0 + t_p)\,
-e^{-(t - t_0 - t_p)/\tau_m}
-$$
-
-::: {.callout-warning}
-## Precaución física
-
-Este modelo RC es una aproximación mínima. En células reales, la dinámica puede modificarse por geometría celular, conductividad del medio, permeabilización de la membrana, formación de poros, cambios de conductancia, temperatura, forma de onda y heterogeneidad celular.
-:::
-
-# Preguntas para explorar
-
-1. ¿Qué ocurre con $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$ cuando se aumenta la duración del pulso $t_p$?
-2. ¿Qué ocurre si $t_p$ es mucho menor que $\tau_m$?
-3. ¿Por qué a $t = t_0 + \tau_m$ se alcanza aproximadamente el 63 % del valor máximo?
-4. ¿Qué cambia si se aumenta $\Delta V_{m,\max}^{\mathrm{ind}}$ pero se mantiene constante $\tau_m$?
-5. ¿Por qué la descarga no empieza desde $\Delta V_{m,\max}^{\mathrm{ind}}$, sino desde $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$?
-6. ¿Cómo afecta el tiempo de inicio $t_0$ a la energía total depositada en la membrana durante el pulso?
-
 # Alcance y limitaciones
 
-Este modelo RC es una representación mínima cuyo valor principal es pedagógico. Permite entender por qué la membrana necesita un tiempo finito para cargarse y descargarse.
+Este modelo RC es una representación mínima cuyo principal valor es pedagógico. Permite comprender por qué la biomembrana necesita un tiempo finito para cargarse y descargarse, y por qué la duración del pulso no puede desvincularse de la magnitud del campo si se quiere alcanzar un determinado nivel de polarización.
 
-Sin embargo, el modelo no incluye explícitamente:
+El modelo no incluye, entre otros aspectos:
 
-- geometrías celulares complejas;
-- membranas no esféricas;
-- heterogeneidad espacial de la membrana;
+- geometrías celulares no esféricas ni heterogeneidades espaciales de la biomembrana;
 - conductancias dependientes del voltaje;
-- formación y evolución de poros;
-- cambios en la conductividad durante la permeabilización;
-- efectos térmicos;
+- formación y evolución dinámica de poros (lo que modifica $R_m$ durante el pulso);
+- cambios en la conductividad del medio durante la permeabilización;
+- efectos térmicos por disipación Joule;
 - acoplamiento con organelos o estructuras intracelulares.
 
-Por tanto, esta aproximación debe interpretarse como un primer modelo físico para entender la escala temporal de la polarización inducida, no como una descripción completa de todos los procesos de la electroporación.
+Por tanto, esta aproximación debe interpretarse como un primer modelo físico para entender la escala temporal de la polarización inducida, no como una descripción completa de todos los procesos involucrados en la electroporación.
 
-# Ideas clave
+# Síntesis del módulo
 
-- La membrana puede modelarse, en primera aproximación, como un sistema RC.
-- La contribución inducida $\Delta V_m^{\mathrm{ind}}(t)$ no aparece instantáneamente, sino que crece exponencialmente a partir del inicio del pulso $t_0$.
-- La constante de tiempo $\tau_m$ controla la rapidez de carga de la membrana.
-- A $t = t_0 + \tau_m$, la membrana alcanza aproximadamente el 63 % del valor máximo inducido.
-- Si el pulso termina antes de completar la carga, la contribución inducida comienza a decaer exponencialmente.
-- La descarga parte del valor alcanzado al final del pulso, $\Delta V_m^{\mathrm{ind}}(t_0 + t_p)$.
-- El modelo temporal puede combinarse con la ecuación de Schwan para incorporar simultáneamente dependencia angular y temporal.
+La biomembrana puede modelarse en primera aproximación como una capacitancia $C_m$ en paralelo con una resistencia de fuga $R_m$, conectada al medio exterior a través de una resistencia $R_e$. Esta representación lleva directamente a una ecuación diferencial de primer orden que, durante un pulso rectangular, tiene como solución una exponencial creciente con constante de tiempo $\tau_m = (R_e \parallel R_m) C_m \approx R_e C_m$.
 
-# Referencias
+La constante de tiempo $\tau_m$ controla cuán rápido se carga la biomembrana: a tiempos $t \ll \tau_m$ la polarización es pequeña; solo cuando $t \gtrsim 3\tau_m$ se alcanza más del 95 % del valor estacionario predicho por la ecuación de Schwan. Una vez cesa el pulso, la carga almacenada en $C_m$ se disipa con una constante de tiempo que puede diferir de la de carga si la formación de poros ha reducido $R_m$.
 
-Ver @Kotnik1998, @Bilska2000, @Kotnik2000 y @Kotnik2019.
+La combinación de la ecuación de Schwan con la dinámica RC produce la expresión que incorpora simultáneamente la dependencia angular (dada por $\cos\theta$) y la dependencia temporal (dada por los factores exponenciales), y que constituye el primer modelo completo del voltaje transmembrana inducido bajo un pulso eléctrico.
+
+[Continuar con la energía libre de formación del poro →](03_energia_poro.qmd)

@@ -5,97 +5,49 @@ subtitle: "Transferencia molecular, ablación no térmica, nsPEF y biotecnologí
 
 # Propósito del módulo
 
-La electroporación es una plataforma física: el mismo principio de aumento controlado de permeabilidad puede utilizarse para fines muy distintos.
+La electroporación es una plataforma física: el mismo principio de aumento controlado de permeabilidad de la biomembrana puede utilizarse para fines muy distintos.
 
-Este módulo resume aplicaciones representativas y muestra cómo dependen del régimen físico de operación.
+Este módulo resume aplicaciones representativas y muestra cómo cada una depende del régimen físico de operación estudiado en los módulos anteriores.
 
-# Idea organizadora
+# El régimen físico determina la aplicación
 
-El resultado biológico depende de la combinación entre:
-
-- intensidad del campo eléctrico;
-- duración del pulso;
-- número de pulsos;
-- forma de onda;
-- blanco biológico;
-- escala espacial;
-- dosis energética;
-- recuperación celular.
+El resultado biológico depende de la combinación entre intensidad del campo eléctrico, duración del pulso, número de pulsos, forma de onda, blanco biológico, escala espacial, dosis energética y capacidad de recuperación celular.
 
 La @fig-aplicaciones-tres-regimenes resume tres aplicaciones representativas de la electroporación organizadas según el régimen físico dominante: permeabilización transitoria para transferencia molecular, electroporación irreversible para ablación no térmica y pulsos eléctricos de nanosegundos para inducir respuestas intracelulares o subcelulares.
 
-![Aplicaciones representativas de la electroporación según el régimen físico de operación. En la transfección y transferencia génica, la permeabilización transitoria permite el ingreso de ADN, ARN u otras moléculas manteniendo la viabilidad celular. En la electroporación irreversible (IRE), el objetivo es inducir ablación no térmica mediante daño irreversible de membrana. En los pulsos eléctricos de nanosegundos (nsPEF), la duración ultracorta y los campos elevados pueden producir respuestas intracelulares o subcelulares. Los rangos indicados son orientativos y dependen del tipo celular, la geometría experimental, el medio y el protocolo aplicado.](figures/ep_aplicaciones_tres_regimenes.png){#fig-aplicaciones-tres-regimenes fig-align="center" width="90%"}
+![Aplicaciones representativas de la electroporación según el régimen físico de operación. En la transfección y transferencia génica, la permeabilización transitoria permite el ingreso de ADN, ARN u otras moléculas manteniendo la viabilidad celular. En la electroporación irreversible (IRE), el objetivo es inducir ablación no térmica mediante daño irreversible de biomembrana. En los pulsos eléctricos de nanosegundos (nsPEF), la duración ultracorta y los campos elevados pueden producir respuestas intracelulares o subcelulares. Los rangos indicados son orientativos y dependen del tipo celular, la geometría experimental, el medio y el protocolo aplicado.](figures/ep_aplicaciones_tres_regimenes.png){#fig-aplicaciones-tres-regimenes fig-align="center" width="90%"}
 
-La comparación muestra que la diferencia entre aplicaciones no está en el principio general —la electropermeabilización de membranas—, sino en el régimen de operación elegido. Al modificar la intensidad del campo, la duración del pulso, el número de pulsos y la escala temporal, cambia el blanco biológico dominante y, por tanto, el resultado esperado.
+La comparación muestra que la diferencia entre aplicaciones no está en el principio general —la electropermeabilización de biomembranas—, sino en el régimen de operación elegido. Al modificar la intensidad del campo, la duración del pulso, el número de pulsos y la escala temporal, cambia el blanco biológico dominante y, por tanto, el resultado esperado.
 
 # Transferencia molecular y transfección
 
-En el régimen reversible, la electroporación permite introducir moléculas en células viables.
+En el régimen reversible, la electroporación permite introducir moléculas en células viables. Entre las moléculas de interés se incluyen ADN plasmídico, ARN, proteínas, sondas fluorescentes, fármacos y nanopartículas o complejos moleculares.
 
-Entre las moléculas de interés se incluyen:
-
-- ADN plasmídico;
-- ARN;
-- proteínas;
-- sondas fluorescentes;
-- fármacos;
-- nanopartículas o complejos moleculares.
-
-La meta es aumentar temporalmente la permeabilidad sin comprometer de manera irreversible la viabilidad celular.
-
-Este principio se usa en:
-
-- transfección celular;
-- transferencia génica;
-- producción de líneas celulares modificadas;
-- investigación en biología molecular;
-- desarrollo de vacunas y terapias génicas.
+La meta es aumentar temporalmente la permeabilidad de la biomembrana sin comprometer de manera irreversible la viabilidad celular. Este principio se aplica en transfección celular, transferencia génica, producción de líneas celulares modificadas, investigación en biología molecular y desarrollo de vacunas y terapias génicas.
 
 # Electroquimioterapia
 
-La electroquimioterapia combina pulsos eléctricos con fármacos antitumorales cuya entrada a la célula es limitada en condiciones normales.
+La electroquimioterapia combina pulsos eléctricos con fármacos antitumorales cuya entrada a la célula es limitada en condiciones normales. La electroporación aumenta transitoriamente la permeabilidad de la biomembrana, favoreciendo la entrada del medicamento y potenciando su efecto local.
 
-La electroporación aumenta transitoriamente la permeabilidad de la membrana, favoreciendo la entrada del medicamento y potenciando su efecto local.
-
-En este caso, el objetivo no es necesariamente introducir material genético, sino mejorar la entrega intracelular de un compuesto terapéutico.
+En este caso, el objetivo no es necesariamente introducir material genético, sino mejorar la entrega intracelular de un compuesto terapéutico. Los fármacos utilizados habitualmente —como la bleomicina o el cisplatino— tienen moléculas cuyo acceso al interior celular está restringido por la biomembrana, y la electroporación actúa como un agente potenciador de su eficacia [@Kotnik2019].
 
 # Electroporación irreversible
 
-La electroporación irreversible busca inducir pérdida permanente de viabilidad celular mediante daño de membrana dominante.
+La electroporación irreversible busca inducir pérdida permanente de viabilidad celular mediante daño irreversible de la biomembrana. Se utiliza principalmente en ablación no térmica de tejidos, en especial cuando se desea destruir células preservando parcialmente las estructuras extracelulares.
 
-Se utiliza principalmente en ablación no térmica de tejidos, en especial cuando se desea destruir células preservando parcialmente estructuras extracelulares.
+Su interés biomédico radica en que puede actuar como modalidad de ablación diferente a los métodos puramente térmicos: al no requerir calentamiento elevado, puede preservar mejor los tejidos conectivos, los vasos y los nervios de la zona tratada.
 
-Su interés biomédico radica en que puede actuar como una modalidad de ablación diferente a métodos puramente térmicos.
+# Pulsos eléctricos de nanosegundos (nsPEF)
 
-# Pulsos eléctricos de nanosegundos
+Los pulsos eléctricos de nanosegundos emplean duraciones extremadamente cortas y campos elevados. Estos protocolos se investigan por su capacidad de inducir respuestas subcelulares, incluyendo efectos sobre organelos, señalización intracelular, flujos de calcio, mitocondrias, inducción de apoptosis y membranas internas.
 
-Los pulsos eléctricos de nanosegundos, o nsPEF, emplean duraciones extremadamente cortas y campos elevados.
-
-Estos protocolos se investigan por su capacidad de inducir respuestas subcelulares, incluyendo efectos sobre:
-
-- organelos;
-- señalización intracelular;
-- calcio;
-- mitocondrias;
-- apoptosis;
-- membranas internas.
-
-Su interpretación requiere considerar escalas temporales de carga, amplitud del campo, geometría celular y propiedades eléctricas internas.
+Su interpretación requiere considerar las escalas temporales de carga de la biomembrana plasmática y de las membranas de organelos, la amplitud del campo, la geometría celular y las propiedades eléctricas internas. Dado que la constante de tiempo RC de la biomembrana plasmática es del orden de microsegundos, un pulso de nanosegundos puede no polarizar completamente la membrana externa pero sí alcanzar estructuras subcelulares [@Kotnik2019].
 
 # Procesamiento de alimentos y biotecnología
 
-La electroporación también se utiliza en contextos no médicos.
+La electroporación también se utiliza en contextos no médicos. En alimentos y bioprocesos puede aplicarse para facilitar la extracción de compuestos intracelulares, mejorar la transferencia de masa, modificar la textura de tejidos vegetales, inactivar microorganismos, asistir procesos de secado y mejorar el rendimiento de extracción.
 
-En alimentos y bioprocesos puede aplicarse para:
-
-- facilitar extracción de compuestos intracelulares;
-- mejorar transferencia de masa;
-- modificar textura;
-- inactivar microorganismos;
-- asistir procesos de secado;
-- mejorar rendimiento de extracción en tejidos vegetales.
-
-En estos casos, la muestra suele ser un tejido o suspensión celular, no una célula aislada. Por ello, la distribución espacial del campo y el calentamiento son especialmente importantes.
+En estos casos, la muestra suele ser un tejido o suspensión celular, no una célula aislada. Por ello, la distribución espacial del campo y el calentamiento Joule son especialmente relevantes en el diseño del protocolo.
 
 # Comparación de aplicaciones
 
@@ -107,16 +59,10 @@ En estos casos, la muestra suele ser un tejido o suspensión celular, no una cé
 | nsPEF | pulsos ultracortos | modular respuestas subcelulares |
 | Procesamiento de alimentos | reversible o irreversible según protocolo | extracción, inactivación o modificación de tejido |
 
-# Criterio físico común
-
-Todas estas aplicaciones comparten una idea central:
-
-> La membrana puede pasar de ser una barrera selectiva a una interfaz permeabilizada mediante control físico del estímulo eléctrico.
-
-La diferencia entre aplicaciones no está en el principio básico, sino en el régimen de operación y en el resultado biológico buscado.
-
 # Cierre
 
-La electroporación muestra cómo un concepto de física de membranas puede convertirse en una tecnología transversal. Su comprensión exige conectar estructura molecular, electromagnetismo, termodinámica, transporte, instrumentación y respuesta biológica.
+Todas estas aplicaciones comparten una idea central: la biomembrana puede pasar de ser una barrera selectiva a una interfaz permeabilizada mediante control físico del estímulo eléctrico. La diferencia entre aplicaciones no está en el principio básico, sino en el régimen de operación y en el resultado biológico buscado.
 
-[Ir a las actividades de aprendizaje](08_actividades.qmd)
+La electroporación muestra cómo un concepto de física de biomembranas puede convertirse en una tecnología transversal: su comprensión exige conectar estructura molecular, electromagnetismo, termodinámica, transporte, instrumentación y respuesta biológica.
+
+[Ir a las actividades de aprendizaje →](08_actividades.qmd)

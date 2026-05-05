@@ -1,13 +1,13 @@
 ---
-title: "Introducción a la membrana biológica"
+title: "Introducción a la biomembrana"
 subtitle: "Estructura molecular, función de barrera y modelo dieléctrico"
 ---
 
 # Propósito del módulo
 
-Antes de estudiar la electroporación, es necesario comprender qué tipo de estructura se está perturbando. La membrana celular no es una pared rígida: es una organización molecular dinámica que separa dos medios acuosos conductores y regula selectivamente el intercambio de materia, carga e información.
+Antes de estudiar la electroporación, es necesario comprender qué tipo de estructura se está perturbando. La biomembrana no es una pared rígida: es una organización molecular dinámica que separa dos medios acuosos conductores y regula selectivamente el intercambio de materia, carga e información (ver @fig-biomembrana-estructura).
 
-En este módulo se introduce la membrana biológica como:
+En este módulo se introduce la biomembrana como:
 
 - una bicapa lipídica anfipática;
 - una barrera selectiva al transporte iónico y molecular;
@@ -16,127 +16,147 @@ En este módulo se introduce la membrana biológica como:
 
 # Fosfolípidos y organización anfipática
 
-Los fosfolípidos son moléculas anfipáticas: poseen una región polar o hidrofílica y una región apolar o hidrofóbica.
+## Estructura del fosfolípido
 
-La cabeza polar interactúa favorablemente con el agua, mientras que las colas hidrocarbonadas tienden a evitar el contacto con el medio acuoso. Esta propiedad conduce espontáneamente a la formación de bicapas lipídicas en ambientes acuosos.
+Los fosfolípidos son las moléculas constitutivas fundamentales de la biomembrana [@Singer1972]. Cada fosfolípido está formado por tres regiones diferenciadas (ver @fig-biomembrana-estructura **A**):
 
-En una bicapa:
+- **Glicerol** como esqueleto central, al que se unen los demás componentes.
+- **Cabeza polar** (hidrofílica): un grupo fosfato unido a un alcohol orgánico. Los alcoholes más comunes son la colina (fosfatidilcolina, PC), la etanolamina (fosfatidiletanolamina, PE), la serina (fosfatidilserina, PS) y el inositol (fosfatidilinositol, PI). La naturaleza del alcohol determina la carga neta y las propiedades de señalización del lípido.
+- **Dos colas hidrofóbicas** (apolares): cadenas hidrocarbonadas de ácidos grasos, generalmente de 14 a 20 carbonos. Una de las colas suele ser saturada (sin dobles enlaces, cadena recta) y la otra insaturada (con uno o más dobles enlaces en configuración *cis*, que introduce una curvatura molecular). La presencia de insaturaciones regula la fluidez de la bicapa.
 
-- las cabezas polares se orientan hacia los medios acuosos;
-- las colas apolares se orientan hacia el interior;
-- la región central hidrofóbica dificulta el paso de iones y moléculas polares;
-- la membrana adquiere una función de barrera selectiva.
+## Autoorganización en ambiente acuoso
 
-La @fig-biomembrana-estructura resume esta organización en cuatro niveles: el fosfolípido como molécula anfipática, la bicapa lipídica como estructura autoorganizada, la biomembrana funcional con proteínas y carbohidratos, y el transporte selectivo de moléculas a través de la membrana.
+La cabeza polar interactúa favorablemente con el agua, mientras que las colas hidrocarbonadas tienden a evitar el contacto con el medio acuoso. Esta propiedad anfipática tiene consecuencias termodinámicas directas: la exposición de las colas al agua incrementa la entropía del sistema (efecto hidrofóbico), de modo que la configuración de mínima energía libre corresponde a estructuras que secuestran las cadenas apolares en un interior protegido [@Cooper2000].
+
+Dependiendo de la geometría molecular y las condiciones de concentración, los fosfolípidos pueden autoorganizarse en:
+
+- **Bicapas lipídicas planas**: cuando el volumen de las colas es comparable al de la cabeza polar (lípidos cilíndricos). Es la estructura característica de la biomembrana plana.
+- **Vesículas o liposomas**: bicapas que se cierran sobre sí mismas para eliminar los bordes hidrofóbicos expuestos.
+- **Micelas**: estructuras esféricas donde las colas se orientan hacia el interior; favorecidas por lípidos con una sola cola (forma cónica).
+
+En una bicapa (ver @fig-biomembrana-estructura **B**):
+
+- las cabezas polares se orientan hacia los medios acuosos (extracelular e intracelular);
+- las colas apolares se orientan hacia el interior hidrofóbico;
+- la región central dificulta el paso de iones y moléculas polares;
+- la membrana adquiere así su función de barrera selectiva.
 
 ![Organización estructural y funcional de la biomembrana. **A)** Fosfolípido con cabeza polar y colas apolares hidrofóbicas. **B)** Bicapa lipídica con región hidrofóbica central. **C)** Biomembrana funcional con proteínas integrales, proteínas periféricas, canales o transportadores y carbohidratos asociados a la superficie. **D)** Transporte selectivo: moléculas pequeñas y gases pueden atravesar con mayor facilidad, mientras que agua, iones, solutos polares y macromoléculas como ADN o ARN requieren vías especializadas o condiciones de permeabilización.](figures/ep_biomembrana_estructura_funcion.png){#fig-biomembrana-estructura fig-align="center" width="90%"}
 
 # La bicapa lipídica como barrera selectiva
 
-La bicapa lipídica permite el paso relativamente fácil de algunas moléculas pequeñas y apolares, pero restringe fuertemente el paso de iones, macromoléculas y moléculas polares grandes.
-
-Por esta razón, muchas sustancias requieren proteínas especializadas para atravesar la membrana:
-
-- canales iónicos;
-- transportadores;
-- bombas;
-- receptores acoplados a transporte;
-- complejos de señalización.
+La bicapa lipídica permite el paso relativamente fácil de algunas moléculas pequeñas y apolares (O₂, CO₂, N₂, lípidos de cadena corta), pero restringe fuertemente el paso de iones, macromoléculas y moléculas polares grandes. El agua puede atravesar la membrana lentamente por difusión simple, aunque en la mayoría de los tipos celulares su transporte masivo ocurre a través de proteínas especializadas llamadas acuaporinas.
 
 Desde la perspectiva de la electroporación, esta selectividad es central: el estímulo eléctrico busca aumentar transitoriamente la permeabilidad de una barrera que normalmente impide el paso de muchas moléculas de interés biológico.
 
 # Proteínas de membrana
 
-Las proteínas de membrana amplían las funciones de la bicapa lipídica. Pueden actuar como:
+## Clasificación: integrales y periféricas
 
-- canales selectivos para iones;
-- transportadores de solutos;
-- receptores de señales químicas;
-- enzimas asociadas a membrana;
-- elementos de adhesión celular;
-- puntos de anclaje para el citoesqueleto.
+Las proteínas de membrana (ver @fig-biomembrana-estructura **C**) se clasifican en dos grandes grupos según su modo de asociación con la bicapa:
 
-En electroporación, la presencia de proteínas hace que la membrana real sea más compleja que una bicapa lipídica ideal. Sin embargo, para construir los modelos físicos iniciales, resulta útil comenzar con la bicapa como sistema dieléctrico simplificado.
+- **Proteínas integrales**: atraviesan parcial o totalmente la bicapa lipídica. Las que la atraviesan de lado a lado se denominan *proteínas transmembrana*. Su región transmembrana suele estar formada por hélices α hidrofóbicas o barras β. Para extraerlas se requieren detergentes o solventes orgánicos.
+- **Proteínas periféricas**: se asocian a la superficie citoplasmática o extracelular de la membrana mediante interacciones electrostáticas o enlaces no covalentes con lípidos o proteínas integrales. Se pueden disociar con agentes como sales a alta concentración o cambios de pH.
 
-# Carbohidratos o glúcidos de membrana
+## Funciones y ejemplos
 
-Los carbohidratos de membrana, también llamados glúcidos, suelen encontrarse unidos a lípidos y proteínas, formando glicolípidos y glicoproteínas.
+Las proteínas de membrana amplían de manera decisiva las funciones de la bicapa lipídica [@Cooper2000]:
 
-Estos componentes participan en:
+- **Canales iónicos**: proteínas integrales que forman poros selectivos y permiten el flujo pasivo de iones específicos según su gradiente electroquímico. Ejemplos: canales de sodio dependientes de voltaje (Nav, ~260 kDa), canales de potasio (Kv, ~150 kDa), acuaporinas (~30 kDa por monómero, funcionales como tetrámeros).
+- **Transportadores**: proteínas que unen el soluto y cambian de conformación para trasladarlo. Pueden ser pasivos (facilitan la difusión en favor del gradiente) o activos (requieren energía). Ejemplo: GLUT1 (~54 kDa), transportador de glucosa presente en eritrocitos.
+- **Bombas iónicas**: transportadores activos primarios que utilizan hidrólisis de ATP. Ejemplo: Na⁺/K⁺-ATPasa (~150 kDa), que mantiene los gradientes de sodio y potasio esenciales para el potencial de reposo.
+- **Receptores**: proteínas que reconocen señales extracelulares (hormonas, neurotransmisores, factores de crecimiento) y transducen la señal al interior celular. Ejemplo: receptor de insulina (~350 kDa), receptor β-adrenérgico (~47 kDa).
+- **Enzimas de membrana**: catalizan reacciones en la interfaz membrana-citoplasma o membrana-exterior. Ejemplo: adenilato ciclasa (~120 kDa).
+- **Proteínas de adhesión y estructura**: anclan la célula a la matriz extracelular o a otras células, y conectan la membrana con el citoesqueleto. Ejemplos: integrinas (~200 kDa), espectrina (~280 kDa por subunidad).
 
-- reconocimiento celular;
-- interacción célula-célula;
-- protección de la superficie celular;
-- organización del glicocálix;
-- respuesta frente al entorno extracelular.
+A modo de referencia de escala: una proteína de 50 kDa tiene un diámetro aproximado de 4–5 nm, comparable al espesor de la bicapa lipídica (~4–5 nm). Las proteínas de canal de mayor tamaño (~300 kDa) pueden alcanzar 10–15 nm de longitud, proyectándose a ambos lados de la membrana.
 
-Aunque no son el centro de los modelos básicos de electroporación, los carbohidratos contribuyen a la complejidad físico-química de la superficie celular y pueden influir en la interacción de la membrana con el medio.
+En electroporación, la presencia de proteínas hace que la membrana real sea más compleja que una bicapa lipídica ideal. Sin embargo, para construir los modelos físicos iniciales resulta útil comenzar con la bicapa como sistema dieléctrico simplificado.
+
+# Carbohidratos de membrana
+
+## Nomenclatura y estructura
+
+Los carbohidratos de membrana son cadenas de monosacáridos (azúcares simples) unidas covalentemente a lípidos o proteínas de la cara extracelular de la biomembrana. El término *glúcidos* es equivalente a *carbohidratos* o *sacáridos* (del latín *gluco-*, dulce), y se usa en la tradición de la bioquímica de habla hispana.
+
+Los monosacáridos más frecuentes en los carbohidratos de membrana son la glucosa, la galactosa, la manosa, la fucosa, el ácido siálico (ácido N-acetilneuramínico) y la N-acetilglucosamina. Se unen entre sí mediante enlaces glucosídicos para formar cadenas lineales o ramificadas de longitud variable (2 a >20 unidades).
+
+## Formas de asociación con la membrana
+
+Los carbohidratos de membrana no existen como moléculas libres en la biomembrana: siempre están covalentemente enlazados a otras moléculas:
+
+- **Glicolípidos**: carbohidratos unidos a la cabeza polar de ciertos lípidos. El enlace ocurre entre el primer monosacárido y el grupo hidroxilo del lípido (habitualmente ceramida). Ejemplo destacado: los gangliósidos, presentes en abundancia en neuronas, con cadenas que incluyen uno o más residuos de ácido siálico.
+- **Glicoproteínas**: carbohidratos unidos covalentemente a residuos de serina/treonina (*O-glucosilación*) o asparragina (*N-glucosilación*) de proteínas de membrana. La mayoría de las proteínas de la superficie celular son glicoproteínas.
+
+Aunque algunos carbohidratos libres (como la glucosa) circulan en solución extracelular, en el contexto de la membrana los carbohidratos existen exclusivamente como componentes de glicolípidos o glicoproteínas.
+
+## El glicocálix y sus funciones
+
+El conjunto de carbohidratos que reviste la cara externa de la biomembrana forma el **glicocálix**, una cubierta de entre 10 y 100 nm de espesor [@Cooper2000]. Sus funciones principales son:
+
+- reconocimiento celular (incluyendo grupos sanguíneos ABO, determinados por glicolípidos);
+- interacción célula-célula y célula-matriz extracelular;
+- protección mecánica y química de la superficie celular;
+- modulación de señales extracelulares.
+
+Aunque los carbohidratos no son el centro de los modelos básicos de electroporación, el glicocálix contribuye a la complejidad físico-química de la superficie celular y puede influir en la interacción de la membrana con los electrolitos del medio.
 
 # La membrana como dieléctrico nanométrico
 
-Desde un punto de vista eléctrico, la membrana puede aproximarse como una capa dieléctrica delgada que separa dos medios conductores: el citoplasma y el fluido extracelular.
+## Modelo del capacitor de placas planas
 
-La @fig-membrana-capacitor muestra la correspondencia física entre la bicapa lipídica y un capacitor de placas plano-paralelas. En esta analogía, la región hidrofóbica central de la membrana actúa como material dieléctrico, mientras que los medios acuosos a ambos lados de la bicapa se comportan como regiones conductoras donde puede acumularse carga interfacial.
+Desde un punto de vista eléctrico, la biomembrana puede aproximarse como una capa dieléctrica delgada que separa dos medios conductores: el citoplasma y el fluido extracelular [@Cole1968].
 
-![Modelo físico de la membrana como capacitor plano-paralelo. A la izquierda se representa la bicapa lipídica como barrera biológica que restringe el flujo iónico entre el citoplasma y el fluido extracelular. A la derecha se muestra su aproximación física como una capa dieléctrica de espesor $d$ y permitividad relativa $\varepsilon_r$, situada entre dos medios conductores. En esta aproximación, la capacitancia específica de membrana se expresa como $C_m = \varepsilon_0\varepsilon_r/d$.](figures/ep_membrana_como_capacitor.png){#fig-membrana-capacitor fig-align="center" width="90%"}
+La @fig-membrana-capacitor muestra la correspondencia física entre la bicapa lipídica y un capacitor de placas plano-paralelas. En esta analogía, la región hidrofóbica central de la bicapa actúa como material dieléctrico, mientras que los medios acuosos a ambos lados —los electrolitos intracelular y extracelular— se comportan como regiones conductoras donde puede acumularse carga interfacial.
 
-Esta representación permite entender por qué la membrana puede acumular carga en sus interfaces y comportarse, en primera aproximación, como un capacitor.
+<!-- PENDIENTE: corregir la Figura 2 (ep_membrana_como_capacitor.png). En el panel izquierdo, añadir una zona azul (conductora) más allá de las cabezas polares de los fosfolípidos, tanto por encima como por debajo de la bicapa. El conductor del modelo son los medios electrolíticos, NO las cabezas polares. Con la figura actual el lector podría interpretar que las cabezas polares son los electrodos del capacitor, lo cual es incorrecto. -->
 
-Para una geometría plana ideal, la capacitancia específica de membrana se expresa como:
+![Modelo físico de la biomembrana como capacitor plano-paralelo. A la izquierda se representa la bicapa lipídica como barrera biológica que restringe el flujo iónico entre el citoplasma y el fluido extracelular. A la derecha se muestra su aproximación física como una capa dieléctrica de espesor $d$ y permitividad relativa $\varepsilon_r$, situada entre dos medios conductores (los electrolitos a ambos lados de la bicapa). En esta aproximación, la capacitancia específica de membrana se expresa como la ecuación (@eq-capacitancia).](figures/ep_membrana_como_capacitor.png){#fig-membrana-capacitor fig-align="center" width="90%"}
+
+## Capacitancia específica de membrana
+
+Esta representación permite entender por qué la biomembrana puede acumular carga en sus interfaces y comportarse, en primera aproximación, como un capacitor. Para una geometría plana ideal, la capacitancia específica de membrana se expresa como:
 
 $$
-C_m =
-\frac{\varepsilon_0 \varepsilon_r}{d}
-$$
+C_m = \frac{\varepsilon_0 \, \varepsilon_r}{d}
+$$ {#eq-capacitancia}
 
-donde:
+donde $C_m$ es la capacitancia específica de membrana (en F/m²), $\varepsilon_0 = 8.85 \times 10^{-12}$ F/m es la permitividad del vacío, $\varepsilon_r$ es la permitividad relativa efectiva de la región lipídica (adimensional, típicamente entre 2 y 3 para la región hidrofóbica), y $d$ es el espesor dieléctrico de la bicapa (en m, del orden de 4–5 nm).
 
-| Símbolo | Significado | Unidad |
-|---|---|---|
-| $C_m$ | capacitancia específica de membrana | $\mathrm{F/m^2}$ |
-| $\varepsilon_0$ | permitividad del vacío | $\mathrm{F/m}$ |
-| $\varepsilon_r$ | permitividad relativa efectiva de la región lipídica | adimensional |
-| $d$ | espesor dieléctrico de la bicapa | $\mathrm{m}$ |
+Con valores típicos ($\varepsilon_r \approx 2.2$, $d \approx 4~\mathrm{nm}$), la ecuación (@eq-capacitancia) predice $C_m \approx 5 \times 10^{-3}~\mathrm{F/m^2}$, en excelente acuerdo con las mediciones experimentales en bicapas lipídicas artificiales y células biológicas, que se sitúan en el rango de $5\text{–}10~\mathrm{mF/m^2}$ [@Cole1968].
 
 # Orden de magnitud del campo intramembranal
 
-Si un voltaje transmembrana de aproximadamente $1~\mathrm{V}$ cae a través de una región hidrofóbica de espesor cercano a $5~\mathrm{nm}$, el campo intramembranal estimado es:
+Las células mantienen en condiciones de reposo un voltaje transmembrana $V_m$ de aproximadamente $-70~\mathrm{mV}$ (negativo en el interior). En valor absoluto, una diferencia de potencial de $70~\mathrm{mV}$ cae sobre el espesor dieléctrico de la bicapa, del orden de $d \approx 5~\mathrm{nm}$. El campo eléctrico intramembranal en reposo es entonces:
 
 $$
 E_m
 \approx
-\frac{V_m}{d}
+\frac{|V_m|}{d}
 =
-\frac{1~\mathrm{V}}{5\times 10^{-9}~\mathrm{m}}
+\frac{70 \times 10^{-3}~\mathrm{V}}{5\times 10^{-9}~\mathrm{m}}
 \approx
-2\times 10^8~\mathrm{V/m}
+1.4\times 10^7~\mathrm{V/m}
 $$
 
-Este resultado muestra que una diferencia de potencial aparentemente pequeña puede corresponder a un campo eléctrico muy intenso a escala molecular.
+Este valor puede compararse con la rigidez dieléctrica del aire seco, que es de aproximadamente $3 \times 10^6~\mathrm{V/m}$: el campo eléctrico intramembranal en una célula en reposo es ya **unas cinco veces superior al campo necesario para generar un arco eléctrico en el aire** (un rayo, en términos prácticos). Este resultado no implica que la biomembrana esté a punto de romperse: la región hidrofóbica de la bicapa soporta campos de hasta $10^8\text{–}10^9~\mathrm{V/m}$ antes de la ruptura dieléctrica. Sin embargo, ilustra de manera contundente la intensidad del entorno electrostático nativo en el que operan las proteínas de membrana, y explica por qué pequeñas perturbaciones de potencial —del orden de decenas de milivoltios adicionales— pueden tener consecuencias moleculares profundas.
+
+Durante la electroporación, el voltaje transmembrana puede alcanzar valores del orden de $0.5\text{–}1~\mathrm{V}$, lo que eleva el campo intramembranal hasta $10^8~\mathrm{V/m}$, suficiente para inducir la reorganización local de los lípidos y la formación de poros hidrofílicos.
 
 # Conexión con la electroporación
 
-La electroporación puede entenderse como una perturbación eléctrica de esta barrera dieléctrica molecular.
+La electroporación puede entenderse como una perturbación eléctrica de esta barrera dieléctrica molecular. El campo externo no "rompe" simplemente la membrana como si fuera una lámina macroscópica. Más bien:
 
-El campo externo no “rompe” simplemente la membrana como si fuera una lámina macroscópica. Más bien:
-
-- induce una diferencia de potencial adicional;
-- polariza la membrana;
-- modifica la energía libre asociada a defectos acuosos;
-- favorece reorganizaciones lipídicas;
+- induce una diferencia de potencial adicional sobre la diferencia nativa de reposo;
+- polariza la biomembrana más allá de su umbral de estabilidad;
+- modifica la energía libre asociada a defectos acuosos en la bicapa;
+- favorece reorganizaciones lipídicas locales;
 - puede aumentar transitoriamente la permeabilidad.
 
-La @fig-disrupcion-membrana-electroporacion resume esta transición de manera esquemática: una membrana inicialmente intacta es expuesta a un campo eléctrico externo; si el estímulo es suficiente, la bicapa puede reorganizarse localmente y formar un poro hidrofílico que permite el paso de especies iónicas o moleculares.
+La @fig-disrupcion-membrana-electroporacion resume esta transición de manera esquemática: una biomembrana inicialmente intacta es expuesta a un campo eléctrico externo; si el estímulo es suficiente, la bicapa puede reorganizarse localmente y formar un poro hidrofílico que permite el paso de especies iónicas o moleculares.
 
-![Secuencia conceptual de electroporación de una membrana lipídica. **1)** Membrana intacta con baja permeabilidad a especies cargadas o polares. **2)** Aplicación de un campo eléctrico externo que induce polarización y aumento del voltaje transmembrana. **3)** Reorganización local de los lípidos y formación de defectos acuosos. **4)** Formación de un poro hidrofílico que permite el transporte de iones y moléculas a través de la bicapa. La figura es esquemática y representa una ruta conceptual simplificada; la formación real de poros es un proceso molecular dinámico y estocástico.](figures/ep_membrana_estructura_y_disrupcion.png){#fig-disrupcion-membrana-electroporacion fig-align="center" width="92%"}
+![Secuencia conceptual de electroporación de una membrana lipídica. **1)** Biomembrana intacta con baja permeabilidad a especies cargadas o polares. **2)** Aplicación de un campo eléctrico externo que induce polarización y aumento del voltaje transmembrana. **3)** Reorganización local de los lípidos y formación de defectos acuosos. **4)** Formación de un poro hidrofílico que permite el transporte de iones y moléculas a través de la bicapa. La figura es esquemática y representa una ruta conceptual simplificada; la formación real de poros es un proceso molecular dinámico y estocástico.](figures/ep_membrana_estructura_y_disrupcion.png){#fig-disrupcion-membrana-electroporacion fig-align="center" width="92%"}
 
-Esta secuencia permite conectar la descripción estructural de la membrana con los modelos físicos que se desarrollan en los módulos siguientes. Primero se estudiará cómo el campo eléctrico induce voltaje transmembrana; luego se analizará la dinámica temporal de carga, la energía libre asociada a la formación del poro y el posible calentamiento por disipación Joule.
+Esta secuencia permite conectar la descripción estructural de la biomembrana con los modelos físicos que se desarrollan en los módulos siguientes. Primero se estudiará cómo el campo eléctrico induce voltaje transmembrana; luego se analizará la dinámica temporal de carga, la energía libre asociada a la formación del poro y el posible calentamiento por disipación Joule.
 
-[Continuar con la ecuación de Schwan](01_schwan_laplace.qmd)
-
-# Referencias básicas
-
-- @Singer1972
-- @Cooper2000
-- @Cole1968
-- @Kotnik2019
+[Continuar con la ecuación de Schwan →](01_schwan_laplace.qmd)

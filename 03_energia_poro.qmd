@@ -1,13 +1,15 @@
 ---
-title: "Paisaje de energía libre del poro"
-author-title: "Autor"
+title: "Energía libre de formación del poro"
+subtitle: "Interpretación termodinámica de la formación y expansión de poros"
 ---
 
-# Objetivo del módulo
+# Propósito del módulo
 
-Este módulo presenta un modelo energético mínimo para interpretar la nucleación y expansión de poros acuosos en una membrana sometida a voltaje transmembrana.
+Este módulo presenta un modelo energético mínimo para interpretar la nucleación y expansión de poros acuosos en una biomembrana sometida a voltaje transmembrana.
 
-La idea central es que la electroporación no debe entenderse como una ruptura mecánica directa de la membrana, sino como una modificación del paisaje de energía libre. El voltaje transmembrana reduce la barrera energética asociada a la formación de poros acuosos y puede favorecer estados de mayor permeabilización.
+La electroporación no debe entenderse como una ruptura mecánica directa de la bicapa, sino como una modificación del **paisaje de energía libre**: el voltaje transmembrana reduce la barrera energética asociada a la formación de poros acuosos y puede favorecer estados de mayor permeabilización. El objetivo es construir esa interpretación desde la termodinámica y llegar al modelo cuantitativo paso a paso.
+
+Este módulo puede recorrerse de manera autónoma; se recomienda haber revisado previamente los módulos sobre la [estructura de la biomembrana](00_introduccion_membrana.qmd) y la [ecuación de Schwan](01_schwan_laplace.qmd).
 
 # Punto de partida: segunda ley de la termodinámica
 
@@ -17,7 +19,7 @@ $$
 dS_{\mathrm{univ}} \ge 0
 $$
 
-Si dividimos el universo en sistema y alrededores:
+Separando el universo en sistema y alrededores:
 
 $$
 dS_{\mathrm{univ}}
@@ -27,21 +29,7 @@ dS_{\mathrm{sist}}
 dS_{\mathrm{alr}}
 $$
 
-Para un proceso a temperatura constante, el intercambio de calor reversible con los alrededores puede escribirse como:
-
-$$
-dS_{\mathrm{alr}}
-=
--\frac{\delta q_{\mathrm{rev}}}{T}
-$$
-
-Si además el proceso ocurre a presión constante, el calor intercambiado se relaciona con el cambio de entalpía del sistema:
-
-$$
-\delta q_{\mathrm{rev}} = dH_{\mathrm{sist}}
-$$
-
-Por tanto:
+Para un proceso a temperatura constante, el intercambio de calor reversible con los alrededores puede escribirse como $dS_{\mathrm{alr}} = -\delta q_{\mathrm{rev}}/T$. Si además el proceso ocurre a presión constante, el calor intercambiado se identifica con el cambio de entalpía del sistema, $\delta q_{\mathrm{rev}} = dH_{\mathrm{sist}}$. Por tanto:
 
 $$
 dS_{\mathrm{univ}}
@@ -51,73 +39,39 @@ dS_{\mathrm{sist}}
 \frac{dH_{\mathrm{sist}}}{T}
 $$
 
-Multiplicando por $-T$:
+Multiplicando por $-T$ y definiendo la **energía libre de Gibbs** como $G = H - TS$, su diferencial a temperatura constante es:
 
 $$
--T\,dS_{\mathrm{univ}}
-=
-dH_{\mathrm{sist}}
--
-T\,dS_{\mathrm{sist}}
+dG = dH - T\,dS = -T\,dS_{\mathrm{univ}}
 $$
 
-A temperatura constante, se define la energía libre de Gibbs como:
-
-$$
-G = H - TS
-$$
-
-y su diferencial, para $T$ constante, es:
-
-$$
-dG = dH - T\,dS
-$$
-
-Por tanto:
-
-$$
-dG = -T\,dS_{\mathrm{univ}}
-$$
-
-Como la segunda ley exige que:
-
-$$
-dS_{\mathrm{univ}} \ge 0
-$$
-
-entonces:
+Como la segunda ley exige $dS_{\mathrm{univ}} \ge 0$, se concluye que:
 
 $$
 dG \le 0
 $$
 
-para procesos espontáneos a temperatura y presión constantes.
+para cualquier proceso espontáneo a temperatura y presión constantes.
 
 ::: {.callout-note}
 ## Lectura física
 
-La energía libre de Gibbs permite evaluar si un cambio estructural puede avanzar espontáneamente bajo ciertas condiciones. En el contexto de la electroporación, no interesa solamente si existe un estado final favorable, sino también si existe una **barrera de energía libre** que debe superarse para formar un poro.
+En el contexto de la electroporación, no interesa solo si existe un estado final favorable ($dG < 0$), sino también si hay una **barrera de energía libre** que debe superarse para llegar a ese estado. La altura de esa barrera determina si la formación de un poro es probable en la escala de tiempo del experimento.
 :::
 
 # Energía libre como paisaje estructural
 
-En el caso de una membrana lipídica, podemos describir la formación de un poro mediante una coordenada estructural simple: el radio del poro.
+La formación de un poro en la biomembrana puede describirse mediante una coordenada estructural natural: el **radio del poro** $r$ (en m). A cada valor de $r$ se asocia un cambio de energía libre $\Delta G(r)$, que representa el costo o la ganancia energética de tener un poro de ese tamaño.
 
-Denotamos esa coordenada como $r$. A cada valor de $r$ le asociamos un cambio de energía libre $\Delta G(r)$, que puede interpretarse como un **paisaje energético**. Si $\Delta G(r)$ presenta una barrera, entonces la formación del poro requiere superar un costo energético inicial.
-
-En términos cualitativos:
-
-- un poro muy pequeño implica crear un borde desfavorable;
-- un poro mayor puede estar favorecido por tensión superficial;
-- un voltaje transmembrana suficientemente alto puede reducir la barrera de formación.
+La función $\Delta G(r)$ define un **paisaje energético**. Si este paisaje presenta un máximo (una barrera), entonces la formación del poro requiere superar un costo energético inicial. Si el máximo es alto, la nucleación es rara. Si el voltaje transmembrana reduce ese máximo, la nucleación se vuelve más probable.
 
 # Transición estructural del poro
 
-El proceso puede representarse como una transición en tres etapas, ilustradas en @fig-transicion:
+El proceso de formación del poro puede representarse como una transición en tres etapas, ilustradas en @fig-transicion:
 
-1. **Poro hidrofóbico.** Una fluctuación térmica provoca una separación local entre lípidos. Las colas hidrofóbicas quedan expuestas al agua, lo que es energéticamente muy desfavorable. Este estado es inestable y transitorio; el poro colapsa espontáneamente si la fluctuación no es suficientemente grande.
+1. **Poro hidrofóbico.** Una fluctuación térmica provoca una separación local entre lípidos. Las colas hidrofóbicas quedan expuestas al agua —un entorno que les es desfavorable— y el poro colapsa espontáneamente si la perturbación no es suficientemente grande.
 
-2. **Poro hidrofílico.** Si la perturbación supera un tamaño crítico, las cabezas polares se reorganizan hacia el interior del canal acuoso, formando una interfaz estable con el agua. Este reordenamiento requiere superar una **barrera energética** — es el costo de reorganizar los lípidos del borde — pero una vez superada, el poro hidrofílico puede estabilizarse o expandirse.
+2. **Poro hidrofílico.** Si la perturbación supera un tamaño crítico, las cabezas polares se reorganizan hacia el interior del canal, formando una interfaz estable con el agua. Este reordenamiento requiere superar una **barrera energética** —el costo de doblar y reorientar los lípidos del borde— pero una vez superada, el poro hidrofílico puede estabilizarse o expandirse.
 
 3. **Expansión del poro.** El poro hidrofílico crece en radio $r$. Si el voltaje transmembrana es suficientemente alto, la expansión puede ser espontánea e irreversible.
 
@@ -125,19 +79,19 @@ El proceso puede representarse como una transición en tres etapas, ilustradas e
 
 ## ¿Qué es la nucleación?
 
-En física y química, **nucleación** es el proceso por el que una nueva estructura o fase aparece espontáneamente dentro de un sistema, superando una barrera energética inicial. Un ejemplo cotidiano es la formación de burbujas en agua caliente: por debajo de cierto tamaño crítico, la burbuja colapsa porque la presión interna no puede sostener la interfaz; por encima de ese tamaño, la burbuja crece espontáneamente.
+En física y química, **nucleación** es el proceso por el que una nueva estructura o fase aparece espontáneamente dentro de un sistema superando una barrera energética inicial. Un ejemplo cotidiano es la formación de burbujas en agua caliente: por debajo de un tamaño crítico, la burbuja colapsa porque la presión interna no puede sostener la interfaz; por encima de ese tamaño, crece espontáneamente.
 
-En electroporación, la **nucleación del poro hidrofílico** es el momento en que el poro adquiere el tamaño y la estructura suficientes para estabilizarse. Antes de ese punto, cualquier perturbación colapsa. Después de ese punto, el poro puede crecer.
+En electroporación, la **nucleación del poro hidrofílico** ocurre cuando la perturbación alcanza el tamaño y la estructura necesarios para estabilizarse como poro con recubrimiento lipídico. Antes de ese punto, cualquier fluctuación colapsa. Después de ese punto, el poro puede crecer.
 
 ## ¿Qué barrera corresponde a qué en la figura de referencia?
 
-La @fig-paisaje muestra el paisaje energético completo calculado con un modelo más detallado. Es importante no confundir las dos regiones que aparecen:
+La @fig-paisaje muestra el paisaje energético completo calculado con un modelo más detallado [@Weaver1996]. Conviene no confundir las dos regiones que aparecen:
 
-**El pico pequeño del zoom** (en $r \approx 0.5$ nm, $\Delta G \approx 46\,k_BT$) **no** corresponde al poro hidrofóbico. Corresponde a la **barrera de nucleación del poro hidrofílico**: es el costo energético de que las cabezas polares se reorganicen hacia el interior del canal acuoso. Una vez superado este pico, el poro hidrofílico se estabiliza y puede expandirse. Este es el máximo que el simulador de este módulo identifica como $\Delta G_c$.
+**El pico pequeño** (en $r \approx 0.5$ nm, $\Delta G \approx 46\,k_BT$) **no** corresponde al poro hidrofóbico. Corresponde a la **barrera de nucleación del poro hidrofílico**: es el costo de que las cabezas polares se reorganicen hacia el interior del canal acuoso. Una vez superado este pico, el poro hidrofílico se estabiliza. Este es el máximo que el simulador de este módulo identifica como $\Delta G_c$.
 
-**El poro hidrofóbico** ocurre a radios aún menores ($r \lesssim 0.3$ nm) y tiene su propia barrera previa, que en el modelo completo aparece antes del pico del zoom. El modelo simplificado de tres términos que usamos aquí **no incluye esa barrera hidrofóbica** — describe directamente la energética del poro hidrofílico.
+**El poro hidrofóbico** ocurre a radios aún menores ($r \lesssim 0.3$ nm) y tiene su propia barrera previa, que en el modelo completo aparece antes del pico. El modelo simplificado de tres términos que se usa en este módulo **no incluye esa barrera hidrofóbica**.
 
-**La curva que sube monotónicamente** a voltajes bajos (curva de 0 mV y 150 mV para radios grandes) representa la **barrera de ruptura irreversible**: el costo enorme de expandir el poro hidrofílico a radios de decenas de nanómetros sin la ayuda del campo eléctrico. Esta segunda barrera tampoco está incluida en el modelo simplificado de tres términos.
+**La curva ascendente** a voltajes bajos (curvas de 0 mV y 150 mV para radios grandes) representa la **barrera de ruptura irreversible**: el costo enorme de expandir el poro a radios de decenas de nanómetros sin la ayuda del campo. Esta segunda barrera tampoco está incluida en el modelo de tres términos.
 
 ::: {.callout-note}
 ## Resumen de las barreras
@@ -145,208 +99,186 @@ La @fig-paisaje muestra el paisaje energético completo calculado con un modelo 
 | Barrera | Radio aproximado | $\Delta G$ aproximado | Incluida en el modelo simplificado |
 |---|---|---|---|
 | Nucleación hidrofóbica | $< 0.3$ nm | No reportada aquí | No |
-| Nucleación hidrofílica ($\Delta G_c$) | $\sim 0.5$ nm | $\sim 40$–$46\,k_BT$ a 0 mV | **Sí** (es lo que muestra el simulador) |
+| Nucleación hidrofílica ($\Delta G_c$) | $\sim 0.5$ nm | $\sim 40$–$46\,k_BT$ a 0 mV | **Sí** |
 | Ruptura irreversible | $\gg 1$ nm | $\sim 300\,k_BT$ a 0 mV | No |
 
 El simulador modela la barrera de nucleación hidrofílica, que es la barrera relevante para la electroporación en el régimen de campos aplicados.
 :::
 
-# Modelo energético mínimo
+# Modelo energético mínimo: construcción término a término
 
-Una forma simplificada del cambio de energía libre asociado a un poro hidrofílico de radio $r$ es:
+## ¿Por qué tres términos?
 
-$$
-\Delta G(r,V_m^{\mathrm{tot}})
-\approx
-\underbrace{2\pi r\gamma}_{\text{Borde}}
--
-\underbrace{\pi r^2\Gamma}_{\text{Tensión}}
--
-\underbrace{k r^2\left(V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico}}
-$$
+El paisaje de energía libre de un poro hidrofílico de radio $r$ resulta de la competencia entre tres efectos físicos distintos, cada uno con una dependencia diferente en $r$. A continuación se construye cada término desde sus fundamentos y se justifica su forma funcional antes de escribir la ecuación completa.
 
-donde $V_m^{\mathrm{tot}}$ representa el voltaje transmembrana total durante el pulso. En el contexto de los módulos anteriores:
+## Término 1: costo del borde — energía de línea $\gamma$
 
-$$
-V_m^{\mathrm{tot}}(t)
-=
-\Delta V_{m,0}
-+
-\Delta V_m^{\mathrm{ind}}(t)
-$$
+### La analogía con la tensión superficial
 
-El modelo energético usa la magnitud del voltaje transmembrana total como variable que modifica la barrera energética.
+Para entender la energía de línea, conviene recordar primero qué es la **tensión superficial**: es la energía libre necesaria para aumentar la superficie de un líquido en una unidad de área. Si se tira de una película de agua (por ejemplo, con un marco de alambre), el trabajo que hay que hacer es proporcional al aumento de área: $\delta W = \sigma \cdot \delta A$, donde $\sigma$ es la tensión superficial (J/m²). La razón física es que en la superficie los enlaces con los vecinos son incompletos —hay "moléculas descontentas"— y crear más superficie expone más de esas moléculas al vacío o al aire.
 
-# Variables y unidades
+### La energía de línea como análogo unidimensional
 
-| Símbolo | Significado físico | Unidad |
-|---|---|---|
-| $\Delta G$ | Cambio de energía libre asociado a la formación del poro | J |
-| $r$ | Radio del poro | m |
-| $V_m^{\mathrm{tot}}$ | Voltaje transmembrana total | V |
-| $\gamma$ | Energía de línea del borde del poro | J/m |
-| $\Gamma$ | Tensión superficial efectiva de la membrana | J/m$^2$ |
-| $k$ | Coeficiente efectivo del término eléctrico | F/m$^2$ |
+La **energía de línea** $\gamma$ (también llamada **tensión lineal** o **tensión de línea**) es el análogo unidimensional de la tensión superficial: es la energía libre por unidad de **longitud** del borde del poro (J/m). Si crear una unidad de área de superficie cuesta $\sigma$, crear una unidad de longitud de borde de poro hidrofílico cuesta $\gamma$.
 
-# Origen físico de los parámetros
+¿Por qué se llama "lineal"? Porque la grandeza que se crea es un contorno, una línea —el borde circular del poro— y no una superficie. De la misma manera que la tensión superficial mide el costo por unidad de área, la tensión lineal mide el costo por unidad de longitud de ese contorno.
 
-## Energía de línea $\gamma$
+### ¿Qué hay físicamente en el borde?
 
-Cuando se forma un poro, los lípidos del borde deben reorganizarse. En un poro hidrofílico, las cabezas polares curvan hacia el interior del canal acuoso, creando una interfaz energéticamente desfavorable entre las colas hidrofóbicas y el agua.
+En un poro hidrofílico, los lípidos del borde han girado sus cabezas polares hacia el interior del canal acuoso, de modo que las colas hidrofóbicas ya no quedan expuestas al agua. Este reordenamiento tiene un costo: para curvar y reorientar los lípidos del borde, hay que deformar la bicapa localmente. Además, en el borde persiste una pequeña área donde las colas de los lípidos del borde siguen estando en contacto con el agua —o muy cerca de ella—, lo que contribuye con una energía interfacial proporcional al grosor de la bicapa $d_m$.
 
-Esta penalización se modela como proporcional al **perímetro** del poro. Para un poro circular de radio $r$:
-
-$$
-\text{Perímetro} = 2\pi r
-$$
-
-La constante de proporcionalidad $\gamma$ recibe el nombre de **energía de línea** o **tensión de línea** y tiene unidades de J/m (equivalente a N, es decir, fuerza por unidad de longitud).
-
-Su valor se puede estimar a partir de la tensión interfacial entre agua y las colas de los lípidos, combinado con el grosor de la membrana $d_m$:
+Este costo puede estimarse combinando la tensión interfacial agua-hidrocarburo ($\sigma_{\mathrm{hc}} \approx 40$–$50$ mN/m) con el espesor de la zona hidrofóbica de la membrana ($d_m \approx 4$ nm):
 
 $$
 \gamma \sim \sigma_{\mathrm{hc}} \cdot d_m
-$$
-
-donde $\sigma_{\mathrm{hc}}$ es la tensión interfacial agua–hidrocarburo (del orden de 40–50 mN/m) y $d_m \approx 4$ nm. Esto da:
-
-$$
-\gamma \sim 0.04\,\text{N/m} \times 4\times10^{-9}\,\text{m}
 \approx
-1.6 \times 10^{-10}\,\text{N·m/m}
-=
-0.16\,\text{nN}
+0.04~\mathrm{N/m} \times 4 \times 10^{-9}~\mathrm{m}
+\approx 0.16~\mathrm{nN}
+= 0.16 \times 10^{-9}~\mathrm{J/m}
 $$
 
-En la literatura, valores reportados para membranas lipídicas típicas se encuentran en el rango $\gamma \approx 6$–$15$ pN [@Weaver1996; @Bockmann2008].
+Los valores reportados en la literatura para membranas lipídicas típicas se encuentran en el rango $\gamma \approx 6$–$15~\mathrm{pN}$ [@Weaver1996; @Bockmann2008], en acuerdo de orden de magnitud con esta estimación.
+
+Para un poro circular de radio $r$, el perímetro es $2\pi r$ y la contribución a la energía libre es:
+
+$$
+\Delta G_{\mathrm{borde}}(r) = 2\pi r\,\gamma
+$$ {#eq-borde}
+
+Este término es **positivo** (costo energético) y **lineal** en $r$: crece proporcionalmente al tamaño del poro. Para radios pequeños, es el término dominante y se opone a la formación del poro.
 
 ::: {.callout-note}
-## Por qué $\gamma$ tiene unidades de J/m
+## Diferencia entre $\gamma$ y tensión superficial
 
-La energía de línea $\gamma$ representa la energía libre por unidad de longitud del borde del poro. De la misma forma que una tensión superficial tiene unidades de J/m² (energía por área), una tensión de línea tiene unidades de J/m (energía por longitud). Multiplicada por el perímetro $2\pi r$, da la contribución energética total del borde.
+La **tensión superficial** $\Gamma$ (J/m²) describe el costo de aumentar el **área** de la bicapa. La **energía de línea** $\gamma$ (J/m) describe el costo de aumentar la **longitud del borde** del poro. Ambas son densidades energéticas, pero en dimensiones distintas: una en 2D (área), otra en 1D (longitud). Multiplicada por el perímetro $2\pi r$, la energía de línea da la contribución total del borde al paisaje energético.
 :::
 
-## Tensión superficial efectiva $\Gamma$
+## Término 2: tensión superficial de la bicapa — $\Gamma$
 
-La bicapa lipídica en equilibrio puede estar sometida a una **tensión superficial** $\Gamma$ que tiende a expandir su área. Esta tensión surge de la competencia entre:
+### ¿Qué hace la tensión superficial de la membrana?
 
-- la repulsión entre cabezas polares (que tiende a separar los lípidos);
-- la atracción entre colas hidrofóbicas (que tiende a compactarlas);
-- la presión osmótica y otras fuentes mecánicas externas.
+La bicapa lipídica en equilibrio puede estar sometida a una **tensión superficial** $\Gamma$ (J/m²). Esta tensión surge de la competencia entre la repulsión entre cabezas polares (que tiende a separar los lípidos y aumentar el área), la atracción entre colas hidrofóbicas (que tiende a compactarlas) y fuerzas mecánicas externas como presión osmótica o estiramiento celular.
 
-Cuando se forma un poro de radio $r$ en una membrana tensa, el área de membrana se reduce en $\pi r^2$. La energía libre asociada a esa reducción es:
+Una membrana en tensión es, en cierto modo, como una goma elástica estirada: quiere contraerse. Si se abre un poro en ella, el área de membrana se **reduce** en $\pi r^2$ (el área del disco que desaparece al abrir el hueco) y la membrana se "relaja" parcialmente, liberando energía. Por eso el término es negativo en el paisaje energético:
 
 $$
-\Delta G_\Gamma = -\Gamma \cdot \pi r^2
-$$
+\Delta G_\Gamma(r) = -\Gamma \cdot \pi r^2
+$$ {#eq-tension}
 
-Este término es **negativo** porque la tensión superficial libera energía al eliminarse área. Favorece por tanto la expansión del poro.
+Este término es **negativo** (ganancia de energía) y **cuadrático** en $r$: crece más rápido que el término de borde al aumentar $r$. Para poros grandes, es el término que domina y **favorece la expansión** del poro.
 
-La magnitud de $\Gamma$ depende del estado mecánico de la membrana. Para membranas en reposo o con tensión residual, $\Gamma$ puede ser muy pequeña (< 0.1 mN/m). Para membranas tensadas mecánicamente o por presión osmótica, $\Gamma$ puede alcanzar 1–5 mN/m. En el contexto de la electroporación, se suele usar el valor representativo $\Gamma \approx 1\,\text{mN/m}$ [@Weaver1996].
+Para membranas en reposo, $\Gamma$ es muy pequeña (< 0.1 mN/m). Para membranas tensadas mecánicamente, $\Gamma$ puede alcanzar 1–5 mN/m. En el contexto de la electroporación se suele usar $\Gamma \approx 1~\mathrm{mN/m}$ como valor representativo [@Weaver1996].
 
-::: {.callout-note}
-## Diferencia entre $\gamma$ y $\Gamma$
+### ¿Por qué $\Gamma$ favorece la apertura y $\gamma$ la cierra?
 
-$\gamma$ (minúscula) es la **energía de línea**: se refiere al borde del poro y tiene unidades de J/m. Se opone a la formación del poro.
+La competencia entre ambos términos es la clave del paisaje energético. Para poros pequeños, el borde cuesta más de lo que se gana relajando la tensión ($2\pi r\gamma > \pi r^2\Gamma$ cuando $r < 2\gamma/\Gamma$), de modo que el poro tiende a cerrarse. Para poros grandes, la ganancia de tensión supera el costo del borde y el poro tiende a expandirse. El radio en el que estos dos efectos se equilibran —y que, combinado con el término eléctrico, da lugar al radio crítico— se obtiene en la siguiente sección.
 
-$\Gamma$ (mayúscula) es la **tensión superficial**: se refiere al área de la membrana y tiene unidades de J/m². Favorece la expansión del poro.
+## Término 3: ganancia dieléctrica — coeficiente eléctrico $k$
 
-Ambas tienen en común que son densidades energéticas, pero en dimensiones diferentes.
-:::
+### Origen físico
 
-## Coeficiente eléctrico $k$
-
-El término eléctrico representa cómo el voltaje transmembrana reduce la barrera energética. Su origen es la diferencia entre la permitividad del agua ($\varepsilon_w \approx 80\,\varepsilon_0$) y la de la membrana lipídica ($\varepsilon_m \approx 2\,\varepsilon_0$).
-
-Cuando se forma un canal acuoso en la membrana, la energía almacenada en el campo eléctrico disminuye porque el agua es un medio mucho más polarizable que el lípido. Esta ganancia energética puede aproximarse como:
+Cuando se forma un poro de radio $r$ en la bicapa, la columna de lípido (dieléctrico de baja permitividad, $\varepsilon_m \approx 2\varepsilon_0$) es reemplazada por una columna de agua (dieléctrico de alta permitividad, $\varepsilon_w \approx 80\varepsilon_0$). La energía almacenada en un capacitor de área $\pi r^2$ y espesor $d_m$ con voltaje $V_m^{\mathrm{tot}}$ es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía **disminuye** porque el agua apantalla mejor el campo:
 
 $$
-\Delta G_{\mathrm{elec}} \approx -k\, r^2 \left(V_m^{\mathrm{tot}}\right)^2
-$$
+\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(V_m^{\mathrm{tot}}\right)^2
+$$ {#eq-electrico}
 
-donde el coeficiente efectivo $k$ puede estimarse a partir de la geometría del poro cilíndrico y las permitividades:
+El coeficiente $k$ (en F/m²) puede estimarse a partir de la geometría cilíndrica del poro y las permitividades:
 
 $$
 k \approx \frac{\pi\,(\varepsilon_w - \varepsilon_m)\,\varepsilon_0}{d_m}
-$$
+$$ {#eq-k}
 
-con $d_m \approx 4$ nm el grosor de membrana. Esto da:
+Con $\varepsilon_w - \varepsilon_m \approx 78$, $\varepsilon_0 = 8.854 \times 10^{-12}$ F/m y $d_m = 4~\mathrm{nm}$:
 
 $$
 k \approx
-\frac{\pi \times (80 - 2) \times 8.854\times10^{-12}\,\text{F/m}}{4\times10^{-9}\,\text{m}}
+\frac{\pi \times 78 \times 8.854 \times 10^{-12}~\mathrm{F/m}}{4 \times 10^{-9}~\mathrm{m}}
 \approx
-0.56\,\text{F/m}^2
-$$
+0.556~\mathrm{F/m^2}
+= 556~\mathrm{mF/m^2}
+$$ {#eq-k-valor}
 
-Este valor, derivado de la física básica de dieléctricos, es el que se usa como valor por defecto en el simulador.
+Este término es **negativo** (ganancia energética), **cuadrático** en $r$ y **cuadrático** en $V_m^{\mathrm{tot}}$. Por eso el efecto no depende del signo del voltaje: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.
 
 ::: {.callout-note}
-## Por qué el término eléctrico es cuadrático en el voltaje
+## ¿Por qué el término eléctrico es cuadrático en el voltaje?
 
-La energía almacenada en un condensador es proporcional a $V^2$. La ganancia energética al reemplazar lípido por agua (un dieléctrico de mayor permitividad) en el poro tiene la misma forma funcional. Por tanto, el efecto no depende del **signo** del voltaje, sino de su **magnitud al cuadrado**. Un voltaje de $-300$ mV produce el mismo efecto sobre la barrera que $+300$ mV.
+La energía almacenada en un condensador es $U = \frac{1}{2}C V^2$: siempre proporcional a $V^2$. La ganancia al sustituir lípido ($\varepsilon_m$) por agua ($\varepsilon_w$) en el poro tiene la misma forma funcional. El efecto depende solo de la magnitud del voltaje, no de su signo.
 :::
 
-# Significado de los términos
+## El modelo completo
 
-| Término | Interpretación física |
-|---|---|
-| $2\pi r\gamma$ | Costo energético de crear el borde del poro; penaliza la nucleación |
-| $-\pi r^2\Gamma$ | Reducción de energía al liberar tensión superficial; favorece expansión |
-| $-k r^2\left(V_m^{\mathrm{tot}}\right)^2$ | Ganancia energética dieléctrica; reduce la barrera y el radio crítico |
+Los tres términos se construyen sobre tres fundamentos físicos distintos —costo de crear un contorno, relajación de tensión superficial, y ganancia dieléctrica— y tienen dependencias en $r$ que se compensan mutuamente. La energía libre total del poro hidrofílico de radio $r$ es su suma:
+
+$$
+\Delta G(r,\,V_m^{\mathrm{tot}})
+\approx
+\underbrace{2\pi r\,\gamma}_{\text{Borde (positivo)}}
+-
+\underbrace{\pi r^2\,\Gamma}_{\text{Tensión (negativo)}}
+-
+\underbrace{k\, r^2\,\left(V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}
+$$ {#eq-modelo}
+
+donde $V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)$ es el voltaje transmembrana total (en V), $\gamma$ es la energía de línea del borde hidrofílico (en J/m), $\Gamma$ es la tensión superficial efectiva de la bicapa (en J/m²) y $k$ es el coeficiente dieléctrico efectivo (en F/m²).
+
+El modelo usa solo tres términos porque estos son los de menor orden en $r$ que capturan la física esencial: el término lineal en $r$ (costo de borde) domina para poros pequeños y el término cuadrático en $r$ (tensión + eléctrico) domina para poros grandes. Términos de orden superior en $r$ existen pero son secundarios en el rango de radios relevante para la nucleación (< 10 nm).
+
+# Origen físico de los parámetros: resumen
+
+Los tres parámetros del modelo tienen interpretaciones físicas bien definidas, unidades distintas y roles opuestos en el paisaje energético:
+
+$\gamma$ (en J/m = N) es la energía de línea o tensión lineal: penaliza la creación del borde del poro y se opone a la nucleación. Su valor típico es $\gamma \approx 6$–$15~\mathrm{pN}$.
+
+$\Gamma$ (en J/m²) es la tensión superficial de la bicapa: libera energía al eliminarse área de membrana y favorece la expansión del poro. Su valor varía entre < 0.1 mN/m (membrana relajada) y ~5 mN/m (membrana tensada).
+
+$k$ (en F/m²) es el coeficiente dieléctrico: refleja la ganancia energética al sustituir lípido por agua en el poro y amplifica el efecto del campo eléctrico. Su valor se puede calcular desde primeros principios (ecuación @eq-k-valor): $k \approx 556~\mathrm{mF/m^2}$.
 
 # Radio crítico y barrera energética
 
-Podemos escribir el modelo agrupando los términos cuadráticos:
+## Agrupación de los términos cuadráticos
+
+Definiendo $A = \pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2$, la ecuación (@eq-modelo) se puede escribir de forma compacta como:
 
 $$
-\Delta G(r)
-=
-2\pi\gamma r
--
-\underbrace{\left[
-\pi\Gamma
-+
-k\left(V_m^{\mathrm{tot}}\right)^2
-\right]}_{A}\,r^2
-$$
+\Delta G(r) = 2\pi\gamma\,r - A\,r^2
+$$ {#eq-modelo-compacto}
 
-El radio crítico $r_c$ es el radio en el que $\Delta G(r)$ alcanza su máximo. Se obtiene igualando la derivada a cero:
+## Deducción del radio crítico
+
+El radio crítico $r_c$ es el valor de $r$ en el que el paisaje energético alcanza su máximo —es decir, donde la derivada se anula. Derivando la ecuación (@eq-modelo-compacto) respecto a $r$ e igualando a cero:
 
 $$
-\frac{d\Delta G}{dr}
-=
-2\pi\gamma
--
-2Ar_c
-=
-0
-\qquad
-\Longrightarrow
-\qquad
-r_c
-=
-\frac{\pi\gamma}{A}
-=
-\frac{\pi\gamma}
-{\pi\Gamma+k\left(V_m^{\mathrm{tot}}\right)^2}
-$$
+\frac{d\Delta G}{dr} = 2\pi\gamma - 2A\,r_c = 0
+\qquad\Longrightarrow\qquad
+r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+$$ {#eq-rc}
 
-La barrera energética en ese radio crítico es:
+La barrera energética $\Delta G_c$ es el valor de $\Delta G$ en $r = r_c$. Sustituyendo la ecuación (@eq-rc) en la ecuación (@eq-modelo-compacto):
 
 $$
 \Delta G_c
 =
-\Delta G(r_c)
+2\pi\gamma\,r_c - A\,r_c^2
 =
-\frac{\pi^2\gamma^2}
-{\pi\Gamma+k\left(V_m^{\mathrm{tot}}\right)^2}
+2\pi\gamma \cdot \frac{\pi\gamma}{A} - A \cdot \left(\frac{\pi\gamma}{A}\right)^2
+=
+\frac{2\pi^2\gamma^2}{A} - \frac{\pi^2\gamma^2}{A}
+=
+\frac{\pi^2\gamma^2}{A}
 $$
+
+$$
+\Delta G_c
+=
+\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+$$ {#eq-Gc}
 
 ::: {.callout-important}
 ## Consecuencia biofísica
 
-Al aumentar $\left|V_m^{\mathrm{tot}}\right|$, el denominador $A$ crece. Por tanto, tanto $r_c$ como $\Delta G_c$ **disminuyen**. Esto significa que el voltaje transmembrana facilita la nucleación del poro al reducir simultáneamente el tamaño crítico y la barrera de energía que debe superarse.
+Al aumentar $|V_m^{\mathrm{tot}}|$, el denominador $A$ crece. Tanto $r_c$ (ecuación @eq-rc) como $\Delta G_c$ (ecuación @eq-Gc) **disminuyen**. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.
 :::
 
 # Paisaje de energía libre
@@ -358,17 +290,12 @@ La @fig-paisaje muestra el paisaje energético para distintos voltajes. Al aumen
 ::: {.callout-note}
 ## Sobre la figura de referencia y el modelo simplificado
 
-La @fig-paisaje, basada en la literatura [@Weaver1996], muestra un modelo completo con más términos que el presentado aquí. Contiene dos barreras distintas que el modelo de tres términos **no** reproduce:
-
-- La **barrera hidrofóbica** a radios $< 0.3$ nm (previa al pico del zoom).
-- La **barrera de ruptura irreversible** que aparece a voltajes bajos como la curva ascendente de 0 mV y 150 mV para radios grandes (~300 $k_BT$).
-
-El **pico pequeño del zoom** en $r \approx 0.5$ nm es la barrera de nucleación del poro **hidrofílico** — no del hidrofóbico. Es precisamente este pico el que el simulador calcula como $\Delta G_c$. La diferencia entre voltajes (0 mV, 150 mV, 300 mV, 450 mV) en el zoom muestra cómo el campo eléctrico reduce esa barrera de nucleación hidrofílica, que es el mecanismo central de la electroporación.
+La @fig-paisaje, basada en la literatura [@Weaver1996], muestra un modelo completo con más términos que el presentado aquí. Contiene dos barreras que el modelo de tres términos no reproduce: la barrera hidrofóbica a radios $< 0.3$ nm y la barrera de ruptura irreversible que aparece como la curva ascendente a voltajes bajos ($\sim 300\,k_BT$ a 0 mV para radios grandes). El pico del zoom corresponde a la barrera de nucleación del poro **hidrofílico**, que es precisamente lo que calcula el simulador.
 :::
 
 # Simulación interactiva
 
-En esta simulación se explora el modelo mínimo:
+En esta simulación se explora el modelo mínimo de la ecuación (@eq-modelo):
 
 $$
 \Delta G(r,V_m^{\mathrm{tot}})
@@ -380,7 +307,7 @@ $$
 k r^2\left(V_m^{\mathrm{tot}}\right)^2
 $$
 
-El radio se expresa en nanómetros y la energía en unidades de $k_BT$ a $T = 298$ K. Los valores por defecto corresponden a parámetros físicamente justificados: $\gamma = 9.2$ pN (Weaver 1996), $\Gamma = 1$ mN/m y $k = 556$ mF/m² (estimado desde la permitividad del agua y el grosor de membrana).
+El radio se expresa en nanómetros y la energía en unidades de $k_BT$ a $T = 298$ K. Los valores por defecto corresponden a parámetros físicamente justificados: $\gamma = 9.2~\mathrm{pN}$ [@Weaver1996], $\Gamma = 1~\mathrm{mN/m}$ y $k = 556~\mathrm{mF/m^2}$ (ecuación @eq-k-valor).
 
 ::: {.callout-note}
 ## Instrucciones
@@ -496,6 +423,7 @@ datos_poro = r_nm.map(rn => {
   const r  = rn * 1e-9
   const G0 = 2 * Math.PI * r * gamma - Math.PI * r * r * Gamma
   const GV = 2 * Math.PI * r * gamma - Math.PI * r * r * Gamma - kcoef * r * r * V * V
+
   return {
     r_nm: rn,
     G0_kBT: G0 / kBT,
@@ -650,25 +578,17 @@ Plot.plot({
 
 # Cómo interpretar la simulación
 
-La curva gris punteada representa el paisaje energético de referencia para $V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje energético para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$.
+La curva gris punteada representa el paisaje energético de referencia para $V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$ (ecuaciones @eq-rc y @eq-Gc).
 
-Con los parámetros por defecto ($\gamma = 9.2$ pN, $\Gamma = 1$ mN/m, $k = 556$ mF/m²):
+Con los parámetros por defecto ($\gamma = 9.2~\mathrm{pN}$, $\Gamma = 1~\mathrm{mN/m}$, $k = 556~\mathrm{mF/m^2}$):
 
-- A $V = 0$ mV: $r_c \approx 9.2$ nm, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.
-- A $V = 300$ mV: $r_c \approx 0.54$ nm, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas; la nucleación se vuelve probable.
-
-El término eléctrico que produce este cambio es:
-
-$$
--k r^2\left(V_m^{\mathrm{tot}}\right)^2
-$$
-
-Al aumentar $V_m^{\mathrm{tot}}$, este término se hace más negativo, reduciendo tanto la altura como el radio de la barrera.
+- A $V = 0~\mathrm{mV}$: $r_c \approx 9.2~\mathrm{nm}$, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.
+- A $V = 300~\mathrm{mV}$: $r_c \approx 0.54~\mathrm{nm}$, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas ($k_BT$); la nucleación se vuelve probable.
 
 ::: {.callout-warning}
 ## Precaución física
 
-Este modelo es deliberadamente simplificado y describe únicamente la barrera de nucleación del poro hidrofílico. No incluye la barrera hidrofóbica previa (a radios $< 0.3$ nm) ni la barrera de ruptura irreversible a radios grandes (~300 $k_BT$ a 0 mV). La figura de referencia (@fig-paisaje) utiliza un modelo más completo que incorpora ambas barreras adicionales. Los valores numéricos del simulador deben interpretarse como una exploración cualitativa y pedagógica de la barrera de nucleación hidrofílica, no como una descripción completa del paisaje energético del poro.
+Este modelo describe únicamente la barrera de nucleación del poro hidrofílico y no incluye la barrera hidrofóbica previa (a radios $< 0.3~\mathrm{nm}$) ni la barrera de ruptura irreversible a radios grandes. Los valores numéricos del simulador deben interpretarse como una exploración cuantitativa y pedagógica de la barrera de nucleación hidrofílica, no como una descripción completa del paisaje energético del poro [@Kotnik2019].
 :::
 
 ## Código para Google Colab
@@ -690,7 +610,7 @@ def simular_paisaje_poro(
     """
     Simulación didáctica del paisaje de energía libre del poro.
 
-    Modelo:
+    Modelo (ecuación principal):
         ΔG(r, V) = 2π r γ  −  π r² Γ  −  k r² V²
 
     Parámetros por defecto basados en la literatura:
@@ -698,13 +618,6 @@ def simular_paisaje_poro(
         Γ = 1.0 mN/m (tensión superficial de membrana bajo campo)
         k = 556 mF/m² (estimado desde permitividades: π(εw−εm)ε0/dm)
         V = 300 mV   (voltaje transmembrana típico en electroporación)
-
-    Unidades de entrada:
-        V_mV      : voltaje transmembrana total en mV
-        gamma_pN  : energía de línea en pN = 10⁻¹² J/m
-        Gamma_mNm : tensión superficial efectiva en mN/m = 10⁻³ J/m²
-        k_mF_m2   : coeficiente eléctrico en mF/m² = 10⁻³ F/m²
-        rmax_nm   : radio máximo mostrado en nm
     """
 
     T   = 298
@@ -796,7 +709,7 @@ interact(
 
 ## Contexto
 
-Use el modelo simplificado con los parámetros de referencia justificados en este módulo:
+Use el modelo simplificado (ecuación @eq-modelo) con los parámetros de referencia justificados en este módulo:
 
 $$
 \gamma = 9.2~\mathrm{pN}
@@ -833,7 +746,7 @@ Luego responda:
 ::: {.callout-tip collapse="true"}
 ## 💡 Pista — Actividad energía libre del poro
 
-Primero convierte todo al SI:
+Convierte todo al SI:
 
 $$
 \gamma = 9.2 \times 10^{-12}~\mathrm{J/m}
@@ -845,7 +758,7 @@ $$
 
 Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.
 
-Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego:
+Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego aplica las ecuaciones (@eq-rc) y (@eq-Gc):
 
 $$
 r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
@@ -859,7 +772,7 @@ $$
 \Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
 $$
 
-Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador, y por tanto menor $r_c$ y menor $\Delta G_c$.
+Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador y, por tanto, menor $r_c$ y menor $\Delta G_c$.
 :::
 
 ::: {.callout-note collapse="true"}
@@ -887,46 +800,27 @@ $$
 
 1. Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.
 
-2. El término eléctrico es $-kr^2V^2$. La energía almacenada en un campo eléctrico es proporcional a $V^2$ (como en un condensador). El efecto no depende del signo del voltaje, solo de su magnitud al cuadrado: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.
+2. El término eléctrico es $-kr^2V^2$. La energía almacenada en un condensador es proporcional a $V^2$. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.
 
 3. Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.
 
-4. La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía para expandirse sigue siendo desfavorable.
+4. La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía de expansión sigue siendo desfavorable.
 
-5. Entre $V = 300~\mathrm{mV}$ y $V = 150~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta. El umbral de $5\,k_BT$ se cruza entre $150~\mathrm{mV}$ y $300~\mathrm{mV}$.
+5. Entre $V = 150~\mathrm{mV}$ y $V = 300~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta.
 
-6. **Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la membrana no recupera su integridad — requiere superar la barrera de ruptura, que es mucho mayor a voltajes bajos ($\sim 300\,k_BT$ a $0~\mathrm{mV}$).
+6. **Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la biomembrana no recupera su integridad — requiere superar la barrera de ruptura ($\sim 300\,k_BT$ a 0 mV).
 :::
 
 # Alcance y limitaciones
 
-Este modelo energético es útil para construir intuición biofísica, pero es una representación mínima. No describe de manera completa todos los procesos moleculares involucrados en la electroporación.
+Este modelo energético es útil para construir intuición biofísica, pero es una representación mínima. No describe de manera completa todos los procesos moleculares involucrados en la electroporación. Entre sus limitaciones principales:
 
-Entre sus limitaciones principales están:
+supone una geometría idealizada del poro (cilíndrico, radio uniforme); agrupa efectos eléctricos complejos en un solo coeficiente efectivo $k$; no describe la transición hidrofóbico–hidrofílico como una barrera separada; no incluye fluctuaciones térmicas de manera estocástica; no reproduce la barrera de ruptura irreversible a voltajes bajos; no incluye composición lipídica específica ni proteínas de membrana; no describe la dinámica molecular detallada de formación y cierre del poro; y no representa explícitamente cambios de conductancia durante la permeabilización.
 
-- supone una geometría idealizada del poro (cilíndrico, radio uniforme);
-- agrupa efectos eléctricos complejos en un solo coeficiente efectivo $k$;
-- no describe la transición hidrofóbico–hidrofílico como una barrera separada;
-- no incluye fluctuaciones térmicas de manera estocástica;
-- no reproduce la barrera de ruptura irreversible a voltajes bajos;
-- no incluye composición lipídica específica ni proteínas de membrana;
-- no describe la dinámica molecular detallada de formación y cierre del poro;
-- no representa explícitamente cambios de conductancia durante la permeabilización.
+# Síntesis del módulo
 
-Por tanto, debe usarse como una herramienta conceptual para entender cómo el voltaje transmembrana puede modificar la barrera energética de formación del poro.
+La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en $r$, gobernado por la energía de línea $\gamma$), la ganancia por relajación de tensión superficial (cuadrática en $r$, gobernada por $\Gamma$) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en $r$ y en $V_m^{\mathrm{tot}}$, gobernada por $k$).
 
-# Ideas clave
+La suma de estos tres términos produce un paisaje energético con una barrera máxima en $r = r_c$. El voltaje transmembrana reduce tanto el radio crítico como la barrera $\Delta G_c$: a voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas ($k_BT$), haciendo la nucleación del poro estadísticamente probable. Este es el mecanismo central por el que el campo eléctrico permeabiliza la biomembrana, no como una ruptura mecánica, sino como una modificación del paisaje energético que rige las fluctuaciones moleculares de la bicapa [@Kotnik2019; @Weaver1996].
 
-- La energía libre de Gibbs permite evaluar la dirección espontánea de procesos a temperatura y presión constantes.
-- La formación de un poro puede representarse mediante un paisaje energético $\Delta G(r)$.
-- El término de borde $2\pi r\gamma$ penaliza la formación inicial del poro; $\gamma$ es la energía de línea del borde hidrofílico.
-- El término de tensión $-\pi r^2\Gamma$ favorece la expansión del poro; $\Gamma$ es la tensión superficial de la membrana.
-- El término eléctrico $-k r^2 (V_m^{\mathrm{tot}})^2$ refleja la ganancia energética dieléctrica al sustituir lípido por agua en el poro.
-- El coeficiente $k$ puede estimarse desde la permitividad del agua y el grosor de membrana: $k \approx \pi(\varepsilon_w - \varepsilon_m)\varepsilon_0/d_m \approx 556\,\text{mF/m}^2$.
-- El voltaje transmembrana reduce tanto el radio crítico $r_c$ como la barrera $\Delta G_c$.
-- A voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas, haciendo la nucleación probable.
-- La electroporación debe interpretarse como una transición estructural favorecida por el campo, no como una ruptura mecánica simple.
-
-# Referencias
-
-Ver @Weaver1996, @Bockmann2008, @Kotnik2019, @Kotulska2007, @Antonov2009 y @Rems2017.
+[Continuar con el calentamiento Joule →](04_calentamiento_joule.qmd)
