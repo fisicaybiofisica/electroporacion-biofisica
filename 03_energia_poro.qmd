@@ -177,10 +177,10 @@ La competencia entre ambos términos es la clave del paisaje energético. Para p
 
 ### Origen físico
 
-Cuando se forma un poro de radio $r$ en la bicapa, la columna de lípido (dieléctrico de baja permitividad, $\varepsilon_m \approx 2\varepsilon_0$) es reemplazada por una columna de agua (dieléctrico de alta permitividad, $\varepsilon_w \approx 80\varepsilon_0$). La energía almacenada en un capacitor de área $\pi r^2$ y espesor $d_m$ con voltaje $V_m^{\mathrm{tot}}$ es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía **disminuye** porque el agua apantalla mejor el campo:
+Cuando se forma un poro de radio $r$ en la bicapa, la columna de lípido (dieléctrico de baja permitividad, $\varepsilon_m \approx 2\varepsilon_0$) es reemplazada por una columna de agua (dieléctrico de alta permitividad, $\varepsilon_w \approx 80\varepsilon_0$). La energía almacenada en un capacitor de área $\pi r^2$ y espesor $d_m$ con voltaje $\Delta V_m^{\mathrm{tot}}$ es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía **disminuye** porque el agua apantalla mejor el campo:
 
 $$
-\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(V_m^{\mathrm{tot}}\right)^2
+\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2
 $$ {#eq-electrico}
 
 El coeficiente $k$ (en F/m²) puede estimarse a partir de la geometría cilíndrica del poro y las permitividades:
@@ -199,7 +199,7 @@ k \approx
 = 556~\mathrm{mF/m^2}
 $$ {#eq-k-valor}
 
-Este término es **negativo** (ganancia energética), **cuadrático** en $r$ y **cuadrático** en $V_m^{\mathrm{tot}}$. Por eso el efecto no depende del signo del voltaje: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.
+Este término es **negativo** (ganancia energética), **cuadrático** en $r$ y **cuadrático** en $\Delta V_m^{\mathrm{tot}}$. Por eso el efecto no depende del signo del voltaje: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.
 
 ::: {.callout-note}
 ## ¿Por qué el término eléctrico es cuadrático en el voltaje?
@@ -212,16 +212,16 @@ La energía almacenada en un condensador es $U = \frac{1}{2}C V^2$: siempre prop
 Los tres términos se construyen sobre tres fundamentos físicos distintos —costo de crear un contorno, relajación de tensión superficial, y ganancia dieléctrica— y tienen dependencias en $r$ que se compensan mutuamente. La energía libre total del poro hidrofílico de radio $r$ es su suma:
 
 $$
-\Delta G(r,\,V_m^{\mathrm{tot}})
+\Delta G(r,\,\Delta V_m^{\mathrm{tot}})
 \approx
 \underbrace{2\pi r\,\gamma}_{\text{Borde (positivo)}}
 -
 \underbrace{\pi r^2\,\Gamma}_{\text{Tensión (negativo)}}
 -
-\underbrace{k\, r^2\,\left(V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}
+\underbrace{k\, r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}
 $$ {#eq-modelo}
 
-donde $V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)$ es el voltaje transmembrana total (en V), $\gamma$ es la energía de línea del borde hidrofílico (en J/m), $\Gamma$ es la tensión superficial efectiva de la bicapa (en J/m²) y $k$ es el coeficiente dieléctrico efectivo (en F/m²).
+donde $\Delta V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)$ es el voltaje transmembrana total (en V), $\gamma$ es la energía de línea del borde hidrofílico (en J/m), $\Gamma$ es la tensión superficial efectiva de la bicapa (en J/m²) y $k$ es el coeficiente dieléctrico efectivo (en F/m²).
 
 El modelo usa solo tres términos porque estos son los de menor orden en $r$ que capturan la física esencial: el término lineal en $r$ (costo de borde) domina para poros pequeños y el término cuadrático en $r$ (tensión + eléctrico) domina para poros grandes. Términos de orden superior en $r$ existen pero son secundarios en el rango de radios relevante para la nucleación (< 10 nm).
 
@@ -239,7 +239,7 @@ $k$ (en F/m²) es el coeficiente dieléctrico: refleja la ganancia energética a
 
 ## Agrupación de los términos cuadráticos
 
-Definiendo $A = \pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2$, la ecuación (@eq-modelo) se puede escribir de forma compacta como:
+Definiendo $A = \pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2$, la ecuación (@eq-modelo) se puede escribir de forma compacta como:
 
 $$
 \Delta G(r) = 2\pi\gamma\,r - A\,r^2
@@ -252,7 +252,7 @@ El radio crítico $r_c$ es el valor de $r$ en el que el paisaje energético alca
 $$
 \frac{d\Delta G}{dr} = 2\pi\gamma - 2A\,r_c = 0
 \qquad\Longrightarrow\qquad
-r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}
 $$ {#eq-rc}
 
 La barrera energética $\Delta G_c$ es el valor de $\Delta G$ en $r = r_c$. Sustituyendo la ecuación (@eq-rc) en la ecuación (@eq-modelo-compacto):
@@ -272,20 +272,20 @@ $$
 $$
 \Delta G_c
 =
-\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}
 $$ {#eq-Gc}
 
 ::: {.callout-important}
 ## Consecuencia biofísica
 
-Al aumentar $|V_m^{\mathrm{tot}}|$, el denominador $A$ crece. Tanto $r_c$ (ecuación @eq-rc) como $\Delta G_c$ (ecuación @eq-Gc) **disminuyen**. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.
+Al aumentar $|\Delta V_m^{\mathrm{tot}}|$, el denominador $A$ crece. Tanto $r_c$ (ecuación @eq-rc) como $\Delta G_c$ (ecuación @eq-Gc) **disminuyen**. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.
 :::
 
 # Paisaje de energía libre
 
 La @fig-paisaje muestra el paisaje energético para distintos voltajes. Al aumentar el voltaje transmembrana total, la barrera de nucleación disminuye y el radio crítico se desplaza hacia valores más pequeños.
 
-![Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de $V_m^{\mathrm{tot}}$; a mayor voltaje, menor altura de la barrera y menor radio crítico.](figures/ep_paisaje_energia_poro_esquema.png){#fig-paisaje fig-alt="Paisaje de energía libre del poro en función del radio para diferentes voltajes transmembrana." width=95%}
+![Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de $\Delta V_m^{\mathrm{tot}}$; a mayor voltaje, menor altura de la barrera y menor radio crítico.](figures/ep_paisaje_energia_poro_esquema.png){#fig-paisaje fig-alt="Paisaje de energía libre del poro en función del radio para diferentes voltajes transmembrana." width=95%}
 
 ::: {.callout-note}
 ## Sobre la figura de referencia y el modelo simplificado
@@ -298,13 +298,13 @@ La @fig-paisaje, basada en la literatura [@Weaver1996], muestra un modelo comple
 En esta simulación se explora el modelo mínimo de la ecuación (@eq-modelo):
 
 $$
-\Delta G(r,V_m^{\mathrm{tot}})
+\Delta G(r,\Delta V_m^{\mathrm{tot}})
 \approx
 2\pi r\gamma
 -
 \pi r^2\Gamma
 -
-k r^2\left(V_m^{\mathrm{tot}}\right)^2
+k r^2\left(\Delta V_m^{\mathrm{tot}}\right)^2
 $$
 
 El radio se expresa en nanómetros y la energía en unidades de $k_BT$ a $T = 298$ K. Los valores por defecto corresponden a parámetros físicamente justificados: $\gamma = 9.2~\mathrm{pN}$ [@Weaver1996], $\Gamma = 1~\mathrm{mN/m}$ y $k = 556~\mathrm{mF/m^2}$ (ecuación @eq-k-valor).
@@ -314,13 +314,13 @@ El radio se expresa en nanómetros y la energía en unidades de $k_BT$ a $T = 29
 
 Use los controles deslizantes para modificar:
 
-- el voltaje transmembrana total $V_m^{\mathrm{tot}}$, expresado en mV;
+- el voltaje transmembrana total $\Delta V_m^{\mathrm{tot}}$, expresado en mV;
 - la energía de línea $\gamma$, expresada en pN;
 - la tensión superficial efectiva $\Gamma$, expresada en mN/m;
 - el coeficiente eléctrico efectivo $k$, expresado en mF/m$^2$;
 - el radio máximo mostrado en la gráfica.
 
-La curva gris punteada corresponde a $V_m^{\mathrm{tot}} = 0$. La curva azul corresponde al voltaje seleccionado. El punto naranja indica $r_c$ y $\Delta G_c$.
+La curva gris punteada corresponde a $\Delta V_m^{\mathrm{tot}} = 0$. La curva azul corresponde al voltaje seleccionado. El punto naranja indica $r_c$ y $\Delta G_c$.
 :::
 
 ## Panel interactivo
@@ -332,12 +332,12 @@ La curva gris punteada corresponde a $V_m^{\mathrm{tot}} = 0$. La curva azul cor
 ```{ojs}
 //| echo: false
 
-viewof V_mV = Inputs.range(
+viewof Delta_V_mV = Inputs.range(
   [0, 600],
   {
     value: 300,
     step: 25,
-    label: "Voltaje Vm,total [mV]"
+    label: "Voltaje ΔVm,total [mV]"
   }
 )
 ```
@@ -401,7 +401,7 @@ T_K   = 298
 kB    = 1.380649e-23
 kBT   = kB * T_K
 
-V     = V_mV * 1e-3
+V     = Delta_V_mV * 1e-3
 gamma = gamma_pN * 1e-12
 Gamma = Gamma_mNm * 1e-3
 kcoef = k_mF_m2 * 1e-3
@@ -458,7 +458,7 @@ html`
 ">
   <h4 style="margin-top:0;">Valores calculados</h4>
   <ul style="padding-left:1.2rem;">
-    <li><b>V<sub>m</sub><sup>tot</sup>:</b><br>${V_mV.toFixed(0)} mV</li>
+    <li><b>ΔV<sub>m</sub><sup>tot</sup>:</b><br>${Delta_V_mV.toFixed(0)} mV</li>
     <li><b>γ:</b><br>${gamma_pN.toFixed(1)} pN</li>
     <li><b>Γ:</b><br>${Gamma_mNm.toFixed(2)} mN/m</li>
     <li><b>k:</b><br>${k_mF_m2.toFixed(0)} mF/m²</li>
@@ -551,12 +551,12 @@ Plot.plot({
         {
           r_nm: rmax_nm * 0.70,
           G_kBT: datos_poro[Math.floor(datos_poro.length * 0.70)].G0_kBT,
-          label: "V = 0 mV"
+          label: "ΔV = 0 mV"
         },
         {
           r_nm: rmax_nm * 0.70,
           G_kBT: datos_poro[Math.floor(datos_poro.length * 0.70)].GV_kBT,
-          label: `V = ${V_mV.toFixed(0)} mV`
+          label: `ΔV = ${Delta_V_mV.toFixed(0)} mV`
         }
       ],
       {
@@ -578,12 +578,12 @@ Plot.plot({
 
 # Cómo interpretar la simulación
 
-La curva gris punteada representa el paisaje energético de referencia para $V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$ (ecuaciones @eq-rc y @eq-Gc).
+La curva gris punteada representa el paisaje energético de referencia para $\Delta V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$ (ecuaciones @eq-rc y @eq-Gc).
 
 Con los parámetros por defecto ($\gamma = 9.2~\mathrm{pN}$, $\Gamma = 1~\mathrm{mN/m}$, $k = 556~\mathrm{mF/m^2}$):
 
-- A $V = 0~\mathrm{mV}$: $r_c \approx 9.2~\mathrm{nm}$, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.
-- A $V = 300~\mathrm{mV}$: $r_c \approx 0.54~\mathrm{nm}$, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas ($k_BT$); la nucleación se vuelve probable.
+- A $\Delta V_m^{\mathrm{tot}} = 0~\mathrm{mV}$: $r_c \approx 9.2~\mathrm{nm}$, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.
+- A $\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}$: $r_c \approx 0.54~\mathrm{nm}$, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas ($k_BT$); la nucleación se vuelve probable.
 
 ::: {.callout-warning}
 ## Precaución física
@@ -601,7 +601,7 @@ import matplotlib.pyplot as plt
 from ipywidgets import interact, FloatSlider
 
 def simular_paisaje_poro(
-    V_mV=300,
+    DeltaV_mV=300,
     gamma_pN=9.2,
     Gamma_mNm=1.0,
     k_mF_m2=556,
@@ -611,20 +611,20 @@ def simular_paisaje_poro(
     Simulación didáctica del paisaje de energía libre del poro.
 
     Modelo (ecuación principal):
-        ΔG(r, V) = 2π r γ  −  π r² Γ  −  k r² V²
+        ΔG(r, ΔV) = 2π r γ  −  π r² Γ  −  k r² ΔV²
 
     Parámetros por defecto basados en la literatura:
         γ = 9.2 pN   (Weaver 1996)
         Γ = 1.0 mN/m (tensión superficial de membrana bajo campo)
         k = 556 mF/m² (estimado desde permitividades: π(εw−εm)ε0/dm)
-        V = 300 mV   (voltaje transmembrana típico en electroporación)
+        ΔV = 300 mV  (voltaje transmembrana típico en electroporación)
     """
 
     T   = 298
     kB  = 1.380649e-23
     kBT = kB * T
 
-    V     = V_mV * 1e-3
+    V     = DeltaV_mV * 1e-3
     gamma = gamma_pN * 1e-12
     Gamma = Gamma_mNm * 1e-3
     kcoef = k_mF_m2 * 1e-3
@@ -651,9 +651,9 @@ def simular_paisaje_poro(
 
     fig, ax = plt.subplots(figsize=(9, 5.5))
     ax.plot(r_nm, G0_kBT, linestyle="--", linewidth=2,
-            color="#6b7280", label="V = 0 mV")
+            color="#6b7280", label="ΔV = 0 mV")
     ax.plot(r_nm, GV_kBT, linewidth=2.8,
-            color="#1f4e79", label=f"V = {V_mV:.0f} mV")
+            color="#1f4e79", label=f"ΔV = {DeltaV_mV:.0f} mV")
     ax.axhline(0, linewidth=0.8, color="black", alpha=0.6)
 
     if np.isfinite(rc_nm) and rc_nm <= rmax_nm:
@@ -671,18 +671,18 @@ def simular_paisaje_poro(
     plt.tight_layout()
     plt.show()
 
-    print(f"V_m^tot = {V_mV:.0f} mV")
-    print(f"γ       = {gamma_pN:.2f} pN")
-    print(f"Γ       = {Gamma_mNm:.2f} mN/m")
-    print(f"k       = {k_mF_m2:.0f} mF/m²")
-    print(f"r_c     = {rc_nm:.4f} nm")
-    print(f"ΔG_c    = {Gc_kBT:.2f} kBT")
+    print(f"ΔV_m^tot = {DeltaV_mV:.0f} mV")
+    print(f"γ        = {gamma_pN:.2f} pN")
+    print(f"Γ        = {Gamma_mNm:.2f} mN/m")
+    print(f"k        = {k_mF_m2:.0f} mF/m²")
+    print(f"r_c      = {rc_nm:.4f} nm")
+    print(f"ΔG_c     = {Gc_kBT:.2f} kBT")
 
 interact(
     simular_paisaje_poro,
-    V_mV=FloatSlider(
+    DeltaV_mV=FloatSlider(
         value=300, min=0, max=600, step=25,
-        description="V [mV]"
+        description="ΔV [mV]"
     ),
     gamma_pN=FloatSlider(
         value=9.2, min=1, max=30, step=0.1,
@@ -727,7 +727,7 @@ con $k_BT = 4.11 \times 10^{-21}~\mathrm{J}$.
 
 Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para los siguientes voltajes y complete la tabla:
 
-| Caso | $V_m^{\mathrm{tot}}$ | $r_c$ [nm] | $\Delta G_c$ [$k_BT$] |
+| Caso | $\Delta V_m^{\mathrm{tot}}$ | $r_c$ [nm] | $\Delta G_c$ [$k_BT$] |
 |---|---|---|---|
 | 1 | $0~\mathrm{mV}$ | ? | ? |
 | 2 | $150~\mathrm{mV}$ | ? | ? |
@@ -736,7 +736,7 @@ Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para los siguientes voltaje
 
 Luego responda:
 
-1. ¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $V_m^{\mathrm{tot}}$?
+1. ¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $\Delta V_m^{\mathrm{tot}}$?
 2. ¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?
 3. ¿Qué significa físicamente que la barrera $\Delta G_c$ disminuya?
 4. ¿Por qué una barrera menor no implica ruptura irreversible inmediata?
@@ -758,7 +758,7 @@ $$
 
 Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.
 
-Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego aplica las ecuaciones (@eq-rc) y (@eq-Gc):
+Calcula primero el denominador $A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2$ para cada voltaje. Luego aplica las ecuaciones (@eq-rc) y (@eq-Gc):
 
 $$
 r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
@@ -772,7 +772,7 @@ $$
 \Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
 $$
 
-Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador y, por tanto, menor $r_c$ y menor $\Delta G_c$.
+Observa cómo $A$ crece con $\left(\Delta V_m^{\mathrm{tot}}\right)^2$: a mayor voltaje, mayor denominador y, por tanto, menor $r_c$ y menor $\Delta G_c$.
 :::
 
 ::: {.callout-note collapse="true"}
@@ -787,9 +787,9 @@ k = 0.556~\mathrm{F/m^2}, \quad
 k_BT = 4.114 \times 10^{-21}~\mathrm{J}
 $$
 
-**Denominador:** $A = \pi\Gamma + k V^2$
+**Denominador:** $A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2$
 
-| Caso | $V_m^{\mathrm{tot}}$ | $A~[\mathrm{J/m^2}]$ | $r_c~[\mathrm{nm}]$ | $\Delta G_c~[k_BT]$ |
+| Caso | $\Delta V_m^{\mathrm{tot}}$ | $A~[\mathrm{J/m^2}]$ | $r_c~[\mathrm{nm}]$ | $\Delta G_c~[k_BT]$ |
 |---|---|---|---|---|
 | 1 | $0~\mathrm{mV}$ | $3.14 \times 10^{-3}$ | $9.20$ | $64.6$ |
 | 2 | $150~\mathrm{mV}$ | $1.566 \times 10^{-2}$ | $1.847$ | $13.0$ |
@@ -798,15 +798,15 @@ $$
 
 **Respuestas:**
 
-1. Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.
+1. Al aumentar $\Delta V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $k\left(\Delta V_m^{\mathrm{tot}}\right)^2$ crece y aumenta el denominador $A$.
 
-2. El término eléctrico es $-kr^2V^2$. La energía almacenada en un condensador es proporcional a $V^2$. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.
+2. El término eléctrico es $-kr^2\left(\Delta V_m^{\mathrm{tot}}\right)^2$. La energía almacenada en un condensador es proporcional a $V^2$. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.
 
 3. Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.
 
 4. La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía de expansión sigue siendo desfavorable.
 
-5. Entre $V = 150~\mathrm{mV}$ y $V = 300~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta.
+5. Entre $\Delta V_m^{\mathrm{tot}} = 150~\mathrm{mV}$ y $\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta.
 
 6. **Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la biomembrana no recupera su integridad — requiere superar la barrera de ruptura ($\sim 300\,k_BT$ a 0 mV).
 :::
@@ -819,7 +819,7 @@ supone una geometría idealizada del poro (cilíndrico, radio uniforme); agrupa 
 
 # Síntesis del módulo
 
-La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en $r$, gobernado por la energía de línea $\gamma$), la ganancia por relajación de tensión superficial (cuadrática en $r$, gobernada por $\Gamma$) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en $r$ y en $V_m^{\mathrm{tot}}$, gobernada por $k$).
+La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en $r$, gobernado por la energía de línea $\gamma$), la ganancia por relajación de tensión superficial (cuadrática en $r$, gobernada por $\Gamma$) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en $r$ y en $\Delta V_m^{\mathrm{tot}}$, gobernada por $k$).
 
 La suma de estos tres términos produce un paisaje energético con una barrera máxima en $r = r_c$. El voltaje transmembrana reduce tanto el radio crítico como la barrera $\Delta G_c$: a voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas ($k_BT$), haciendo la nucleación del poro estadísticamente probable. Este es el mecanismo central por el que el campo eléctrico permeabiliza la biomembrana, no como una ruptura mecánica, sino como una modificación del paisaje energético que rige las fluctuaciones moleculares de la bicapa [@Kotnik2019; @Weaver1996].
 

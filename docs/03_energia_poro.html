@@ -520,9 +520,9 @@ Figura&nbsp;1: Representación esquemática de la transición estructural del po
 <h2 data-number="5.4" class="anchored" data-anchor-id="término-3-ganancia-dieléctrica-coeficiente-eléctrico-k"><span class="header-section-number">5.4</span> Término 3: ganancia dieléctrica — coeficiente eléctrico <span class="math inline">\(k\)</span></h2>
 <section id="origen-físico" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="origen-físico"><span class="header-section-number">5.4.1</span> Origen físico</h3>
-<p>Cuando se forma un poro de radio <span class="math inline">\(r\)</span> en la bicapa, la columna de lípido (dieléctrico de baja permitividad, <span class="math inline">\(\varepsilon_m \approx 2\varepsilon_0\)</span>) es reemplazada por una columna de agua (dieléctrico de alta permitividad, <span class="math inline">\(\varepsilon_w \approx 80\varepsilon_0\)</span>). La energía almacenada en un capacitor de área <span class="math inline">\(\pi r^2\)</span> y espesor <span class="math inline">\(d_m\)</span> con voltaje <span class="math inline">\(V_m^{\mathrm{tot}}\)</span> es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía <strong>disminuye</strong> porque el agua apantalla mejor el campo:</p>
+<p>Cuando se forma un poro de radio <span class="math inline">\(r\)</span> en la bicapa, la columna de lípido (dieléctrico de baja permitividad, <span class="math inline">\(\varepsilon_m \approx 2\varepsilon_0\)</span>) es reemplazada por una columna de agua (dieléctrico de alta permitividad, <span class="math inline">\(\varepsilon_w \approx 80\varepsilon_0\)</span>). La energía almacenada en un capacitor de área <span class="math inline">\(\pi r^2\)</span> y espesor <span class="math inline">\(d_m\)</span> con voltaje <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span> es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía <strong>disminuye</strong> porque el agua apantalla mejor el campo:</p>
 <p><span id="eq-electrico"><span class="math display">\[
-\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(V_m^{\mathrm{tot}}\right)^2
+\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2
 \tag{3}\]</span></span></p>
 <p>El coeficiente <span class="math inline">\(k\)</span> (en F/m²) puede estimarse a partir de la geometría cilíndrica del poro y las permitividades:</p>
 <p><span id="eq-k"><span class="math display">\[
@@ -536,7 +536,7 @@ k \approx
 0.556~\mathrm{F/m^2}
 = 556~\mathrm{mF/m^2}
 \tag{5}\]</span></span></p>
-<p>Este término es <strong>negativo</strong> (ganancia energética), <strong>cuadrático</strong> en <span class="math inline">\(r\)</span> y <strong>cuadrático</strong> en <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>. Por eso el efecto no depende del signo del voltaje: <span class="math inline">\(+300~\mathrm{mV}\)</span> y <span class="math inline">\(-300~\mathrm{mV}\)</span> producen la misma reducción de barrera.</p>
+<p>Este término es <strong>negativo</strong> (ganancia energética), <strong>cuadrático</strong> en <span class="math inline">\(r\)</span> y <strong>cuadrático</strong> en <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>. Por eso el efecto no depende del signo del voltaje: <span class="math inline">\(+300~\mathrm{mV}\)</span> y <span class="math inline">\(-300~\mathrm{mV}\)</span> producen la misma reducción de barrera.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -556,15 +556,15 @@ k \approx
 <h2 data-number="5.5" class="anchored" data-anchor-id="el-modelo-completo"><span class="header-section-number">5.5</span> El modelo completo</h2>
 <p>Los tres términos se construyen sobre tres fundamentos físicos distintos —costo de crear un contorno, relajación de tensión superficial, y ganancia dieléctrica— y tienen dependencias en <span class="math inline">\(r\)</span> que se compensan mutuamente. La energía libre total del poro hidrofílico de radio <span class="math inline">\(r\)</span> es su suma:</p>
 <p><span id="eq-modelo"><span class="math display">\[
-\Delta G(r,\,V_m^{\mathrm{tot}})
+\Delta G(r,\,\Delta V_m^{\mathrm{tot}})
 \approx
 \underbrace{2\pi r\,\gamma}_{\text{Borde (positivo)}}
 -
 \underbrace{\pi r^2\,\Gamma}_{\text{Tensión (negativo)}}
 -
-\underbrace{k\, r^2\,\left(V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}
+\underbrace{k\, r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}
 \tag{6}\]</span></span></p>
-<p>donde <span class="math inline">\(V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)\)</span> es el voltaje transmembrana total (en V), <span class="math inline">\(\gamma\)</span> es la energía de línea del borde hidrofílico (en J/m), <span class="math inline">\(\Gamma\)</span> es la tensión superficial efectiva de la bicapa (en J/m²) y <span class="math inline">\(k\)</span> es el coeficiente dieléctrico efectivo (en F/m²).</p>
+<p>donde <span class="math inline">\(\Delta V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)\)</span> es el voltaje transmembrana total (en V), <span class="math inline">\(\gamma\)</span> es la energía de línea del borde hidrofílico (en J/m), <span class="math inline">\(\Gamma\)</span> es la tensión superficial efectiva de la bicapa (en J/m²) y <span class="math inline">\(k\)</span> es el coeficiente dieléctrico efectivo (en F/m²).</p>
 <p>El modelo usa solo tres términos porque estos son los de menor orden en <span class="math inline">\(r\)</span> que capturan la física esencial: el término lineal en <span class="math inline">\(r\)</span> (costo de borde) domina para poros pequeños y el término cuadrático en <span class="math inline">\(r\)</span> (tensión + eléctrico) domina para poros grandes. Términos de orden superior en <span class="math inline">\(r\)</span> existen pero son secundarios en el rango de radios relevante para la nucleación (&lt; 10 nm).</p>
 </section>
 </section>
@@ -579,7 +579,7 @@ k \approx
 <h1 data-number="7"><span class="header-section-number">7</span> Radio crítico y barrera energética</h1>
 <section id="agrupación-de-los-términos-cuadráticos" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="agrupación-de-los-términos-cuadráticos"><span class="header-section-number">7.1</span> Agrupación de los términos cuadráticos</h2>
-<p>Definiendo <span class="math inline">\(A = \pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2\)</span>, la ecuación (<a href="#eq-modelo" class="quarto-xref">Ecuación&nbsp;6</a>) se puede escribir de forma compacta como:</p>
+<p>Definiendo <span class="math inline">\(A = \pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span>, la ecuación (<a href="#eq-modelo" class="quarto-xref">Ecuación&nbsp;6</a>) se puede escribir de forma compacta como:</p>
 <p><span id="eq-modelo-compacto"><span class="math display">\[
 \Delta G(r) = 2\pi\gamma\,r - A\,r^2
 \tag{7}\]</span></span></p>
@@ -590,7 +590,7 @@ k \approx
 <p><span id="eq-rc"><span class="math display">\[
 \frac{d\Delta G}{dr} = 2\pi\gamma - 2A\,r_c = 0
 \qquad\Longrightarrow\qquad
-r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}
 \tag{8}\]</span></span></p>
 <p>La barrera energética <span class="math inline">\(\Delta G_c\)</span> es el valor de <span class="math inline">\(\Delta G\)</span> en <span class="math inline">\(r = r_c\)</span>. Sustituyendo la ecuación (<a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a>) en la ecuación (<a href="#eq-modelo-compacto" class="quarto-xref">Ecuación&nbsp;7</a>):</p>
 <p><span class="math display">\[
@@ -607,7 +607,7 @@ r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot
 <p><span id="eq-Gc"><span class="math display">\[
 \Delta G_c
 =
-\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}
+\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}
 \tag{9}\]</span></span></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -619,7 +619,7 @@ r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Al aumentar <span class="math inline">\(|V_m^{\mathrm{tot}}|\)</span>, el denominador <span class="math inline">\(A\)</span> crece. Tanto <span class="math inline">\(r_c\)</span> (ecuación <a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a>) como <span class="math inline">\(\Delta G_c\)</span> (ecuación <a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>) <strong>disminuyen</strong>. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.</p>
+<p>Al aumentar <span class="math inline">\(|\Delta V_m^{\mathrm{tot}}|\)</span>, el denominador <span class="math inline">\(A\)</span> crece. Tanto <span class="math inline">\(r_c\)</span> (ecuación <a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a>) como <span class="math inline">\(\Delta G_c\)</span> (ecuación <a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>) <strong>disminuyen</strong>. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.</p>
 </div>
 </div>
 </section>
@@ -633,7 +633,7 @@ r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot
 <img src="figures/ep_paisaje_energia_poro_esquema.png" class="img-fluid figure-img" style="width:95.0%" alt="Paisaje de energía libre del poro en función del radio para diferentes voltajes transmembrana.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paisaje-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2: Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>; a mayor voltaje, menor altura de la barrera y menor radio crítico.
+Figura&nbsp;2: Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>; a mayor voltaje, menor altura de la barrera y menor radio crítico.
 </figcaption>
 </figure>
 </div>
@@ -655,13 +655,13 @@ Figura&nbsp;2: Paisaje energético esquemático: al aumentar el voltaje transmem
 <h1 data-number="9"><span class="header-section-number">9</span> Simulación interactiva</h1>
 <p>En esta simulación se explora el modelo mínimo de la ecuación (<a href="#eq-modelo" class="quarto-xref">Ecuación&nbsp;6</a>):</p>
 <p><span class="math display">\[
-\Delta G(r,V_m^{\mathrm{tot}})
+\Delta G(r,\Delta V_m^{\mathrm{tot}})
 \approx
 2\pi r\gamma
 -
 \pi r^2\Gamma
 -
-k r^2\left(V_m^{\mathrm{tot}}\right)^2
+k r^2\left(\Delta V_m^{\mathrm{tot}}\right)^2
 \]</span></p>
 <p>El radio se expresa en nanómetros y la energía en unidades de <span class="math inline">\(k_BT\)</span> a <span class="math inline">\(T = 298\)</span> K. Los valores por defecto corresponden a parámetros físicamente justificados: <span class="math inline">\(\gamma = 9.2~\mathrm{pN}\)</span> <span class="citation" data-cites="Weaver1996">(<a href="#ref-Weaver1996" role="doc-biblioref">Weaver y Chizmadzhev 1996</a>)</span>, <span class="math inline">\(\Gamma = 1~\mathrm{mN/m}\)</span> y <span class="math inline">\(k = 556~\mathrm{mF/m^2}\)</span> (ecuación <a href="#eq-k-valor" class="quarto-xref">Ecuación&nbsp;5</a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -676,13 +676,13 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <div class="callout-body-container callout-body">
 <p>Use los controles deslizantes para modificar:</p>
 <ul>
-<li>el voltaje transmembrana total <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>, expresado en mV;</li>
+<li>el voltaje transmembrana total <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>, expresado en mV;</li>
 <li>la energía de línea <span class="math inline">\(\gamma\)</span>, expresada en pN;</li>
 <li>la tensión superficial efectiva <span class="math inline">\(\Gamma\)</span>, expresada en mN/m;</li>
 <li>el coeficiente eléctrico efectivo <span class="math inline">\(k\)</span>, expresado en mF/m<span class="math inline">\(^2\)</span>;</li>
 <li>el radio máximo mostrado en la gráfica.</li>
 </ul>
-<p>La curva gris punteada corresponde a <span class="math inline">\(V_m^{\mathrm{tot}} = 0\)</span>. La curva azul corresponde al voltaje seleccionado. El punto naranja indica <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span>.</p>
+<p>La curva gris punteada corresponde a <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 0\)</span>. La curva azul corresponde al voltaje seleccionado. El punto naranja indica <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span>.</p>
 </div>
 </div>
 <section id="panel-interactivo" class="level2" data-number="9.1">
@@ -692,12 +692,12 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="333" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 332;"><span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>viewof V_mV <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="333" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 332;"><span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>viewof Delta_V_mV <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">600</span>]<span class="op">,</span></span>
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>  {</span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
 <span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span></span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Voltaje Vm,total [mV]"</span></span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Voltaje ΔVm,total [mV]"</span></span>
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -786,7 +786,7 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb6-401"><a href="#cb6-401" aria-hidden="true" tabindex="-1"></a>kB    <span class="op">=</span> <span class="fl">1.380649e-23</span></span>
 <span id="cb6-402"><a href="#cb6-402" aria-hidden="true" tabindex="-1"></a>kBT   <span class="op">=</span> kB <span class="op">*</span> T_K</span>
 <span id="cb6-403"><a href="#cb6-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-404"><a href="#cb6-404" aria-hidden="true" tabindex="-1"></a>V     <span class="op">=</span> V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
+<span id="cb6-404"><a href="#cb6-404" aria-hidden="true" tabindex="-1"></a>V     <span class="op">=</span> Delta_V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb6-405"><a href="#cb6-405" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> gamma_pN <span class="op">*</span> <span class="fl">1e-12</span></span>
 <span id="cb6-406"><a href="#cb6-406" aria-hidden="true" tabindex="-1"></a>Gamma <span class="op">=</span> Gamma_mNm <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb6-407"><a href="#cb6-407" aria-hidden="true" tabindex="-1"></a>kcoef <span class="op">=</span> k_mF_m2 <span class="op">*</span> <span class="fl">1e-3</span></span>
@@ -969,7 +969,7 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb7-456"><a href="#cb7-456" aria-hidden="true" tabindex="-1"></a><span class="vs">"&gt;</span></span>
 <span id="cb7-457"><a href="#cb7-457" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h4 style="margin-top:0;"&gt;Valores calculados&lt;/h4&gt;</span></span>
 <span id="cb7-458"><a href="#cb7-458" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;ul style="padding-left:1.2rem;"&gt;</span></span>
-<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;V&lt;sub&gt;m&lt;/sub&gt;&lt;sup&gt;tot&lt;/sup&gt;:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV&lt;/li&gt;</span></span>
+<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;ΔV&lt;sub&gt;m&lt;/sub&gt;&lt;sup&gt;tot&lt;/sup&gt;:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>Delta_V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV&lt;/li&gt;</span></span>
 <span id="cb7-460"><a href="#cb7-460" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;γ:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>gamma_pN<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs"> pN&lt;/li&gt;</span></span>
 <span id="cb7-461"><a href="#cb7-461" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;Γ:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>Gamma_mNm<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs"> mN/m&lt;/li&gt;</span></span>
 <span id="cb7-462"><a href="#cb7-462" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;k:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>k_mF_m2<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mF/m²&lt;/li&gt;</span></span>
@@ -1064,12 +1064,12 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb8-549"><a href="#cb8-549" aria-hidden="true" tabindex="-1"></a>        {</span>
 <span id="cb8-550"><a href="#cb8-550" aria-hidden="true" tabindex="-1"></a>          <span class="dt">r_nm</span><span class="op">:</span> rmax_nm <span class="op">*</span> <span class="fl">0.70</span><span class="op">,</span></span>
 <span id="cb8-551"><a href="#cb8-551" aria-hidden="true" tabindex="-1"></a>          <span class="dt">G_kBT</span><span class="op">:</span> datos_poro[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(datos_poro<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="fl">0.70</span>)]<span class="op">.</span><span class="at">G0_kBT</span><span class="op">,</span></span>
-<span id="cb8-552"><a href="#cb8-552" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="st">"V = 0 mV"</span></span>
+<span id="cb8-552"><a href="#cb8-552" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="st">"ΔV = 0 mV"</span></span>
 <span id="cb8-553"><a href="#cb8-553" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
 <span id="cb8-554"><a href="#cb8-554" aria-hidden="true" tabindex="-1"></a>        {</span>
 <span id="cb8-555"><a href="#cb8-555" aria-hidden="true" tabindex="-1"></a>          <span class="dt">r_nm</span><span class="op">:</span> rmax_nm <span class="op">*</span> <span class="fl">0.70</span><span class="op">,</span></span>
 <span id="cb8-556"><a href="#cb8-556" aria-hidden="true" tabindex="-1"></a>          <span class="dt">G_kBT</span><span class="op">:</span> datos_poro[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(datos_poro<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="fl">0.70</span>)]<span class="op">.</span><span class="at">GV_kBT</span><span class="op">,</span></span>
-<span id="cb8-557"><a href="#cb8-557" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="vs">`V = </span><span class="sc">${</span>V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV`</span></span>
+<span id="cb8-557"><a href="#cb8-557" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="vs">`ΔV = </span><span class="sc">${</span>Delta_V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV`</span></span>
 <span id="cb8-558"><a href="#cb8-558" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb8-559"><a href="#cb8-559" aria-hidden="true" tabindex="-1"></a>      ]<span class="op">,</span></span>
 <span id="cb8-560"><a href="#cb8-560" aria-hidden="true" tabindex="-1"></a>      {</span>
@@ -1096,11 +1096,11 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 </section>
 <section id="cómo-interpretar-la-simulación" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Cómo interpretar la simulación</h1>
-<p>La curva gris punteada representa el paisaje energético de referencia para <span class="math inline">\(V_m^{\mathrm{tot}} = 0\)</span>. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación <span class="math inline">\(\Delta G_c\)</span> al radio crítico <span class="math inline">\(r_c\)</span> (ecuaciones <a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a> y <a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>).</p>
+<p>La curva gris punteada representa el paisaje energético de referencia para <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 0\)</span>. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación <span class="math inline">\(\Delta G_c\)</span> al radio crítico <span class="math inline">\(r_c\)</span> (ecuaciones <a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a> y <a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>).</p>
 <p>Con los parámetros por defecto (<span class="math inline">\(\gamma = 9.2~\mathrm{pN}\)</span>, <span class="math inline">\(\Gamma = 1~\mathrm{mN/m}\)</span>, <span class="math inline">\(k = 556~\mathrm{mF/m^2}\)</span>):</p>
 <ul>
-<li>A <span class="math inline">\(V = 0~\mathrm{mV}\)</span>: <span class="math inline">\(r_c \approx 9.2~\mathrm{nm}\)</span>, <span class="math inline">\(\Delta G_c \approx 64.6\,k_BT\)</span> — la nucleación espontánea es extremadamente improbable.</li>
-<li>A <span class="math inline">\(V = 300~\mathrm{mV}\)</span>: <span class="math inline">\(r_c \approx 0.54~\mathrm{nm}\)</span>, <span class="math inline">\(\Delta G_c \approx 3.8\,k_BT\)</span> — la barrera es comparable a las fluctuaciones térmicas (<span class="math inline">\(k_BT\)</span>); la nucleación se vuelve probable.</li>
+<li>A <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 0~\mathrm{mV}\)</span>: <span class="math inline">\(r_c \approx 9.2~\mathrm{nm}\)</span>, <span class="math inline">\(\Delta G_c \approx 64.6\,k_BT\)</span> — la nucleación espontánea es extremadamente improbable.</li>
+<li>A <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}\)</span>: <span class="math inline">\(r_c \approx 0.54~\mathrm{nm}\)</span>, <span class="math inline">\(\Delta G_c \approx 3.8\,k_BT\)</span> — la barrera es comparable a las fluctuaciones térmicas (<span class="math inline">\(k_BT\)</span>); la nucleación se vuelve probable.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1123,7 +1123,7 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, FloatSlider</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simular_paisaje_poro(</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    V_mV<span class="op">=</span><span class="dv">300</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    DeltaV_mV<span class="op">=</span><span class="dv">300</span>,</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    gamma_pN<span class="op">=</span><span class="fl">9.2</span>,</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    Gamma_mNm<span class="op">=</span><span class="fl">1.0</span>,</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    k_mF_m2<span class="op">=</span><span class="dv">556</span>,</span>
@@ -1133,20 +1133,20 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Simulación didáctica del paisaje de energía libre del poro.</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Modelo (ecuación principal):</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔG(r, V) = 2π r γ  −  π r² Γ  −  k r² V²</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔG(r, ΔV) = 2π r γ  −  π r² Γ  −  k r² ΔV²</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Parámetros por defecto basados en la literatura:</span></span>
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">        γ = 9.2 pN   (Weaver 1996)</span></span>
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Γ = 1.0 mN/m (tensión superficial de membrana bajo campo)</span></span>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">        k = 556 mF/m² (estimado desde permitividades: π(εw−εm)ε0/dm)</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">        V = 300 mV   (voltaje transmembrana típico en electroporación)</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔV = 300 mV  (voltaje transmembrana típico en electroporación)</span></span>
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    T   <span class="op">=</span> <span class="dv">298</span></span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    kB  <span class="op">=</span> <span class="fl">1.380649e-23</span></span>
 <span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    kBT <span class="op">=</span> kB <span class="op">*</span> T</span>
 <span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    V     <span class="op">=</span> V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    V     <span class="op">=</span> DeltaV_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> gamma_pN <span class="op">*</span> <span class="fl">1e-12</span></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    Gamma <span class="op">=</span> Gamma_mNm <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    kcoef <span class="op">=</span> k_mF_m2 <span class="op">*</span> <span class="fl">1e-3</span></span>
@@ -1173,9 +1173,9 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">5.5</span>))</span>
 <span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    ax.plot(r_nm, G0_kBT, linestyle<span class="op">=</span><span class="st">"--"</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#6b7280"</span>, label<span class="op">=</span><span class="st">"V = 0 mV"</span>)</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#6b7280"</span>, label<span class="op">=</span><span class="st">"ΔV = 0 mV"</span>)</span>
 <span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    ax.plot(r_nm, GV_kBT, linewidth<span class="op">=</span><span class="fl">2.8</span>,</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#1f4e79"</span>, label<span class="op">=</span><span class="ss">f"V = </span><span class="sc">{</span>V_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#1f4e79"</span>, label<span class="op">=</span><span class="ss">f"ΔV = </span><span class="sc">{</span>DeltaV_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
 <span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    ax.axhline(<span class="dv">0</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"black"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.isfinite(rc_nm) <span class="kw">and</span> rc_nm <span class="op">&lt;=</span> rmax_nm:</span>
@@ -1193,18 +1193,18 @@ k r^2\left(V_m^{\mathrm{tot}}\right)^2
 <span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
 <span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
 <span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"V_m^tot = </span><span class="sc">{</span>V_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"γ       = </span><span class="sc">{</span>gamma_pN<span class="sc">:.2f}</span><span class="ss"> pN"</span>)</span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Γ       = </span><span class="sc">{</span>Gamma_mNm<span class="sc">:.2f}</span><span class="ss"> mN/m"</span>)</span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"k       = </span><span class="sc">{</span>k_mF_m2<span class="sc">:.0f}</span><span class="ss"> mF/m²"</span>)</span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"r_c     = </span><span class="sc">{</span>rc_nm<span class="sc">:.4f}</span><span class="ss"> nm"</span>)</span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔG_c    = </span><span class="sc">{</span>Gc_kBT<span class="sc">:.2f}</span><span class="ss"> kBT"</span>)</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔV_m^tot = </span><span class="sc">{</span>DeltaV_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"γ        = </span><span class="sc">{</span>gamma_pN<span class="sc">:.2f}</span><span class="ss"> pN"</span>)</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Γ        = </span><span class="sc">{</span>Gamma_mNm<span class="sc">:.2f}</span><span class="ss"> mN/m"</span>)</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"k        = </span><span class="sc">{</span>k_mF_m2<span class="sc">:.0f}</span><span class="ss"> mF/m²"</span>)</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"r_c      = </span><span class="sc">{</span>rc_nm<span class="sc">:.4f}</span><span class="ss"> nm"</span>)</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔG_c     = </span><span class="sc">{</span>Gc_kBT<span class="sc">:.2f}</span><span class="ss"> kBT"</span>)</span>
 <span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>interact(</span>
 <span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>    simular_paisaje_poro,</span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>    V_mV<span class="op">=</span>FloatSlider(</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>    DeltaV_mV<span class="op">=</span>FloatSlider(</span>
 <span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span><span class="dv">300</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">0</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">600</span>, step<span class="op">=</span><span class="dv">25</span>,</span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">"V [mV]"</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">"ΔV [mV]"</span></span>
 <span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>    gamma_pN<span class="op">=</span>FloatSlider(</span>
 <span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span><span class="fl">9.2</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">1</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">30</span>, step<span class="op">=</span><span class="fl">0.1</span>,</span>
@@ -1246,10 +1246,16 @@ T = 298~\mathrm{K}
 <h2 data-number="11.2" class="anchored" data-anchor-id="procedimiento"><span class="header-section-number">11.2</span> Procedimiento</h2>
 <p>Calcule <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span> (en unidades de <span class="math inline">\(k_BT\)</span>) para los siguientes voltajes y complete la tabla:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Caso</th>
-<th><span class="math inline">\(V_m^{\mathrm{tot}}\)</span></th>
+<th><span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span></th>
 <th><span class="math inline">\(r_c\)</span> [nm]</th>
 <th><span class="math inline">\(\Delta G_c\)</span> [<span class="math inline">\(k_BT\)</span>]</th>
 </tr>
@@ -1283,7 +1289,7 @@ T = 298~\mathrm{K}
 </table>
 <p>Luego responda:</p>
 <ol type="1">
-<li>¿Cómo cambian <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span> al aumentar <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>?</li>
+<li>¿Cómo cambian <span class="math inline">\(r_c\)</span> y <span class="math inline">\(\Delta G_c\)</span> al aumentar <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>?</li>
 <li>¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?</li>
 <li>¿Qué significa físicamente que la barrera <span class="math inline">\(\Delta G_c\)</span> disminuya?</li>
 <li>¿Por qué una barrera menor no implica ruptura irreversible inmediata?</li>
@@ -1311,7 +1317,7 @@ T = 298~\mathrm{K}
 k = 0.556~\mathrm{F/m^2}
 \]</span></p>
 <p>Los voltajes también en V: <span class="math inline">\(150~\mathrm{mV} = 0.150~\mathrm{V}\)</span>, etc.</p>
-<p>Calcula primero el denominador <span class="math inline">\(A = \pi\Gamma + k V^2\)</span> para cada voltaje. Luego aplica las ecuaciones (<a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a>) y (<a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>):</p>
+<p>Calcula primero el denominador <span class="math inline">\(A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span> para cada voltaje. Luego aplica las ecuaciones (<a href="#eq-rc" class="quarto-xref">Ecuación&nbsp;8</a>) y (<a href="#eq-Gc" class="quarto-xref">Ecuación&nbsp;9</a>):</p>
 <p><span class="math display">\[
 r_c = \frac{\pi\gamma}{A}~\mathrm{[m]}
 \quad\rightarrow\quad
@@ -1322,7 +1328,7 @@ r_c~\mathrm{[nm]} = r_c~\mathrm{[m]} \times 10^9
 \quad\rightarrow\quad
 \Delta G_c~[k_BT] = \frac{\Delta G_c~\mathrm{[J]}}{k_BT}
 \]</span></p>
-<p>Observa cómo <span class="math inline">\(A\)</span> crece con <span class="math inline">\(V^2\)</span>: a mayor voltaje, mayor denominador y, por tanto, menor <span class="math inline">\(r_c\)</span> y menor <span class="math inline">\(\Delta G_c\)</span>.</p>
+<p>Observa cómo <span class="math inline">\(A\)</span> crece con <span class="math inline">\(\left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span>: a mayor voltaje, mayor denominador y, por tanto, menor <span class="math inline">\(r_c\)</span> y menor <span class="math inline">\(\Delta G_c\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1345,7 +1351,7 @@ r_c~\mathrm{[nm]} = r_c~\mathrm{[m]} \times 10^9
 k = 0.556~\mathrm{F/m^2}, \quad
 k_BT = 4.114 \times 10^{-21}~\mathrm{J}
 \]</span></p>
-<p><strong>Denominador:</strong> <span class="math inline">\(A = \pi\Gamma + k V^2\)</span></p>
+<p><strong>Denominador:</strong> <span class="math inline">\(A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -1357,7 +1363,7 @@ k_BT = 4.114 \times 10^{-21}~\mathrm{J}
 <thead>
 <tr class="header">
 <th>Caso</th>
-<th><span class="math inline">\(V_m^{\mathrm{tot}}\)</span></th>
+<th><span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span></th>
 <th><span class="math inline">\(A~[\mathrm{J/m^2}]\)</span></th>
 <th><span class="math inline">\(r_c~[\mathrm{nm}]\)</span></th>
 <th><span class="math inline">\(\Delta G_c~[k_BT]\)</span></th>
@@ -1396,11 +1402,11 @@ k_BT = 4.114 \times 10^{-21}~\mathrm{J}
 </table>
 <p><strong>Respuestas:</strong></p>
 <ol type="1">
-<li><p>Al aumentar <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>, tanto <span class="math inline">\(r_c\)</span> como <span class="math inline">\(\Delta G_c\)</span> disminuyen progresivamente, porque el término <span class="math inline">\(kV^2\)</span> crece y aumenta el denominador <span class="math inline">\(A\)</span>.</p></li>
-<li><p>El término eléctrico es <span class="math inline">\(-kr^2V^2\)</span>. La energía almacenada en un condensador es proporcional a <span class="math inline">\(V^2\)</span>. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.</p></li>
+<li><p>Al aumentar <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>, tanto <span class="math inline">\(r_c\)</span> como <span class="math inline">\(\Delta G_c\)</span> disminuyen progresivamente, porque el término <span class="math inline">\(k\left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span> crece y aumenta el denominador <span class="math inline">\(A\)</span>.</p></li>
+<li><p>El término eléctrico es <span class="math inline">\(-kr^2\left(\Delta V_m^{\mathrm{tot}}\right)^2\)</span>. La energía almacenada en un condensador es proporcional a <span class="math inline">\(V^2\)</span>. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.</p></li>
 <li><p>Una barrera <span class="math inline">\(\Delta G_c\)</span> menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.</p></li>
 <li><p>La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía de expansión sigue siendo desfavorable.</p></li>
-<li><p>Entre <span class="math inline">\(V = 150~\mathrm{mV}\)</span> y <span class="math inline">\(V = 300~\mathrm{mV}\)</span>: a <span class="math inline">\(300~\mathrm{mV}\)</span> la barrera ya es <span class="math inline">\(3.82\,k_BT\)</span>, por debajo de <span class="math inline">\(5\,k_BT\)</span>. A <span class="math inline">\(150~\mathrm{mV}\)</span> es <span class="math inline">\(13.0\,k_BT\)</span>, aún alta.</p></li>
+<li><p>Entre <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 150~\mathrm{mV}\)</span> y <span class="math inline">\(\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}\)</span>: a <span class="math inline">\(300~\mathrm{mV}\)</span> la barrera ya es <span class="math inline">\(3.82\,k_BT\)</span>, por debajo de <span class="math inline">\(5\,k_BT\)</span>. A <span class="math inline">\(150~\mathrm{mV}\)</span> es <span class="math inline">\(13.0\,k_BT\)</span>, aún alta.</p></li>
 <li><p><strong>Nucleación</strong>: formación del primer poro hidrofílico estable — superar <span class="math inline">\(\Delta G_c\)</span>. <strong>Expansión</strong>: crecimiento del radio una vez nucleado. <strong>Daño irreversible</strong>: expansión tan grande que la biomembrana no recupera su integridad — requiere superar la barrera de ruptura (<span class="math inline">\(\sim 300\,k_BT\)</span> a 0 mV).</p></li>
 </ol>
 </div>
@@ -1415,7 +1421,7 @@ k_BT = 4.114 \times 10^{-21}~\mathrm{J}
 </section>
 <section id="síntesis-del-módulo" class="level1" data-number="13">
 <h1 data-number="13"><span class="header-section-number">13</span> Síntesis del módulo</h1>
-<p>La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en <span class="math inline">\(r\)</span>, gobernado por la energía de línea <span class="math inline">\(\gamma\)</span>), la ganancia por relajación de tensión superficial (cuadrática en <span class="math inline">\(r\)</span>, gobernada por <span class="math inline">\(\Gamma\)</span>) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en <span class="math inline">\(r\)</span> y en <span class="math inline">\(V_m^{\mathrm{tot}}\)</span>, gobernada por <span class="math inline">\(k\)</span>).</p>
+<p>La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en <span class="math inline">\(r\)</span>, gobernado por la energía de línea <span class="math inline">\(\gamma\)</span>), la ganancia por relajación de tensión superficial (cuadrática en <span class="math inline">\(r\)</span>, gobernada por <span class="math inline">\(\Gamma\)</span>) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en <span class="math inline">\(r\)</span> y en <span class="math inline">\(\Delta V_m^{\mathrm{tot}}\)</span>, gobernada por <span class="math inline">\(k\)</span>).</p>
 <p>La suma de estos tres términos produce un paisaje energético con una barrera máxima en <span class="math inline">\(r = r_c\)</span>. El voltaje transmembrana reduce tanto el radio crítico como la barrera <span class="math inline">\(\Delta G_c\)</span>: a voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas (<span class="math inline">\(k_BT\)</span>), haciendo la nucleación del poro estadísticamente probable. Este es el mecanismo central por el que el campo eléctrico permeabiliza la biomembrana, no como una ruptura mecánica, sino como una modificación del paisaje energético que rige las fluctuaciones moleculares de la bicapa <span class="citation" data-cites="Kotnik2019 Weaver1996">(<a href="#ref-Kotnik2019" role="doc-biblioref">Kotnik et&nbsp;al. 2019</a>; <a href="#ref-Weaver1996" role="doc-biblioref">Weaver y Chizmadzhev 1996</a>)</span>.</p>
 <p><a href="./04_calentamiento_joule.html">Continuar con el calentamiento Joule →</a></p>
 
@@ -1437,7 +1443,7 @@ Weaver, James C., y Yuri A. Chizmadzhev. 1996. <span>«Theory of Electroporation
 </div>
 </div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIFZfbVYgPSBJbnB1dHMucmFuZ2UoXG4gIFswLCA2MDBdLFxuICB7XG4gICAgdmFsdWU6IDMwMCxcbiAgICBzdGVwOiAyNSxcbiAgICBsYWJlbDogXCJWb2x0YWplIFZtLHRvdGFsIFttVl1cIlxuICB9XG4pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbnZpZXdvZiBnYW1tYV9wTiA9IElucHV0cy5yYW5nZShcbiAgWzEsIDMwXSxcbiAge1xuICAgIHZhbHVlOiA5LjIsXG4gICAgc3RlcDogMC4xLFxuICAgIGxhYmVsOiBcIkVuZXJnw61hIGRlIGzDrW5lYSDOsyBbcE5dXCJcbiAgfVxuKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2YgR2FtbWFfbU5tID0gSW5wdXRzLnJhbmdlKFxuICBbMCwgNV0sXG4gIHtcbiAgICB2YWx1ZTogMS4wLFxuICAgIHN0ZXA6IDAuMSxcbiAgICBsYWJlbDogXCJUZW5zacOzbiDOkyBbbU4vbV1cIlxuICB9XG4pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbnZpZXdvZiBrX21GX20yID0gSW5wdXRzLnJhbmdlKFxuICBbMSwgMTAwMF0sXG4gIHtcbiAgICB2YWx1ZTogNTU2LFxuICAgIHN0ZXA6IDEsXG4gICAgbGFiZWw6IFwiQ29lZmljaWVudGUgayBbbUYvbcKyXVwiXG4gIH1cbilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIHJtYXhfbm0gPSBJbnB1dHMucmFuZ2UoXG4gIFsxLCAzMF0sXG4gIHtcbiAgICB2YWx1ZTogMTIsXG4gICAgc3RlcDogMC41LFxuICAgIGxhYmVsOiBcIlJhZGlvIG3DoXhpbW8gW25tXVwiXG4gIH1cbilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuVF9LICAgPSAyOThcbmtCICAgID0gMS4zODA2NDllLTIzXG5rQlQgICA9IGtCICogVF9LXG5cblYgICAgID0gVl9tViAqIDFlLTNcbmdhbW1hID0gZ2FtbWFfcE4gKiAxZS0xMlxuR2FtbWEgPSBHYW1tYV9tTm0gKiAxZS0zXG5rY29lZiA9IGtfbUZfbTIgKiAxZS0zXG5cbkEgPSBNYXRoLlBJICogR2FtbWEgKyBrY29lZiAqIFYgKiBWXG5cbnJjcml0X20gID0gQSA+IDAgPyBNYXRoLlBJICogZ2FtbWEgLyBBIDogTmFOXG5yY3JpdF9ubSA9IHJjcml0X20gKiAxZTlcblxuR2NyaXRfSiAgID0gQSA+IDAgPyBNYXRoLlBJICogTWF0aC5QSSAqIGdhbW1hICogZ2FtbWEgLyBBIDogTmFOXG5HY3JpdF9rQlQgPSBHY3JpdF9KIC8ga0JUXG5cbnJfbm0gPSBBcnJheS5mcm9tKFxuICB7bGVuZ3RoOiA2MDB9LFxuICAoXywgaSkgPT4gMC4wMSArIGkgKiAocm1heF9ubSAtIDAuMDEpIC8gNTk5XG4pXG5cbmRhdG9zX3Bvcm8gPSByX25tLm1hcChybiA9PiB7XG4gIGNvbnN0IHIgID0gcm4gKiAxZS05XG4gIGNvbnN0IEcwID0gMiAqIE1hdGguUEkgKiByICogZ2FtbWEgLSBNYXRoLlBJICogciAqIHIgKiBHYW1tYVxuICBjb25zdCBHViA9IDIgKiBNYXRoLlBJICogciAqIGdhbW1hIC0gTWF0aC5QSSAqIHIgKiByICogR2FtbWEgLSBrY29lZiAqIHIgKiByICogViAqIFZcblxuICByZXR1cm4ge1xuICAgIHJfbm06IHJuLFxuICAgIEcwX2tCVDogRzAgLyBrQlQsXG4gICAgR1Zfa0JUOiBHViAvIGtCVFxuICB9XG59KVxuXG5wdW50b19jcml0aWNvID0gKFxuICBOdW1iZXIuaXNGaW5pdGUocmNyaXRfbm0pICYmXG4gIHJjcml0X25tID4gMC4wMSAmJlxuICByY3JpdF9ubSA8PSBybWF4X25tXG4pXG4gID8gW3tyX25tOiByY3JpdF9ubSwgR19rQlQ6IEdjcml0X2tCVH1dXG4gIDogW11cblxuR192YWx1ZXMgPSBkYXRvc19wb3JvLmZsYXRNYXAoZCA9PiBbZC5HMF9rQlQsIGQuR1Zfa0JUXSlcbkdtaW4gPSBNYXRoLm1pbigwLCAuLi5HX3ZhbHVlcylcbkdtYXggPSBNYXRoLm1heCg1LCAuLi5HX3ZhbHVlcylcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuaHRtbGBcbjxkaXYgc3R5bGU9XCJcbiAgYm9yZGVyOiAxcHggc29saWQgI2QwZDdkZTtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgcGFkZGluZzogMXJlbTtcbiAgbWFyZ2luLXRvcDogMXJlbTtcbiAgYmFja2dyb3VuZDogI2Y4ZmFmYztcbiAgZm9udC1zaXplOiAwLjk1cmVtO1xuXCI+XG4gIDxoNCBzdHlsZT1cIm1hcmdpbi10b3A6MDtcIj5WYWxvcmVzIGNhbGN1bGFkb3M8L2g0PlxuICA8dWwgc3R5bGU9XCJwYWRkaW5nLWxlZnQ6MS4ycmVtO1wiPlxuICAgIDxsaT48Yj5WPHN1Yj5tPC9zdWI+PHN1cD50b3Q8L3N1cD46PC9iPjxicj4ke1ZfbVYudG9GaXhlZCgwKX0gbVY8L2xpPlxuICAgIDxsaT48Yj7Oszo8L2I+PGJyPiR7Z2FtbWFfcE4udG9GaXhlZCgxKX0gcE48L2xpPlxuICAgIDxsaT48Yj7Okzo8L2I+PGJyPiR7R2FtbWFfbU5tLnRvRml4ZWQoMil9IG1OL208L2xpPlxuICAgIDxsaT48Yj5rOjwvYj48YnI+JHtrX21GX20yLnRvRml4ZWQoMCl9IG1GL23CsjwvbGk+XG4gICAgPGxpPjxiPnI8c3ViPmM8L3N1Yj46PC9iPjxicj4ke051bWJlci5pc0Zpbml0ZShyY3JpdF9ubSkgPyByY3JpdF9ubS50b0ZpeGVkKDMpICsgXCIgbm1cIiA6IFwibm8gZGVmaW5pZG9cIn08L2xpPlxuICAgIDxsaT48Yj7OlEc8c3ViPmM8L3N1Yj46PC9iPjxicj4ke051bWJlci5pc0Zpbml0ZShHY3JpdF9rQlQpID8gR2NyaXRfa0JULnRvRml4ZWQoMikgKyBcIiBrXFx1MjA4MlRcIiA6IFwibm8gZGVmaW5pZG9cIn08L2xpPlxuICAgIDxsaT48Yj5rPHN1Yj5CPC9zdWI+VCAoMjk4IEspOjwvYj48YnI+NC4xMSDDlyAxMOKBu8KywrkgSjwvbGk+XG4gIDwvdWw+XG4gIDxwIHN0eWxlPVwibWFyZ2luLWJvdHRvbTowOyBmb250LXNpemU6MC44OHJlbTsgY29sb3I6IzU1NTtcIj5cbiAgICBDb24gbG9zIHBhcsOhbWV0cm9zIHBvciBkZWZlY3RvOjxicj5cbiAgICDOlEc8c3ViPmM8L3N1Yj4oMCBtVikg4omIIDY0LjYgazxzdWI+Qjwvc3ViPlQ8YnI+XG4gICAgzpRHPHN1Yj5jPC9zdWI+KDMwMCBtVikg4omIIDMuOCBrPHN1Yj5CPC9zdWI+VFxuICA8L3A+XG48L2Rpdj5cbmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgd2lkdGg6IDUwMCxcbiAgaGVpZ2h0OiA1MDAsXG4gIG1hcmdpbkxlZnQ6IDgwLFxuICBtYXJnaW5SaWdodDogMjUsXG4gIG1hcmdpblRvcDogMzAsXG4gIG1hcmdpbkJvdHRvbTogNjAsXG4gIGdyaWQ6IHRydWUsXG4gIHg6IHtcbiAgICBsYWJlbDogXCJSYWRpbyBkZWwgcG9ybyByIFtubV0g4oaSXCIsXG4gICAgZG9tYWluOiBbMCwgcm1heF9ubV1cbiAgfSxcbiAgeToge1xuICAgIGxhYmVsOiBcIuKGkSDOlEcgW2tCVF1cIixcbiAgICBkb21haW46IFtHbWluICogMS4xMCwgR21heCAqIDEuMTBdXG4gIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5ydWxlWShbMF0sIHtcbiAgICAgIHN0cm9rZTogXCJibGFja1wiLFxuICAgICAgc3Ryb2tlT3BhY2l0eTogMC42XG4gICAgfSksXG4gICAgUGxvdC5saW5lKGRhdG9zX3Bvcm8sIHtcbiAgICAgIHg6IFwicl9ubVwiLFxuICAgICAgeTogXCJHMF9rQlRcIixcbiAgICAgIHN0cm9rZTogXCIjNmI3MjgwXCIsXG4gICAgICBzdHJva2VXaWR0aDogMixcbiAgICAgIHN0cm9rZURhc2hhcnJheTogXCI1LDVcIlxuICAgIH0pLFxuICAgIFBsb3QubGluZShkYXRvc19wb3JvLCB7XG4gICAgICB4OiBcInJfbm1cIixcbiAgICAgIHk6IFwiR1Zfa0JUXCIsXG4gICAgICBzdHJva2U6IFwiIzFmNGU3OVwiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDNcbiAgICB9KSxcbiAgICBQbG90LmRvdChwdW50b19jcml0aWNvLCB7XG4gICAgICB4OiBcInJfbm1cIixcbiAgICAgIHk6IFwiR19rQlRcIixcbiAgICAgIHI6IDUsXG4gICAgICBmaWxsOiBcIiNkOTVmMDJcIlxuICAgIH0pLFxuICAgIFBsb3QucnVsZVgoXG4gICAgICBwdW50b19jcml0aWNvLm1hcChkID0+IGQucl9ubSksXG4gICAgICB7XG4gICAgICAgIHN0cm9rZTogXCIjZDk1ZjAyXCIsXG4gICAgICAgIHN0cm9rZURhc2hhcnJheTogXCI0LDRcIixcbiAgICAgICAgc3Ryb2tlV2lkdGg6IDEuNFxuICAgICAgfVxuICAgICksXG4gICAgUGxvdC50ZXh0KFxuICAgICAgcHVudG9fY3JpdGljby5tYXAoZCA9PiAoe1xuICAgICAgICByX25tOiBkLnJfbm0sXG4gICAgICAgIEdfa0JUOiBkLkdfa0JULFxuICAgICAgICBsYWJlbDogYM6UR2MgPSAke2QuR19rQlQudG9GaXhlZCgxKX0ga0JUYFxuICAgICAgfSkpLFxuICAgICAge1xuICAgICAgICB4OiBcInJfbm1cIixcbiAgICAgICAgeTogXCJHX2tCVFwiLFxuICAgICAgICB0ZXh0OiBcImxhYmVsXCIsXG4gICAgICAgIGR4OiA4LFxuICAgICAgICBkeTogLTEwLFxuICAgICAgICBmb250U2l6ZTogMTEsXG4gICAgICAgIGZpbGw6IFwiI2Q5NWYwMlwiXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LnRleHQoXG4gICAgICBbXG4gICAgICAgIHtcbiAgICAgICAgICByX25tOiBybWF4X25tICogMC43MCxcbiAgICAgICAgICBHX2tCVDogZGF0b3NfcG9yb1tNYXRoLmZsb29yKGRhdG9zX3Bvcm8ubGVuZ3RoICogMC43MCldLkcwX2tCVCxcbiAgICAgICAgICBsYWJlbDogXCJWID0gMCBtVlwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICByX25tOiBybWF4X25tICogMC43MCxcbiAgICAgICAgICBHX2tCVDogZGF0b3NfcG9yb1tNYXRoLmZsb29yKGRhdG9zX3Bvcm8ubGVuZ3RoICogMC43MCldLkdWX2tCVCxcbiAgICAgICAgICBsYWJlbDogYFYgPSAke1ZfbVYudG9GaXhlZCgwKX0gbVZgXG4gICAgICAgIH1cbiAgICAgIF0sXG4gICAgICB7XG4gICAgICAgIHg6IFwicl9ubVwiLFxuICAgICAgICB5OiBcIkdfa0JUXCIsXG4gICAgICAgIHRleHQ6IFwibGFiZWxcIixcbiAgICAgICAgZHk6IC04LFxuICAgICAgICBmb250U2l6ZTogMTEsXG4gICAgICAgIGZpbGw6IFwiIzM3NDE1MVwiXG4gICAgICB9XG4gICAgKVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdWX21WJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2dhbW1hX3BOJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ0dhbW1hX21ObScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdrX21GX20yJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3JtYXhfbm0nKSJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIERlbHRhX1ZfbVYgPSBJbnB1dHMucmFuZ2UoXG4gIFswLCA2MDBdLFxuICB7XG4gICAgdmFsdWU6IDMwMCxcbiAgICBzdGVwOiAyNSxcbiAgICBsYWJlbDogXCJWb2x0YWplIM6UVm0sdG90YWwgW21WXVwiXG4gIH1cbilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIGdhbW1hX3BOID0gSW5wdXRzLnJhbmdlKFxuICBbMSwgMzBdLFxuICB7XG4gICAgdmFsdWU6IDkuMixcbiAgICBzdGVwOiAwLjEsXG4gICAgbGFiZWw6IFwiRW5lcmfDrWEgZGUgbMOtbmVhIM6zIFtwTl1cIlxuICB9XG4pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbnZpZXdvZiBHYW1tYV9tTm0gPSBJbnB1dHMucmFuZ2UoXG4gIFswLCA1XSxcbiAge1xuICAgIHZhbHVlOiAxLjAsXG4gICAgc3RlcDogMC4xLFxuICAgIGxhYmVsOiBcIlRlbnNpw7NuIM6TIFttTi9tXVwiXG4gIH1cbilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIGtfbUZfbTIgPSBJbnB1dHMucmFuZ2UoXG4gIFsxLCAxMDAwXSxcbiAge1xuICAgIHZhbHVlOiA1NTYsXG4gICAgc3RlcDogMSxcbiAgICBsYWJlbDogXCJDb2VmaWNpZW50ZSBrIFttRi9twrJdXCJcbiAgfVxuKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2Ygcm1heF9ubSA9IElucHV0cy5yYW5nZShcbiAgWzEsIDMwXSxcbiAge1xuICAgIHZhbHVlOiAxMixcbiAgICBzdGVwOiAwLjUsXG4gICAgbGFiZWw6IFwiUmFkaW8gbcOheGltbyBbbm1dXCJcbiAgfVxuKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5UX0sgICA9IDI5OFxua0IgICAgPSAxLjM4MDY0OWUtMjNcbmtCVCAgID0ga0IgKiBUX0tcblxuViAgICAgPSBEZWx0YV9WX21WICogMWUtM1xuZ2FtbWEgPSBnYW1tYV9wTiAqIDFlLTEyXG5HYW1tYSA9IEdhbW1hX21ObSAqIDFlLTNcbmtjb2VmID0ga19tRl9tMiAqIDFlLTNcblxuQSA9IE1hdGguUEkgKiBHYW1tYSArIGtjb2VmICogViAqIFZcblxucmNyaXRfbSAgPSBBID4gMCA/IE1hdGguUEkgKiBnYW1tYSAvIEEgOiBOYU5cbnJjcml0X25tID0gcmNyaXRfbSAqIDFlOVxuXG5HY3JpdF9KICAgPSBBID4gMCA/IE1hdGguUEkgKiBNYXRoLlBJICogZ2FtbWEgKiBnYW1tYSAvIEEgOiBOYU5cbkdjcml0X2tCVCA9IEdjcml0X0ogLyBrQlRcblxucl9ubSA9IEFycmF5LmZyb20oXG4gIHtsZW5ndGg6IDYwMH0sXG4gIChfLCBpKSA9PiAwLjAxICsgaSAqIChybWF4X25tIC0gMC4wMSkgLyA1OTlcbilcblxuZGF0b3NfcG9ybyA9IHJfbm0ubWFwKHJuID0+IHtcbiAgY29uc3QgciAgPSBybiAqIDFlLTlcbiAgY29uc3QgRzAgPSAyICogTWF0aC5QSSAqIHIgKiBnYW1tYSAtIE1hdGguUEkgKiByICogciAqIEdhbW1hXG4gIGNvbnN0IEdWID0gMiAqIE1hdGguUEkgKiByICogZ2FtbWEgLSBNYXRoLlBJICogciAqIHIgKiBHYW1tYSAtIGtjb2VmICogciAqIHIgKiBWICogVlxuXG4gIHJldHVybiB7XG4gICAgcl9ubTogcm4sXG4gICAgRzBfa0JUOiBHMCAvIGtCVCxcbiAgICBHVl9rQlQ6IEdWIC8ga0JUXG4gIH1cbn0pXG5cbnB1bnRvX2NyaXRpY28gPSAoXG4gIE51bWJlci5pc0Zpbml0ZShyY3JpdF9ubSkgJiZcbiAgcmNyaXRfbm0gPiAwLjAxICYmXG4gIHJjcml0X25tIDw9IHJtYXhfbm1cbilcbiAgPyBbe3Jfbm06IHJjcml0X25tLCBHX2tCVDogR2NyaXRfa0JUfV1cbiAgOiBbXVxuXG5HX3ZhbHVlcyA9IGRhdG9zX3Bvcm8uZmxhdE1hcChkID0+IFtkLkcwX2tCVCwgZC5HVl9rQlRdKVxuR21pbiA9IE1hdGgubWluKDAsIC4uLkdfdmFsdWVzKVxuR21heCA9IE1hdGgubWF4KDUsIC4uLkdfdmFsdWVzKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5odG1sYFxuPGRpdiBzdHlsZT1cIlxuICBib3JkZXI6IDFweCBzb2xpZCAjZDBkN2RlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBwYWRkaW5nOiAxcmVtO1xuICBtYXJnaW4tdG9wOiAxcmVtO1xuICBiYWNrZ3JvdW5kOiAjZjhmYWZjO1xuICBmb250LXNpemU6IDAuOTVyZW07XG5cIj5cbiAgPGg0IHN0eWxlPVwibWFyZ2luLXRvcDowO1wiPlZhbG9yZXMgY2FsY3VsYWRvczwvaDQ+XG4gIDx1bCBzdHlsZT1cInBhZGRpbmctbGVmdDoxLjJyZW07XCI+XG4gICAgPGxpPjxiPs6UVjxzdWI+bTwvc3ViPjxzdXA+dG90PC9zdXA+OjwvYj48YnI+JHtEZWx0YV9WX21WLnRvRml4ZWQoMCl9IG1WPC9saT5cbiAgICA8bGk+PGI+zrM6PC9iPjxicj4ke2dhbW1hX3BOLnRvRml4ZWQoMSl9IHBOPC9saT5cbiAgICA8bGk+PGI+zpM6PC9iPjxicj4ke0dhbW1hX21ObS50b0ZpeGVkKDIpfSBtTi9tPC9saT5cbiAgICA8bGk+PGI+azo8L2I+PGJyPiR7a19tRl9tMi50b0ZpeGVkKDApfSBtRi9twrI8L2xpPlxuICAgIDxsaT48Yj5yPHN1Yj5jPC9zdWI+OjwvYj48YnI+JHtOdW1iZXIuaXNGaW5pdGUocmNyaXRfbm0pID8gcmNyaXRfbm0udG9GaXhlZCgzKSArIFwiIG5tXCIgOiBcIm5vIGRlZmluaWRvXCJ9PC9saT5cbiAgICA8bGk+PGI+zpRHPHN1Yj5jPC9zdWI+OjwvYj48YnI+JHtOdW1iZXIuaXNGaW5pdGUoR2NyaXRfa0JUKSA/IEdjcml0X2tCVC50b0ZpeGVkKDIpICsgXCIga1xcdTIwODJUXCIgOiBcIm5vIGRlZmluaWRvXCJ9PC9saT5cbiAgICA8bGk+PGI+azxzdWI+Qjwvc3ViPlQgKDI5OCBLKTo8L2I+PGJyPjQuMTEgw5cgMTDigbvCssK5IEo8L2xpPlxuICA8L3VsPlxuICA8cCBzdHlsZT1cIm1hcmdpbi1ib3R0b206MDsgZm9udC1zaXplOjAuODhyZW07IGNvbG9yOiM1NTU7XCI+XG4gICAgQ29uIGxvcyBwYXLDoW1ldHJvcyBwb3IgZGVmZWN0bzo8YnI+XG4gICAgzpRHPHN1Yj5jPC9zdWI+KDAgbVYpIOKJiCA2NC42IGs8c3ViPkI8L3N1Yj5UPGJyPlxuICAgIM6URzxzdWI+Yzwvc3ViPigzMDAgbVYpIOKJiCAzLjggazxzdWI+Qjwvc3ViPlRcbiAgPC9wPlxuPC9kaXY+XG5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblBsb3QucGxvdCh7XG4gIHdpZHRoOiA1MDAsXG4gIGhlaWdodDogNTAwLFxuICBtYXJnaW5MZWZ0OiA4MCxcbiAgbWFyZ2luUmlnaHQ6IDI1LFxuICBtYXJnaW5Ub3A6IDMwLFxuICBtYXJnaW5Cb3R0b206IDYwLFxuICBncmlkOiB0cnVlLFxuICB4OiB7XG4gICAgbGFiZWw6IFwiUmFkaW8gZGVsIHBvcm8gciBbbm1dIOKGklwiLFxuICAgIGRvbWFpbjogWzAsIHJtYXhfbm1dXG4gIH0sXG4gIHk6IHtcbiAgICBsYWJlbDogXCLihpEgzpRHIFtrQlRdXCIsXG4gICAgZG9tYWluOiBbR21pbiAqIDEuMTAsIEdtYXggKiAxLjEwXVxuICB9LFxuICBtYXJrczogW1xuICAgIFBsb3QucnVsZVkoWzBdLCB7XG4gICAgICBzdHJva2U6IFwiYmxhY2tcIixcbiAgICAgIHN0cm9rZU9wYWNpdHk6IDAuNlxuICAgIH0pLFxuICAgIFBsb3QubGluZShkYXRvc19wb3JvLCB7XG4gICAgICB4OiBcInJfbm1cIixcbiAgICAgIHk6IFwiRzBfa0JUXCIsXG4gICAgICBzdHJva2U6IFwiIzZiNzI4MFwiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDIsXG4gICAgICBzdHJva2VEYXNoYXJyYXk6IFwiNSw1XCJcbiAgICB9KSxcbiAgICBQbG90LmxpbmUoZGF0b3NfcG9ybywge1xuICAgICAgeDogXCJyX25tXCIsXG4gICAgICB5OiBcIkdWX2tCVFwiLFxuICAgICAgc3Ryb2tlOiBcIiMxZjRlNzlcIixcbiAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgfSksXG4gICAgUGxvdC5kb3QocHVudG9fY3JpdGljbywge1xuICAgICAgeDogXCJyX25tXCIsXG4gICAgICB5OiBcIkdfa0JUXCIsXG4gICAgICByOiA1LFxuICAgICAgZmlsbDogXCIjZDk1ZjAyXCJcbiAgICB9KSxcbiAgICBQbG90LnJ1bGVYKFxuICAgICAgcHVudG9fY3JpdGljby5tYXAoZCA9PiBkLnJfbm0pLFxuICAgICAge1xuICAgICAgICBzdHJva2U6IFwiI2Q5NWYwMlwiLFxuICAgICAgICBzdHJva2VEYXNoYXJyYXk6IFwiNCw0XCIsXG4gICAgICAgIHN0cm9rZVdpZHRoOiAxLjRcbiAgICAgIH1cbiAgICApLFxuICAgIFBsb3QudGV4dChcbiAgICAgIHB1bnRvX2NyaXRpY28ubWFwKGQgPT4gKHtcbiAgICAgICAgcl9ubTogZC5yX25tLFxuICAgICAgICBHX2tCVDogZC5HX2tCVCxcbiAgICAgICAgbGFiZWw6IGDOlEdjID0gJHtkLkdfa0JULnRvRml4ZWQoMSl9IGtCVGBcbiAgICAgIH0pKSxcbiAgICAgIHtcbiAgICAgICAgeDogXCJyX25tXCIsXG4gICAgICAgIHk6IFwiR19rQlRcIixcbiAgICAgICAgdGV4dDogXCJsYWJlbFwiLFxuICAgICAgICBkeDogOCxcbiAgICAgICAgZHk6IC0xMCxcbiAgICAgICAgZm9udFNpemU6IDExLFxuICAgICAgICBmaWxsOiBcIiNkOTVmMDJcIlxuICAgICAgfVxuICAgICksXG4gICAgUGxvdC50ZXh0KFxuICAgICAgW1xuICAgICAgICB7XG4gICAgICAgICAgcl9ubTogcm1heF9ubSAqIDAuNzAsXG4gICAgICAgICAgR19rQlQ6IGRhdG9zX3Bvcm9bTWF0aC5mbG9vcihkYXRvc19wb3JvLmxlbmd0aCAqIDAuNzApXS5HMF9rQlQsXG4gICAgICAgICAgbGFiZWw6IFwizpRWID0gMCBtVlwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICByX25tOiBybWF4X25tICogMC43MCxcbiAgICAgICAgICBHX2tCVDogZGF0b3NfcG9yb1tNYXRoLmZsb29yKGRhdG9zX3Bvcm8ubGVuZ3RoICogMC43MCldLkdWX2tCVCxcbiAgICAgICAgICBsYWJlbDogYM6UViA9ICR7RGVsdGFfVl9tVi50b0ZpeGVkKDApfSBtVmBcbiAgICAgICAgfVxuICAgICAgXSxcbiAgICAgIHtcbiAgICAgICAgeDogXCJyX25tXCIsXG4gICAgICAgIHk6IFwiR19rQlRcIixcbiAgICAgICAgdGV4dDogXCJsYWJlbFwiLFxuICAgICAgICBkeTogLTgsXG4gICAgICAgIGZvbnRTaXplOiAxMSxcbiAgICAgICAgZmlsbDogXCIjMzc0MTUxXCJcbiAgICAgIH1cbiAgICApXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ0RlbHRhX1ZfbVYnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnZ2FtbWFfcE4nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnR2FtbWFfbU5tJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2tfbUZfbTInKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncm1heF9ubScpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -2077,10 +2083,10 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a><span class="fu">### Origen físico</span></span>
 <span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>Cuando se forma un poro de radio $r$ en la bicapa, la columna de lípido (dieléctrico de baja permitividad, $\varepsilon_m \approx 2\varepsilon_0$) es reemplazada por una columna de agua (dieléctrico de alta permitividad, $\varepsilon_w \approx 80\varepsilon_0$). La energía almacenada en un capacitor de área $\pi r^2$ y espesor $d_m$ con voltaje $V_m^{\mathrm{tot}}$ es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía **disminuye** porque el agua apantalla mejor el campo:</span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>Cuando se forma un poro de radio $r$ en la bicapa, la columna de lípido (dieléctrico de baja permitividad, $\varepsilon_m \approx 2\varepsilon_0$) es reemplazada por una columna de agua (dieléctrico de alta permitividad, $\varepsilon_w \approx 80\varepsilon_0$). La energía almacenada en un capacitor de área $\pi r^2$ y espesor $d_m$ con voltaje $\Delta V_m^{\mathrm{tot}}$ es proporcional a la permitividad del material; al pasar de lípido a agua, esa energía **disminuye** porque el agua apantalla mejor el campo:</span>
 <span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(V_m^{\mathrm{tot}}\right)^2</span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>\Delta G_{\mathrm{elec}}(r) \approx -k\,r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2</span>
 <span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>$$ {#eq-electrico}</span>
 <span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>El coeficiente $k$ (en F/m²) puede estimarse a partir de la geometría cilíndrica del poro y las permitividades:</span>
@@ -2099,7 +2105,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>= 556~\mathrm{mF/m^2}</span>
 <span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>$$ {#eq-k-valor}</span>
 <span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>Este término es **negativo** (ganancia energética), **cuadrático** en $r$ y **cuadrático** en $V_m^{\mathrm{tot}}$. Por eso el efecto no depende del signo del voltaje: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.</span>
+<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>Este término es **negativo** (ganancia energética), **cuadrático** en $r$ y **cuadrático** en $\Delta V_m^{\mathrm{tot}}$. Por eso el efecto no depende del signo del voltaje: $+300~\mathrm{mV}$ y $-300~\mathrm{mV}$ producen la misma reducción de barrera.</span>
 <span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
 <span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## ¿Por qué el término eléctrico es cuadrático en el voltaje?</span></span>
@@ -2112,16 +2118,16 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a>Los tres términos se construyen sobre tres fundamentos físicos distintos —costo de crear un contorno, relajación de tensión superficial, y ganancia dieléctrica— y tienen dependencias en $r$ que se compensan mutuamente. La energía libre total del poro hidrofílico de radio $r$ es su suma:</span>
 <span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>\Delta G(r,\,V_m^{\mathrm{tot}})</span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>\Delta G(r,\,\Delta V_m^{\mathrm{tot}})</span>
 <span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>\approx</span>
 <span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>\underbrace{2\pi r\,\gamma}_{\text{Borde (positivo)}}</span>
 <span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>-</span>
 <span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a>\underbrace{\pi r^2\,\Gamma}_{\text{Tensión (negativo)}}</span>
 <span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>-</span>
-<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>\underbrace{k\, r^2\,\left(V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}</span>
+<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>\underbrace{k\, r^2\,\left(\Delta V_m^{\mathrm{tot}}\right)^2}_{\text{Eléctrico (negativo)}}</span>
 <span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>$$ {#eq-modelo}</span>
 <span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>donde $V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)$ es el voltaje transmembrana total (en V), $\gamma$ es la energía de línea del borde hidrofílico (en J/m), $\Gamma$ es la tensión superficial efectiva de la bicapa (en J/m²) y $k$ es el coeficiente dieléctrico efectivo (en F/m²).</span>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>donde $\Delta V_m^{\mathrm{tot}}(t) = \Delta V_{m,0} + \Delta V_m^{\mathrm{ind}}(t)$ es el voltaje transmembrana total (en V), $\gamma$ es la energía de línea del borde hidrofílico (en J/m), $\Gamma$ es la tensión superficial efectiva de la bicapa (en J/m²) y $k$ es el coeficiente dieléctrico efectivo (en F/m²).</span>
 <span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>El modelo usa solo tres términos porque estos son los de menor orden en $r$ que capturan la física esencial: el término lineal en $r$ (costo de borde) domina para poros pequeños y el término cuadrático en $r$ (tensión + eléctrico) domina para poros grandes. Términos de orden superior en $r$ existen pero son secundarios en el rango de radios relevante para la nucleación (&lt; 10 nm).</span>
 <span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a></span>
@@ -2139,7 +2145,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-239"><a href="#cb10-239" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## Agrupación de los términos cuadráticos</span></span>
 <span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a>Definiendo $A = \pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2$, la ecuación (@eq-modelo) se puede escribir de forma compacta como:</span>
+<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a>Definiendo $A = \pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2$, la ecuación (@eq-modelo) se puede escribir de forma compacta como:</span>
 <span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a>\Delta G(r) = 2\pi\gamma\,r - A\,r^2</span>
@@ -2152,7 +2158,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-252"><a href="#cb10-252" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-253"><a href="#cb10-253" aria-hidden="true" tabindex="-1"></a>\frac{d\Delta G}{dr} = 2\pi\gamma - 2A\,r_c = 0</span>
 <span id="cb10-254"><a href="#cb10-254" aria-hidden="true" tabindex="-1"></a>\qquad\Longrightarrow\qquad</span>
-<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}</span>
+<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>r_c = \frac{\pi\gamma}{A} = \frac{\pi\gamma}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}</span>
 <span id="cb10-256"><a href="#cb10-256" aria-hidden="true" tabindex="-1"></a>$$ {#eq-rc}</span>
 <span id="cb10-257"><a href="#cb10-257" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-258"><a href="#cb10-258" aria-hidden="true" tabindex="-1"></a>La barrera energética $\Delta G_c$ es el valor de $\Delta G$ en $r = r_c$. Sustituyendo la ecuación (@eq-rc) en la ecuación (@eq-modelo-compacto):</span>
@@ -2172,20 +2178,20 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-272"><a href="#cb10-272" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-273"><a href="#cb10-273" aria-hidden="true" tabindex="-1"></a>\Delta G_c</span>
 <span id="cb10-274"><a href="#cb10-274" aria-hidden="true" tabindex="-1"></a>=</span>
-<span id="cb10-275"><a href="#cb10-275" aria-hidden="true" tabindex="-1"></a>\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(V_m^{\mathrm{tot}}\right)^2}</span>
+<span id="cb10-275"><a href="#cb10-275" aria-hidden="true" tabindex="-1"></a>\frac{\pi^2\gamma^2}{\pi\Gamma + k\left(\Delta V_m^{\mathrm{tot}}\right)^2}</span>
 <span id="cb10-276"><a href="#cb10-276" aria-hidden="true" tabindex="-1"></a>$$ {#eq-Gc}</span>
 <span id="cb10-277"><a href="#cb10-277" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-278"><a href="#cb10-278" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
 <span id="cb10-279"><a href="#cb10-279" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consecuencia biofísica</span></span>
 <span id="cb10-280"><a href="#cb10-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-281"><a href="#cb10-281" aria-hidden="true" tabindex="-1"></a>Al aumentar $|V_m^{\mathrm{tot}}|$, el denominador $A$ crece. Tanto $r_c$ (ecuación @eq-rc) como $\Delta G_c$ (ecuación @eq-Gc) **disminuyen**. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.</span>
+<span id="cb10-281"><a href="#cb10-281" aria-hidden="true" tabindex="-1"></a>Al aumentar $|\Delta V_m^{\mathrm{tot}}|$, el denominador $A$ crece. Tanto $r_c$ (ecuación @eq-rc) como $\Delta G_c$ (ecuación @eq-Gc) **disminuyen**. El voltaje transmembrana facilita la nucleación al reducir simultáneamente el tamaño crítico del poro y la barrera de energía que debe superarse.</span>
 <span id="cb10-282"><a href="#cb10-282" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-283"><a href="#cb10-283" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-284"><a href="#cb10-284" aria-hidden="true" tabindex="-1"></a><span class="fu"># Paisaje de energía libre</span></span>
 <span id="cb10-285"><a href="#cb10-285" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-286"><a href="#cb10-286" aria-hidden="true" tabindex="-1"></a>La @fig-paisaje muestra el paisaje energético para distintos voltajes. Al aumentar el voltaje transmembrana total, la barrera de nucleación disminuye y el radio crítico se desplaza hacia valores más pequeños.</span>
 <span id="cb10-287"><a href="#cb10-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-288"><a href="#cb10-288" aria-hidden="true" tabindex="-1"></a><span class="al">![Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de $V_m^{\mathrm{tot}}$; a mayor voltaje, menor altura de la barrera y menor radio crítico.](figures/ep_paisaje_energia_poro_esquema.png)</span>{#fig-paisaje fig-alt="Paisaje de energía libre del poro en función del radio para diferentes voltajes transmembrana." width=95%}</span>
+<span id="cb10-288"><a href="#cb10-288" aria-hidden="true" tabindex="-1"></a><span class="al">![Paisaje energético esquemático: al aumentar el voltaje transmembrana total, disminuyen la barrera de nucleación y el radio crítico del poro. Las curvas corresponden a diferentes valores de $\Delta V_m^{\mathrm{tot}}$; a mayor voltaje, menor altura de la barrera y menor radio crítico.](figures/ep_paisaje_energia_poro_esquema.png)</span>{#fig-paisaje fig-alt="Paisaje de energía libre del poro en función del radio para diferentes voltajes transmembrana." width=95%}</span>
 <span id="cb10-289"><a href="#cb10-289" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-290"><a href="#cb10-290" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
 <span id="cb10-291"><a href="#cb10-291" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sobre la figura de referencia y el modelo simplificado</span></span>
@@ -2198,13 +2204,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-298"><a href="#cb10-298" aria-hidden="true" tabindex="-1"></a>En esta simulación se explora el modelo mínimo de la ecuación (@eq-modelo):</span>
 <span id="cb10-299"><a href="#cb10-299" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-300"><a href="#cb10-300" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>\Delta G(r,V_m^{\mathrm{tot}})</span>
+<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>\Delta G(r,\Delta V_m^{\mathrm{tot}})</span>
 <span id="cb10-302"><a href="#cb10-302" aria-hidden="true" tabindex="-1"></a>\approx</span>
 <span id="cb10-303"><a href="#cb10-303" aria-hidden="true" tabindex="-1"></a>2\pi r\gamma</span>
 <span id="cb10-304"><a href="#cb10-304" aria-hidden="true" tabindex="-1"></a>-</span>
 <span id="cb10-305"><a href="#cb10-305" aria-hidden="true" tabindex="-1"></a>\pi r^2\Gamma</span>
 <span id="cb10-306"><a href="#cb10-306" aria-hidden="true" tabindex="-1"></a>-</span>
-<span id="cb10-307"><a href="#cb10-307" aria-hidden="true" tabindex="-1"></a>k r^2\left(V_m^{\mathrm{tot}}\right)^2</span>
+<span id="cb10-307"><a href="#cb10-307" aria-hidden="true" tabindex="-1"></a>k r^2\left(\Delta V_m^{\mathrm{tot}}\right)^2</span>
 <span id="cb10-308"><a href="#cb10-308" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-309"><a href="#cb10-309" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-310"><a href="#cb10-310" aria-hidden="true" tabindex="-1"></a>El radio se expresa en nanómetros y la energía en unidades de $k_BT$ a $T = 298$ K. Los valores por defecto corresponden a parámetros físicamente justificados: $\gamma = 9.2~\mathrm{pN}$ <span class="co">[</span><span class="ot">@Weaver1996</span><span class="co">]</span>, $\Gamma = 1~\mathrm{mN/m}$ y $k = 556~\mathrm{mF/m^2}$ (ecuación @eq-k-valor).</span>
@@ -2214,13 +2220,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-314"><a href="#cb10-314" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-315"><a href="#cb10-315" aria-hidden="true" tabindex="-1"></a>Use los controles deslizantes para modificar:</span>
 <span id="cb10-316"><a href="#cb10-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>el voltaje transmembrana total $V_m^{\mathrm{tot}}$, expresado en mV;</span>
+<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>el voltaje transmembrana total $\Delta V_m^{\mathrm{tot}}$, expresado en mV;</span>
 <span id="cb10-318"><a href="#cb10-318" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la energía de línea $\gamma$, expresada en pN;</span>
 <span id="cb10-319"><a href="#cb10-319" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>la tensión superficial efectiva $\Gamma$, expresada en mN/m;</span>
 <span id="cb10-320"><a href="#cb10-320" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>el coeficiente eléctrico efectivo $k$, expresado en mF/m$^2$;</span>
 <span id="cb10-321"><a href="#cb10-321" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>el radio máximo mostrado en la gráfica.</span>
 <span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a>La curva gris punteada corresponde a $V_m^{\mathrm{tot}} = 0$. La curva azul corresponde al voltaje seleccionado. El punto naranja indica $r_c$ y $\Delta G_c$.</span>
+<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a>La curva gris punteada corresponde a $\Delta V_m^{\mathrm{tot}} = 0$. La curva azul corresponde al voltaje seleccionado. El punto naranja indica $r_c$ y $\Delta G_c$.</span>
 <span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a><span class="fu">## Panel interactivo</span></span>
@@ -2232,12 +2238,12 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-334"><a href="#cb10-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
 <span id="cb10-335"><a href="#cb10-335" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
 <span id="cb10-336"><a href="#cb10-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a>viewof V_mV <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a>viewof Delta_V_mV <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb10-338"><a href="#cb10-338" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">600</span>]<span class="op">,</span></span>
 <span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a>  {</span>
 <span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
 <span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span></span>
-<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Voltaje Vm,total [mV]"</span></span>
+<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Voltaje ΔVm,total [mV]"</span></span>
 <span id="cb10-343"><a href="#cb10-343" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
@@ -2301,7 +2307,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-413"><a href="#cb10-413" aria-hidden="true" tabindex="-1"></a>kB    <span class="op">=</span> <span class="fl">1.380649e-23</span></span>
 <span id="cb10-414"><a href="#cb10-414" aria-hidden="true" tabindex="-1"></a>kBT   <span class="op">=</span> kB <span class="op">*</span> T_K</span>
 <span id="cb10-415"><a href="#cb10-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-416"><a href="#cb10-416" aria-hidden="true" tabindex="-1"></a>V     <span class="op">=</span> V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
+<span id="cb10-416"><a href="#cb10-416" aria-hidden="true" tabindex="-1"></a>V     <span class="op">=</span> Delta_V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb10-417"><a href="#cb10-417" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> gamma_pN <span class="op">*</span> <span class="fl">1e-12</span></span>
 <span id="cb10-418"><a href="#cb10-418" aria-hidden="true" tabindex="-1"></a>Gamma <span class="op">=</span> Gamma_mNm <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb10-419"><a href="#cb10-419" aria-hidden="true" tabindex="-1"></a>kcoef <span class="op">=</span> k_mF_m2 <span class="op">*</span> <span class="fl">1e-3</span></span>
@@ -2358,7 +2364,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-472"><a href="#cb10-472" aria-hidden="true" tabindex="-1"></a><span class="vs">"&gt;</span></span>
 <span id="cb10-473"><a href="#cb10-473" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h4 style="margin-top:0;"&gt;Valores calculados&lt;/h4&gt;</span></span>
 <span id="cb10-474"><a href="#cb10-474" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;ul style="padding-left:1.2rem;"&gt;</span></span>
-<span id="cb10-475"><a href="#cb10-475" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;V&lt;sub&gt;m&lt;/sub&gt;&lt;sup&gt;tot&lt;/sup&gt;:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV&lt;/li&gt;</span></span>
+<span id="cb10-475"><a href="#cb10-475" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;ΔV&lt;sub&gt;m&lt;/sub&gt;&lt;sup&gt;tot&lt;/sup&gt;:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>Delta_V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV&lt;/li&gt;</span></span>
 <span id="cb10-476"><a href="#cb10-476" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;γ:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>gamma_pN<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs"> pN&lt;/li&gt;</span></span>
 <span id="cb10-477"><a href="#cb10-477" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;Γ:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>Gamma_mNm<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs"> mN/m&lt;/li&gt;</span></span>
 <span id="cb10-478"><a href="#cb10-478" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;li&gt;&lt;b&gt;k:&lt;/b&gt;&lt;br&gt;</span><span class="sc">${</span>k_mF_m2<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mF/m²&lt;/li&gt;</span></span>
@@ -2451,12 +2457,12 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-567"><a href="#cb10-567" aria-hidden="true" tabindex="-1"></a>        {</span>
 <span id="cb10-568"><a href="#cb10-568" aria-hidden="true" tabindex="-1"></a>          <span class="dt">r_nm</span><span class="op">:</span> rmax_nm <span class="op">*</span> <span class="fl">0.70</span><span class="op">,</span></span>
 <span id="cb10-569"><a href="#cb10-569" aria-hidden="true" tabindex="-1"></a>          <span class="dt">G_kBT</span><span class="op">:</span> datos_poro[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(datos_poro<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="fl">0.70</span>)]<span class="op">.</span><span class="at">G0_kBT</span><span class="op">,</span></span>
-<span id="cb10-570"><a href="#cb10-570" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="st">"V = 0 mV"</span></span>
+<span id="cb10-570"><a href="#cb10-570" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="st">"ΔV = 0 mV"</span></span>
 <span id="cb10-571"><a href="#cb10-571" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
 <span id="cb10-572"><a href="#cb10-572" aria-hidden="true" tabindex="-1"></a>        {</span>
 <span id="cb10-573"><a href="#cb10-573" aria-hidden="true" tabindex="-1"></a>          <span class="dt">r_nm</span><span class="op">:</span> rmax_nm <span class="op">*</span> <span class="fl">0.70</span><span class="op">,</span></span>
 <span id="cb10-574"><a href="#cb10-574" aria-hidden="true" tabindex="-1"></a>          <span class="dt">G_kBT</span><span class="op">:</span> datos_poro[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(datos_poro<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="fl">0.70</span>)]<span class="op">.</span><span class="at">GV_kBT</span><span class="op">,</span></span>
-<span id="cb10-575"><a href="#cb10-575" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="vs">`V = </span><span class="sc">${</span>V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV`</span></span>
+<span id="cb10-575"><a href="#cb10-575" aria-hidden="true" tabindex="-1"></a>          <span class="dt">label</span><span class="op">:</span> <span class="vs">`ΔV = </span><span class="sc">${</span>Delta_V_mV<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="vs"> mV`</span></span>
 <span id="cb10-576"><a href="#cb10-576" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb10-577"><a href="#cb10-577" aria-hidden="true" tabindex="-1"></a>      ]<span class="op">,</span></span>
 <span id="cb10-578"><a href="#cb10-578" aria-hidden="true" tabindex="-1"></a>      {</span>
@@ -2478,12 +2484,12 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-594"><a href="#cb10-594" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-595"><a href="#cb10-595" aria-hidden="true" tabindex="-1"></a><span class="fu"># Cómo interpretar la simulación</span></span>
 <span id="cb10-596"><a href="#cb10-596" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-597"><a href="#cb10-597" aria-hidden="true" tabindex="-1"></a>La curva gris punteada representa el paisaje energético de referencia para $V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$ (ecuaciones @eq-rc y @eq-Gc).</span>
+<span id="cb10-597"><a href="#cb10-597" aria-hidden="true" tabindex="-1"></a>La curva gris punteada representa el paisaje energético de referencia para $\Delta V_m^{\mathrm{tot}} = 0$. La curva azul representa el paisaje para el voltaje seleccionado. El punto naranja marca la barrera de nucleación $\Delta G_c$ al radio crítico $r_c$ (ecuaciones @eq-rc y @eq-Gc).</span>
 <span id="cb10-598"><a href="#cb10-598" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-599"><a href="#cb10-599" aria-hidden="true" tabindex="-1"></a>Con los parámetros por defecto ($\gamma = 9.2~\mathrm{pN}$, $\Gamma = 1~\mathrm{mN/m}$, $k = 556~\mathrm{mF/m^2}$):</span>
 <span id="cb10-600"><a href="#cb10-600" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-601"><a href="#cb10-601" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A $V = 0~\mathrm{mV}$: $r_c \approx 9.2~\mathrm{nm}$, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.</span>
-<span id="cb10-602"><a href="#cb10-602" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A $V = 300~\mathrm{mV}$: $r_c \approx 0.54~\mathrm{nm}$, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas ($k_BT$); la nucleación se vuelve probable.</span>
+<span id="cb10-601"><a href="#cb10-601" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A $\Delta V_m^{\mathrm{tot}} = 0~\mathrm{mV}$: $r_c \approx 9.2~\mathrm{nm}$, $\Delta G_c \approx 64.6\,k_BT$ — la nucleación espontánea es extremadamente improbable.</span>
+<span id="cb10-602"><a href="#cb10-602" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A $\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}$: $r_c \approx 0.54~\mathrm{nm}$, $\Delta G_c \approx 3.8\,k_BT$ — la barrera es comparable a las fluctuaciones térmicas ($k_BT$); la nucleación se vuelve probable.</span>
 <span id="cb10-603"><a href="#cb10-603" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-604"><a href="#cb10-604" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
 <span id="cb10-605"><a href="#cb10-605" aria-hidden="true" tabindex="-1"></a><span class="fu">## Precaución física</span></span>
@@ -2501,7 +2507,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-617"><a href="#cb10-617" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, FloatSlider</span>
 <span id="cb10-618"><a href="#cb10-618" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-619"><a href="#cb10-619" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simular_paisaje_poro(</span>
-<span id="cb10-620"><a href="#cb10-620" aria-hidden="true" tabindex="-1"></a>    V_mV<span class="op">=</span><span class="dv">300</span>,</span>
+<span id="cb10-620"><a href="#cb10-620" aria-hidden="true" tabindex="-1"></a>    DeltaV_mV<span class="op">=</span><span class="dv">300</span>,</span>
 <span id="cb10-621"><a href="#cb10-621" aria-hidden="true" tabindex="-1"></a>    gamma_pN<span class="op">=</span><span class="fl">9.2</span>,</span>
 <span id="cb10-622"><a href="#cb10-622" aria-hidden="true" tabindex="-1"></a>    Gamma_mNm<span class="op">=</span><span class="fl">1.0</span>,</span>
 <span id="cb10-623"><a href="#cb10-623" aria-hidden="true" tabindex="-1"></a>    k_mF_m2<span class="op">=</span><span class="dv">556</span>,</span>
@@ -2511,20 +2517,20 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-627"><a href="#cb10-627" aria-hidden="true" tabindex="-1"></a><span class="co">    Simulación didáctica del paisaje de energía libre del poro.</span></span>
 <span id="cb10-628"><a href="#cb10-628" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-629"><a href="#cb10-629" aria-hidden="true" tabindex="-1"></a><span class="co">    Modelo (ecuación principal):</span></span>
-<span id="cb10-630"><a href="#cb10-630" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔG(r, V) = 2π r γ  −  π r² Γ  −  k r² V²</span></span>
+<span id="cb10-630"><a href="#cb10-630" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔG(r, ΔV) = 2π r γ  −  π r² Γ  −  k r² ΔV²</span></span>
 <span id="cb10-631"><a href="#cb10-631" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-632"><a href="#cb10-632" aria-hidden="true" tabindex="-1"></a><span class="co">    Parámetros por defecto basados en la literatura:</span></span>
 <span id="cb10-633"><a href="#cb10-633" aria-hidden="true" tabindex="-1"></a><span class="co">        γ = 9.2 pN   (Weaver 1996)</span></span>
 <span id="cb10-634"><a href="#cb10-634" aria-hidden="true" tabindex="-1"></a><span class="co">        Γ = 1.0 mN/m (tensión superficial de membrana bajo campo)</span></span>
 <span id="cb10-635"><a href="#cb10-635" aria-hidden="true" tabindex="-1"></a><span class="co">        k = 556 mF/m² (estimado desde permitividades: π(εw−εm)ε0/dm)</span></span>
-<span id="cb10-636"><a href="#cb10-636" aria-hidden="true" tabindex="-1"></a><span class="co">        V = 300 mV   (voltaje transmembrana típico en electroporación)</span></span>
+<span id="cb10-636"><a href="#cb10-636" aria-hidden="true" tabindex="-1"></a><span class="co">        ΔV = 300 mV  (voltaje transmembrana típico en electroporación)</span></span>
 <span id="cb10-637"><a href="#cb10-637" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb10-638"><a href="#cb10-638" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-639"><a href="#cb10-639" aria-hidden="true" tabindex="-1"></a>    T   <span class="op">=</span> <span class="dv">298</span></span>
 <span id="cb10-640"><a href="#cb10-640" aria-hidden="true" tabindex="-1"></a>    kB  <span class="op">=</span> <span class="fl">1.380649e-23</span></span>
 <span id="cb10-641"><a href="#cb10-641" aria-hidden="true" tabindex="-1"></a>    kBT <span class="op">=</span> kB <span class="op">*</span> T</span>
 <span id="cb10-642"><a href="#cb10-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-643"><a href="#cb10-643" aria-hidden="true" tabindex="-1"></a>    V     <span class="op">=</span> V_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
+<span id="cb10-643"><a href="#cb10-643" aria-hidden="true" tabindex="-1"></a>    V     <span class="op">=</span> DeltaV_mV <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb10-644"><a href="#cb10-644" aria-hidden="true" tabindex="-1"></a>    gamma <span class="op">=</span> gamma_pN <span class="op">*</span> <span class="fl">1e-12</span></span>
 <span id="cb10-645"><a href="#cb10-645" aria-hidden="true" tabindex="-1"></a>    Gamma <span class="op">=</span> Gamma_mNm <span class="op">*</span> <span class="fl">1e-3</span></span>
 <span id="cb10-646"><a href="#cb10-646" aria-hidden="true" tabindex="-1"></a>    kcoef <span class="op">=</span> k_mF_m2 <span class="op">*</span> <span class="fl">1e-3</span></span>
@@ -2551,9 +2557,9 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-667"><a href="#cb10-667" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-668"><a href="#cb10-668" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">5.5</span>))</span>
 <span id="cb10-669"><a href="#cb10-669" aria-hidden="true" tabindex="-1"></a>    ax.plot(r_nm, G0_kBT, linestyle<span class="op">=</span><span class="st">"--"</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb10-670"><a href="#cb10-670" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#6b7280"</span>, label<span class="op">=</span><span class="st">"V = 0 mV"</span>)</span>
+<span id="cb10-670"><a href="#cb10-670" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#6b7280"</span>, label<span class="op">=</span><span class="st">"ΔV = 0 mV"</span>)</span>
 <span id="cb10-671"><a href="#cb10-671" aria-hidden="true" tabindex="-1"></a>    ax.plot(r_nm, GV_kBT, linewidth<span class="op">=</span><span class="fl">2.8</span>,</span>
-<span id="cb10-672"><a href="#cb10-672" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#1f4e79"</span>, label<span class="op">=</span><span class="ss">f"V = </span><span class="sc">{</span>V_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
+<span id="cb10-672"><a href="#cb10-672" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">"#1f4e79"</span>, label<span class="op">=</span><span class="ss">f"ΔV = </span><span class="sc">{</span>DeltaV_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
 <span id="cb10-673"><a href="#cb10-673" aria-hidden="true" tabindex="-1"></a>    ax.axhline(<span class="dv">0</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, color<span class="op">=</span><span class="st">"black"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb10-674"><a href="#cb10-674" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-675"><a href="#cb10-675" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.isfinite(rc_nm) <span class="kw">and</span> rc_nm <span class="op">&lt;=</span> rmax_nm:</span>
@@ -2571,18 +2577,18 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-687"><a href="#cb10-687" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
 <span id="cb10-688"><a href="#cb10-688" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
 <span id="cb10-689"><a href="#cb10-689" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-690"><a href="#cb10-690" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"V_m^tot = </span><span class="sc">{</span>V_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
-<span id="cb10-691"><a href="#cb10-691" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"γ       = </span><span class="sc">{</span>gamma_pN<span class="sc">:.2f}</span><span class="ss"> pN"</span>)</span>
-<span id="cb10-692"><a href="#cb10-692" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Γ       = </span><span class="sc">{</span>Gamma_mNm<span class="sc">:.2f}</span><span class="ss"> mN/m"</span>)</span>
-<span id="cb10-693"><a href="#cb10-693" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"k       = </span><span class="sc">{</span>k_mF_m2<span class="sc">:.0f}</span><span class="ss"> mF/m²"</span>)</span>
-<span id="cb10-694"><a href="#cb10-694" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"r_c     = </span><span class="sc">{</span>rc_nm<span class="sc">:.4f}</span><span class="ss"> nm"</span>)</span>
-<span id="cb10-695"><a href="#cb10-695" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔG_c    = </span><span class="sc">{</span>Gc_kBT<span class="sc">:.2f}</span><span class="ss"> kBT"</span>)</span>
+<span id="cb10-690"><a href="#cb10-690" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔV_m^tot = </span><span class="sc">{</span>DeltaV_mV<span class="sc">:.0f}</span><span class="ss"> mV"</span>)</span>
+<span id="cb10-691"><a href="#cb10-691" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"γ        = </span><span class="sc">{</span>gamma_pN<span class="sc">:.2f}</span><span class="ss"> pN"</span>)</span>
+<span id="cb10-692"><a href="#cb10-692" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Γ        = </span><span class="sc">{</span>Gamma_mNm<span class="sc">:.2f}</span><span class="ss"> mN/m"</span>)</span>
+<span id="cb10-693"><a href="#cb10-693" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"k        = </span><span class="sc">{</span>k_mF_m2<span class="sc">:.0f}</span><span class="ss"> mF/m²"</span>)</span>
+<span id="cb10-694"><a href="#cb10-694" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"r_c      = </span><span class="sc">{</span>rc_nm<span class="sc">:.4f}</span><span class="ss"> nm"</span>)</span>
+<span id="cb10-695"><a href="#cb10-695" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ΔG_c     = </span><span class="sc">{</span>Gc_kBT<span class="sc">:.2f}</span><span class="ss"> kBT"</span>)</span>
 <span id="cb10-696"><a href="#cb10-696" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-697"><a href="#cb10-697" aria-hidden="true" tabindex="-1"></a>interact(</span>
 <span id="cb10-698"><a href="#cb10-698" aria-hidden="true" tabindex="-1"></a>    simular_paisaje_poro,</span>
-<span id="cb10-699"><a href="#cb10-699" aria-hidden="true" tabindex="-1"></a>    V_mV<span class="op">=</span>FloatSlider(</span>
+<span id="cb10-699"><a href="#cb10-699" aria-hidden="true" tabindex="-1"></a>    DeltaV_mV<span class="op">=</span>FloatSlider(</span>
 <span id="cb10-700"><a href="#cb10-700" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span><span class="dv">300</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">0</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">600</span>, step<span class="op">=</span><span class="dv">25</span>,</span>
-<span id="cb10-701"><a href="#cb10-701" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">"V [mV]"</span></span>
+<span id="cb10-701"><a href="#cb10-701" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">"ΔV [mV]"</span></span>
 <span id="cb10-702"><a href="#cb10-702" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb10-703"><a href="#cb10-703" aria-hidden="true" tabindex="-1"></a>    gamma_pN<span class="op">=</span>FloatSlider(</span>
 <span id="cb10-704"><a href="#cb10-704" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span><span class="fl">9.2</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">1</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">30</span>, step<span class="op">=</span><span class="fl">0.1</span>,</span>
@@ -2627,7 +2633,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-743"><a href="#cb10-743" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-744"><a href="#cb10-744" aria-hidden="true" tabindex="-1"></a>Calcule $r_c$ y $\Delta G_c$ (en unidades de $k_BT$) para los siguientes voltajes y complete la tabla:</span>
 <span id="cb10-745"><a href="#cb10-745" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-746"><a href="#cb10-746" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $V_m^{\mathrm{tot}}$ <span class="pp">|</span> $r_c$ <span class="co">[</span><span class="ot">nm</span><span class="co">]</span> <span class="pp">|</span> $\Delta G_c$ <span class="co">[</span><span class="ot">$k_BT$</span><span class="co">]</span> <span class="pp">|</span></span>
+<span id="cb10-746"><a href="#cb10-746" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $\Delta V_m^{\mathrm{tot}}$ <span class="pp">|</span> $r_c$ <span class="co">[</span><span class="ot">nm</span><span class="co">]</span> <span class="pp">|</span> $\Delta G_c$ <span class="co">[</span><span class="ot">$k_BT$</span><span class="co">]</span> <span class="pp">|</span></span>
 <span id="cb10-747"><a href="#cb10-747" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
 <span id="cb10-748"><a href="#cb10-748" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> $0~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
 <span id="cb10-749"><a href="#cb10-749" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> $150~\mathrm{mV}$ <span class="pp">|</span> ? <span class="pp">|</span> ? <span class="pp">|</span></span>
@@ -2636,7 +2642,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-752"><a href="#cb10-752" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-753"><a href="#cb10-753" aria-hidden="true" tabindex="-1"></a>Luego responda:</span>
 <span id="cb10-754"><a href="#cb10-754" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-755"><a href="#cb10-755" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $V_m^{\mathrm{tot}}$?</span>
+<span id="cb10-755"><a href="#cb10-755" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>¿Cómo cambian $r_c$ y $\Delta G_c$ al aumentar $\Delta V_m^{\mathrm{tot}}$?</span>
 <span id="cb10-756"><a href="#cb10-756" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>¿Por qué el voltaje aparece elevado al cuadrado en el término eléctrico?</span>
 <span id="cb10-757"><a href="#cb10-757" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>¿Qué significa físicamente que la barrera $\Delta G_c$ disminuya?</span>
 <span id="cb10-758"><a href="#cb10-758" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>¿Por qué una barrera menor no implica ruptura irreversible inmediata?</span>
@@ -2658,7 +2664,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-774"><a href="#cb10-774" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-775"><a href="#cb10-775" aria-hidden="true" tabindex="-1"></a>Los voltajes también en V: $150~\mathrm{mV} = 0.150~\mathrm{V}$, etc.</span>
 <span id="cb10-776"><a href="#cb10-776" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-777"><a href="#cb10-777" aria-hidden="true" tabindex="-1"></a>Calcula primero el denominador $A = \pi\Gamma + k V^2$ para cada voltaje. Luego aplica las ecuaciones (@eq-rc) y (@eq-Gc):</span>
+<span id="cb10-777"><a href="#cb10-777" aria-hidden="true" tabindex="-1"></a>Calcula primero el denominador $A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2$ para cada voltaje. Luego aplica las ecuaciones (@eq-rc) y (@eq-Gc):</span>
 <span id="cb10-778"><a href="#cb10-778" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-779"><a href="#cb10-779" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-780"><a href="#cb10-780" aria-hidden="true" tabindex="-1"></a>r_c = \frac{\pi\gamma}{A}~\mathrm{<span class="co">[</span><span class="ot">m</span><span class="co">]</span>}</span>
@@ -2672,7 +2678,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-788"><a href="#cb10-788" aria-hidden="true" tabindex="-1"></a>\Delta G_c~<span class="co">[</span><span class="ot">k_BT</span><span class="co">]</span> = \frac{\Delta G_c~\mathrm{<span class="co">[</span><span class="ot">J</span><span class="co">]</span>}}{k_BT}</span>
 <span id="cb10-789"><a href="#cb10-789" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-790"><a href="#cb10-790" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-791"><a href="#cb10-791" aria-hidden="true" tabindex="-1"></a>Observa cómo $A$ crece con $V^2$: a mayor voltaje, mayor denominador y, por tanto, menor $r_c$ y menor $\Delta G_c$.</span>
+<span id="cb10-791"><a href="#cb10-791" aria-hidden="true" tabindex="-1"></a>Observa cómo $A$ crece con $\left(\Delta V_m^{\mathrm{tot}}\right)^2$: a mayor voltaje, mayor denominador y, por tanto, menor $r_c$ y menor $\Delta G_c$.</span>
 <span id="cb10-792"><a href="#cb10-792" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb10-793"><a href="#cb10-793" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-794"><a href="#cb10-794" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
@@ -2687,9 +2693,9 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-803"><a href="#cb10-803" aria-hidden="true" tabindex="-1"></a>k_BT = 4.114 \times 10^{-21}~\mathrm{J}</span>
 <span id="cb10-804"><a href="#cb10-804" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb10-805"><a href="#cb10-805" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-806"><a href="#cb10-806" aria-hidden="true" tabindex="-1"></a>**Denominador:** $A = \pi\Gamma + k V^2$</span>
+<span id="cb10-806"><a href="#cb10-806" aria-hidden="true" tabindex="-1"></a>**Denominador:** $A = \pi\Gamma + k \left(\Delta V_m^{\mathrm{tot}}\right)^2$</span>
 <span id="cb10-807"><a href="#cb10-807" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-808"><a href="#cb10-808" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $V_m^{\mathrm{tot}}$ <span class="pp">|</span> $A~<span class="co">[</span><span class="ot">\mathrm{J/m^2}</span><span class="co">]</span>$ <span class="pp">|</span> $r_c~<span class="co">[</span><span class="ot">\mathrm{nm}</span><span class="co">]</span>$ <span class="pp">|</span> $\Delta G_c~<span class="co">[</span><span class="ot">k_BT</span><span class="co">]</span>$ <span class="pp">|</span></span>
+<span id="cb10-808"><a href="#cb10-808" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Caso <span class="pp">|</span> $\Delta V_m^{\mathrm{tot}}$ <span class="pp">|</span> $A~<span class="co">[</span><span class="ot">\mathrm{J/m^2}</span><span class="co">]</span>$ <span class="pp">|</span> $r_c~<span class="co">[</span><span class="ot">\mathrm{nm}</span><span class="co">]</span>$ <span class="pp">|</span> $\Delta G_c~<span class="co">[</span><span class="ot">k_BT</span><span class="co">]</span>$ <span class="pp">|</span></span>
 <span id="cb10-809"><a href="#cb10-809" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|---|</span></span>
 <span id="cb10-810"><a href="#cb10-810" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> $0~\mathrm{mV}$ <span class="pp">|</span> $3.14 \times 10^{-3}$ <span class="pp">|</span> $9.20$ <span class="pp">|</span> $64.6$ <span class="pp">|</span></span>
 <span id="cb10-811"><a href="#cb10-811" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> $150~\mathrm{mV}$ <span class="pp">|</span> $1.566 \times 10^{-2}$ <span class="pp">|</span> $1.847$ <span class="pp">|</span> $13.0$ <span class="pp">|</span></span>
@@ -2698,15 +2704,15 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-814"><a href="#cb10-814" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-815"><a href="#cb10-815" aria-hidden="true" tabindex="-1"></a>**Respuestas:**</span>
 <span id="cb10-816"><a href="#cb10-816" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-817"><a href="#cb10-817" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Al aumentar $V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $kV^2$ crece y aumenta el denominador $A$.</span>
+<span id="cb10-817"><a href="#cb10-817" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Al aumentar $\Delta V_m^{\mathrm{tot}}$, tanto $r_c$ como $\Delta G_c$ disminuyen progresivamente, porque el término $k\left(\Delta V_m^{\mathrm{tot}}\right)^2$ crece y aumenta el denominador $A$.</span>
 <span id="cb10-818"><a href="#cb10-818" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-819"><a href="#cb10-819" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>El término eléctrico es $-kr^2V^2$. La energía almacenada en un condensador es proporcional a $V^2$. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.</span>
+<span id="cb10-819"><a href="#cb10-819" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>El término eléctrico es $-kr^2\left(\Delta V_m^{\mathrm{tot}}\right)^2$. La energía almacenada en un condensador es proporcional a $V^2$. La ganancia al reemplazar lípido por agua tiene la misma forma funcional: el efecto no depende del signo del voltaje, sino de su magnitud al cuadrado.</span>
 <span id="cb10-820"><a href="#cb10-820" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-821"><a href="#cb10-821" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Una barrera $\Delta G_c$ menor significa que las fluctuaciones térmicas tienen mayor probabilidad de superarla y nuclearse. Cuanto más baja la barrera, más probable la formación espontánea de poros.</span>
 <span id="cb10-822"><a href="#cb10-822" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-823"><a href="#cb10-823" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>La superación de la barrera de nucleación abre el poro hidrofílico, pero la expansión posterior depende de si el campo y la tensión superficial favorecen el crecimiento. Un poro puede nuclearse y luego cerrarse si la energía de expansión sigue siendo desfavorable.</span>
 <span id="cb10-824"><a href="#cb10-824" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-825"><a href="#cb10-825" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Entre $V = 150~\mathrm{mV}$ y $V = 300~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta.</span>
+<span id="cb10-825"><a href="#cb10-825" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Entre $\Delta V_m^{\mathrm{tot}} = 150~\mathrm{mV}$ y $\Delta V_m^{\mathrm{tot}} = 300~\mathrm{mV}$: a $300~\mathrm{mV}$ la barrera ya es $3.82\,k_BT$, por debajo de $5\,k_BT$. A $150~\mathrm{mV}$ es $13.0\,k_BT$, aún alta.</span>
 <span id="cb10-826"><a href="#cb10-826" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-827"><a href="#cb10-827" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Nucleación**: formación del primer poro hidrofílico estable — superar $\Delta G_c$. **Expansión**: crecimiento del radio una vez nucleado. **Daño irreversible**: expansión tan grande que la biomembrana no recupera su integridad — requiere superar la barrera de ruptura ($\sim 300\,k_BT$ a 0 mV).</span>
 <span id="cb10-828"><a href="#cb10-828" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -2719,7 +2725,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb10-835"><a href="#cb10-835" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-836"><a href="#cb10-836" aria-hidden="true" tabindex="-1"></a><span class="fu"># Síntesis del módulo</span></span>
 <span id="cb10-837"><a href="#cb10-837" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-838"><a href="#cb10-838" aria-hidden="true" tabindex="-1"></a>La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en $r$, gobernado por la energía de línea $\gamma$), la ganancia por relajación de tensión superficial (cuadrática en $r$, gobernada por $\Gamma$) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en $r$ y en $V_m^{\mathrm{tot}}$, gobernada por $k$).</span>
+<span id="cb10-838"><a href="#cb10-838" aria-hidden="true" tabindex="-1"></a>La formación de un poro hidrofílico en la biomembrana resulta de la competencia entre tres efectos físicos con dependencias distintas en el radio: el costo de crear el borde (lineal en $r$, gobernado por la energía de línea $\gamma$), la ganancia por relajación de tensión superficial (cuadrática en $r$, gobernada por $\Gamma$) y la ganancia dieléctrica al sustituir lípido por agua en el poro (cuadrática en $r$ y en $\Delta V_m^{\mathrm{tot}}$, gobernada por $k$).</span>
 <span id="cb10-839"><a href="#cb10-839" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-840"><a href="#cb10-840" aria-hidden="true" tabindex="-1"></a>La suma de estos tres términos produce un paisaje energético con una barrera máxima en $r = r_c$. El voltaje transmembrana reduce tanto el radio crítico como la barrera $\Delta G_c$: a voltajes típicos de electroporación (~300 mV), la barrera cae a valores comparables a las fluctuaciones térmicas ($k_BT$), haciendo la nucleación del poro estadísticamente probable. Este es el mecanismo central por el que el campo eléctrico permeabiliza la biomembrana, no como una ruptura mecánica, sino como una modificación del paisaje energético que rige las fluctuaciones moleculares de la bicapa <span class="co">[</span><span class="ot">@Kotnik2019; @Weaver1996</span><span class="co">]</span>.</span>
 <span id="cb10-841"><a href="#cb10-841" aria-hidden="true" tabindex="-1"></a></span>
